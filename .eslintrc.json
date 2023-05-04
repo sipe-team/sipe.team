@@ -1,0 +1,15 @@
+{
+  "extends": ["@opstool-fe/eslint-config", "plugin:storybook/recommended"],
+  "ignorePatterns": ["vite.config.ts", "vitest.config.ts"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module",
+    "project": ["./tsconfig.json"],
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "react/destructuring-assignment": 0
+  }
+}
