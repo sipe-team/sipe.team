@@ -1,0 +1,18 @@
+import { Theme } from '@emotion/react';
+
+const theme: Theme = {
+  colors: {
+    green: '#01FF13',
+    blue: '#3BFEA6',
+    black111: '#111111',
+    black222: '#222222',
+    black333: '#333333',
+    gray01: '#2A2A2A',
+    gray02: '#9C9C9C',
+    gray03: '#C8C8C8',
+    white: '#FFFFFF',
+    divider: '#999999',
+  },
+};
+
+export default theme;
