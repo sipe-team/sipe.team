@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
-export const StyledSection = styled.div`
+export const StyledSection = styled.div<{ direction?: 'row' | 'column' }>`
   display: flex;
-  flex-direction: column;
+  flex-direction: ${({ direction }) => direction ?? 'column'};
   gap: 8px;
 `;
