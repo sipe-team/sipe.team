@@ -10,6 +10,7 @@ const theme: Theme = {
     gray01: '#2A2A2A',
     gray02: '#9C9C9C',
     gray03: '#C8C8C8',
+    gray04: '#E1E1E1',
     white: '#FFFFFF',
     divider: '#999999',
   },

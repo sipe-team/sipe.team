@@ -1,5 +1,5 @@
 import * as S from './styled';
-import { ReactComponent as Logo } from '../../assets/logo.svg';
+import { ReactComponent as Logo } from '@/assets/logo.svg';
 import JoinButton from '../common/JoinButton';
 
 const Header = () => {
