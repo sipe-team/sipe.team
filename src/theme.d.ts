@@ -5,6 +5,7 @@ declare module '@emotion/react' {
     colors: {
       green: '#01FF13';
       blue: '#3BFEA6';
+      border: '#75FB4F';
       black111: '#111111';
       black222: '#222222';
       black333: '#333333';
