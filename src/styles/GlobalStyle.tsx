@@ -21,6 +21,7 @@ const styles = (theme: Theme) => css`
     scrollbar-width: none;
     padding: 0 40px;
     padding-top: 113px;
+    margin: 0;
   }
 
   ::-webkit-scrollbar {

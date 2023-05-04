@@ -1,4 +1,4 @@
-import { StyledSection } from 'styles/common';
+import { StyledSection } from '@/styles/common';
 
 const Section2 = () => {
   return <StyledSection></StyledSection>;
