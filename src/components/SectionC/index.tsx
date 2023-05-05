@@ -3,7 +3,7 @@ import * as S from './styled';
 import ProfileCard from './ProfileCard';
 import { StyledSection } from '@/styles/common';
 
-const Section3 = () => {
+const SectionC = () => {
   const { makers } = data;
 
   return (
@@ -22,4 +22,4 @@ const Section3 = () => {
   );
 };
 
-export default Section3;
+export default SectionC;

@@ -4,7 +4,7 @@ import { StyledSection } from '@/styles/common';
 import ImageCard from './ImageCard';
 import data from '@/data';
 
-const Section1 = () => {
+const SectionA = () => {
   return (
     <StyledSection>
       <MainBanner />
@@ -23,4 +23,4 @@ const Section1 = () => {
   );
 };
 
-export default Section1;
+export default SectionA;

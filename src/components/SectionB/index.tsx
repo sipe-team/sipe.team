@@ -6,7 +6,7 @@ import EventBanner from './EventBanner';
 import EventCard from './EventCard';
 import JoinButton from '../common/JoinButton';
 
-const Section2 = () => {
+const SectionB = () => {
   const { recruitment, qualification } = data;
 
   return (
@@ -23,4 +23,4 @@ const Section2 = () => {
   );
 };
 
-export default Section2;
+export default SectionB;
