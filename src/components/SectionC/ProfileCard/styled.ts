@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   background: #d9d9d9; // TODO: 삭제
   border-radius: 300px;
   position: relative;
+  max-width: 246.8px;
 `;
 
 export const BadgeGroup = styled.div`

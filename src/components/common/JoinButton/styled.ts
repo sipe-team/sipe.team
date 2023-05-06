@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 export type sizeType = 's' | 'm' | 'lg';
 
 export const Wrapper = styled.div<{ size: sizeType }>`
+  cursor: pointer;
   background-color: ${({ theme }) => theme.colors.green};
   height: ${({ size }) => (size === 's' ? '42px' : '70px')};
   border-radius: 560px;

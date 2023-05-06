@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
-  cursor: pointer;
   border-radius: 88px;
   padding: 25px 29px 25px 62px;
   border: 1px solid ${({ theme }) => theme.colors.blue};

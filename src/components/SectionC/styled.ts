@@ -6,6 +6,9 @@ export const Wrapper = styled.div`
   border-right: none;
   display: flex;
   padding: 36px 0;
+  & > div:last-child {
+    justify-content: end;
+  }
 `;
 
 export const Title = styled.div`
