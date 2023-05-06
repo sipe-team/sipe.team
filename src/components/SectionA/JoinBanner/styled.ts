@@ -1,10 +1,12 @@
 import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
+  cursor: pointer;
   border-radius: 88px;
   padding: 25px 29px 25px 62px;
   border: 1px solid ${({ theme }) => theme.colors.blue};
   display: flex;
+  align-items: center;
   justify-content: space-between;
   color: ${({ theme }) => theme.colors.green};
   position: relative;
@@ -26,5 +28,19 @@ export const Wrapper = styled.div`
         rgba(59, 254, 166, 0.2) 0%,
         rgba(59, 254, 166, 0) 100%
       );
+  }
+`;
+
+export const Text = styled.div`
+  display: flex;
+  & > div:first-child {
+    font-family: 'Pretendard-Bold';
+    font-size: 40px;
+    line-height: 48px;
+  }
+  & > div:last-child {
+    margin-left: 11px;
+    font-size: 40px;
+    line-height: 48px;
   }
 `;

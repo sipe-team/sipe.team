@@ -10,4 +10,9 @@ export const Wrapper = styled.div`
 
 export const Title = styled.div`
   color: ${({ theme }) => theme.colors.green};
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 90%;
 `;

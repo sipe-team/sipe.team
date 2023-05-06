@@ -13,8 +13,11 @@ export const Wrapper = styled.div<{ size: sizeType }>`
   align-items: center;
   padding: 0px ${({ size }) => (size === 's' ? '24px' : '11px')};
   padding-left: ${({ size }) => (size === 's' ? '24px' : '29px')};
-
   justify-content: space-between;
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-style: italic;
+  line-height: 24px;
 `;
 
 export const Icon = styled.div`
@@ -26,4 +29,5 @@ export const Icon = styled.div`
   align-items: center;
   justify-content: center;
   margin-left: 21px;
+  padding-left: 3px;
 `;

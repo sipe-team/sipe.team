@@ -10,9 +10,11 @@ const ListCard = ({ title, flex, list }: ListCardProps) => {
   return (
     <S.Wrapper flex={flex}>
       <S.Title>{title}</S.Title>
-      {list.map((item, i) => (
-        <div key={i}>{item}</div>
-      ))}
+      <S.List>
+        {list.map((item, i) => (
+          <li key={i}>{item}</li>
+        ))}
+      </S.List>
     </S.Wrapper>
   );
 };

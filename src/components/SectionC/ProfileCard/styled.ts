@@ -26,4 +26,14 @@ export const Badge = styled.div<{ i: number; isName?: boolean }>`
   align-items: center;
   justify-content: center;
   margin-bottom: ${({ isName }) => (isName ? -12 : 0)}px;
+  font-family: 'Pretendard-ExtraBold';
+
+  &:first-child {
+    font-size: 24px;
+    line-height: 29px;
+  }
+  &:last-child {
+    font-size: 16px;
+    line-height: 19px;
+  }
 `;

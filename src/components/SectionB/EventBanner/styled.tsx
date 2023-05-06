@@ -31,9 +31,16 @@ export const Text = styled.div`
   gap: 46px;
 `;
 
-export const Title = styled.div``;
+export const Title = styled.div`
+  font-family: 'Pretendard-ExtraBold';
+  font-size: 48px;
+  line-height: 57px;
+  color: ${({ theme }) => theme.colors.green};
+`;
 
 export const Description = styled.div`
   display: flex;
   flex-direction: column;
+  font-size: 16px;
+  line-height: 140%;
 `;

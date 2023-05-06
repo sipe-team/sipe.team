@@ -20,4 +20,15 @@ export const Box = styled.div`
   box-shadow: 0px 0px 20px #01ff13;
   border-radius: 64px;
   padding: 48px 74px;
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 900;
+  font-size: 100px;
+  line-height: 110%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  & > div:last-child {
+    margin-left: auto;
+  }
 `;

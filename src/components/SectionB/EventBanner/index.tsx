@@ -11,7 +11,7 @@ const EventBanner = () => {
         <S.Title>{event.title}</S.Title>
         <S.Description>
           {event.list.map((item, i) => (
-            <div key={i}>{item}</div>
+            <li key={i}>{item}</li>
           ))}
         </S.Description>
       </S.Text>

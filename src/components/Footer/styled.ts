@@ -22,4 +22,7 @@ export const Sns = styled.div`
 export const Email = styled.div`
   color: ${({ theme }) => theme.colors.gray02};
   margin-top: 27px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 140%;
 `;

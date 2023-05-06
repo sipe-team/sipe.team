@@ -18,8 +18,14 @@ export const Image = styled.div`
 
 export const Title = styled.div`
   margin-top: 56px;
+  font-family: 'Pretendard-ExtraBold';
+  font-size: 32px;
+  line-height: 38px;
 `;
 
 export const Description = styled.div`
   margin-top: 24px;
+  font-size: 24px;
+  line-height: 140%;
+  color: ${({ theme }) => theme.colors.gray03};
 `;

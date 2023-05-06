@@ -8,10 +8,23 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   height: 640px;
-  & > div {
-    color: ${({ theme }) => theme.colors.black111};
-    display: flex;
-    flex-direction: column;
-    gap: 11px;
+`;
+
+export const Text = styled.div`
+  color: ${({ theme }) => theme.colors.black111};
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  & > div:first-child {
+    font-family: 'Montserrat';
+    font-style: italic;
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 39px;
+  }
+  & > div:last-child {
+    font-family: 'Pretendard-Bold';
+    font-size: 24px;
+    line-height: 29px;
   }
 `;

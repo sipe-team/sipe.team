@@ -12,6 +12,7 @@ export const Wrapper = styled.div`
   left: 0;
   right: 0;
   padding: 0 40px;
+  z-index: 100;
 `;
 
 export const Buttons = styled.div`
@@ -24,4 +25,5 @@ export const Anchors = styled.div`
   display: flex;
   gap: 40px;
   font-size: 18px;
+  line-height: 21px;
 `;
