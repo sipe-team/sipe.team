@@ -1,11 +1,10 @@
 import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
-  height: 706px;
   background: ${({ theme }) => theme.colors.gray01};
   border-radius: 72px;
   padding: 32px;
-  padding-bottom: 72px;
+  padding-bottom: 64px;
   width: 100%;
 `;
 
@@ -19,13 +18,13 @@ export const Image = styled.div`
 export const Title = styled.div`
   margin-top: 56px;
   font-family: 'Pretendard-ExtraBold';
-  font-size: 32px;
-  line-height: 38px;
+  font-size: 28px;
+  line-height: 33px;
 `;
 
 export const Description = styled.div`
   margin-top: 24px;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 140%;
   color: ${({ theme }) => theme.colors.gray03};
 `;

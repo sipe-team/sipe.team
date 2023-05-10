@@ -17,12 +17,11 @@ export const BadgeGroup = styled.div`
 `;
 
 export const Badge = styled.div<{ i: number; isName?: boolean }>`
-  width: ${({ isName }) => (isName ? 100 : 188)}px;
+  width: ${({ isName }) => (isName ? 92 : 164)}px;
   height: ${({ isName }) => (isName ? 52 : 36)}px;
   border-radius: 32px;
   background-color: ${({ theme, i }) =>
     i % 2 === 1 ? theme.colors.blue : theme.colors.green};
-  font-size: ${({ isName }) => (isName ? 24 : 16)}px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,11 +29,11 @@ export const Badge = styled.div<{ i: number; isName?: boolean }>`
   font-family: 'Pretendard-ExtraBold';
 
   &:first-child {
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 20px;
+    line-height: 24px;
   }
   &:last-child {
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 14px;
+    line-height: 17px;
   }
 `;
