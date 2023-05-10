@@ -49,6 +49,12 @@ const styles = (theme: Theme) => css`
     margin: 0;
   }
 
+  #root {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
   ::-webkit-scrollbar {
     display: none;
   }

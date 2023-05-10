@@ -1,11 +1,11 @@
+import { MAX_WIDTH } from '@/styles/common';
 import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.black111};
   display: flex;
-  align-items: center;
   width: 100%;
-  justify-content: space-between;
+  justify-content: center;
   height: 72px;
   position: fixed;
   top: 0;
@@ -13,6 +13,14 @@ export const Wrapper = styled.div`
   right: 0;
   padding: 0 40px;
   z-index: 100;
+  & > div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    height: 100%;
+    max-width: ${MAX_WIDTH};
+  }
 `;
 
 export const Buttons = styled.div`
