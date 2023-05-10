@@ -1,4 +1,5 @@
 import JoinButton from '@/components/common/JoinButton';
+
 import * as S from './styled';
 
 const JoinBanner = () => {

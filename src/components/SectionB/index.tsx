@@ -1,10 +1,11 @@
-import { StyledSection } from '@/styles/common';
-import MainBanner from './MainBanner';
-import ListCard from './ListCard';
 import data from '@/data';
+import { StyledSection } from '@/styles/common';
+
+import JoinButton from '../common/JoinButton';
 import EventBanner from './EventBanner';
 import EventCard from './EventCard';
-import JoinButton from '../common/JoinButton';
+import ListCard from './ListCard';
+import MainBanner from './MainBanner';
 
 const SectionB = () => {
   const { recruitment, qualification } = data;

@@ -1,5 +1,6 @@
-import * as S from './styled';
 import { ReactComponent as LogoBig } from '@/assets/logo_big.svg';
+
+import * as S from './styled';
 
 const MainBanner = () => {
   return (

@@ -1,7 +1,8 @@
-import * as S from './styled';
-import { ReactComponent as LogoFooter } from '@/assets/logo_footer.svg';
-import { ReactComponent as Instagram } from '@/assets/instagram.svg';
 import { ReactComponent as Facebook } from '@/assets/facebook.svg';
+import { ReactComponent as Instagram } from '@/assets/instagram.svg';
+import { ReactComponent as LogoFooter } from '@/assets/logo_footer.svg';
+
+import * as S from './styled';
 
 const Footer = () => {
   return (

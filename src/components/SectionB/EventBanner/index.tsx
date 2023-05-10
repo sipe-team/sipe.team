@@ -1,5 +1,6 @@
-import data from '@/data';
 import { ReactComponent as ArrowEvent } from '@/assets/arrow_event.svg';
+import data from '@/data';
+
 import * as S from './styled';
 
 const EventBanner = () => {

@@ -1,7 +1,8 @@
 import data from '@/data';
-import * as S from './styled';
-import ProfileCard from './ProfileCard';
 import { StyledSection } from '@/styles/common';
+
+import ProfileCard from './ProfileCard';
+import * as S from './styled';
 
 const SectionC = () => {
   const { makers } = data;

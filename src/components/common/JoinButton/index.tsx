@@ -1,5 +1,6 @@
-import * as S from './styled';
 import { ReactComponent as ArrowJoin } from '@/assets/arrow_join.svg';
+
+import * as S from './styled';
 
 type JonButtonProps = {
   size: S.sizeType;

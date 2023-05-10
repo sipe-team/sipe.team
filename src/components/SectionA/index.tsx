@@ -1,8 +1,9 @@
-import MainBanner from './MainBanner';
-import JoinBanner from './JoinBanner';
-import { StyledSection } from '@/styles/common';
-import ImageCard from './ImageCard';
 import data from '@/data';
+import { StyledSection } from '@/styles/common';
+
+import ImageCard from './ImageCard';
+import JoinBanner from './JoinBanner';
+import MainBanner from './MainBanner';
 
 const SectionA = () => {
   return (
