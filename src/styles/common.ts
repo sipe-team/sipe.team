@@ -7,6 +7,7 @@ export const StyledSection = styled.div<{
   gap?: number;
 }>`
   max-width: ${MAX_WIDTH};
+  width: 100%;
   display: flex;
   flex: 1;
   flex-direction: ${({ direction }) => direction ?? 'column'};

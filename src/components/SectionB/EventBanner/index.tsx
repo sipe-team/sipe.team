@@ -16,7 +16,9 @@ const EventBanner = () => {
           ))}
         </S.Description>
       </S.Text>
-      <ArrowEvent />
+      <S.ArrowIcon>
+        <ArrowEvent />
+      </S.ArrowIcon>
     </S.Wrapper>
   );
 };

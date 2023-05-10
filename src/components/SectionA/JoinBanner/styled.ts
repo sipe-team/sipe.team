@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 
+import { desktop } from '@/styles/media-query';
+
 export const Wrapper = styled.div`
   border-radius: 88px;
   padding: 25px 29px 25px 62px;
@@ -41,5 +43,10 @@ export const Text = styled.div`
     margin-left: 11px;
     font-size: 40px;
     line-height: 48px;
+  }
+  flex-direction: column;
+
+  ${desktop} {
+    flex-direction: row;
   }
 `;

@@ -6,7 +6,7 @@ import * as S from './styled';
 const Header = () => {
   return (
     <S.Wrapper>
-      <div>
+      <div style={{ padding: '0 40px' }}>
         <Logo />
         <S.Buttons>
           <S.Anchors>

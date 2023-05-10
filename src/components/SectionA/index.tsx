@@ -7,7 +7,7 @@ import MainBanner from './MainBanner';
 
 const SectionA = () => {
   return (
-    <StyledSection>
+    <StyledSection style={{ padding: '0 40px' }}>
       <MainBanner />
       <JoinBanner />
       <StyledSection direction="row">

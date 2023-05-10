@@ -1,5 +1,6 @@
-import { MAX_WIDTH } from '@/styles/common';
 import styled from '@emotion/styled';
+
+import { MAX_WIDTH } from '@/styles/common';
 
 export const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.black111};

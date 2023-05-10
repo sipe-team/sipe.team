@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 
+import { desktop } from '@/styles/media-query';
+
 export const Wrapper = styled.div`
   border: 1px solid #01ff13;
   border-radius: 32px;
@@ -27,8 +29,14 @@ export const Wrapper = styled.div`
 
 export const Text = styled.div`
   display: flex;
-  align-items: center;
   gap: 46px;
+  flex-direction: column;
+  justify-content: start;
+
+  ${desktop} {
+    align-items: center;
+    flex-direction: row;
+  }
 `;
 
 export const Title = styled.div`
@@ -43,4 +51,11 @@ export const Description = styled.div`
   flex-direction: column;
   font-size: 16px;
   line-height: 140%;
+`;
+
+export const ArrowIcon = styled.div`
+  display: none;
+  ${desktop} {
+    display: block;
+  }
 `;

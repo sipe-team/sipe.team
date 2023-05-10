@@ -44,14 +44,12 @@ const styles = (theme: Theme) => css`
   body {
     -ms-overflow-style: none;
     scrollbar-width: none;
-    padding: 0 40px;
     padding-top: 113px;
     margin: 0;
   }
 
   #root {
     display: flex;
-    width: 100%;
     justify-content: center;
   }
 

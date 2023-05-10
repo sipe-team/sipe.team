@@ -11,7 +11,7 @@ const SectionB = () => {
   const { recruitment, qualification } = data;
 
   return (
-    <StyledSection>
+    <StyledSection style={{ padding: '0 40px' }}>
       <MainBanner />
       <StyledSection direction="row">
         <ListCard flex={472} {...recruitment} />

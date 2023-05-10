@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   background: #d9d9d9; // TODO: 삭제
   border-radius: 300px;
   position: relative;
-  max-width: 246.8px;
+  width: 246.8px;
 `;
 
 export const BadgeGroup = styled.div`
@@ -33,6 +33,8 @@ export const Badge = styled.div<{ i: number; isName?: boolean }>`
     line-height: 24px;
   }
   &:last-child {
+    justify-content: start;
+    padding-left: 18.4px;
     font-size: 14px;
     line-height: 17px;
   }
