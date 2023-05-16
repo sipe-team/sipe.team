@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 
+import { mobile } from '@/styles/media-query';
+
 export const Container = styled.div`
   position: relative;
   width: 100%;
@@ -13,6 +15,11 @@ export const Wrapper = styled.div`
   height: 410px;
   max-width: 1432px;
   overflow-x: scroll;
+
+  ${mobile} {
+    padding: 25px;
+    height: 307px;
+  }
 
   & > div {
     overflow-x: scroll;
@@ -41,4 +48,9 @@ export const Title = styled.div`
   font-weight: 900;
   font-size: 32px;
   line-height: 90%;
+
+  ${mobile} {
+    font-size: 24px;
+    line-height: 90%;
+  }
 `;
