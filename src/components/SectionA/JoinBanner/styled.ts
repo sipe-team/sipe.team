@@ -46,7 +46,7 @@ export const Wrapper = styled.div`
 export const TextWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  gap: 16px;
+  gap: 5px;
 
   & > div:first-child {
     font-family: 'Pretendard-Bold';
