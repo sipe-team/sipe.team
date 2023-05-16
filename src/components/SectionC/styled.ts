@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 
+import { mobile } from '@/styles/media-query';
+
 export const Container = styled.div`
   position: relative;
   width: 100%;
@@ -14,8 +16,15 @@ export const Wrapper = styled.div`
   max-width: 1432px;
   overflow-x: scroll;
 
+  ${mobile} {
+    padding: 25px;
+    height: 307px;
+  }
+
   & > div {
+    overflow-y: hidden;
     overflow-x: scroll;
+    padding-right: 8px;
     display: flex;
     justify-content: flex-start;
     position: absolute;
@@ -41,4 +50,9 @@ export const Title = styled.div`
   font-weight: 900;
   font-size: 32px;
   line-height: 90%;
+
+  ${mobile} {
+    font-size: 24px;
+    line-height: 90%;
+  }
 `;

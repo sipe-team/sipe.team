@@ -8,9 +8,9 @@ type ProfileCardProps = {
 };
 
 const ProfileCard = ({ index, src, name, role }: ProfileCardProps) => {
-  console.log('index', index);
   return (
     <S.Wrapper>
+      <S.Photo src={src} />
       <S.BadgeGroup>
         <S.Badge i={index} isName>
           {name}

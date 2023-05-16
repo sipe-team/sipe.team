@@ -1,16 +1,18 @@
 import styled from '@emotion/styled';
 
-import { desktop } from '@/styles/media-query';
+import { mobile } from '@/styles/media-query';
 
 export const Wrapper = styled.div`
   border-radius: 88px;
-  padding: 25px 29px 25px 62px;
+  height: 88px;
+  padding: 28px 16px 27px 65px;
   border: 1px solid ${({ theme }) => theme.colors.blue};
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: ${({ theme }) => theme.colors.green};
   position: relative;
+  min-width: 320px;
   &:after {
     border-radius: 88px;
     height: 100%;
@@ -30,23 +32,58 @@ export const Wrapper = styled.div`
         rgba(59, 254, 166, 0) 100%
       );
   }
+
+  ${mobile} {
+    padding: 20px 104px 18px 24px;
+    height: 128px;
+    border-radius: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+`;
+
+export const TextWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+
+  & > div:first-child {
+    font-family: 'Pretendard-Bold';
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 33px;
+  }
+  & > div:last-child {
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 33px;
+  }
+
+  ${mobile} {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+
+    & > div:first-child {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19px;
+    }
+    & > div:last-child {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
 `;
 
 export const Text = styled.div`
-  display: flex;
-  & > div:first-child {
-    font-family: 'Pretendard-Bold';
-    font-size: 40px;
-    line-height: 48px;
-  }
-  & > div:last-child {
-    margin-left: 11px;
-    font-size: 40px;
-    line-height: 48px;
-  }
-  flex-direction: column;
+  min-width: 334px;
+`;
 
-  ${desktop} {
-    flex-direction: row;
-  }
+export const JoinButtonWrapper = styled.div`
+  position: absolute;
+  right: 16px;
+  z-index: 10;
 `;
