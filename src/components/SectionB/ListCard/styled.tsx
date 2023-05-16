@@ -46,6 +46,7 @@ export const List = styled.div`
   min-width: 320px;
 
   & > li {
+    border-bottom: 1px solid ${({ theme }) => theme.colors.divider};
     font-size: 16px;
     line-height: 140%;
     flex: 1;

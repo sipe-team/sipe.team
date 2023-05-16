@@ -13,7 +13,6 @@ export const Wrapper = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  padding: 0 40px;
   z-index: 100;
   & > div {
     display: flex;
