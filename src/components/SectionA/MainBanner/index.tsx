@@ -1,11 +1,15 @@
-import { ReactComponent as LogoBig } from '@/assets/logo_big.svg';
+import { ReactComponent as BannerLogoBig } from '@/assets/banner_logo_big.svg';
+import { ReactComponent as BannerLogoSmall } from '@/assets/banner_logo_small.svg';
+import useDeviceType from '@/hook/useDeviceType';
 
 import * as S from './styled';
 
 const MainBanner = () => {
+  const { isMobile } = useDeviceType();
+
   return (
     <S.Wrapper>
-      <LogoBig />
+      {isMobile ? <BannerLogoSmall /> : <BannerLogoBig />}
       <S.Text>
         <div>Next Step of Side Project</div>
         <div>
