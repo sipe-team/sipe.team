@@ -9,7 +9,9 @@ const JoinBanner = () => {
         <S.Text>SIPE의 1기 멤버 현재 모집중!!</S.Text>
         <S.Text>05/19 (금) ~ 06/02 (금)</S.Text>
       </S.TextWrapper>
-      <JoinButton size="m" />
+      <S.JoinButtonWrapper>
+        <JoinButton size="m" />
+      </S.JoinButtonWrapper>
     </S.Wrapper>
   );
 };

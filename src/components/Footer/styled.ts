@@ -20,13 +20,7 @@ export const Logos = styled.div`
 `;
 
 export const Sns = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: 24px;
-
-  ${mobile} {
-    gap: 16px;
-  }
+  cursor: pointer;
 `;
 
 export const Email = styled.div`

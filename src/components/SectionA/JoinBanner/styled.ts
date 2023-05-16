@@ -81,3 +81,9 @@ export const TextWrapper = styled.div`
 export const Text = styled.div`
   min-width: 334px;
 `;
+
+export const JoinButtonWrapper = styled.div`
+  position: absolute;
+  right: 16px;
+  z-index: 10;
+`;

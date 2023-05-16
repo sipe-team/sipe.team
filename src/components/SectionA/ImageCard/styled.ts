@@ -23,6 +23,7 @@ export const Image = styled.img`
   height: 382px;
   border-radius: 72px; // TODO: 확인방법 체크
   background-color: #fff; // TODO: 삭제
+  object-fit: cover;
 
   ${mobile} {
     margin-left: 4px;
