@@ -1,10 +1,12 @@
 import { ReactComponent as ArrowEvent } from '@/assets/arrow_event.svg';
 import data from '@/data';
+import useDeviceType from '@/hook/useDeviceType';
 
 import * as S from './styled';
 
 const EventBanner = () => {
   const { event } = data;
+  const { isDesktop } = useDeviceType();
 
   return (
     <S.Wrapper>
@@ -16,9 +18,11 @@ const EventBanner = () => {
           ))}
         </S.Description>
       </S.Text>
-      <S.ArrowIcon>
-        <ArrowEvent />
-      </S.ArrowIcon>
+      {isDesktop && (
+        <S.ArrowIcon>
+          <ArrowEvent />
+        </S.ArrowIcon>
+      )}
     </S.Wrapper>
   );
 };

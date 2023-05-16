@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import { desktop } from '@/styles/media-query';
+import { desktop, mobile } from '@/styles/media-query';
 
 export const Wrapper = styled.div`
   border: 1px solid #01ff13;
@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
   align-items: center;
   position: relative;
   margin-right: 360px;
-  padding: 37px 56px;
+  padding: 38px 50px 38px 56px;
   &:after {
     border-radius: 32px;
     height: 100%;
@@ -25,17 +25,27 @@ export const Wrapper = styled.div`
       rgba(1, 255, 19, 0) 100%
     );
   }
+
+  ${mobile} {
+    margin-right: 0;
+    width: 100%;
+    padding: 24px 35px 24px 20px;
+  }
 `;
 
 export const Text = styled.div`
   display: flex;
-  gap: 46px;
-  flex-direction: column;
-  justify-content: start;
+  min-width: 320px;
 
-  ${desktop} {
-    align-items: center;
-    flex-direction: row;
+  align-items: center;
+  flex-direction: row;
+  gap: 46px;
+
+  ${mobile} {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+    gap: 16px;
   }
 `;
 
@@ -44,6 +54,11 @@ export const Title = styled.div`
   font-size: 48px;
   line-height: 57px;
   color: ${({ theme }) => theme.colors.green};
+
+  ${mobile} {
+    font-size: 24px;
+    line-height: 29px;
+  }
 `;
 
 export const Description = styled.div`
@@ -51,6 +66,12 @@ export const Description = styled.div`
   flex-direction: column;
   font-size: 16px;
   line-height: 140%;
+  color: ${({ theme }) => theme.colors.gray03};
+
+  ${mobile} {
+    font-size: 12px;
+    line-height: 140%;
+  }
 `;
 
 export const ArrowIcon = styled.div`
