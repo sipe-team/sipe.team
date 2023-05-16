@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 import { MAX_WIDTH } from '@/styles/common';
+import { mobile } from '@/styles/media-query';
 
 export const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.black111};
@@ -21,6 +22,10 @@ export const Wrapper = styled.div`
     justify-content: space-between;
     height: 100%;
     max-width: ${MAX_WIDTH};
+  }
+
+  ${mobile} {
+    padding: 0;
   }
 `;
 
