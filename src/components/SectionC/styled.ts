@@ -22,7 +22,9 @@ export const Wrapper = styled.div`
   }
 
   & > div {
+    overflow-y: hidden;
     overflow-x: scroll;
+    padding-right: 8px;
     display: flex;
     justify-content: flex-start;
     position: absolute;

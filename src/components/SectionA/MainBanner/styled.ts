@@ -17,12 +17,17 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   height: 640px;
   min-width: 320px;
+  background-image: url('/main_banner.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 
   ${mobile} {
     width: 100%;
     height: 420px;
     border-radius: 24px;
     padding: 48px 70px 40px 32px;
+    background-image: url('/main_banner_mobile.svg');
   }
 `;
 
