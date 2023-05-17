@@ -13,13 +13,15 @@ const Header = () => {
   return (
     <S.Wrapper>
       <div style={{ padding: '0 40px' }}>
-        <StyledLogo />
+        <a href="#">
+          <StyledLogo />
+        </a>
         <S.Buttons>
           {!isMobile && (
             <S.Anchors>
-              <div>About</div>
-              <div>1기 지원 안내</div>
-              <div>Makers</div>
+              <a href="#about">About</a>
+              <a href="#apply">1기 지원 안내</a>
+              <a href="#makers">Makers</a>
             </S.Anchors>
           )}
           <JoinButton size="s" />

@@ -39,7 +39,8 @@ export const Anchors = styled.div`
   gap: 40px;
   font-size: 18px;
   line-height: 21px;
-  & > div {
-    cursor: pointer;
+  & > a {
+    color: ${({ theme }) => theme.colors.white};
+    text-decoration: none;
   }
 `;

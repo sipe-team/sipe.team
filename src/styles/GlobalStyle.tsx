@@ -39,6 +39,7 @@ const styles = (theme: Theme) => css`
     font-size: 14px;
     color: ${theme.colors.white};
     background-color: ${theme.colors.black111};
+    scroll-behavior: smooth;
   }
 
   body {
