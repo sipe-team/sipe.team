@@ -58,7 +58,6 @@ export const List = styled.div`
 
     &::before {
       content: '•';
-      font-size: 108%;
       margin-left: 0.5px;
       margin-right: 16px;
     }

@@ -34,7 +34,7 @@ export const LeftSection = styled.div<{ height: number }>`
   height: ${(props) => `${props.height + 38}px`};
 
   ${mobile} {
-    min-width: 36px;
+    width: 36px;
     font-weight: 400;
     font-size: 10px;
     line-height: 140%;
@@ -47,21 +47,20 @@ export const LeftSectionText = styled.div`
   border-bottom: 1px solid rgba(153, 153, 153, 0.3);
   padding: 13px 0;
 
-  &:first-child {
-    padding-top: 0;
-  }
-
-  &:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-
   ${mobile} {
     font-size: 10px;
     padding: 12px 0;
   }
 `;
+
+export const RigtSectionContentUl = styled.div`
+  margin: 0;
+  padding: 0;
+  padding-left: 25px;
+`;
+
 export const RightSection = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -70,10 +69,11 @@ export const RightSection = styled.div`
 export const Ul = styled.ul`
   margin-top: 0;
   margin-bottom: 10px;
+  padding-left: 30px;
 
   ${mobile} {
     margin-bottom: 10px;
-    padding-left: 18px;
+    padding-left: 0;
   }
 `;
 
