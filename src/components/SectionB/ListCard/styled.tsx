@@ -27,8 +27,6 @@ export const Title = styled.div`
   margin-bottom: 26.5px;
   margin-left: 9px;
 
-  //margin-left: 32px;
-
   ${mobile} {
     margin-left: 12px;
     font-size: 20px;
