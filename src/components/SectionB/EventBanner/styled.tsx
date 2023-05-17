@@ -28,6 +28,7 @@ export const Wrapper = styled.div`
   min-width: 100%;
 
   ${mobile} {
+    min-width: 320px;
     margin-right: 0;
     width: 100%;
     padding: 24px 26px;
