@@ -17,7 +17,7 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   height: 640px;
   min-width: 320px;
-  background-image: url('/main_banner.svg');
+  background-image: url('/main_banner.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;

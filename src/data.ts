@@ -103,7 +103,7 @@ const data = {
   ],
   makers: [
     {
-      src: '/IMG_이정민.svg',
+      src: '/IMG_이정민.png',
       name: '이정민',
       role: 'Frontend Developer',
     },

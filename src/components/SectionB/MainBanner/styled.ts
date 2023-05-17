@@ -54,7 +54,7 @@ export const Box = styled.div`
   }
 
   ${tablet} {
-    background-image: url('/second_banner.svg');
+    background-image: url('/second_banner.png');
     font-size: 80px;
     border-radius: 64px;
   }
