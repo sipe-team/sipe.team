@@ -34,6 +34,7 @@ export const LeftSection = styled.div<{ height: number }>`
   height: ${(props) => `${props.height + 38}px`};
 
   ${mobile} {
+    justify-content: space-around;
     width: 36px;
     font-weight: 400;
     font-size: 10px;
@@ -53,12 +54,6 @@ export const LeftSectionText = styled.div`
   }
 `;
 
-export const RigtSectionContentUl = styled.div`
-  margin: 0;
-  padding: 0;
-  padding-left: 25px;
-`;
-
 export const RightSection = styled.div`
   width: 100%;
   display: flex;
@@ -69,11 +64,11 @@ export const RightSection = styled.div`
 export const Ul = styled.ul`
   margin-top: 0;
   margin-bottom: 10px;
-  padding-left: 30px;
+  padding-left: 25px;
 
   ${mobile} {
     margin-bottom: 10px;
-    padding-left: 0;
+    padding-left: 18px;
   }
 `;
 
@@ -85,6 +80,15 @@ export const Title = styled.div`
 
   ${mobile} {
     font-size: 14px;
+  }
+`;
+
+export const ContentUl = styled.ul`
+  margin: 0;
+  padding: 0;
+  padding-left: 30px;
+  ${mobile} {
+    padding-left: 21px;
   }
 `;
 

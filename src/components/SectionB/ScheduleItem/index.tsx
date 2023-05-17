@@ -1,6 +1,4 @@
 import * as S from './styled';
-import styled from '@emotion/styled';
-import { mobile } from '@/styles/media-query';
 
 type ScheduleItemProps = {
   title: string;
@@ -24,7 +22,7 @@ const ScheduleItem = ({
       </S.LeftSection>
       <S.RightSection>
         <S.Title>{title}</S.Title>
-        <Ul>
+        <S.ContentUl>
           {list.map((li) => {
             const hasSubContent =
               typeof li === 'object' && !Array.isArray(li) && li !== null;
@@ -42,19 +40,10 @@ const ScheduleItem = ({
               </S.Li>
             );
           })}
-        </Ul>
+        </S.ContentUl>
       </S.RightSection>
     </S.Wrapper>
   );
 };
-
-const Ul = styled.ul`
-  margin: 0;
-  padding: 0;
-  padding-left: 30px;
-  ${mobile} {
-    padding-left: 21px;
-  }
-`;
 
 export default ScheduleItem;
