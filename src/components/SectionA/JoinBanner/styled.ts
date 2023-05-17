@@ -13,6 +13,7 @@ export const Wrapper = styled.div`
   color: ${({ theme }) => theme.colors.green};
   position: relative;
   min-width: 320px;
+
   &:after {
     border-radius: 88px;
     height: 100%;
@@ -40,45 +41,45 @@ export const Wrapper = styled.div`
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
+    &:after {
+      border-radius: 24px;
+    }
   }
 `;
 
 export const TextWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  gap: 5px;
+  gap: 16px;
+  font-size: 28px;
 
-  & > div:first-child {
+  & > span:first-child {
     font-family: 'Pretendard-Bold';
-    font-weight: 700;
-    font-size: 28px;
     line-height: 33px;
   }
-  & > div:last-child {
-    font-weight: 400;
-    font-size: 28px;
+  & > span:last-child {
+    font-family: 'Pretendard-Regular';
     line-height: 33px;
   }
 
   ${mobile} {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     gap: 4px;
+    font-size: 16px;
 
-    & > div:first-child {
-      font-weight: 700;
-      font-size: 16px;
+    & > span:first-child {
       line-height: 19px;
     }
-    & > div:last-child {
-      font-weight: 400;
+    & > span:last-child {
       font-size: 16px;
       line-height: 19px;
     }
   }
 `;
 
-export const Text = styled.div`
+export const Text = styled.span`
   min-width: 334px;
 `;
 
@@ -86,4 +87,10 @@ export const JoinButtonWrapper = styled.div`
   position: absolute;
   right: 16px;
   z-index: 10;
+
+  ${mobile} {
+    left: 24px;
+    right: auto;
+    bottom: 18px;
+  }
 `;

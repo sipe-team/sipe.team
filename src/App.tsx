@@ -23,7 +23,7 @@ const App = () => {
       sectionBtoC: 104,
       sectionCtoFooter: 104,
     },
-  }[isMobile ? 'desktop' : 'mobile'];
+  }[isMobile ? 'mobile' : 'desktop'];
 
   return (
     <StyledSection>

@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import { desktop, mobile, tablet } from '@/styles/media-query';
 
 export const Wrapper = styled.div`
+  position: relative;
   padding: 47px 43px;
   display: flex;
   flex-direction: column;

@@ -57,6 +57,19 @@ const styles = (theme: Theme) => css`
   ::-webkit-scrollbar {
     display: none;
   }
+
+  .rectangle-up {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+  }
+
+  .rectangle-down {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
 `;
 
 const GlobalStyle: React.FC = () => (

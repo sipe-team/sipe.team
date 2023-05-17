@@ -17,18 +17,18 @@ const JoinButton = ({ size }: JonButtonProps) => {
     >
       Join us Now!
       {size !== 's' && (
-        <S.Icon>
-          <StyledArrowJoin />
+        <S.Icon size={size}>
+          <StyledArrowJoin size={size} />
         </S.Icon>
       )}
     </S.Wrapper>
   );
 };
 
-const StyledArrowJoin = styled(ArrowJoin)`
+const StyledArrowJoin = styled(ArrowJoin)<{ size: S.sizeType }>`
   ${mobile} {
-    width: 10px;
-    height: 10px;
+    width: ${({ size }) => (size === 'lg' ? '16px' : '10px')};
+    height: ${({ size }) => (size === 'lg' ? '16px' : '10px')};
   }
 `;
 

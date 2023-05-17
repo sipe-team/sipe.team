@@ -17,6 +17,7 @@ const desktopSizeStyle: Record<sizeType, CSSObject> = {
   lg: {
     width: '100%',
     padding: '16px 7px 16px 40px',
+    height: '56px',
   },
 };
 
@@ -54,6 +55,7 @@ export const Wrapper = styled.div<{ size: sizeType }>`
   font-weight: 400;
   font-style: italic;
   line-height: 24px;
+  white-space: nowrap;
 
   ${mobile} {
     width: ${({ size }) => mobileSizeStyle[size].width};
@@ -64,7 +66,7 @@ export const Wrapper = styled.div<{ size: sizeType }>`
   }
 `;
 
-export const Icon = styled.div`
+export const Icon = styled.div<{ size: sizeType }>`
   width: 40px;
   height: 40px;
   background-color: ${({ theme }) => theme.colors.white};
@@ -76,8 +78,8 @@ export const Icon = styled.div`
   padding-left: 3px;
 
   ${mobile} {
-    width: 20px;
-    height: 20px;
+    width: ${({ size }) => (size === 'lg' ? '32px' : '20px')};
+    height: ${({ size }) => (size === 'lg' ? '32px' : '20px')};
     margin-left: 8px;
   }
 `;

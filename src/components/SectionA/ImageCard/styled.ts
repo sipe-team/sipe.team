@@ -15,6 +15,7 @@ export const Wrapper = styled.div`
     padding: 20px;
     padding-bottom: 48px;
     border-radius: 24px;
+    height: 357px;
   }
 `;
 
@@ -26,6 +27,7 @@ export const Image = styled.img`
   object-fit: cover;
 
   ${mobile} {
+    height: 160px;
     margin-left: 4px;
     font-size: 18px;
     line-height: 21px;

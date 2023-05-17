@@ -25,11 +25,13 @@ export const Wrapper = styled.div`
       rgba(1, 255, 19, 0) 100%
     );
   }
+  min-width: 780px;
 
   ${mobile} {
     margin-right: 0;
     width: 100%;
-    padding: 24px 35px 24px 20px;
+    padding: 24px 26px;
+    min-width: 100%;
   }
 `;
 
