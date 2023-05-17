@@ -1,14 +1,14 @@
 const data = {
   imageCards: [
     {
-      src: '/study.svg',
+      src: '/study.png',
       title: '다양한 방식으로 함께 성장하기!',
       description: `관심사가 비슷한 사람들과 
             스터디, 회고 작성, 사이드 프로젝트 등
             원하는 방식으로 목표를 설정하고 달성해보세요!`,
     },
     {
-      src: '/beer.svg',
+      src: '/beer.png',
       title: '다른 개발자들과 재미있게 소통해요!',
       description: `알차게 공부하고 놀면 더 즐겁겠죠?
         뒷풀이, 번개모임 등! 동아리원들과 친해질 수 있는
@@ -108,22 +108,22 @@ const data = {
       role: 'Frontend Developer',
     },
     {
-      src: '/IMG_조기문.svg',
+      src: '/IMG_조기문.png',
       name: '조기문',
       role: 'Frontend Developer',
     },
     {
-      src: '/IMG_이지원.svg',
+      src: '/IMG_이지원.png',
       name: '이지원',
       role: 'Frontend Developer',
     },
     {
-      src: '/IMG_유현식.svg',
+      src: '/IMG_유현식.png',
       name: '유현식',
       role: 'IOS Developer',
     },
     {
-      src: '/IMG_양효정.svg',
+      src: '/IMG_양효정.png',
       name: '양효정',
       role: 'Product Designer',
     },
