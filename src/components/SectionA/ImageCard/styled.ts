@@ -28,7 +28,6 @@ export const Image = styled.img`
 
   ${mobile} {
     height: 160px;
-    margin-left: 4px;
     font-size: 18px;
     line-height: 21px;
     border-radius: 24px; // TODO: 확인방법 체크

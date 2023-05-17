@@ -12,7 +12,7 @@ const Header = () => {
 
   return (
     <S.Wrapper>
-      <div style={{ padding: '0 40px' }}>
+      <div style={{ padding: `0 ${isMobile ? 20 : 40}px` }}>
         <a href="#">
           <StyledLogo />
         </a>
