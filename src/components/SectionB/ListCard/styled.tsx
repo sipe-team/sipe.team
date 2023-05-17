@@ -1,23 +1,21 @@
 import styled from '@emotion/styled';
 
-import { desktop, mobile, tablet } from '@/styles/media-query';
+import { mobile } from '@/styles/media-query';
 
 export const Wrapper = styled.div<{ flex: number }>`
   width: 100%;
-  height: 296px;
+  height: 365px;
   border-radius: 32px;
-  padding: 32px;
+  padding: 33px 34px 36.5px 34px;
+  flex: ${({ flex }) => flex};
   background-color: ${({ theme }) => theme.colors.gray04};
   color: ${({ theme }) => theme.colors.black222};
   min-width: 320px;
 
-  ${tablet} {
+  ${mobile} {
     border-radius: 24px;
-    height: 365px;
-  }
-
-  ${desktop} {
-    flex: ${({ flex }) => flex};
+    max-height: 296px;
+    padding: 32px 28px 40px 20px;
   }
 `;
 
@@ -39,9 +37,11 @@ export const Title = styled.div`
 export const List = styled.div`
   display: flex;
   flex-direction: column;
+  flex: 3;
   height: 100%;
   box-sizing: border-box;
   padding-bottom: 57.5px;
+  min-width: 320px;
 
   & > li {
     border-bottom: 1px solid ${({ theme }) => theme.colors.divider};
@@ -52,10 +52,6 @@ export const List = styled.div`
     align-items: center;
     list-style-type: decimal;
 
-    &:first-child {
-      border-top: 1px solid ${({ theme }) => theme.colors.divider};
-    }
-
     &::before {
       content: '•';
       font-size: 108%;
@@ -64,7 +60,6 @@ export const List = styled.div`
     }
 
     ${mobile} {
-      width: 100%;
       font-size: 14px;
     }
   }

@@ -4,18 +4,25 @@ type ScheduleItemProps = {
   title: string;
   list: (string | { parents: string; children: string[] })[];
   targetWeeks: number[];
+  height: number;
 };
 
-const ScheduleItem = ({ title, list, targetWeeks }: ScheduleItemProps) => {
+const ScheduleItem = ({
+  title,
+  list,
+  targetWeeks,
+  height,
+}: ScheduleItemProps) => {
   return (
     <S.Wrapper>
-      <S.LeftSection>
+      <S.LeftSection height={height}>
         {targetWeeks.map((week) => {
           return <S.LeftSectionText>{week}주차</S.LeftSectionText>;
         })}
       </S.LeftSection>
       <S.RightSection>
         <S.Title>{title}</S.Title>
+
         {list.map((li) => {
           const hasSubContent =
             typeof li === 'object' && !Array.isArray(li) && li !== null;

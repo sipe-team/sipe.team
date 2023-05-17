@@ -6,48 +6,59 @@ export const Wrapper = styled.div`
   color: ${({ theme }) => theme.colors.black222};
   display: flex;
   gap: 128px;
-  border-top: 1px solid #999999;
+
+  &:first-child {
+    border-top: 1px solid #999999;
+  }
+
   border-bottom: 1px solid #999999;
   border-image: linear-gradient(to left, transparent 94%, #999999 10%) 1; // FIXME
   flex-direction: row;
   align-items: center;
-  padding: 15px;
 
   ${mobile} {
     min-width: 280px;
     gap: 11px;
-    padding: 24px 25px 24px 0;
-    border-top: 1px solid #999999;
+    border-bottom: 1px solid #999999;
     border-image: none;
   }
 `;
 
-export const LeftSection = styled.div`
+export const LeftSection = styled.div<{ height: number }>`
+  width: 78px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  min-width: 78px;
+  padding: 19px 0;
+  height: ${(props) => `${props.height + 38}px`};
 
   ${mobile} {
-    min-width: 35px;
+    min-width: 36px;
     font-weight: 400;
     font-size: 10px;
     line-height: 140%;
-    padding: 13px 0 13px 0;
   }
 `;
 
 export const LeftSectionText = styled.div`
-  padding-top: 13px;
-  padding-right: 40px;
-  padding-bottom: 13px;
   font-size: 16px;
   line-height: 140%;
+  border-bottom: 1px solid rgba(153, 153, 153, 0.3);
+  padding: 13px 0;
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
 
   ${mobile} {
     font-size: 10px;
-    padding: 12px 0 12px 0;
+    padding: 12px 0;
   }
 `;
 export const RightSection = styled.div`
@@ -82,7 +93,7 @@ export const Li = styled.li`
   line-height: 160%;
 
   ${mobile} {
-    font-size: 10px;
+    font-size: 12px;
   }
 `;
 export const ChildLi = styled.li`
@@ -91,6 +102,6 @@ export const ChildLi = styled.li`
   line-height: 160%;
 
   ${mobile} {
-    font-size: 8px;
+    font-size: 10px;
   }
 `;
