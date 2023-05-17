@@ -27,7 +27,7 @@ export const Wrapper = styled.div`
     height: 420px;
     border-radius: 24px;
     padding: 48px 70px 40px 32px;
-    background-image: url('/main_banner_mobile.svg');
+    background-image: url('/main_banner_mobile.png');
   }
 `;
 

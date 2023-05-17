@@ -29,7 +29,7 @@ export const Box = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  background-image: url('/second_banner_mobile.svg');
+  background-image: url('/second_banner_mobile.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
