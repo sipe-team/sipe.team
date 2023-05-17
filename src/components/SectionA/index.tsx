@@ -12,7 +12,7 @@ const SectionA = () => {
   const { isMobile } = useDeviceType();
 
   return (
-    <StyledSection id="about" style={{ padding: '0 40px' }}>
+    <StyledSection id="about" style={{ padding: `0 ${isMobile ? 20 : 40}px` }}>
       <MainBanner />
       <JoinBanner />
       <StyledSection direction={isMobile ? 'column' : 'row'}>

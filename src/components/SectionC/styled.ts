@@ -13,12 +13,13 @@ export const Wrapper = styled.div`
   padding: 36px 0;
   position: relative;
   height: 410px;
-  max-width: 1432px;
   overflow-x: scroll;
+  padding-left: 0;
 
   ${mobile} {
     padding: 25px;
     height: 307px;
+    padding-left: 0;
   }
 
   & > div {
@@ -32,15 +33,22 @@ export const Wrapper = styled.div`
     & > div:last-child {
       justify-content: end;
     }
+    ${mobile} {
+      left: 20px;
+    }
   }
 `;
 
 export const Line = styled.div`
-  width: calc(100% - 40px);
   height: 1px;
   background-color: ${({ theme }) => theme.colors.border};
   position: absolute;
   left: 40px;
+  right: 0;
+
+  ${mobile} {
+    left: 20px;
+  }
 `;
 
 export const Title = styled.div`

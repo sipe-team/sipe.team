@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import { desktop, mobile } from '@/styles/media-query';
+import { desktop, mobile, tablet } from '@/styles/media-query';
 
 export const Wrapper = styled.div`
   border: 1px solid #01ff13;
@@ -25,13 +25,19 @@ export const Wrapper = styled.div`
       rgba(1, 255, 19, 0) 100%
     );
   }
-  min-width: 780px;
+  min-width: 100%;
 
   ${mobile} {
     margin-right: 0;
     width: 100%;
     padding: 24px 26px;
-    min-width: 100%;
+  }
+
+  ${tablet} {
+  }
+
+  ${desktop} {
+    min-width: 780px;
   }
 `;
 
