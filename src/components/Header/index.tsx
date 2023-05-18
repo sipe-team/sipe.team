@@ -21,7 +21,7 @@ const Header = () => {
             <S.Anchors>
               <a href="#about">About</a>
               <a href="#apply">1기 지원 안내</a>
-              <a href="#makers">Makers</a>
+              <a href="#contact">Contact</a>
             </S.Anchors>
           )}
           <JoinButton size="s" />
