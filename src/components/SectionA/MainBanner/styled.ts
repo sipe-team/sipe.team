@@ -37,7 +37,7 @@ export const Text = styled.div`
   flex-direction: column;
   gap: 16px;
 
-  & > div:first-child {
+  & > div:first-of-type {
     ${commonDivStyles}
     font-size: 28px;
     line-height: 34px;
@@ -54,7 +54,7 @@ export const Text = styled.div`
   ${mobile} {
     gap: 12px;
 
-    & > div:first-child {
+    & > div:first-of-type {
       ${commonDivStyles}
       font-size: 16px;
       line-height: 20px;

@@ -52,7 +52,7 @@ export const List = styled.div`
     align-items: center;
     list-style-type: decimal;
 
-    &:first-child {
+    &:first-of-type {
       border-top: 1px solid ${({ theme }) => theme.colors.divider};
     }
 

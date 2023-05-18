@@ -1,4 +1,3 @@
-import React from 'react';
 import ScheduleItem from 'src/components/SectionB/ScheduleItem';
 
 import data from '@/data';
@@ -25,6 +24,7 @@ const EventCard = () => {
 
         return (
           <ScheduleItem
+            key={index}
             title={title}
             list={list}
             targetWeeks={targetWeeks}

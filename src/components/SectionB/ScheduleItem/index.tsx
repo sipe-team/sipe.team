@@ -16,25 +16,25 @@ const ScheduleItem = ({
   return (
     <S.Wrapper>
       <S.LeftSection height={height}>
-        {targetWeeks.map((week) => {
-          return <S.LeftSectionText>{week}주차</S.LeftSectionText>;
+        {targetWeeks.map((week, index) => {
+          return <S.LeftSectionText key={index}>{week}주차</S.LeftSectionText>;
         })}
       </S.LeftSection>
       <S.RightSection>
         <S.Title>{title}</S.Title>
         <S.ContentUl>
-          {list.map((li) => {
+          {list.map((li, index) => {
             const hasSubContent =
               typeof li === 'object' && !Array.isArray(li) && li !== null;
 
-            if (!hasSubContent) return <S.Li>{li}</S.Li>;
+            if (!hasSubContent) return <S.Li key={index}>{li}</S.Li>;
 
             return (
-              <S.Li>
+              <S.Li key={index}>
                 {li.parents}
                 <S.Ul>
-                  {li.children.map((childContent) => {
-                    return <S.ChildLi>{childContent}</S.ChildLi>;
+                  {li.children.map((childContent, index) => {
+                    return <S.ChildLi key={index}>{childContent}</S.ChildLi>;
                   })}
                 </S.Ul>
               </S.Li>

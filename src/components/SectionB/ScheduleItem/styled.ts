@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   display: flex;
   gap: 128px;
 
-  &:first-child {
+  &:first-of-type {
     border-top: 1px solid #999999;
   }
   border-bottom: 1px solid #999999;

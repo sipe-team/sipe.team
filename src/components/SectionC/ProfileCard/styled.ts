@@ -37,7 +37,7 @@ export const Badge = styled.div<{ i: number; isName?: boolean }>`
     height: ${({ isName }) => (isName ? 38 : 27)}px;
   }
 
-  &:first-child {
+  &:first-of-type {
     font-family: 'Pretendard-ExtraBold';
     font-size: 20px;
     line-height: 24px;

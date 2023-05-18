@@ -8,7 +8,7 @@ const SectionC = () => {
   const { makers } = data;
 
   return (
-    <S.Container id="makers">
+    <S.Container>
       <S.Line />
       <S.Wrapper>
         <div>

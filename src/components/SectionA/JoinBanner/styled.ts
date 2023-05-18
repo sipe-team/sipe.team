@@ -53,7 +53,7 @@ export const TextWrapper = styled.div`
   gap: 16px;
   font-size: 28px;
 
-  & > span:first-child {
+  & > span:first-of-type {
     font-family: 'Pretendard-Bold';
     line-height: 33px;
   }
@@ -69,7 +69,7 @@ export const TextWrapper = styled.div`
     gap: 4px;
     font-size: 16px;
 
-    & > span:first-child {
+    & > span:first-of-type {
       line-height: 19px;
     }
     & > span:last-child {
