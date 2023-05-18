@@ -26,7 +26,7 @@ const App = () => {
   }[isMobile ? 'mobile' : 'desktop'];
 
   return (
-    <StyledSection>
+    <StyledSection overflowX={'hidden'}>
       <Header />
       <SectionA />
       <Divider gap={gap.sectionAtoB} />
