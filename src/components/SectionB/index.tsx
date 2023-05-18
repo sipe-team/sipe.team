@@ -13,9 +13,9 @@ const SectionB = () => {
   const { isMobile } = useDeviceType();
 
   return (
-    <StyledSection id="apply" style={{ padding: `0 ${isMobile ? 20 : 40}px` }}>
+    <StyledSection style={{ padding: `0 ${isMobile ? 20 : 40}px` }}>
       <MainBanner />
-      <StyledSection direction={isMobile ? 'column' : 'row'}>
+      <StyledSection id="apply" direction={isMobile ? 'column' : 'row'}>
         <ListCard flex={472} {...recruitment} />
         <ListCard flex={948} {...qualification} />
       </StyledSection>

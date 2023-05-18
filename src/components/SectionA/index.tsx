@@ -12,10 +12,10 @@ const SectionA = () => {
   const { isMobile } = useDeviceType();
 
   return (
-    <StyledSection id="about" style={{ padding: `0 ${isMobile ? 20 : 40}px` }}>
+    <StyledSection style={{ padding: `0 ${isMobile ? 20 : 40}px` }}>
       <MainBanner />
       <JoinBanner />
-      <StyledSection direction={isMobile ? 'column' : 'row'}>
+      <StyledSection id="about" direction={isMobile ? 'column' : 'row'}>
         {data.imageCards.map((imageCard, i) => (
           <ImageCard
             key={i}

@@ -20,7 +20,7 @@ const Header = () => {
           {!isMobile && (
             <S.Anchors>
               <a href="#about">About</a>
-              <a href="#apply">1기 지원 안내</a>
+              <a href="#apply">Recruit</a>
               <a href="#contact">Contact</a>
             </S.Anchors>
           )}
