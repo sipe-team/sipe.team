@@ -7,7 +7,7 @@ import * as S from './styled';
 
 const LEFT_SECTION_ITEM_HEIGHT = {
   [DEVICE_TYPE.DESKTOP]: [114, 166, 140, 166, 88, 114],
-  [DEVICE_TYPE.MOBILE]: [127, 194, 142, 134, 89, 93],
+  [DEVICE_TYPE.MOBILE]: [167, 194, 142, 134, 89, 93],
 } as const;
 
 const EventCard = () => {
