@@ -10,14 +10,25 @@ export const Wrapper = styled.div<{ flex: number }>`
   background-color: ${({ theme }) => theme.colors.gray04};
   color: ${({ theme }) => theme.colors.black222};
   min-width: 320px;
+  &:last-child {
+    background-size: cover;
+    background-position: right bottom;
+    background-image: url('/qualification_background_mobile.png');
+  }
 
   ${tablet} {
     border-radius: 24px;
     height: 365px;
+    &:last-child {
+      background-image: url('/qualification_background.png');
+    }
   }
 
   ${desktop} {
     flex: ${({ flex }) => flex};
+    &:last-child {
+      background-image: url('/qualification_background.png');
+    }
   }
 `;
 
