@@ -10,8 +10,8 @@ export const Wrapper = styled.div`
   &:first-child {
     border-top: 1px solid #999999;
   }
-
   border-bottom: 1px solid #999999;
+
   border-image: linear-gradient(to left, transparent 94%, #999999 10%) 1; // FIXME
   flex-direction: row;
   align-items: center;
@@ -47,6 +47,10 @@ export const LeftSectionText = styled.div`
   line-height: 140%;
   border-bottom: 1px solid rgba(153, 153, 153, 0.3);
   padding: 13px 0;
+
+  &:last-child {
+    border-bottom: none;
+  }
 
   ${mobile} {
     font-size: 10px;
