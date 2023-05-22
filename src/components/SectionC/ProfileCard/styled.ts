@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   width: 246.8px;
 
   ${mobile} {
-    width: 180px;
+    width: 190px;
     height: 257px;
   }
 `;
