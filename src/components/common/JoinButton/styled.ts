@@ -64,6 +64,11 @@ export const Wrapper = styled.div<{ size: sizeType }>`
     font-size: 14px;
     line-height: 17px;
   }
+
+  &:hover,
+  &:active {
+    opacity: 0.8;
+  }
 `;
 
 export const Icon = styled.div<{ size: sizeType }>`
