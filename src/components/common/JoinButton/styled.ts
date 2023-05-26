@@ -67,7 +67,7 @@ export const Wrapper = styled.div<{ size: sizeType }>`
 
   &:hover,
   &:active {
-    opacity: 0.8;
+    opacity: 0.7;
   }
 `;
 
