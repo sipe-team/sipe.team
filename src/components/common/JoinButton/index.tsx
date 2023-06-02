@@ -13,9 +13,10 @@ const JoinButton = ({ size }: JonButtonProps) => {
   return (
     <S.Wrapper
       size={size}
-      onClick={() => window.open('https://forms.gle/fkryrx4MRjN1Ajks8')}
+      // onClick={() => window.open('https://forms.gle/fkryrx4MRjN1Ajks8')}
     >
-      Join us Now!
+      {/* Join us Now! */}
+      To be continued...
       {size !== 's' && (
         <S.Icon size={size}>
           <StyledArrowJoin size={size} />

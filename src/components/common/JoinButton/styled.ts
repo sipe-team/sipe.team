@@ -40,7 +40,7 @@ const mobileSizeStyle: Record<sizeType, CSSObject> = {
 };
 
 export const Wrapper = styled.div<{ size: sizeType }>`
-  cursor: pointer;
+  cursor: not-allowed;
   background-color: ${({ theme }) => theme.colors.green};
   border-radius: 560px;
   padding: ${({ size }) => desktopSizeStyle[size].padding};
@@ -65,10 +65,12 @@ export const Wrapper = styled.div<{ size: sizeType }>`
     line-height: 17px;
   }
 
-  &:hover,
+  opacity: 0.3;
+
+  /* &:hover,
   &:active {
     opacity: 0.7;
-  }
+  } */
 `;
 
 export const Icon = styled.div<{ size: sizeType }>`
