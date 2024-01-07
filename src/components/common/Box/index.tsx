@@ -2,13 +2,16 @@ import React from 'react';
 
 import * as S from './styled';
 
-type BoxProps = {
-  type: 'BASIC' | 'CONTENT';
-  children: React.ReactNode;
+type BoxProps = React.ComponentProps<'div'> & {
+  type?: 'BASIC' | 'CONTENT';
 };
 
-const Box = ({ type = 'BASIC', children }: BoxProps) => {
-  return <S.Wrapper type={type}>{children}</S.Wrapper>;
+const Box = ({ type = 'BASIC', children, className }: BoxProps) => {
+  return (
+    <S.Wrapper type={type} className={className}>
+      {children}
+    </S.Wrapper>
+  );
 };
 
 export default Box;

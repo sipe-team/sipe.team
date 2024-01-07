@@ -14,6 +14,9 @@ const theme: Theme = {
     gray04: '#E1E1E1',
     white: '#FFFFFF',
     divider: '#999999',
+
+    primary: '#1A202C',
+    secondary: '#2D3748',
   },
 };
 

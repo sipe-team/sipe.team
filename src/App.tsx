@@ -8,6 +8,7 @@ import SectionA from './components/SectionA';
 import SectionB from './components/SectionB';
 import SectionC from './components/SectionC';
 import { StyledSection } from './styles/common';
+import Peoples from './components/Peoples';
 
 const App = () => {
   const { isMobile } = useDeviceType();
@@ -27,6 +28,7 @@ const App = () => {
 
   return (
     <StyledSection overflowX={'hidden'}>
+      <Peoples />
       <Header />
       <SectionA />
       <Divider gap={gap.sectionAtoB} />
