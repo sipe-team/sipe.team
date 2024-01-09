@@ -4,7 +4,7 @@ import PeopleCard from './PeopleCard';
 const Peoples = () => {
   return (
     <InfiniteScroll>
-      <PeopleCard />
+      <PeopleCard name="이지원" part="FE" />
     </InfiniteScroll>
   );
 };
