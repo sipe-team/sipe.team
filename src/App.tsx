@@ -5,7 +5,6 @@ import useDeviceType from '@/hook/useDeviceType';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Peoples from './components/Peoples';
-import PeopleCard from './components/Peoples/PeopleCard';
 import SectionA from './components/SectionA';
 import SectionB from './components/SectionB';
 import SectionC from './components/SectionC';
