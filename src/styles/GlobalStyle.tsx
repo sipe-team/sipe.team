@@ -29,6 +29,7 @@ const styles = (theme: Theme) => css`
   * {
     box-sizing: border-box;
     appearance: none;
+    line-height: 140%;
   }
   html {
     font-family: 'Pretendard-Regular', sans-serif;
@@ -43,10 +44,13 @@ const styles = (theme: Theme) => css`
   }
 
   body {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 14px;
     -ms-overflow-style: none;
     scrollbar-width: none;
     padding-top: 113px;
     margin: 0;
+    letter-spacing: -0.2%;
   }
 
   #root {
