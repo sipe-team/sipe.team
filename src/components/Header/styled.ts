@@ -4,43 +4,34 @@ import { MAX_WIDTH } from '@/styles/common';
 import { mobile } from '@/styles/media-query';
 
 export const Wrapper = styled.div`
-  background-color: ${({ theme }) => theme.colors.black111};
-  display: flex;
+  background-color: ${({ theme }) => theme.colors.black};
   width: 100%;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  height: 72px;
+  height: 64px;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  & > div {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: space-between;
-    height: 100%;
-    max-width: ${MAX_WIDTH};
-  }
+`;
 
-  ${mobile} {
-    padding: 0;
-  }
+export const Group = styled.div`
+  width: 1060px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 `;
 
 export const Buttons = styled.div`
   display: flex;
   align-items: center;
-  gap: 84px;
+  gap: 32px;
 `;
 
-export const Anchors = styled.div`
+export const Menus = styled.div`
   display: flex;
-  gap: 40px;
-  font-size: 18px;
-  line-height: 21px;
-  & > a {
-    color: ${({ theme }) => theme.colors.white};
-    text-decoration: none;
-  }
+  gap: 16px;
 `;

@@ -33,13 +33,12 @@ const styles = (theme: Theme) => css`
   }
   html {
     font-family: 'Pretendard-Regular', sans-serif;
-    /* font-family: 'Montserrat', sans-serif; */
     width: 100%;
     height: 100%;
     overflow-y: scroll;
     font-size: 14px;
     color: ${theme.colors.white};
-    background-color: ${theme.colors.black111};
+    background-color: ${theme.colors.black};
     scroll-behavior: smooth;
   }
 
@@ -51,6 +50,11 @@ const styles = (theme: Theme) => css`
     padding-top: 113px;
     margin: 0;
     letter-spacing: -0.2%;
+  }
+
+  button {
+    border: 0;
+    background-color: transparent;
   }
 
   #root {

@@ -1,45 +1,55 @@
 import styled from '@emotion/styled';
 
 import { ReactComponent as Logo } from '@/assets/logo.svg';
+import { ReactComponent as Menu } from '@/assets/menu.svg';
 import useDeviceType from '@/hook/useDeviceType';
-import { mobile } from '@/styles/media-query';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
-import JoinButton from '../common/JoinButton';
 import * as S from './styled';
+import Button from '../Button';
+import { ApplyButton } from '../Button/styled';
+
+const menus = [
+  { name: 'About', path: '/about' },
+  { name: 'Recruit', path: '/recruit' },
+  { name: 'People', path: '/people' },
+  { name: 'Activity', path: '/activity' },
+  { name: 'Contact', path: '/contact' },
+];
 
 const Header = () => {
   const { isMobile } = useDeviceType();
   const navigate = useNavigate();
+  const location = useLocation();
 
   return (
     <S.Wrapper>
-      <div style={{ padding: `0 ${isMobile ? 20 : 40}px` }}>
-        <a href="#">
-          <StyledLogo />
-        </a>
+      <S.Group>
+        <div onClick={() => navigate('/')}>
+          <Logo />
+        </div>
         <S.Buttons>
-          {!isMobile && (
-            <S.Anchors>
-              <div onClick={() => navigate('/about')}>About</div>
-              <div onClick={() => navigate('/recruit')}>Recruit</div>
-              <div>People</div>
-              <div>Activity</div>
-              <div>Contact</div>
-            </S.Anchors>
+          {isMobile ? (
+            <Menu />
+          ) : (
+            <S.Menus>
+              {menus.map((menu) => (
+                <Button
+                  key={menu.name}
+                  type="menu"
+                  selected={menu.path === location.pathname}
+                  onClick={() => navigate(menu.path)}
+                >
+                  {menu.name}
+                </Button>
+              ))}
+            </S.Menus>
           )}
-          <JoinButton size="s" />
+          <ApplyButton>Join Us</ApplyButton>
         </S.Buttons>
-      </div>
+      </S.Group>
     </S.Wrapper>
   );
 };
-
-const StyledLogo = styled(Logo)`
-  ${mobile} {
-    width: 68px;
-    height: 20px;
-  }
-`;
 
 export default Header;
