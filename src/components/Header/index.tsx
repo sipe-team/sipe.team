@@ -3,12 +3,14 @@ import styled from '@emotion/styled';
 import { ReactComponent as Logo } from '@/assets/logo.svg';
 import useDeviceType from '@/hook/useDeviceType';
 import { mobile } from '@/styles/media-query';
+import { useNavigate } from 'react-router-dom';
 
 import JoinButton from '../common/JoinButton';
 import * as S from './styled';
 
 const Header = () => {
   const { isMobile } = useDeviceType();
+  const navigate = useNavigate();
 
   return (
     <S.Wrapper>
@@ -19,9 +21,11 @@ const Header = () => {
         <S.Buttons>
           {!isMobile && (
             <S.Anchors>
-              <a href="#about">About</a>
-              <a href="#apply">Recruit</a>
-              <a href="#contact">Contact</a>
+              <div onClick={() => navigate('/about')}>About</div>
+              <div onClick={() => navigate('/recruit')}>Recruit</div>
+              <div>People</div>
+              <div>Activity</div>
+              <div>Contact</div>
             </S.Anchors>
           )}
           <JoinButton size="s" />

@@ -4,21 +4,34 @@ import ReactDOM from 'react-dom/client';
 
 import GlobalStyle from './styles/GlobalStyle';
 import theme from './styles/theme';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Recruit from './pages/Recruit';
 import Contact from './pages/Contact';
 import People from './pages/People';
 import Activity from './pages/Activity';
+import Header from './components/Header';
+
+const Layout = () => (
+  <>
+    <Header />
+    <Outlet />
+  </>
+);
 
 const router = createBrowserRouter([
-  { path: '/', element: <Home /> },
-  { path: '/about', element: <About /> },
-  { path: '/recruit', element: <Recruit /> },
-  { path: '/people', element: <People /> },
-  { path: '/activity', element: <Activity /> },
-  { path: '/contact', element: <Contact /> },
+  {
+    element: <Layout />,
+    children: [
+      { path: '/', element: <Home /> },
+      { path: '/about', element: <About /> },
+      { path: '/recruit', element: <Recruit /> },
+      { path: '/people', element: <People /> },
+      { path: '/activity', element: <Activity /> },
+      { path: '/contact', element: <Contact /> },
+    ],
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
