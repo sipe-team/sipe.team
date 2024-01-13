@@ -17,13 +17,17 @@ const sns = [
   { name: 'Linkedin', url: '', icon: <Linkedin /> },
 ];
 
-export default function Footer() {
+type FooterProps = {
+  fixed?: boolean;
+};
+
+export default function Footer({ fixed = false }: FooterProps) {
   const { pathname } = useLocation();
 
   const color = pathname === '/' ? 'black' : 'gray';
 
   return (
-    <S.Wrapper>
+    <S.Wrapper fixed={fixed}>
       <S.Group>
         <S.Copyright color={color}>All rights reserved ⓒ SIPE</S.Copyright>
         <S.Logos>

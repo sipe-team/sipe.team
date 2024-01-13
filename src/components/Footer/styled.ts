@@ -1,10 +1,13 @@
 import styled from '@emotion/styled';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<{ fixed: boolean }>`
   width: 100%;
   height: 100px;
   display: flex;
-  align-items: center;
+  justify-content: center;
+  position: ${({ fixed }) => (fixed ? 'fixed' : 'relative')};
+  bottom: 0;
+  left: 0;
 `;
 
 export const Group = styled.div`
