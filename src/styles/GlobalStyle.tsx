@@ -47,7 +47,7 @@ const styles = (theme: Theme) => css`
     font-size: 14px;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    padding-top: 113px;
+    padding-top: 64px;
     margin: 0;
     letter-spacing: -0.2%;
   }

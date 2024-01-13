@@ -1,8 +1,5 @@
 import styled from '@emotion/styled';
 
-import { MAX_WIDTH } from '@/styles/common';
-import { mobile } from '@/styles/media-query';
-
 export const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.black};
   width: 100%;

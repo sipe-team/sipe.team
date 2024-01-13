@@ -11,13 +11,22 @@ import Recruit from './pages/Recruit';
 import Contact from './pages/Contact';
 import People from './pages/People';
 import Activity from './pages/Activity';
-import Header from './components/Header';
+import Header from './components/Navigation';
+import Footer from './components/Footer';
 
 const Layout = () => (
-  <>
+  <div
+    style={{
+      minHeight: 'calc(100vh - 64px)',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+    }}
+  >
     <Header />
     <Outlet />
-  </>
+    <Footer />
+  </div>
 );
 
 const router = createBrowserRouter([

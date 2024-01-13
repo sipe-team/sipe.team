@@ -17,7 +17,7 @@ const menus = [
   { name: 'Contact', path: '/contact' },
 ];
 
-const Header = () => {
+export default function Navigation() {
   const { isMobile } = useDeviceType();
   const navigate = useNavigate();
   const location = useLocation();
@@ -25,7 +25,7 @@ const Header = () => {
   return (
     <S.Wrapper>
       <S.Group>
-        <div onClick={() => navigate('/')}>
+        <div onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
           <Logo />
         </div>
         <S.Buttons>
@@ -50,6 +50,4 @@ const Header = () => {
       </S.Group>
     </S.Wrapper>
   );
-};
-
-export default Header;
+}

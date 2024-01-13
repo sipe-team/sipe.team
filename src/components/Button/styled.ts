@@ -7,6 +7,7 @@ const Common = styled.button`
   border-radius: 8px;
   height: 40px;
   font-weight: ${({ theme }) => theme.fontWeight.bold};
+  cursor: pointer;
 
   :hover {
     background-color: ${({ theme }) => theme.colors.gray2};
@@ -41,6 +42,7 @@ export const HomeButton = styled(Common)<{ color: 'green' | 'black' }>`
   :disabled {
     background-color: ${({ theme }) => theme.colors.gray4};
     color: ${({ theme }) => theme.colors.gray2};
+    cursor: not-allowed;
   }
 `;
 

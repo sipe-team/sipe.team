@@ -1,37 +1,37 @@
 import styled from '@emotion/styled';
 
-import { mobile } from '@/styles/media-query';
-
 export const Wrapper = styled.div`
-  border-top: 1px solid #383838;
-  padding: 64px 43px 80px 40px;
   width: 100%;
-
-  ${mobile} {
-    padding: 52px 24px 88px 24px;
-  }
+  height: 100px;
+  display: flex;
+  align-items: center;
 `;
 
-export const Logos = styled.div`
+export const Group = styled.div`
+  width: 1060px;
+  padding: 0 20px;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
 `;
 
-export const Sns = styled.div`
-  cursor: pointer;
+export const Copyright = styled.div<{ color: 'black' | 'gray' }>`
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 17px;
+  color: ${({ theme, color }) =>
+    color === 'black' ? theme.colors.black : theme.colors.gray4};
 `;
 
-export const Email = styled.div`
-  color: ${({ theme }) => theme.colors.gray02};
-  margin-top: 27px;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 140%;
+export const Logos = styled.div`
+  display: flex;
+  gap: 8px;
+`;
 
-  ${mobile} {
-    font-size: 14px;
-    line-height: 140%;
+export const Icon = styled.div<{ color: 'black' | 'gray' }>`
+  cursor: pointer;
+  path {
+    fill: ${({ theme, color }) =>
+      color === 'black' ? theme.colors.black : theme.colors.gray4};
   }
 `;
