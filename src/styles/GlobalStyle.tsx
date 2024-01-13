@@ -2,44 +2,20 @@ import { css, Global, Theme } from '@emotion/react';
 import React from 'react';
 
 const styles = (theme: Theme) => css`
-  @font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
-      format('woff');
-    font-weight: 400;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Pretendard-Bold';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff')
-      format('woff');
-    font-weight: 700;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Pretendard-ExtraBold';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff')
-      format('woff');
-    font-weight: 800;
-    font-style: normal;
-  }
-
   * {
     box-sizing: border-box;
     appearance: none;
     line-height: 140%;
   }
+
   html {
     font-family: 'Pretendard-Regular', sans-serif;
-    /* font-family: 'Montserrat', sans-serif; */
     width: 100%;
     height: 100%;
     overflow-y: scroll;
     font-size: 14px;
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.black111};
+    color: ${theme.colors.black};
+    background-color: ${theme.colors.black};
     scroll-behavior: smooth;
   }
 
@@ -48,9 +24,14 @@ const styles = (theme: Theme) => css`
     font-size: 14px;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    padding-top: 113px;
+    padding-top: 64px;
     margin: 0;
     letter-spacing: -0.2%;
+  }
+
+  button {
+    border: 0;
+    background-color: transparent;
   }
 
   #root {
