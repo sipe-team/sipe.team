@@ -24,6 +24,7 @@ const Link = ({ type, url }: LinkProps) => {
 };
 
 const LinkIcon = styled.a`
+  display: inline-block;
   width: 24px;
   height: 24px;
 `;

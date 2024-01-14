@@ -13,6 +13,8 @@ type PeopleCardProps = ComponentProps<'div'> & {
   links?: { type: 'GITHUB' | 'LINKEDIN' | 'LINK'; url: string }[];
   part: string;
   isOrganizer?: boolean;
+  introduce?: string;
+  review?: string;
 };
 
 const PeopleCard = ({
@@ -26,25 +28,37 @@ const PeopleCard = ({
     <Box type="CONTENT" className="people-box">
       <S.Meta>
         <Image className="profile" alt="user image" src={img} />
-        <section className="main-info">
-          <h3 className="name">{name}</h3>
-          <article className="links">
-            {links.map((link) => (
-              <Link type={link.type} url={link.url} key={link.type} />
-            ))}
-          </article>
-        </section>
-        <section className="sub-info">
-          <p className="part">{part}</p>
-          {isOrganizer && (
-            <p>
-              Organizer <OrganizerMark />
-            </p>
-          )}
+        <section className="info">
+          <section className="main-info">
+            <h3 className="name">{name}</h3>
+            <article className="links">
+              {links.map((link) => (
+                <Link type={link.type} url={link.url} key={link.type} />
+              ))}
+            </article>
+          </section>
+          <section className="sub-info">
+            <p className="part">{part}</p>
+            {isOrganizer && (
+              <p>
+                Organizer <OrganizerMark />
+              </p>
+            )}
+          </section>
         </section>
       </S.Meta>
-      <S.Introduce>introduce area</S.Introduce>
-      <S.Review>review area</S.Review>
+      <S.Introduce>
+        자기소개는 24자 이내, 1줄까지 자기소개는 24자 이내, 1줄까지
+      </S.Introduce>
+      <S.Review>
+        <h3>활동후기</h3>
+        <p>
+          활동 후기는 80자, 3줄까지 활동 후기는 80자, 3줄까지 활동 후기는 80자,
+          3줄까지 활동 후기는 80자, 3줄까지 활동 후기는 80자, 3줄까지 활동
+          후기는 80자, 3줄까지 활동 후기는 80자, 3줄까지 활동 후기는 80자,
+          3줄까지 활동 후기는 80자, 3줄까지
+        </p>
+      </S.Review>
     </Box>
   );
 };

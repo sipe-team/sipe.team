@@ -4,7 +4,11 @@ import PeopleCard from './PeopleCard';
 const Peoples = () => {
   return (
     <InfiniteScroll>
-      <PeopleCard name="이지원" part="FE" />
+      <PeopleCard
+        name="이지원"
+        part="FE"
+        links={[{ type: 'GITHUB', url: 'github.com/KimHunJin' }]}
+      />
     </InfiniteScroll>
   );
 };
