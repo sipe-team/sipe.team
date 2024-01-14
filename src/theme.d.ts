@@ -9,6 +9,7 @@ declare module '@emotion/react' {
       gray2: '#2D3748';
       gray3: '#4A5568';
       gray4: '#718096';
+      gray5: '#E2E8F0';
       white: '#FFFFFF';
     };
     fontWeight: {
