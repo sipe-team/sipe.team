@@ -14,7 +14,7 @@ const Card = ({ src, index, badgeText, title, subTitle }: CardProps) => {
   return (
     <S.Section index={index}>
       {isOdd ? <S.Image src={src} /> : null}
-      <S.Description>
+      <S.Description index={index}>
         <Badge text={badgeText} />
         <S.Title>{title}</S.Title>
         <S.SubTitle>{subTitle}</S.SubTitle>

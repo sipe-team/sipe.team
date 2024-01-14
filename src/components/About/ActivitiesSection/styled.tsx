@@ -56,3 +56,9 @@ export const DescriptionSubTitle = styled.div`
   line-height: 19.6px;
   word-wrap: break-word;
 `;
+
+export const Menus = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+`;

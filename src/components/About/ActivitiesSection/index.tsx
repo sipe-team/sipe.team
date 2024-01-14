@@ -1,21 +1,34 @@
 import * as S from './styled';
 import { Carousel } from 'react-responsive-carousel';
+import Button from '../../Button';
+import { useEffect, useState } from 'react';
+
+const chips = [
+  { name: '정규 미션', value: 'mission' },
+  { name: '사담콘', value: 'sipe-concert' },
+  { name: '내친소', value: 'introduce-myFriend' },
+  { name: '사이프톤', value: 'sipe-hackathon' },
+  { name: '그 외 행사', value: 'etc' },
+];
 
 const Activity = () => {
+  const [selectChip, setSelectChip] = useState<string>('mission');
+
   return (
     <S.Wrapper>
       <S.Title>주요 활동</S.Title>
-      <Carousel autoPlay>
-        <div>
-          <img src="/IMG_이정민.png" />
-        </div>
-        <div>
-          <img src="/IMG_이지원.png" />
-        </div>
-        <div>
-          <img src="/IMG_조기문.png" />
-        </div>
-      </Carousel>
+      <S.Menus>
+        {chips.map((chip) => (
+          <Button
+            key={chip.name}
+            type="chip"
+            onClick={() => setSelectChip(chip.value)}
+            selected={chip.value === selectChip}
+          >
+            {chip.name}
+          </Button>
+        ))}
+      </S.Menus>
       <S.Description>
         <S.DescriptionTitle>2번의 정규 미션 진행</S.DescriptionTitle>
         <S.DescriptionSubTitle>
