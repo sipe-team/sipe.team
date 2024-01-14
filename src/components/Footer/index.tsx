@@ -31,19 +31,16 @@ export default function Footer({ fixed = false }: FooterProps) {
       <S.Group>
         <S.Copyright color={color}>All rights reserved ⓒ SIPE</S.Copyright>
         <S.Logos>
-          {sns.map(
-            (s) =>
-              s.url !== '' && (
-                <S.Icon
-                  color={color}
-                  onClick={() => {
-                    window.open(s.url);
-                  }}
-                >
-                  {s.icon}
-                </S.Icon>
-              )
-          )}
+          {sns.map((s) => (
+            <S.Icon
+              color={color}
+              onClick={() => {
+                window.open(s.url);
+              }}
+            >
+              {s.icon}
+            </S.Icon>
+          ))}
         </S.Logos>
       </S.Group>
     </S.Wrapper>
