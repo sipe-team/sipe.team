@@ -29,7 +29,6 @@ const styles = (theme: Theme) => css`
   * {
     box-sizing: border-box;
     appearance: none;
-    line-height: 140%;
   }
   html {
     font-family: 'Pretendard-Regular', sans-serif;
