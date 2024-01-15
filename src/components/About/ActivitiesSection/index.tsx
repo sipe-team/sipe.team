@@ -11,6 +11,21 @@ const chips = [
   { name: '그 외 행사', value: 'etc' },
 ];
 
+const carouselData = [
+  {
+    src: '/ogimage.png',
+    name: 'title1',
+  },
+  {
+    src: '/ogimage.png',
+    name: 'title2',
+  },
+  {
+    src: '/ogimage.png',
+    name: 'title3',
+  },
+];
+
 const Activity = () => {
   const [selectChip, setSelectChip] = useState<string>('mission');
 
@@ -31,6 +46,7 @@ const Activity = () => {
       </S.Menus>
       <Carousel
         centerMode={true}
+        showIndicators={false}
         centerSlidePercentage={30}
         interval={1200}
         showThumbs={false}
@@ -39,9 +55,9 @@ const Activity = () => {
         autoPlay
         infiniteLoop={true}
       >
-        <img src="/IMG_이정민.png" />
-        <img src="/IMG_이지원.png" />
-        <img src="/IMG_조기문.png" />
+        {carouselData.map((data) => (
+          <S.Image src={data.src} />
+        ))}
       </Carousel>
       <S.Description>
         <S.DescriptionTitle>2번의 정규 미션 진행</S.DescriptionTitle>

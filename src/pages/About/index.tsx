@@ -1,4 +1,7 @@
+import Activity from '@/components/About/ActivitiesSection';
+import Introduce from '@/components/About/IntroduceSection';
 import Faq from '@/components/Faq';
+import * as S from './styled';
 
 const faqs = [
   {
@@ -21,8 +24,12 @@ const faqs = [
 
 export default function About() {
   return (
-    <div>
-      <Faq faqs={faqs} />
-    </div>
+    <S.Wrapper>
+      <Introduce />
+      <Activity />
+      <div>
+        <Faq faqs={faqs} />
+      </div>
+    </S.Wrapper>
   );
 }

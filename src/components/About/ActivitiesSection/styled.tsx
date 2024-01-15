@@ -24,10 +24,10 @@ export const Title = styled.div`
 
 export const Description = styled.div`
   width: 100%;
-  height: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 40px;
   gap: 16px;
   display: inline-flex;
 `;
@@ -61,6 +61,10 @@ export const Menus = styled.div`
   display: flex;
   justify-content: center;
   gap: 16px;
+  margin: 40px 0px;
 `;
 
-export const Image = styled.image``;
+export const Image = styled.img`
+  width: 480px;
+  height: 270px;
+`;
