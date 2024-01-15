@@ -35,7 +35,7 @@ const Layout = () => {
     >
       <Header />
       <Outlet />
-      <Footer fixed={pathname === '/'} />
+      <Footer fixed={pathname === '/' || pathname === '/contact'} />
     </div>
   );
 };
