@@ -1,6 +1,8 @@
 import { ThemeProvider } from '@emotion/react';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+
 import {
   createBrowserRouter,
   Outlet,
@@ -8,14 +10,13 @@ import {
   useLocation,
 } from 'react-router-dom';
 
-import Peoples from '@/pages/Peoples';
-
 import Footer from './components/Footer';
 import Header from './components/Navigation';
 import About from './pages/About';
 import Activity from './pages/Activity';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
+import Peoples from './pages/Peoples';
 import Recruit from './pages/Recruit';
 import GlobalStyle from './styles/GlobalStyle';
 import theme from './styles/theme';
