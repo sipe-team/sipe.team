@@ -2,7 +2,7 @@ import { ComponentProps } from 'react';
 
 import { ReactComponent as OrganizerMark } from '@/assets/organizer.svg';
 import Box from '@/components/common/Box';
-import Image from '@/components/common/Image'
+import Image from '@/components/common/Image';
 
 import Link from '../Link';
 import * as S from './styled';
@@ -23,9 +23,11 @@ const PeopleCard = ({
   links = [],
   part,
   isOrganizer = false,
+  introduce = '',
+  review = '',
 }: PeopleCardProps) => {
   return (
-    <Box type="CONTENT" className="people-box">
+    <Box type="CONTENT" className="people-box" minHeight={270}>
       <S.Meta>
         <Image className="profile" alt="user image" src={img} />
         <section className="info">
@@ -47,17 +49,10 @@ const PeopleCard = ({
           </section>
         </section>
       </S.Meta>
-      <S.Introduce>
-        자기소개는 24자 이내, 1줄까지 자기소개는 24자 이내, 1줄까지
-      </S.Introduce>
+      <S.Introduce>{introduce}</S.Introduce>
       <S.Review>
         <h3>활동후기</h3>
-        <p>
-          활동 후기는 80자, 3줄까지 활동 후기는 80자, 3줄까지 활동 후기는 80자,
-          3줄까지 활동 후기는 80자, 3줄까지 활동 후기는 80자, 3줄까지 활동
-          후기는 80자, 3줄까지 활동 후기는 80자, 3줄까지 활동 후기는 80자,
-          3줄까지 활동 후기는 80자, 3줄까지
-        </p>
+        <p>{review}</p>
       </S.Review>
     </Box>
   );

@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 export const Meta = styled.section`
   display: flex;
   height: 70px;
+  margin-bottom: 20px;
 
   .profile {
     display: inline-block;
@@ -55,6 +56,7 @@ export const Introduce = styled.section`
   letter-spacing: -0.002em;
   text-align: left;
   color: ${({ theme }) => theme.colors.gray5};
+  margin-bottom: 20px;
 `;
 
 export const Review = styled.section`

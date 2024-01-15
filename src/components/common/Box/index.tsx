@@ -4,11 +4,12 @@ import * as S from './styled';
 
 type BoxProps = React.ComponentProps<'div'> & {
   type?: 'BASIC' | 'CONTENT';
+  minHeight?: number;
 };
 
-const Box = ({ type = 'BASIC', children, className }: BoxProps) => {
+const Box = ({ type = 'BASIC', minHeight, children, className }: BoxProps) => {
   return (
-    <S.Wrapper type={type} className={className}>
+    <S.Wrapper type={type} minHeight={minHeight} className={className}>
       {children}
     </S.Wrapper>
   );
