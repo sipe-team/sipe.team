@@ -1,40 +1,37 @@
 import styled from '@emotion/styled';
 
-export const Wrapper = styled.div<{ fixed: boolean }>`
+import { mobile } from '@/styles/media-query';
+
+export const Wrapper = styled.div`
+  border-top: 1px solid #383838;
+  padding: 64px 43px 80px 40px;
   width: 100%;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  position: ${({ fixed }) => (fixed ? 'fixed' : 'relative')};
-  bottom: 0;
-  left: 0;
-`;
 
-export const Group = styled.div`
-  width: 1060px;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-export const Copyright = styled.div<{ color: 'black' | 'gray' }>`
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 17px;
-  color: ${({ theme, color }) =>
-    color === 'black' ? theme.colors.black : theme.colors.gray4};
+  ${mobile} {
+    padding: 52px 24px 88px 24px;
+  }
 `;
 
 export const Logos = styled.div`
   display: flex;
-  gap: 8px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 `;
 
-export const Icon = styled.div<{ color: 'black' | 'gray' }>`
+export const Sns = styled.div`
   cursor: pointer;
-  path {
-    fill: ${({ theme, color }) =>
-      color === 'black' ? theme.colors.black : theme.colors.gray4};
+`;
+
+export const Email = styled.div`
+  color: ${({ theme }) => theme.colors.gray02};
+  margin-top: 27px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 140%;
+
+  ${mobile} {
+    font-size: 14px;
+    line-height: 140%;
   }
 `;
