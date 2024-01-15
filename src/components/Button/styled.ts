@@ -68,8 +68,8 @@ export const ChipButton = styled(Common)<{ selected: boolean }>`
     selected ? theme.colors.green : theme.colors.gray1};
   color: ${({ theme, selected }) =>
     selected ? theme.colors.black : theme.colors.white};
-  width: 67px;
   font-size: 24px;
   line-height: 19.6px;
+  padding: 24px;
   border-radius: 100px;
 `;

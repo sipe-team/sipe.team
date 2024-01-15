@@ -1,6 +1,7 @@
 import { ThemeProvider } from '@emotion/react';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 import GlobalStyle from './styles/GlobalStyle';
 import theme from './styles/theme';
