@@ -5,7 +5,50 @@ const styles = (theme: Theme) => css`
   * {
     box-sizing: border-box;
     appearance: none;
-    line-height: 140%;
+  }
+
+  html,
+  body,
+  div,
+  span,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  pre,
+  a,
+  img,
+  b,
+  u,
+  i,
+  ul,
+  li,
+  label,
+  legend,
+  table,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  footer,
+  header,
+  nav,
+  section,
+  summary,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
   }
 
   html {
