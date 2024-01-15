@@ -1,7 +1,7 @@
 import * as S from './styled';
 import { Carousel } from 'react-responsive-carousel';
 import Button from '../../Button';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const chips = [
   { name: '정규 미션', value: 'mission' },
@@ -29,6 +29,20 @@ const Activity = () => {
           </Button>
         ))}
       </S.Menus>
+      <Carousel
+        centerMode={true}
+        centerSlidePercentage={30}
+        interval={1200}
+        showThumbs={false}
+        showArrows={false}
+        showStatus={false}
+        autoPlay
+        infiniteLoop={true}
+      >
+        <img src="/IMG_이정민.png" />
+        <img src="/IMG_이지원.png" />
+        <img src="/IMG_조기문.png" />
+      </Carousel>
       <S.Description>
         <S.DescriptionTitle>2번의 정규 미션 진행</S.DescriptionTitle>
         <S.DescriptionSubTitle>

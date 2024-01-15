@@ -62,3 +62,5 @@ export const Menus = styled.div`
   justify-content: center;
   gap: 16px;
 `;
+
+export const Image = styled.image``;
