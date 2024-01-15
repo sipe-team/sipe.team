@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const Meta = styled.section`
   display: flex;
   height: 70px;
-  
+
   .profile {
     display: inline-block;
     width: 70px;
@@ -43,7 +43,7 @@ export const Meta = styled.section`
       line-height: 17px;
       letter-spacing: -0.002em;
       text-align: left;
-      color: ${({ theme }) => theme.colors.gray500};
+      color: ${({ theme }) => theme.colors.gray6};
     }
   }
 `;
@@ -54,7 +54,7 @@ export const Introduce = styled.section`
   line-height: 20px;
   letter-spacing: -0.002em;
   text-align: left;
-  color: ${({ theme }) => theme.colors.gray300};
+  color: ${({ theme }) => theme.colors.gray5};
 `;
 
 export const Review = styled.section`
@@ -72,6 +72,6 @@ export const Review = styled.section`
     line-height: 19px;
     letter-spacing: -0.002em;
     text-align: left;
-    color: ${({ theme }) => theme.colors.gray300};
+    color: ${({ theme }) => theme.colors.gray5};
   }
 `;

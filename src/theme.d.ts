@@ -10,6 +10,11 @@ declare module '@emotion/react' {
       gray3: '#4A5568';
       gray4: '#718096';
       gray5: '#E2E8F0';
+      gray6: '#A0AEC0';
+      gray7: '#CBD5E0';
+      gray8: '#E2E8F0';
+      gary9: '#EDF2F7';
+      gray10: '#F7FAFC';
       white: '#FFFFFF';
     };
     fontWeight: {

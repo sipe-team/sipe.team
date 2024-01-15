@@ -1,5 +1,6 @@
-import InfiniteScroll from '../common/InfiniteScroll';
-import PeopleCard from './Components/PeopleCard';
+import PeopleCard from '@/components/PeopleCard';
+
+import InfiniteScroll from '../../components/common/InfiniteScroll';
 
 const Peoples = () => {
   return (

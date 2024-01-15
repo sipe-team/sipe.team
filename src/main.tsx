@@ -1,23 +1,24 @@
 import { ThemeProvider } from '@emotion/react';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
-import GlobalStyle from './styles/GlobalStyle';
-import theme from './styles/theme';
 import {
   createBrowserRouter,
-  RouterProvider,
   Outlet,
+  RouterProvider,
   useLocation,
 } from 'react-router-dom';
-import Home from './pages/Home';
-import About from './pages/About';
-import Recruit from './pages/Recruit';
-import Contact from './pages/Contact';
-import People from './pages/People';
-import Activity from './pages/Activity';
-import Header from './components/Navigation';
+
+import Peoples from '@/pages/Peoples';
+
 import Footer from './components/Footer';
+import Header from './components/Navigation';
+import About from './pages/About';
+import Activity from './pages/Activity';
+import Contact from './pages/Contact';
+import Home from './pages/Home';
+import Recruit from './pages/Recruit';
+import GlobalStyle from './styles/GlobalStyle';
+import theme from './styles/theme';
 
 const Layout = () => {
   const { pathname } = useLocation();
@@ -46,7 +47,7 @@ const router = createBrowserRouter([
       { path: '/', element: <Home /> },
       { path: '/about', element: <About /> },
       { path: '/recruit', element: <Recruit /> },
-      { path: '/people', element: <People /> },
+      { path: '/people', element: <Peoples /> },
       { path: '/activity', element: <Activity /> },
       { path: '/contact', element: <Contact /> },
     ],

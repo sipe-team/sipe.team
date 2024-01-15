@@ -2,7 +2,7 @@ import { ComponentProps } from 'react';
 
 import { ReactComponent as OrganizerMark } from '@/assets/organizer.svg';
 import Box from '@/components/common/Box';
-import { Image } from '@/components/SectionA/ImageCard/styled';
+import Image from '@/components/common/Image'
 
 import Link from '../Link';
 import * as S from './styled';
