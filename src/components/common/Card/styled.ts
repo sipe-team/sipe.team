@@ -1,17 +1,13 @@
 import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
-  width: 100%;
   height: 100%;
-  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
   gap: 32px;
   display: inline-flex;
 `;
 
 export const CardWrapper = styled.div`
-  width: 192px;
   height: 100%;
   padding: 32px 20px;
   background: #1a202c;
@@ -39,6 +35,7 @@ export const Title = styled.div`
 
 export const HighLightTitle = styled.div`
   align-self: stretch;
+  width: 192px;
   padding: 8px 16px;
   background: #2d3748;
   border-radius: 8px;
@@ -47,12 +44,12 @@ export const HighLightTitle = styled.div`
   flex: 1 1 0;
   text-align: center;
   color: #01ff13;
-  font-size: 12px;
+  font-size: 15px;
   font-family: Pretendard;
   font-weight: 600;
   line-height: 21px;
   letter-spacing: 0.3px;
-  word-wrap: break-word;
+  white-space: nowrap;
 `;
 
 export const SubTitle = styled.div`

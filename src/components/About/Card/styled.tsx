@@ -21,7 +21,7 @@ export const Image = styled.img`
   border-radius: 12px;
 `;
 
-export const Description = styled.div<SectionProps>`
+export const Description = styled.div`
   padding: 8px 16px;
   flex-direction: column;
   justify-content: flex-start;
@@ -30,10 +30,8 @@ export const Description = styled.div<SectionProps>`
   width: auto;
   height: 270px;
   display: inline-flex;
-
-  box-shadow: ${({ index }) =>
-    index !== 2 ? '0px 4px 4px rgba(0, 0, 0, 0.25)' : ''};
-  border: ${({ index }) => (index !== 2 ? '1px black solid' : '')};
+  box-shadow: '0px 4px 4px rgba(0, 0, 0, 0.25)';
+  border: '1px black solid';
 `;
 
 export const Title = styled.div`

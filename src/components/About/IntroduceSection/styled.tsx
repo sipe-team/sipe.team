@@ -19,6 +19,5 @@ export const Title = styled.div`
   word-wrap: break-word;
   display: flex;
   justify-content: center;
-  padding-top: 60px;
   margin-bottom: 40px;
 `;
