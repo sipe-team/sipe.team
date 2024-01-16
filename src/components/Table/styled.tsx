@@ -7,8 +7,9 @@ interface TableProps {
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-
   align-items: center;
+  margin-top: 100px;
+  margin-bottom: 160px;
   gap: 40px;
 `;
 
@@ -27,10 +28,10 @@ export const TableWrapper = styled.div`
   display: inline-flex;
 `;
 
-export const Table = styled.div<TableProps>`
+export const Table = styled.div`
   align-self: stretch;
   width: 520px;
-  height: ${({ isApplicant }) => (isApplicant ? '24px' : '37px')};
+  height: auto;
   padding: 20px;
   border-radius: 12px;
   gap: 20px;
@@ -43,10 +44,10 @@ export const Table = styled.div<TableProps>`
   display: inline-flex;
 `;
 
-export const Text = styled.div`
+export const Text = styled.div<TableProps>`
   flex: 1 1 0;
   color: white;
-  font-size: 14px;
+  font-size: ${({ isApplicant }) => (isApplicant ? '14px' : '20px')};
   font-family: Pretendard;
   font-weight: 500;
   line-height: 19.6px;

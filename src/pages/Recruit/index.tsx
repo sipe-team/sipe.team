@@ -1,5 +1,6 @@
 import Faq from '@/components/Faq';
 import Table from '@/components/Table';
+import * as S from './styled';
 
 const faqs = [
   {
@@ -85,10 +86,10 @@ const InActivity = [
 
 export default function Recruit() {
   return (
-    <div>
+    <S.Wrapper>
       <Table title="지원자격" dataList={Applicants} isApplicant={true} />
-      <Faq faqs={faqs} />
       <Table title="활동안내" dataList={InActivity} isApplicant={false} />
-    </div>
+      <Faq faqs={faqs} />
+    </S.Wrapper>
   );
 }

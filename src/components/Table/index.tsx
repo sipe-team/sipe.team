@@ -20,13 +20,13 @@ const Table = ({ title, dataList, isApplicant }: TableProps) => {
       <S.Title>{title}</S.Title>
       <S.TableWrapper>
         {dataList.map((data) => (
-          <S.Table isApplicant={isApplicant}>
+          <S.Table>
             {isApplicant ? (
               <Circle />
             ) : (
               <S.SubText>{data.recurring_date}</S.SubText>
             )}
-            <S.Text>{data.text}</S.Text>
+            <S.Text isApplicant={isApplicant}>{data.text}</S.Text>
             {!isApplicant && data.badge && <Badge text={data.badge} />}
           </S.Table>
         ))}
