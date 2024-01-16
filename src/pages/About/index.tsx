@@ -2,6 +2,7 @@ import Activity from '@/components/About/ActivitiesSection';
 import Introduce from '@/components/About/IntroduceSection';
 import Faq from '@/components/Faq';
 import * as S from './styled';
+import Sponsor from '@/components/About/SponsorSection';
 
 const faqs = [
   {
@@ -27,6 +28,7 @@ export default function About() {
     <S.Wrapper>
       <Introduce />
       <Activity />
+      <Sponsor />
       <div>
         <Faq faqs={faqs} />
       </div>
