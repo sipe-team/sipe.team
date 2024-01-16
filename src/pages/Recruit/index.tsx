@@ -1,6 +1,7 @@
 import Faq from '@/components/Faq';
 import Table from '@/components/Table';
 import * as S from './styled';
+import Card from '@/components/common/Card';
 
 const faqs = [
   {
@@ -88,6 +89,10 @@ export default function Recruit() {
   return (
     <S.Wrapper>
       <Table title="지원자격" dataList={Applicants} isApplicant={true} />
+      <S.CardWrapper>
+        <S.CardTitle>모집 일정</S.CardTitle>
+        <Card />
+      </S.CardWrapper>
       <Table title="활동안내" dataList={InActivity} isApplicant={false} />
       <Faq faqs={faqs} />
     </S.Wrapper>
