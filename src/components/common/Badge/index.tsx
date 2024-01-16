@@ -1,7 +1,7 @@
 import * as S from './styled';
 
 interface Text {
-  text: string;
+  text: string | undefined;
 }
 
 const Badge = ({ text }: Text) => {
