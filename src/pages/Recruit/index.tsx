@@ -3,6 +3,8 @@ import Table from '@/components/Table';
 import * as S from './styled';
 import ScheduleCard from './components/ScheduleCard';
 import ContentWithTitle from '@/components/ContentWithTitle';
+import Layout from '@/components/Layout';
+import useDeviceType from '@/hook/useDeviceType';
 
 const faqs = [
   {
@@ -116,21 +118,35 @@ const CardList = [
 ];
 
 export default function Recruit() {
+  const { isDesktop } = useDeviceType();
+
   return (
     <>
       <ContentWithTitle title="지원자격">
         <Table dataList={Applicants} isApplicant={true} />
       </ContentWithTitle>
       <ContentWithTitle title="모집 일정">
-        <S.CardList>
-          {CardList.map((card, i) => (
-            <ScheduleCard key={i} {...card} />
-          ))}
-        </S.CardList>
+        {isDesktop ? (
+          <S.CardList>
+            {CardList.map((card, i) => (
+              <ScheduleCard key={i} {...card} />
+            ))}
+          </S.CardList>
+        ) : (
+          <S.MobileContent>
+            <S.CardList>
+              {CardList.map((card, i) => (
+                <ScheduleCard key={i} {...card} />
+              ))}
+            </S.CardList>
+          </S.MobileContent>
+        )}
       </ContentWithTitle>
-      <ContentWithTitle title="활동안내">
-        <Table dataList={InActivity} isApplicant={false} />
-      </ContentWithTitle>
+      <Layout>
+        <ContentWithTitle title="활동안내">
+          <Table dataList={InActivity} isApplicant={false} />
+        </ContentWithTitle>
+      </Layout>
       <Faq faqs={faqs} />
     </>
   );
