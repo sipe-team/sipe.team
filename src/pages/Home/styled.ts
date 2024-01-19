@@ -40,3 +40,8 @@ export const Content = styled.div`
   gap: 40px;
   align-items: center;
 `;
+
+export const Carousels = styled.div`
+  display: flex;
+  gap: 16px;
+`;

@@ -1,12 +1,13 @@
-import Layout from '@/components/common/Layout';
-import PeopleCard from '@/components/PeopleCard';
+import Layout from '@/components/Layout';
+import UserCard from './components/UserCard';
 import useDeviceType from '@/hook/useDeviceType';
-import { Wrapper } from '@/pages/Peoples/styled';
+import { Wrapper } from '@/pages/People/styled';
 
-import InfiniteScroll from '../../components/common/InfiniteScroll';
+import InfiniteScroll from '../../components/InfiniteScroll';
+import ContentWithTitle from '@/components/ContentWithTitle';
 
 const temp = (index: number) => (
-  <PeopleCard
+  <UserCard
     name={`${index}`}
     part="FE"
     links={[{ type: 'GITHUB', url: 'github.com/KimHunJin' }]}
@@ -17,15 +18,18 @@ const temp = (index: number) => (
 
 const peopleCards = Array.from({ length: 100 }).map((_, index) => temp(index));
 
-const Peoples = () => {
+const People = () => {
   const { isMobile } = useDeviceType();
+
   return (
     <Layout>
-      <Wrapper isMobile={isMobile}>
-        <InfiniteScroll items={peopleCards} />
-      </Wrapper>
+      <ContentWithTitle title="사이퍼 소개">
+        <Wrapper isMobile={isMobile}>
+          <InfiniteScroll items={peopleCards} />
+        </Wrapper>
+      </ContentWithTitle>
     </Layout>
   );
 };
 
-export default Peoples;
+export default People;

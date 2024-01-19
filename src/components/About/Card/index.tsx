@@ -1,4 +1,4 @@
-import Badge from '@/components/common/Badge';
+import Badge from '@/components/Badge';
 import * as S from './styled';
 
 interface CardProps {

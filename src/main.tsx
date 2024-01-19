@@ -16,7 +16,7 @@ import About from './pages/About';
 import Activity from './pages/Activity';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
-import Peoples from './pages/Peoples';
+import People from './pages/People';
 import Recruit from './pages/Recruit';
 import GlobalStyle from './styles/GlobalStyle';
 import theme from './styles/theme';
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
       { path: '/', element: <Home /> },
       { path: '/about', element: <About /> },
       { path: '/recruit', element: <Recruit /> },
-      { path: '/people', element: <Peoples /> },
+      { path: '/people', element: <People /> },
       { path: '/activity', element: <Activity /> },
       { path: '/contact', element: <Contact /> },
     ],

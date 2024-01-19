@@ -4,15 +4,14 @@ import useDeviceType from '@/hook/useDeviceType';
 
 import * as S from './styled';
 const Layout = ({ children }: { children: React.ReactNode }) => {
-  const { isMobile, isTablet, isDesktop } = useDeviceType();
+  const { isMobile, isTablet } = useDeviceType();
   const getWidth = () => {
     if (isTablet) {
-      return 740;
+      return 780;
     }
     if (isMobile) {
-      return 280;
+      return 360;
     }
-
     return 1060;
   };
 
