@@ -60,6 +60,7 @@ const styles = (theme: Theme) => css`
     color: ${theme.colors.black};
     background-color: ${theme.colors.black};
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {

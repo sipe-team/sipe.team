@@ -38,8 +38,8 @@ export default function Home() {
                 : 'SIPE 2기 모집 중'}
             </div>
             <div>
-              현직 개발자들이 함께 경험을 쌓으며 {!isDesktop && <br />}성장하는
-              IT 커뮤니티
+              현직 개발자들이 함께 경험을 쌓으며 {isMobile && <br />}성장하는 IT
+              커뮤니티
             </div>
           </S.Title>
           {!isMobile && (
