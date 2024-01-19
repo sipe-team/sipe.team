@@ -1,13 +1,14 @@
-import styled from '@emotion/styled';
-
 import { ReactComponent as Logo } from '@/assets/logo.svg';
 import { ReactComponent as Menu } from '@/assets/menu.svg';
+import { ReactComponent as MenuClose } from '@/assets/menu_close.svg';
 import useDeviceType from '@/hook/useDeviceType';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 import * as S from './styled';
 import Button from '../Button';
 import { ApplyButton } from '../Button/styled';
+import { useState } from 'react';
+import Layout from '../Layout';
 
 const menus = [
   { name: 'About', path: '/about' },
@@ -18,36 +19,71 @@ const menus = [
 ];
 
 export default function Navigation() {
-  const { isMobile } = useDeviceType();
+  const { isDesktop } = useDeviceType();
   const navigate = useNavigate();
   const location = useLocation();
 
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const handleNavigate = (path: string) => {
+    setIsMobileMenuOpen(false);
+    navigate(path);
+  };
+
   return (
     <S.Wrapper>
-      <S.Group>
-        <div onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
-          <Logo />
-        </div>
-        <S.Buttons>
-          {isMobile ? (
-            <Menu />
+      <Layout>
+        <S.Group>
+          <div
+            onClick={() => handleNavigate('/')}
+            style={{ cursor: 'pointer' }}
+          >
+            <Logo />
+          </div>
+          {isDesktop ? (
+            <S.Buttons>
+              <S.Menus>
+                {menus.map((menu) => (
+                  <Button
+                    key={menu.name}
+                    type="menu"
+                    selected={menu.path === location.pathname}
+                    onClick={() => handleNavigate(menu.path)}
+                  >
+                    {menu.name}
+                  </Button>
+                ))}
+              </S.Menus>
+              <ApplyButton isDesktop={isDesktop}>Join Us</ApplyButton>
+            </S.Buttons>
+          ) : isMobileMenuOpen ? (
+            <MenuClose
+              style={{ cursor: 'pointer' }}
+              onClick={() => setIsMobileMenuOpen(false)}
+            />
           ) : (
-            <S.Menus>
-              {menus.map((menu) => (
-                <Button
-                  key={menu.name}
-                  type="menu"
-                  selected={menu.path === location.pathname}
-                  onClick={() => navigate(menu.path)}
-                >
-                  {menu.name}
-                </Button>
-              ))}
-            </S.Menus>
+            <Menu
+              style={{ cursor: 'pointer' }}
+              onClick={() => setIsMobileMenuOpen(true)}
+            />
           )}
-          <ApplyButton>Join Us</ApplyButton>
-        </S.Buttons>
-      </S.Group>
+        </S.Group>
+        {isMobileMenuOpen && !isDesktop && (
+          <S.MobileMenus>
+            {menus.map((menu) => (
+              <Button
+                key={menu.name}
+                type="menu"
+                selected={menu.path === location.pathname}
+                onClick={() => handleNavigate(menu.path)}
+              >
+                {menu.name}
+              </Button>
+            ))}
+            <ApplyButton isDesktop={isDesktop}>Join Us</ApplyButton>
+          </S.MobileMenus>
+        )}
+      </Layout>
     </S.Wrapper>
   );
 }

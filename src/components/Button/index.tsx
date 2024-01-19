@@ -1,3 +1,4 @@
+import useDeviceType from '@/hook/useDeviceType';
 import * as S from './styled';
 
 type ButtonProps = {
@@ -17,6 +18,8 @@ export default function Button({
   color = 'black',
   onClick,
 }: ButtonProps) {
+  const { isDesktop } = useDeviceType();
+
   switch (type) {
     case 'home':
       return (
@@ -26,7 +29,11 @@ export default function Button({
       );
     case 'menu':
       return (
-        <S.MenuButton onClick={onClick} selected={selected}>
+        <S.MenuButton
+          onClick={onClick}
+          selected={selected}
+          isDesktop={isDesktop}
+        >
           {children}
         </S.MenuButton>
       );

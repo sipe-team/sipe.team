@@ -74,6 +74,7 @@ const styles = (theme: Theme) => css`
 
   button {
     border: 0;
+    padding: 0;
     background-color: transparent;
   }
 

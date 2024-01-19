@@ -46,19 +46,22 @@ export const HomeButton = styled(Common)<{ color: 'green' | 'black' }>`
   }
 `;
 
-export const MenuButton = styled(Common)<{ selected: boolean }>`
+export const MenuButton = styled(Common)<{
+  selected: boolean;
+  isDesktop: boolean;
+}>`
   background-color: transparent;
-  width: 88px;
+  width: ${({ isDesktop }) => (isDesktop ? '88px' : '100%')};
   font-size: 15px;
   line-height: 21px;
   color: ${({ theme, selected }) =>
     selected ? theme.colors.green : theme.colors.white};
 `;
 
-export const ApplyButton = styled(Common)`
+export const ApplyButton = styled(Common)<{ isDesktop: boolean }>`
   background-color: ${({ theme }) => theme.colors.green};
   color: ${({ theme }) => theme.colors.black};
-  width: 99px;
+  width: ${({ isDesktop }) => (isDesktop ? '99px' : '100%')};
   font-size: 16px;
   line-height: 22.4px;
 `;
