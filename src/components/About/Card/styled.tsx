@@ -9,7 +9,6 @@ export const Section = styled.div<SectionProps>`
   width: 100%;
   display: flex;
   flex: 1 1;
-  padding: 8px 16px;
   flex-direction: ${({ isTablet }) => (isTablet ? 'column' : '')};
   justify-content: flex-start;
   align-items: flex-start;
@@ -20,8 +19,9 @@ export const Section = styled.div<SectionProps>`
 
 export const Image = styled.img<SectionProps>`
   width: 100%;
-  height: 270px;
+  height: ${({ isTablet }) => (isTablet ? '416.25px' : '270px')};
   border-radius: 12px;
+  object-fit: contain;
 `;
 
 export const Description = styled.div<SectionProps>`
