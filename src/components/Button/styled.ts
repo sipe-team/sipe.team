@@ -20,8 +20,11 @@ const Common = styled.button`
   }
 `;
 
-export const HomeButton = styled(Common)<{ color: 'green' | 'black' }>`
-  width: 392px;
+export const HomeButton = styled(Common)<{
+  color: 'green' | 'black';
+  isMobile: boolean;
+}>`
+  width: ${({ isMobile }) => (isMobile ? '100%' : '392px')};
   height: 56px;
   background-color: ${({ theme, color }) =>
     color === 'green' ? theme.colors.green : theme.colors.gray1};

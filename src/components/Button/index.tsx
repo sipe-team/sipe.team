@@ -18,12 +18,17 @@ export default function Button({
   color = 'black',
   onClick,
 }: ButtonProps) {
-  const { isDesktop } = useDeviceType();
+  const { isMobile, isDesktop } = useDeviceType();
 
   switch (type) {
     case 'home':
       return (
-        <S.HomeButton disabled={disabled} color={color} onClick={onClick}>
+        <S.HomeButton
+          disabled={disabled}
+          color={color}
+          onClick={onClick}
+          isMobile={isMobile}
+        >
           {children}
         </S.HomeButton>
       );
@@ -38,7 +43,11 @@ export default function Button({
         </S.MenuButton>
       );
     case 'apply':
-      return <S.ApplyButton onClick={onClick}>{children}</S.ApplyButton>;
+      return (
+        <S.ApplyButton onClick={onClick} isDesktop={isDesktop}>
+          {children}
+        </S.ApplyButton>
+      );
     case 'chip':
       return (
         <S.ChipButton onClick={onClick} selected={selected}>

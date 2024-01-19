@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 
 export const Wrapper = styled(CardWrapper)`
   width: 181px;
+  min-width: 181px;
   height: 112px;
   display: flex;
   align-items: center;

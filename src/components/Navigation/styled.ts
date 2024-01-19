@@ -15,7 +15,6 @@ export const Wrapper = styled.div`
 
 export const Group = styled.div`
   width: 100%;
-  padding: 0 20px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -40,6 +39,5 @@ export const MobileMenus = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 9px;
-  padding: 0 20px;
   padding-bottom: 20px;
 `;
