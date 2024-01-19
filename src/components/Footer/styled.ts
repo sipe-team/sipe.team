@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 
 export const Wrapper = styled.div<{ fixed: boolean }>`
   width: 100%;
-  height: 100px;
   display: flex;
   justify-content: center;
   position: ${({ fixed }) => (fixed ? 'fixed' : 'relative')};
@@ -10,12 +9,15 @@ export const Wrapper = styled.div<{ fixed: boolean }>`
   left: 0;
 `;
 
-export const Group = styled.div`
-  width: 1060px;
-  padding: 0 20px;
+export const Group = styled.div<{ isDesktop: boolean }>`
+  width: 100%;
+  height: ${({ isDesktop }) => (isDesktop ? '100px' : '113px')};
   display: flex;
+  flex-direction: ${({ isDesktop }) => (isDesktop ? 'row' : 'column-reverse')};
   align-items: center;
-  justify-content: space-between;
+  justify-content: ${({ isDesktop }) =>
+    isDesktop ? 'space-between' : 'center'};
+  gap: ${({ isDesktop }) => (isDesktop ? '0' : '16px')};
 `;
 
 export const Copyright = styled.div<{ color: 'black' | 'gray' }>`
@@ -36,5 +38,10 @@ export const Icon = styled.div<{ color: 'black' | 'gray' }>`
   path {
     fill: ${({ theme, color }) =>
       color === 'black' ? theme.colors.black : theme.colors.gray4};
+  }
+  &:hover {
+    path {
+      fill: ${({ theme }) => theme.colors.gray4};
+    }
   }
 `;
