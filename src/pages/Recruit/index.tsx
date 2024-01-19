@@ -2,6 +2,7 @@ import Faq from '@/components/Faq';
 import Table from '@/components/Table';
 import * as S from './styled';
 import ScheduleCard from './components/ScheduleCard';
+import ContentWithTitle from '@/components/ContentWithTitle';
 
 const faqs = [
   {
@@ -116,18 +117,21 @@ const CardList = [
 
 export default function Recruit() {
   return (
-    <S.Wrapper>
-      <Table title="지원자격" dataList={Applicants} isApplicant={true} />
-      <S.CardWrapper>
-        <S.CardTitle>모집 일정</S.CardTitle>
+    <>
+      <ContentWithTitle title="지원자격">
+        <Table dataList={Applicants} isApplicant={true} />
+      </ContentWithTitle>
+      <ContentWithTitle title="모집 일정">
         <S.CardList>
           {CardList.map((card, i) => (
             <ScheduleCard key={i} {...card} />
           ))}
         </S.CardList>
-      </S.CardWrapper>
-      <Table title="활동안내" dataList={InActivity} isApplicant={false} />
+      </ContentWithTitle>
+      <ContentWithTitle title="활동안내">
+        <Table dataList={InActivity} isApplicant={false} />
+      </ContentWithTitle>
       <Faq faqs={faqs} />
-    </S.Wrapper>
+    </>
   );
 }

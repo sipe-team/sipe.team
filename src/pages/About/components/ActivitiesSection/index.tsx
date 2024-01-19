@@ -1,37 +1,17 @@
 import * as S from './styled';
 import { Carousel } from 'react-responsive-carousel';
-import Button from '../../Button';
+import Button from '../../../../components/Button';
 import { useState } from 'react';
-
-const chips = [
-  { name: '정규 미션', value: 'mission' },
-  { name: '사담콘', value: 'sipe-concert' },
-  { name: '내친소', value: 'introduce-myFriend' },
-  { name: '사이프톤', value: 'sipe-hackathon' },
-  { name: '그 외 행사', value: 'etc' },
-];
-
-const carouselData = [
-  {
-    src: '/ogimage.png',
-    name: 'title1',
-  },
-  {
-    src: '/ogimage.png',
-    name: 'title2',
-  },
-  {
-    src: '/ogimage.png',
-    name: 'title3',
-  },
-];
+import { activities } from '../../data';
+import ContentWithTitle from '@/components/ContentWithTitle';
 
 const Activity = () => {
   const [selectChip, setSelectChip] = useState<string>('mission');
 
+  const { chips, carouselData } = activities;
+
   return (
-    <S.Wrapper>
-      <S.Title>주요 활동</S.Title>
+    <ContentWithTitle title="주요 활동">
       <S.Menus>
         {chips.map((chip) => (
           <Button
@@ -67,7 +47,7 @@ const Activity = () => {
           자유롭게 팀을 구성하고 미션을 진행해요.
         </S.DescriptionSubTitle>
       </S.Description>
-    </S.Wrapper>
+    </ContentWithTitle>
   );
 };
 

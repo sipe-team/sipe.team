@@ -4,6 +4,7 @@ import useDeviceType from '@/hook/useDeviceType';
 import { Wrapper } from '@/pages/People/styled';
 
 import InfiniteScroll from '../../components/InfiniteScroll';
+import ContentWithTitle from '@/components/ContentWithTitle';
 
 const temp = (index: number) => (
   <UserCard
@@ -22,9 +23,11 @@ const People = () => {
 
   return (
     <Layout>
-      <Wrapper isMobile={isMobile}>
-        <InfiniteScroll items={peopleCards} />
-      </Wrapper>
+      <ContentWithTitle title="사이퍼 소개">
+        <Wrapper isMobile={isMobile}>
+          <InfiniteScroll items={peopleCards} />
+        </Wrapper>
+      </ContentWithTitle>
     </Layout>
   );
 };
