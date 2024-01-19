@@ -11,17 +11,18 @@ export const Title = styled.div`
   color: ${({ theme }) => theme.colors.white};
 `;
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<{ isMobile: boolean }>`
+  display: inline-flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 32px;
-  display: inline-flex;
+  width: 100%;
+  padding: ${({ isMobile }) => (isMobile ? '0 20px' : '0')};
 `;
 
-export const Table = styled.div`
-  align-self: stretch;
-  width: 520px;
+export const Table = styled.div<{ isMobile: boolean }>`
+  width: ${({ isMobile }) => (isMobile ? '100%' : '560px')};
   height: auto;
   padding: 20px;
   border-radius: 12px;
@@ -33,23 +34,17 @@ export const Table = styled.div`
   justify-content: space-between;
   align-items: center;
   display: inline-flex;
+  font-weight: 500;
+  line-height: 19.6px;
 `;
 
 export const Text = styled.div<TableProps>`
   flex: 1 1 0;
   color: white;
   font-size: ${({ isApplicant }) => (isApplicant ? '14px' : '20px')};
-  font-family: Pretendard;
-  font-weight: 500;
-  line-height: 19.6px;
-  word-wrap: break-word;
 `;
 
 export const SubText = styled.div`
   color: #e2e8f0;
   font-size: 14px;
-  font-family: Pretendard;
-  font-weight: 500;
-  line-height: 19.6px;
-  word-wrap: break-word;
 `;

@@ -42,7 +42,6 @@ export const Content = styled.div`
   margin-top: 40px;
   gap: 40px;
   align-items: center;
-  overflow-y: scroll;
 `;
 
 export const MobileContent = styled.div`
@@ -50,16 +49,11 @@ export const MobileContent = styled.div`
   margin-top: 40px;
   margin-bottom: 24px;
   width: 100%;
-  overflow-y: scroll;
+  overflow-x: scroll;
+  padding: 0 20px;
 `;
 
 export const Carousels = styled.div`
-  display: flex;
   gap: 16px;
-  padding: 0 20px;
-  &::after {
-    content: '';
-    width: 1px;
-    flex-shrink: 0;
-  }
+  display: inline-flex;
 `;

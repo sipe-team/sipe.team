@@ -19,6 +19,7 @@ export const Title = styled.div`
   flex-direction: column;
   gap: 8px;
   align-items: center;
+  text-align: center;
 
   div:first-of-type {
     font-size: 48px;
