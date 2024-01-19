@@ -6,7 +6,7 @@ import ContentWithTitle from '@/components/ContentWithTitle';
 const Introduce = () => {
   return (
     <Layout>
-      <ContentWithTitle title="샤이프 소개">
+      <ContentWithTitle title="사이프 소개">
         {introduces.map((card) => (
           <Card key={card.index} {...card} />
         ))}

@@ -1,5 +1,6 @@
 import Badge from '@/components/Badge';
 import * as S from './styled';
+import useDeviceType from '@/hook/useDeviceType';
 
 interface CardProps {
   src: string;
@@ -10,16 +11,19 @@ interface CardProps {
 }
 
 const Card = ({ src, index, badgeText, title, subTitle }: CardProps) => {
+  const { isTablet } = useDeviceType();
   const isOdd = index % 2 !== 0;
   return (
-    <S.Section index={index}>
-      {isOdd ? <S.Image src={src} /> : null}
-      <S.Description>
+    <S.Section index={index} isTablet={isTablet}>
+      {isOdd || (!isOdd && isTablet) ? (
+        <S.Image isTablet={isTablet} src={src} />
+      ) : null}
+      <S.Description isTablet={isTablet}>
         <Badge text={badgeText} />
         <S.Title>{title}</S.Title>
         <S.SubTitle>{subTitle}</S.SubTitle>
       </S.Description>
-      {!isOdd ? <S.Image src={src} /> : null}
+      {!isOdd && !isTablet ? <S.Image isTablet={isTablet} src={src} /> : null}
     </S.Section>
   );
 };
