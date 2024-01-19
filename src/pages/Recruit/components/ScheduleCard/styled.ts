@@ -1,12 +1,9 @@
+import CardWrapper from '@/components/CardWrapper';
 import styled from '@emotion/styled';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled(CardWrapper)`
   height: 100%;
   padding: 32px 20px;
-  background: #1a202c;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px #2d3748 solid;
   flex-direction: column;
   justify-content: center;
   align-items: center;

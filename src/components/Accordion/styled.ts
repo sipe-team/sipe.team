@@ -32,7 +32,7 @@ export const Arrow = styled.div<{ isOpen: boolean }>`
 export const Answer = styled.div`
   margin-top: 24px;
   border-radius: 8px;
-  color: ${({ theme }) => theme.colors.gray5};
+  color: ${({ theme }) => theme.colors.gray8};
   background-color: ${({ theme }) => theme.colors.gray2};
   font-weight: 600;
   padding: 20px 16px;

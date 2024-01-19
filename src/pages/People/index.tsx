@@ -19,6 +19,7 @@ const peopleCards = Array.from({ length: 100 }).map((_, index) => temp(index));
 
 const People = () => {
   const { isMobile } = useDeviceType();
+
   return (
     <Layout>
       <Wrapper isMobile={isMobile}>

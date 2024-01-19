@@ -19,10 +19,5 @@ export default function useTimer(dueDate?: number) {
   const minutes = Math.floor((overallTime - dates * 86400 - hours * 3600) / 60);
   const seconds = overallTime - dates * 86400 - hours * 3600 - minutes * 60;
 
-  // const dates = Math.floor(overallTime / 86400);
-  // const hours = Math.floor(overallTime - dates / 3600);
-  // const minutes = Math.floor((overallTime - hours) / 60);
-  // const seconds = overallTime - minutes;
-
   return { overallTime, dates, hours, minutes, seconds };
 }

@@ -2,12 +2,17 @@ import React from 'react';
 
 import * as S from './styled';
 
-type BoxProps = React.ComponentProps<'div'> & {
+type CardWrapperProps = React.ComponentProps<'div'> & {
   type?: 'BASIC' | 'CONTENT';
   minHeight?: number;
 };
 
-const Box = ({ type = 'BASIC', minHeight, children, className }: BoxProps) => {
+const CardWrapper = ({
+  type = 'BASIC',
+  minHeight,
+  children,
+  className,
+}: CardWrapperProps) => {
   return (
     <S.Wrapper type={type} minHeight={minHeight} className={className}>
       {children}
@@ -15,4 +20,4 @@ const Box = ({ type = 'BASIC', minHeight, children, className }: BoxProps) => {
   );
 };
 
-export default Box;
+export default CardWrapper;

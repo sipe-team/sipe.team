@@ -55,7 +55,7 @@ export const Introduce = styled.section`
   line-height: 20px;
   letter-spacing: -0.002em;
   text-align: left;
-  color: ${({ theme }) => theme.colors.gray5};
+  color: ${({ theme }) => theme.colors.gray8};
   margin-bottom: 20px;
 `;
 
@@ -74,6 +74,6 @@ export const Review = styled.section`
     line-height: 19px;
     letter-spacing: -0.002em;
     text-align: left;
-    color: ${({ theme }) => theme.colors.gray5};
+    color: ${({ theme }) => theme.colors.gray8};
   }
 `;

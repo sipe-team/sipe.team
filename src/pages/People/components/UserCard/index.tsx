@@ -1,7 +1,7 @@
 import { ComponentProps } from 'react';
 
 import { ReactComponent as OrganizerMark } from '@/assets/organizer.svg';
-import Box from '@/components/Box';
+import CardWrapper from '@/components/CardWrapper';
 import Image from '@/components/Image';
 
 import Link from '../../../../components/Link';
@@ -27,7 +27,7 @@ const UserCard = ({
   review = '',
 }: UserCardProps) => {
   return (
-    <Box type="CONTENT" className="people-box" minHeight={270}>
+    <CardWrapper type="CONTENT" className="people-box" minHeight={270}>
       <S.Meta>
         <Image className="profile" alt="user image" src={img} />
         <section className="info">
@@ -54,7 +54,7 @@ const UserCard = ({
         <h3>활동후기</h3>
         <p>{review}</p>
       </S.Review>
-    </Box>
+    </CardWrapper>
   );
 };
 
