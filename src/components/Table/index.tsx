@@ -1,4 +1,4 @@
-import Badge from '../common/Badge';
+import Badge from '../Badge';
 import * as S from './styled';
 import { ReactComponent as Circle } from '@/assets/check_circle.svg';
 

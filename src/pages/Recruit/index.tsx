@@ -1,7 +1,7 @@
 import Faq from '@/components/Faq';
 import Table from '@/components/Table';
 import * as S from './styled';
-import Card from '@/components/common/Card';
+import ScheduleCard from './components/ScheduleCard';
 
 const faqs = [
   {
@@ -85,13 +85,46 @@ const InActivity = [
   },
 ];
 
+const CardList = [
+  {
+    title: '서류 접수',
+    processDate: '02.05(월) ~ 02.16(금)',
+    subTitle: '23:59:59 마감',
+  },
+  {
+    title: '서류 결과 발표',
+    processDate: '02.21(수)',
+    subTitle: '오후 8시 예정',
+  },
+  {
+    title: '오프라인 인터뷰',
+    processDate: '03.01(금) ~ 03.03(일)',
+    subTitle: '서류합격자 개별연락',
+  },
+
+  {
+    title: '최종 합격 발표',
+    processDate: '03.06(수)',
+    subTitle: '오후 8시 예정',
+  },
+  {
+    title: '정규 활동 시작',
+    processDate: '03.16(토)',
+    subTitle: 'OT 진행',
+  },
+];
+
 export default function Recruit() {
   return (
     <S.Wrapper>
       <Table title="지원자격" dataList={Applicants} isApplicant={true} />
       <S.CardWrapper>
         <S.CardTitle>모집 일정</S.CardTitle>
-        <Card />
+        <S.CardList>
+          {CardList.map((card, i) => (
+            <ScheduleCard key={i} {...card} />
+          ))}
+        </S.CardList>
       </S.CardWrapper>
       <Table title="활동안내" dataList={InActivity} isApplicant={false} />
       <Faq faqs={faqs} />

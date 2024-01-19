@@ -2,13 +2,6 @@ import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
   height: 100%;
-  align-items: center;
-  gap: 32px;
-  display: inline-flex;
-`;
-
-export const CardWrapper = styled.div`
-  height: 100%;
   padding: 32px 20px;
   background: #1a202c;
   border-radius: 12px;
@@ -26,7 +19,6 @@ export const Title = styled.div`
   text-align: center;
   color: white;
   font-size: 20px;
-  font-family: Pretendard;
   font-weight: 700;
   line-height: 28px;
   letter-spacing: 0.4px;
@@ -45,7 +37,6 @@ export const HighLightTitle = styled.div`
   text-align: center;
   color: #01ff13;
   font-size: 15px;
-  font-family: Pretendard;
   font-weight: 600;
   line-height: 21px;
   letter-spacing: 0.3px;

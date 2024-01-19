@@ -20,3 +20,10 @@ export const CardTitle = styled.div`
   line-height: 50px;
   color: ${({ theme }) => theme.colors.white};
 `;
+
+export const CardList = styled.div`
+  height: 100%;
+  align-items: center;
+  gap: 32px;
+  display: inline-flex;
+`;

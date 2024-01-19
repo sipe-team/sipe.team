@@ -1,12 +1,12 @@
-import Layout from '@/components/common/Layout';
-import PeopleCard from '@/components/PeopleCard';
+import Layout from '@/components/Layout';
+import UserCard from './components/UserCard';
 import useDeviceType from '@/hook/useDeviceType';
-import { Wrapper } from '@/pages/Peoples/styled';
+import { Wrapper } from '@/pages/People/styled';
 
-import InfiniteScroll from '../../components/common/InfiniteScroll';
+import InfiniteScroll from '../../components/InfiniteScroll';
 
 const temp = (index: number) => (
-  <PeopleCard
+  <UserCard
     name={`${index}`}
     part="FE"
     links={[{ type: 'GITHUB', url: 'github.com/KimHunJin' }]}
@@ -17,7 +17,7 @@ const temp = (index: number) => (
 
 const peopleCards = Array.from({ length: 100 }).map((_, index) => temp(index));
 
-const Peoples = () => {
+const People = () => {
   const { isMobile } = useDeviceType();
   return (
     <Layout>
@@ -28,4 +28,4 @@ const Peoples = () => {
   );
 };
 
-export default Peoples;
+export default People;

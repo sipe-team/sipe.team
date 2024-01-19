@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRef } from 'react';
 
-import { useInfiniteScroll } from '@/components/common/InfiniteScroll/hooks/useInfiniteScroll';
+import { useInfiniteScroll } from '@/components/InfiniteScroll/hooks/useInfiniteScroll';
 
 import * as S from './styled';
 

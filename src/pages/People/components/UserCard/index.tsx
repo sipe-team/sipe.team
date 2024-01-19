@@ -1,13 +1,13 @@
 import { ComponentProps } from 'react';
 
 import { ReactComponent as OrganizerMark } from '@/assets/organizer.svg';
-import Box from '@/components/common/Box';
-import Image from '@/components/common/Image';
+import Box from '@/components/Box';
+import Image from '@/components/Image';
 
-import Link from '../Link';
+import Link from '../../../../components/Link';
 import * as S from './styled';
 
-type PeopleCardProps = ComponentProps<'div'> & {
+type UserCardProps = ComponentProps<'div'> & {
   img?: string;
   name: string;
   links?: { type: 'GITHUB' | 'LINKEDIN' | 'LINK'; url: string }[];
@@ -17,7 +17,7 @@ type PeopleCardProps = ComponentProps<'div'> & {
   review?: string;
 };
 
-const PeopleCard = ({
+const UserCard = ({
   img,
   name,
   links = [],
@@ -25,7 +25,7 @@ const PeopleCard = ({
   isOrganizer = false,
   introduce = '',
   review = '',
-}: PeopleCardProps) => {
+}: UserCardProps) => {
   return (
     <Box type="CONTENT" className="people-box" minHeight={270}>
       <S.Meta>
@@ -58,4 +58,4 @@ const PeopleCard = ({
   );
 };
 
-export default PeopleCard;
+export default UserCard;
