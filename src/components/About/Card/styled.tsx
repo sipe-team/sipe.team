@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
 
 interface SectionProps {
-  index: number;
+  index?: number;
+  isTablet: boolean;
 }
 
 export const Section = styled.div<SectionProps>`
@@ -9,19 +10,21 @@ export const Section = styled.div<SectionProps>`
   display: flex;
   flex: 1 1;
   padding: 8px 16px;
+  flex-direction: ${({ isTablet }) => (isTablet ? 'column' : '')};
   justify-content: flex-start;
   align-items: flex-start;
   gap: 24px;
-  margin-bottom: ${({ index }) => (index !== 3 ? '120px' : '0px')};
+  margin-bottom: ${({ index, isTablet }) =>
+    index === 3 ? '0px' : isTablet ? '60px' : '120px'};
 `;
 
-export const Image = styled.img`
+export const Image = styled.img<SectionProps>`
   width: 100%;
   height: 270px;
   border-radius: 12px;
 `;
 
-export const Description = styled.div`
+export const Description = styled.div<SectionProps>`
   padding: 8px 16px;
   flex-direction: column;
   justify-content: flex-start;
@@ -29,6 +32,7 @@ export const Description = styled.div`
   gap: 24px;
   width: auto;
   height: 270px;
+  margin-top: ${({ isTablet }) => (isTablet ? '24px' : '0px')};
   display: inline-flex;
   box-shadow: '0px 4px 4px rgba(0, 0, 0, 0.25)';
   border: '1px black solid';
