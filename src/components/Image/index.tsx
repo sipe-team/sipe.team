@@ -9,7 +9,7 @@ type ImageProps = React.DetailedHTMLProps<
 
 const Image = ({ src, alt, className }: ImageProps) => {
   if (!src) {
-    return <BaseImage />;
+    return <BaseImage className={className} />;
   }
   return <img src={src} alt={alt} className={className} />;
 };

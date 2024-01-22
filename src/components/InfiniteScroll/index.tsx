@@ -9,12 +9,16 @@ type InfiniteScrollProps = React.ComponentProps<'div'> & {
   items: React.ReactNode[];
 };
 
-const InfiniteScroll = ({ items, children }: InfiniteScrollProps) => {
+const InfiniteScroll = ({
+  items,
+  children,
+  className,
+}: InfiniteScrollProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { elements, isEnd } = useInfiniteScroll(containerRef, items);
 
   return (
-    <S.Wrapper>
+    <S.Wrapper className={className}>
       {elements.map((element, index) => (
         <React.Fragment key={index}>{element}</React.Fragment>
       ))}
