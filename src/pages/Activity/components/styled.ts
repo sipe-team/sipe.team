@@ -10,8 +10,8 @@ export const Wrapper = styled.section<{ isMobile: boolean }>`
   }
 `;
 
-export const ContentsWrapper = styled.article`
-  margin-left: 24px;
+export const ContentsWrapper = styled.article<{ isMobile: boolean }>`
+  margin-left: ${({ isMobile }) => (isMobile ? '0px' : '24px')};
   padding: 16px;
   display: flex;
   flex-direction: column;
