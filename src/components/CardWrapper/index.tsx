@@ -11,10 +11,10 @@ const CardWrapper = ({
   type = 'BASIC',
   minHeight,
   children,
-  className,
+  ...props
 }: CardWrapperProps) => {
   return (
-    <S.Wrapper type={type} minHeight={minHeight} className={className}>
+    <S.Wrapper type={type} minHeight={minHeight} {...props}>
       {children}
     </S.Wrapper>
   );
