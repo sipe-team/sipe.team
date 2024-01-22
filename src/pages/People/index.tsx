@@ -25,7 +25,7 @@ const People = () => {
     <Layout>
       <ContentWithTitle title="사이퍼 소개">
         <Wrapper isMobile={isMobile}>
-          <InfiniteScroll items={peopleCards} />
+          <InfiniteScroll items={peopleCards} className="contents" />
         </Wrapper>
       </ContentWithTitle>
     </Layout>
