@@ -100,6 +100,39 @@ const styles = (theme: Theme) => css`
     left: 0;
     bottom: 0;
   }
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    object-fit: cover;
+    scale: 0.5;
+  }
+
+  /* todo: 공통으로 처리하는걸로 대체 */
+  .swiper-pagination {
+    @media (min-width: 1100px) {
+      display: none;
+    }
+  }
+
+  .swiper-slide-active {
+    scale: 1.5;
+    z-index: 99;
+  }
 `;
 
 const GlobalStyle: React.FC = () => (

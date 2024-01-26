@@ -1,9 +1,13 @@
 import * as S from './styled';
-import { Carousel } from 'react-responsive-carousel';
 import Button from '../../../../components/Button';
 import { useState } from 'react';
 import { activities } from '../../data';
 import ContentWithTitle from '@/components/ContentWithTitle';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 const Activity = () => {
   const [selectChip, setSelectChip] = useState<string>('mission');
@@ -24,21 +28,37 @@ const Activity = () => {
           </Button>
         ))}
       </S.Menus>
-      <Carousel
-        centerMode={true}
-        showIndicators={false}
-        centerSlidePercentage={30}
-        interval={1200}
-        showThumbs={false}
-        showArrows={false}
-        showStatus={false}
-        autoPlay
-        infiniteLoop={true}
+      <Swiper
+        loop={true}
+        centeredSlides={true}
+        slidesPerView={1}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        breakpoints={{
+          1100: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+        }}
+        modules={[Pagination, Autoplay]}
       >
         {carouselData.map((data) => (
-          <S.Image src={data.src} />
+          <SwiperSlide>
+            <S.Image src={data.src} />
+          </SwiperSlide>
         ))}
-      </Carousel>
+        {carouselData.map((data) => (
+          <SwiperSlide>
+            <S.Image src={data.src} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
       <S.Description>
         <S.DescriptionTitle>2번의 정규 미션 진행</S.DescriptionTitle>
         <S.DescriptionSubTitle>
