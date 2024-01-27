@@ -86,7 +86,7 @@ function getGoogleSheet() {
                     activities: activityMap,
                 }
 
-                fs.writeFile('content/index.json', JSON.stringify(json), { flag: 'w+' }, function (err) {
+                fs.writeFile('src/db/index.json', JSON.stringify(json), { flag: 'w+' }, function (err) {
                     if (err) return console.error(err);
                 });
 

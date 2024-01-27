@@ -1,22 +1,47 @@
+import ContentWithTitle from '@/components/ContentWithTitle';
 import Layout from '@/components/Layout';
-import UserCard from './components/UserCard';
 import useDeviceType from '@/hook/useDeviceType';
 import { Wrapper } from '@/pages/People/styled';
 
 import InfiniteScroll from '../../components/InfiniteScroll';
-import ContentWithTitle from '@/components/ContentWithTitle';
+import UserCard from './components/UserCard';
+import * as db from '../../db/index.json';
 
-const temp = (index: number) => (
-  <UserCard
-    name={`${index}`}
-    part="FE"
-    links={[{ type: 'GITHUB', url: 'github.com/KimHunJin' }]}
-    introduce="자기소개는 24자 이내, 1줄까지 자기소개는 24자 이내, 1줄까지"
-    review="활동 후기는 80자, 3줄까지 활동 후기는 80자, 3줄까지 활동 후기는 80자, 3줄까지 활동 후기는 80자, 3줄까지 활동 후기는 80자, 3줄까지 활동 후기는 80자, 3줄까지 활동 후기는 80자, 3줄까지 활동 후기는 80자, 3줄까지 활동 후기는 80자, 3줄까지"
-  />
-);
+const peopleCards = db.peoples.map((people, index) => {
+  const links: { type: 'GITHUB' | 'LINKEDIN' | 'LINK'; url: string }[] = [];
+  if (people.github) {
+    links.push({
+      type: 'GITHUB',
+      url: people.github,
+    });
+  }
 
-const peopleCards = Array.from({ length: 100 }).map((_, index) => temp(index));
+  if (people.linkedin) {
+    links.push({
+      type: 'LINKEDIN',
+      url: people.linkedin,
+    });
+  }
+
+  if (people.etc) {
+    links.push({
+      type: 'LINK',
+      url: people.etc,
+    });
+  }
+
+  return (
+    <UserCard
+      key={people.id}
+      img={people.thumbnail}
+      name={people.name}
+      part={people.part}
+      links={links}
+      introduce={people.introduce}
+      review={people.review}
+    />
+  );
+});
 
 const People = () => {
   const { isMobile } = useDeviceType();
