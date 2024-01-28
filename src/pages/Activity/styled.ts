@@ -5,5 +5,11 @@ export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: 32px;
+
+    .card {
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
 `;
