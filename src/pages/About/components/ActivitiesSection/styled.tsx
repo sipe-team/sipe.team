@@ -45,4 +45,5 @@ export const Menus = styled.div`
 export const Image = styled.img`
   width: 480px;
   height: 270px;
+  border-radius: 12px;
 `;

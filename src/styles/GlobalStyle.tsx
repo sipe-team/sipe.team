@@ -109,7 +109,6 @@ const styles = (theme: Theme) => css`
   .swiper-slide {
     text-align: center;
     font-size: 18px;
-
     /* Center slide text vertically */
     display: flex;
     justify-content: center;
