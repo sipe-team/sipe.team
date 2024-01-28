@@ -31,7 +31,8 @@ export const Meta = styled.section`
       color: ${({ theme }) => theme.colors.white};
     }
     .links {
-      display: inline-block;
+      display: flex;
+      gap: 12px;
     }
   }
 
@@ -45,6 +46,16 @@ export const Meta = styled.section`
       letter-spacing: -0.002em;
       text-align: left;
       color: ${({ theme }) => theme.colors.gray6};
+    }
+    .organizer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: ${({ theme }) => theme.colors.green};
+    }
+
+    .organizer-mark {
+      margin-left: 4px;
     }
   }
 `;
