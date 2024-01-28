@@ -39,7 +39,7 @@ const peopleCards = db.peoples.map((people, index) => {
       links={links}
       introduce={people.introduce}
       review={people.review}
-      isOrganizer
+      isOrganizer={people.isOrganizer}
     />
   );
 });
