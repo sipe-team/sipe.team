@@ -13,6 +13,9 @@ export const Wrapper = styled.div<{ isDesktop: boolean }>`
   font-size: ${({ isDesktop }) => (isDesktop ? '17px' : '14px')};
   line-height: ${({ isDesktop }) => (isDesktop ? '24px' : '20px')};
   color: ${({ theme }) => theme.colors.white};
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const Question = styled.div<{ isDesktop: boolean }>`
@@ -27,7 +30,7 @@ export const Question = styled.div<{ isDesktop: boolean }>`
 
 export const Arrow = styled.div<{ isOpen: boolean; isDesktop: boolean }>`
   cursor: pointer;
-  rotate: ${({ isOpen }) => (isOpen ? '180deg' : '0deg')};
+  rotate: ${({ isOpen }) => (isOpen ? '0deg' : '180deg')};
   width: ${({ isDesktop }) => (isDesktop ? '48px' : '36px')};
   height: ${({ isDesktop }) => (isDesktop ? '48px' : '36px')};
   svg {
