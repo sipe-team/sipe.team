@@ -5,11 +5,17 @@ export const Meta = styled.section`
   height: 70px;
   margin-bottom: 20px;
 
+  .profile-bg {
+    min-width: 70px;
+    min-height: 70px;
+  }
+
   .profile {
     display: inline-block;
-    width: 70px;
-    height: 70px;
+    width: 100%;
+    height: 100%;
     border-radius: 4px;
+    background-size: contain;
   }
 
   .info {
