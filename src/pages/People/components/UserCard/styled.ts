@@ -9,6 +9,7 @@ export const Meta = styled.section`
     min-width: 70px;
     min-height: 70px;
     background-color: #2d3748;
+    border-radius: 4px;
   }
 
   .profile {
