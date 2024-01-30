@@ -2,6 +2,9 @@ const { GoogleSpreadsheet } = require("google-spreadsheet");
 const fs = require("fs");
 require('dotenv').config()
 
+function isEmpty(data) {
+    return data === '' || data.length === 0
+}
 
 function getGoogleSheet() {
     // Initialize the sheet - doc ID is the long id in the sheets URL
@@ -22,21 +25,26 @@ function getGoogleSheet() {
                     private_key: key,
                 });
                 await doc.loadInfo()
+                const config = doc.sheetsByTitle['Config'];
                 const peoples = doc.sheetsByTitle['People']; // or use doc.sheetsById[id] or doc.sheetsByTitle[title]
                 const activities = doc.sheetsByTitle['Activity'];
 
                 const peoplesRow = await peoples.getRows();
                 const activitiesRow = await activities.getRows();
+                const configRow = await config.getRows();
 
                 const peopleMap = [];
                 const activityMap = [];
+
+                const driveData = configRow.find(it => it._rowNumber === 3)['_rawData'];
+                const imageBaseUrl = driveData[1].trim();
 
                 peoplesRow.forEach(it => {
                     const row = it['_rawData'];
                     const key = row[0];
                     const period = row[1];
                     const isOrganizer = row[2] === 'TRUE';
-                    const thumbnail = row[3];
+                    const thumbnail = isEmpty(row[3]) ? '' : imageBaseUrl + row[3] + '&export=view';
                     const name = row[4];
                     const part = row[5];
                     const introduce = row[6];
