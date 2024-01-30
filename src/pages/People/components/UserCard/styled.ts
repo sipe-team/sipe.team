@@ -8,6 +8,7 @@ export const Meta = styled.section`
   .profile-bg {
     min-width: 70px;
     min-height: 70px;
+    background-color: #2d3748;
   }
 
   .profile {
