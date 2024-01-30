@@ -35,17 +35,19 @@ function getGoogleSheet() {
                     const row = it['_rawData'];
                     const key = row[0];
                     const period = row[1];
-                    const thumbnail = row[2];
-                    const name = row[3];
-                    const part = row[4];
-                    const introduce = row[5];
-                    const review = row[6];
-                    const github = row[7];
-                    const linkedin = row[8];
-                    const etc = row[9];
+                    const isOrganizer = row[2] === 'TRUE';
+                    const thumbnail = row[3];
+                    const name = row[4];
+                    const part = row[5];
+                    const introduce = row[6];
+                    const review = row[7];
+                    const github = row[8];
+                    const linkedin = row[9];
+                    const etc = row[10];
                     peopleMap.push({
                         id: key,
                         period: period,
+                        isOrganizer: isOrganizer,
                         thumbnail: thumbnail,
                         name: name,
                         part: part,
