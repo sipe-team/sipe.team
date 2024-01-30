@@ -1,14 +1,15 @@
+import { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+
 import { ReactComponent as Logo } from '@/assets/logo.svg';
 import { ReactComponent as Menu } from '@/assets/menu.svg';
 import { ReactComponent as MenuClose } from '@/assets/menu_close.svg';
 import useDeviceType from '@/hook/useDeviceType';
-import { useNavigate, useLocation } from 'react-router-dom';
 
-import * as S from './styled';
 import Button from '../Button';
 import { ApplyButton } from '../Button/styled';
-import { useState } from 'react';
 import Layout from '../Layout';
+import * as S from './styled';
 
 const menus = [
   { name: 'About', path: '/about' },
@@ -28,6 +29,7 @@ export default function Navigation() {
   const handleNavigate = (path: string) => {
     setIsMobileMenuOpen(false);
     navigate(path);
+    scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (

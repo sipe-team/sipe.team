@@ -27,6 +27,10 @@ const LinkIcon = styled.a`
   display: inline-block;
   width: 24px;
   height: 24px;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export default Link;

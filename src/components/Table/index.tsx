@@ -1,6 +1,5 @@
 import useDeviceType from '@/hook/useDeviceType';
 import Badge from '../Badge';
-import Layout from '../Layout';
 import * as S from './styled';
 import { ReactComponent as Circle } from '@/assets/check_circle.svg';
 
@@ -17,7 +16,6 @@ interface DataListProps {
 
 const Table = ({ dataList, isApplicant }: TableProps) => {
   const { isMobile } = useDeviceType();
-  console.log(isMobile);
 
   return (
     <S.Wrapper isMobile={isMobile}>

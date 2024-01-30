@@ -42,8 +42,8 @@ const UserCard = ({
           <section className="sub-info">
             <p className="part">{part}</p>
             {isOrganizer && (
-              <p>
-                Organizer <OrganizerMark />
+              <p className="organizer">
+                Organizer <OrganizerMark className="organizer-mark" />
               </p>
             )}
           </section>

@@ -12,8 +12,8 @@ export default function Faq({ faqs }: FaqProps) {
     <Layout>
       <ContentWithTitle title="자주 묻는 질문">
         <S.Faqs>
-          {faqs.map((faq) => (
-            <Accordion q={faq.q} a={faq.a} />
+          {faqs.map((faq, index) => (
+            <Accordion key={index} q={faq.q} a={faq.a} />
           ))}
         </S.Faqs>
       </ContentWithTitle>

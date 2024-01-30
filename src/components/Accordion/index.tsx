@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import * as S from './styled';
+
 import { ReactComponent as Arrow } from '@/assets/accordion_arrow.svg';
 import useDeviceType from '@/hook/useDeviceType';
+
+import * as S from './styled';
 
 export type AccordionProps = {
   q: string;
@@ -13,14 +15,10 @@ export default function Accordion({ q, a }: AccordionProps) {
   const { isDesktop } = useDeviceType();
 
   return (
-    <S.Wrapper isDesktop={isDesktop}>
+    <S.Wrapper isDesktop={isDesktop} onClick={() => setIsOpen((v) => !v)}>
       <S.Question isDesktop={isDesktop}>
         {q}
-        <S.Arrow
-          isOpen={isOpen}
-          onClick={() => setIsOpen((v) => !v)}
-          isDesktop={isDesktop}
-        >
+        <S.Arrow isOpen={isOpen} isDesktop={isDesktop}>
           <Arrow />
         </S.Arrow>
       </S.Question>
