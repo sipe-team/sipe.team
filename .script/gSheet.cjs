@@ -44,7 +44,7 @@ function getGoogleSheet() {
                     const key = row[0];
                     const period = row[1];
                     const isOrganizer = row[2] === 'TRUE';
-                    const thumbnail = isEmpty(row[3]) ? '' : imageBaseUrl + row[3] + '&export=view';
+                    const thumbnail = isEmpty(row[3]) ? '' : imageBaseUrl + row[3];
                     const name = row[4];
                     const part = row[5];
                     const introduce = row[6];
