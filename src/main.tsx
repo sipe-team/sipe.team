@@ -3,10 +3,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import {
-  createBrowserRouter,
-  Outlet,
-  RouterProvider,
-  useLocation,
+    createBrowserRouter, createHashRouter,
+    Outlet,
+    RouterProvider,
+    useLocation,
 } from 'react-router-dom';
 
 import Footer from './components/Footer';
@@ -40,7 +40,7 @@ const Layout = () => {
   );
 };
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     element: <Layout />,
     children: [
