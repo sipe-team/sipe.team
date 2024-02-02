@@ -24,7 +24,6 @@ export const DescriptionTitle = styled.div`
 `;
 
 export const DescriptionSubTitle = styled.div`
-  width: 640px;
   align-self: stretch;
   text-align: center;
   color: #e2e8f0;
@@ -35,11 +34,24 @@ export const DescriptionSubTitle = styled.div`
   word-wrap: break-word;
 `;
 
-export const Menus = styled.div`
+export const Menus = styled.div<{ isMobile: boolean }>`
   display: flex;
-  justify-content: center;
+  justify-content: ${({ isMobile }) => (isMobile ? 'start' : 'center')};
   gap: 16px;
   margin-bottom: 40px;
+  overflow: scroll;
+  width: 100%;
+
+  .activity-button {
+    min-width: 85px;
+    padding: 0 24px;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: -0.002em;
+    text-align: center;
+  }
 `;
 
 export const Image = styled.img`

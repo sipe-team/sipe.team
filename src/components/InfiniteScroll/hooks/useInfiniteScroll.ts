@@ -1,4 +1,5 @@
 import { RefObject, useEffect, useState } from 'react';
+import { off } from 'react-use/lib/misc/util';
 
 import { getIntersectionObserver } from '@/libs/observers/getIntersectionObserver';
 
@@ -13,22 +14,29 @@ const nextPage = (page: number, lastPage: number) => {
 
 export const useInfiniteScroll = (
   target: RefObject<any>,
-  items: React.ReactNode[],
+  items: Array<unknown>,
   options?: {
     offest: number;
   }
 ) => {
   const offset = options?.offest || DEFAULT_OFFSET;
-  const lastPage = items.length / offset;
+
+  const [lastPage, setLastPage] = useState(items.length / offset);
   const pageInfo = {
     page: 0,
     lastPage: lastPage + 1,
   };
 
+  useEffect(() => {
+    setLastPage(items.length / offset);
+    pageInfo.page = 0;
+    pageInfo.lastPage = lastPage + 1;
+  }, [items]);
+
   const [loading, setLoading] = useState(false);
   const [isEnd, setIsEnd] = useState(false);
   const [page, setPage] = useState(0);
-  const [elements, setElements] = useState<React.ReactNode[]>([]);
+  const [elements, setElements] = useState<Array<unknown>>([]);
 
   const changeNextPage = () => {
     const next = nextPage(pageInfo.page, pageInfo.lastPage);
@@ -55,15 +63,9 @@ export const useInfiniteScroll = (
 
   useEffect(() => {
     setLoading(true);
-    setElements([
-      ...elements,
-      ...items.slice(
-        page * DEFAULT_OFFSET,
-        page * DEFAULT_OFFSET + DEFAULT_OFFSET
-      ),
-    ]);
+    setElements(items.slice(0, offset * page));
     setLoading(false);
-  }, [page]);
+  }, [items, page]);
 
   useEffect(() => {
     if (observer) {

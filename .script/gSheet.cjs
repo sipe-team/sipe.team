@@ -28,16 +28,25 @@ function getGoogleSheet() {
                 const config = doc.sheetsByTitle['Config'];
                 const peoples = doc.sheetsByTitle['People']; // or use doc.sheetsById[id] or doc.sheetsByTitle[title]
                 const activities = doc.sheetsByTitle['Activity'];
+                const aboutActivity = doc.sheetsByTitle['About-Activity']
+                const aboutSponsor = doc.sheetsByTitle['About-Sponsor']
 
                 const peoplesRow = await peoples.getRows();
                 const activitiesRow = await activities.getRows();
+                const aboutActivityRow = await aboutActivity.getRows();
+                const aboutSponsorRow = await aboutSponsor.getRows()
+
                 const configRow = await config.getRows();
 
-                const peopleMap = [];
-                const activityMap = [];
-
                 const driveData = configRow.find(it => it._rowNumber === 3)['_rawData'];
+                const periods = configRow.find(it => it._rowNumber === 2)['_rawData'].slice(1);
+                const activitiesType = configRow.find(it => it._rowNumber === 4)['_rawData'].slice(1)
                 const imageBaseUrl = driveData[1].trim();
+
+                const periodsMap = {}
+                periods.forEach(period => {
+                    periodsMap[period] = []
+                })
 
                 peoplesRow.forEach(it => {
                     const row = it['_rawData'];
@@ -52,7 +61,7 @@ function getGoogleSheet() {
                     const github = row[8];
                     const linkedin = row[9];
                     const etc = row[10];
-                    peopleMap.push({
+                    periodsMap[period].push({
                         id: key,
                         period: period,
                         isOrganizer: isOrganizer,
@@ -67,6 +76,11 @@ function getGoogleSheet() {
                     })
                 })
 
+                const activityMap = {}
+                activitiesType.forEach((activity) => {
+                    activityMap[activity] = []
+                })
+
                 activitiesRow.forEach(it => {
                     const row = it['_rawData'];
                     const key = row[0];
@@ -78,22 +92,52 @@ function getGoogleSheet() {
                     const date = row[6];
                     const link = row[7];
 
-                    activityMap.push({
+                    activityMap[type].push({
                         id: key,
-                        type: type,
-                        thumbnail: thumbnail,
-                        title: title,
-                        description: description,
-                        name: name,
-                        date: date,
-                        link: link,
+                        type: type || 'B',
+                        thumbnail: thumbnail || '',
+                        title: title || '',
+                        description: description || '',
+                        name: name || '',
+                        date: date || '',
+                        link: link || '',
                     })
                 });
 
+                const aboutMap = {
+                    activity: {},
+                    sponsor: {}
+                }
+
+                aboutActivityRow.forEach(it => {
+                    const row = it['_rawData']
+                    const key = row[0];
+                    const name = row[1];
+                    const activities = row[2]?.split(',') || []
+                    aboutMap.activity[key] = {
+                        key,
+                        name,
+                        activities
+                    }
+                })
+
+                aboutSponsorRow.forEach(it => {
+                    const row = it['_rawData']
+                    const key = row[0];
+                    const name = row[1] || '';
+                    const link = row[2] || '';
+                    aboutMap.sponsor[key] = {
+                        key,
+                        name,
+                        link
+                    }
+                })
+
 
                 const json = {
-                    peoples: peopleMap,
+                    peoples: periodsMap,
                     activities: activityMap,
+                    abouts: aboutMap
                 }
 
                 fs.writeFile('src/db/index.json', JSON.stringify(json), { flag: 'w+' }, function (err) {

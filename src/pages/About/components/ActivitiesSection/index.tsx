@@ -1,26 +1,56 @@
-import * as S from './styled';
-import Button from '../../../../components/Button';
-import { useState } from 'react';
-import { activities } from '../../data';
-import ContentWithTitle from '@/components/ContentWithTitle';
-
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-const Activity = () => {
-  const [selectChip, setSelectChip] = useState<string>('mission');
+import { useEffect, useState } from 'react';
+import { Autoplay, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-  const { chips, carouselData } = activities;
+import ContentWithTitle from '@/components/ContentWithTitle';
+import useDeviceType from '@/hook/useDeviceType';
+
+import Button from '../../../../components/Button';
+import * as S from './styled';
+import * as db from '@/db/index.json';
+
+const aboutActivity = db.abouts.activity;
+
+const aboutActivityNames = Object.keys(aboutActivity).map((key) => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  const activity = aboutActivity[key];
+  return {
+    name: activity.name,
+    value: activity.key,
+  };
+});
+
+const Activity = () => {
+  const [selectChip, setSelectChip] = useState<string>(
+    aboutActivityNames[0].value
+  );
+
+  const [carouselData, setCarouselData] = useState(
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    aboutActivity[selectChip].activities
+  );
+
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    setCarouselData(aboutActivity[selectChip].activities);
+  }, [selectChip]);
+
+  const { isMobile } = useDeviceType();
 
   return (
     <ContentWithTitle title="주요 활동">
-      <S.Menus>
-        {chips.map((chip) => (
+      <S.Menus isMobile={isMobile}>
+        {aboutActivityNames.map((chip) => (
           <Button
+            className="activity-button"
             key={chip.name}
-            type="chip"
+            buttonType="chip"
             onClick={() => setSelectChip(chip.value)}
             selected={chip.value === selectChip}
           >
@@ -47,16 +77,24 @@ const Activity = () => {
         }}
         modules={[Pagination, Autoplay]}
       >
-        {carouselData.map((data) => (
-          <SwiperSlide>
-            <S.Image src={data.src} />
-          </SwiperSlide>
-        ))}
-        {carouselData.map((data) => (
-          <SwiperSlide>
-            <S.Image src={data.src} />
-          </SwiperSlide>
-        ))}
+        {
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
+          carouselData?.map((data) => (
+            <SwiperSlide>
+              <S.Image src={data} />
+            </SwiperSlide>
+          ))
+        }
+        {
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
+          carouselData?.map((data) => (
+            <SwiperSlide>
+              <S.Image src={data} />
+            </SwiperSlide>
+          ))
+        }
       </Swiper>
 
       <S.Description>

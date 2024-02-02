@@ -29,7 +29,9 @@ const UserCard = ({
   return (
     <CardWrapper type="CONTENT" className="people-box" minHeight={270}>
       <S.Meta>
-        <Image className="profile" alt="user image" src={img} />
+        <section className="profile-bg">
+          <Image className="profile" alt="user image" src={img} />
+        </section>
         <section className="info">
           <section className="main-info">
             <h3 className="name">{name}</h3>

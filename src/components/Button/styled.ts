@@ -78,4 +78,11 @@ export const ChipButton = styled(Common)<{ selected: boolean }>`
   line-height: 19.6px;
   padding: 24px;
   border-radius: 100px;
+
+  :hover {
+    background-color: ${({ theme, selected }) =>
+      selected ? theme.colors.green : theme.colors.gray2};
+    color: ${({ theme, selected }) =>
+      selected ? theme.colors.black : theme.colors.white};
+  }
 `;

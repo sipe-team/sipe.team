@@ -1,10 +1,10 @@
 import { ReactComponent as UserIcon } from '@/assets/ico_user.svg';
 import CardWrapper from '@/components/CardWrapper';
 import Image from '@/components/Image';
+import useDeviceType from '@/hook/useDeviceType';
 import { StyledH5 } from '@/styles/common';
 
 import * as S from './styled';
-import useDeviceType from "@/hook/useDeviceType";
 
 type ActiveCardProps = React.ComponentProps<'div'> & {
   thumbnail?: string;

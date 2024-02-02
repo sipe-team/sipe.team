@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 
+import Image from '@/components/Image';
+
 interface ImageProps {
   isMobile: boolean;
   isTablet: boolean;
@@ -22,10 +24,10 @@ export const ImageList = styled.div<ImageProps>`
       : 'repeat(3, 1fr)'};
 `;
 
-export const Image = styled.img`
+export const SponsorImage = styled(Image)`
   width: 320px;
   height: 180px;
   position: relative;
-  background: linear-gradient(0deg, white 0%, white 100%);
+  background-color: #2d3748;
   border-radius: 12px;
 `;

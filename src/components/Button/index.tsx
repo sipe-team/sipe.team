@@ -1,31 +1,32 @@
+import React from 'react';
+
 import useDeviceType from '@/hook/useDeviceType';
+
 import * as S from './styled';
 
-type ButtonProps = {
-  children: React.ReactNode;
-  disabled?: boolean;
+type ButtonProps = React.ComponentProps<'button'> & {
   selected?: boolean;
-  type: 'home' | 'menu' | 'apply' | 'chip';
-  color?: 'green' | 'black';
-  onClick?: () => void;
+  buttonType: 'home' | 'menu' | 'apply' | 'chip';
+  buttonColor?: 'black' | 'green';
 };
 
 export default function Button({
   children,
   disabled,
   selected = false,
-  type,
-  color = 'black',
+  buttonType,
+  buttonColor = 'black',
   onClick,
+  ...props
 }: ButtonProps) {
   const { isMobile, isDesktop } = useDeviceType();
 
-  switch (type) {
+  switch (buttonType) {
     case 'home':
       return (
         <S.HomeButton
           disabled={disabled}
-          color={color}
+          color={buttonColor}
           onClick={onClick}
           isMobile={isMobile}
         >
@@ -50,7 +51,7 @@ export default function Button({
       );
     case 'chip':
       return (
-        <S.ChipButton onClick={onClick} selected={selected}>
+        <S.ChipButton onClick={onClick} selected={selected} {...props}>
           {children}
         </S.ChipButton>
       );
