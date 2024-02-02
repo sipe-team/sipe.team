@@ -32,8 +32,9 @@ export const Table = styled.div<{ isMobile: boolean }>`
   overflow: hidden;
   border: 1px #2d3748 solid;
   justify-content: space-between;
-  align-items: center;
+  align-items: ${({ isMobile }) => (isMobile ? 'start' : 'center')};
   display: inline-flex;
+  flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'row')};
   font-weight: 500;
   line-height: 19.6px;
 `;

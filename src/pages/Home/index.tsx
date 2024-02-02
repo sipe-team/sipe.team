@@ -53,7 +53,7 @@ export default function Home() {
               ) : (
                 <Timer dueDate={DUE_DATE.getTime()} />
               )}
-              <Button type="home" color="green">
+              <Button buttonType="home" buttonColor="green">
                 {isFinished ? '3기 모집 알림 신청' : '2기 모집 신청'}
               </Button>
             </S.Content>
@@ -73,7 +73,7 @@ export default function Home() {
               )}
             </S.MobileContent>
             <Layout>
-              <Button type="home" color="green">
+              <Button buttonType="home" buttonColor="green">
                 {isFinished ? '3기 모집 알림 신청' : '2기 모집 신청'}
               </Button>
             </Layout>

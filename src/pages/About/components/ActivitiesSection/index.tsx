@@ -1,26 +1,32 @@
-import * as S from './styled';
-import Button from '../../../../components/Button';
-import { useState } from 'react';
-import { activities } from '../../data';
-import ContentWithTitle from '@/components/ContentWithTitle';
-
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+
+import { useState } from 'react';
+import { Autoplay, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import ContentWithTitle from '@/components/ContentWithTitle';
+import useDeviceType from '@/hook/useDeviceType';
+
+import Button from '../../../../components/Button';
+import { activities } from '../../data';
+import * as S from './styled';
 
 const Activity = () => {
   const [selectChip, setSelectChip] = useState<string>('mission');
 
   const { chips, carouselData } = activities;
 
+  const { isMobile } = useDeviceType();
+
   return (
     <ContentWithTitle title="주요 활동">
-      <S.Menus>
+      <S.Menus isMobile={isMobile}>
         {chips.map((chip) => (
           <Button
+            className="activity-button"
             key={chip.name}
-            type="chip"
+            buttonType="chip"
             onClick={() => setSelectChip(chip.value)}
             selected={chip.value === selectChip}
           >

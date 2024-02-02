@@ -48,7 +48,7 @@ export default function Navigation() {
                 {menus.map((menu) => (
                   <Button
                     key={menu.name}
-                    type="menu"
+                    buttonType="menu"
                     selected={menu.path === location.pathname}
                     onClick={() => handleNavigate(menu.path)}
                   >
@@ -75,7 +75,7 @@ export default function Navigation() {
             {menus.map((menu) => (
               <Button
                 key={menu.name}
-                type="menu"
+                buttonType="menu"
                 selected={menu.path === location.pathname}
                 onClick={() => handleNavigate(menu.path)}
               >
