@@ -1,7 +1,7 @@
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -9,20 +9,44 @@ import ContentWithTitle from '@/components/ContentWithTitle';
 import useDeviceType from '@/hook/useDeviceType';
 
 import Button from '../../../../components/Button';
-import { activities } from '../../data';
 import * as S from './styled';
+import * as db from '@/db/index.json';
+
+const aboutActivity = db.abouts.activity;
+
+const aboutActivityNames = Object.keys(aboutActivity).map((key) => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  const activity = aboutActivity[key];
+  return {
+    name: activity.name,
+    value: activity.key,
+  };
+});
 
 const Activity = () => {
-  const [selectChip, setSelectChip] = useState<string>('mission');
+  const [selectChip, setSelectChip] = useState<string>(
+    aboutActivityNames[0].value
+  );
 
-  const { chips, carouselData } = activities;
+  const [carouselData, setCarouselData] = useState(
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    aboutActivity[selectChip].activities
+  );
+
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    setCarouselData(aboutActivity[selectChip].activities);
+  }, [selectChip]);
 
   const { isMobile } = useDeviceType();
 
   return (
     <ContentWithTitle title="주요 활동">
       <S.Menus isMobile={isMobile}>
-        {chips.map((chip) => (
+        {aboutActivityNames.map((chip) => (
           <Button
             className="activity-button"
             key={chip.name}
@@ -53,16 +77,24 @@ const Activity = () => {
         }}
         modules={[Pagination, Autoplay]}
       >
-        {carouselData.map((data) => (
-          <SwiperSlide>
-            <S.Image src={data.src} />
-          </SwiperSlide>
-        ))}
-        {carouselData.map((data) => (
-          <SwiperSlide>
-            <S.Image src={data.src} />
-          </SwiperSlide>
-        ))}
+        {
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
+          carouselData?.map((data) => (
+            <SwiperSlide>
+              <S.Image src={data} />
+            </SwiperSlide>
+          ))
+        }
+        {
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
+          carouselData?.map((data) => (
+            <SwiperSlide>
+              <S.Image src={data} />
+            </SwiperSlide>
+          ))
+        }
       </Swiper>
 
       <S.Description>

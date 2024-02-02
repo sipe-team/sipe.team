@@ -11,6 +11,7 @@ export const Wrapper = styled.section<{ isMobile: boolean }>`
 `;
 
 export const ContentsWrapper = styled.article<{ isMobile: boolean }>`
+  width: 100%;
   margin-left: ${({ isMobile }) => (isMobile ? '0px' : '24px')};
   padding: 16px;
   display: flex;

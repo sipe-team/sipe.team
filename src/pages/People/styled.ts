@@ -9,3 +9,13 @@ export const Wrapper = styled.article<{ isMobile: boolean }>`
     gap: 32px;
   }
 `;
+
+export const PeriodsWrapper = styled.article`
+  display: flex;
+  margin-bottom: 40px;
+  gap: 16px;
+
+  .period-button {
+    height: 40px;
+  }
+`;
