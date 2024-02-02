@@ -72,7 +72,7 @@ const Activity = () => {
         breakpoints={{
           1100: {
             slidesPerView: 3,
-            spaceBetween: 20,
+            spaceBetween: -80,
           },
         }}
         modules={[Pagination, Autoplay]}
