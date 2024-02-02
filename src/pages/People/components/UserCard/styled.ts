@@ -86,6 +86,7 @@ export const Review = styled.section`
     letter-spacing: -0.002em;
     text-align: left;
     color: ${({ theme }) => theme.colors.white};
+    margin-bottom: 8px;
   }
   p {
     font-size: 14px;
