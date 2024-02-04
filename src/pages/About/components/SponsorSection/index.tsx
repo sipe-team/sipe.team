@@ -23,7 +23,11 @@ const Sponsor = () => {
   return (
     <Layout>
       <ContentWithTitle title="후원사 소개">
-        <S.ImageList isMobile={isMobile} isTablet={isTablet}>
+        <S.ImageList
+          isFlex={sponsors.length < 3}
+          isMobile={isMobile}
+          isTablet={isTablet}
+        >
           {sponsors.map((image) => (
             <S.SponsorImage src={image.src} key={image.key} />
           ))}

@@ -1,8 +1,10 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 import Image from '@/components/Image';
 
 interface ImageProps {
+  isFlex?: boolean;
   isMobile: boolean;
   isTablet: boolean;
 }
@@ -13,15 +15,25 @@ export const ImageList = styled.div<ImageProps>`
   justify-content: center;
   align-items: center;
   gap: ${({ isTablet }) => (isTablet ? '20px' : '32px')};
-  display: grid;
-  align-self: stretch;
-  place-items: center;
-  grid-template-columns: ${({ isMobile, isTablet }) =>
-    isMobile
-      ? 'repeat(1, 1fr)'
-      : isTablet
-      ? 'repeat(2, 1fr)'
-      : 'repeat(3, 1fr)'};
+
+  ${({ isFlex, isMobile, isTablet }) =>
+    isFlex
+      ? css`
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+        `
+      : css`
+          display: grid;
+          align-self: stretch;
+          place-items: center;
+          grid-template-columns: ${isMobile
+            ? 'repeat(1, 1fr)'
+            : isTablet
+            ? 'repeat(1, 1fr)'
+            : 'repeat(3, 1fr)'};
+        `}
 `;
 
 export const SponsorImage = styled(Image)`
@@ -30,4 +42,5 @@ export const SponsorImage = styled(Image)`
   position: relative;
   background-color: #2d3748;
   border-radius: 12px;
+  object-fit: cover;
 `;
