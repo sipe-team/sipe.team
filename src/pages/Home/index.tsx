@@ -1,9 +1,10 @@
 import Button from '@/components/Button';
+import Layout from '@/components/Layout';
+import useDeviceType from '@/hook/useDeviceType';
+
+import CarouselCard from './components/CarouselCard';
 import Timer from './components/Timer';
 import * as S from './styled';
-import CarouselCard from './components/CarouselCard';
-import useDeviceType from '@/hook/useDeviceType';
-import Layout from '@/components/Layout';
 
 const DUE_DATE = new Date('2024-03-03:00:00:00');
 
@@ -28,7 +29,7 @@ export default function Home() {
   const { isMobile, isDesktop } = useDeviceType();
 
   return (
-    <S.Wrapper>
+    <S.Wrapper backgroundImage="/bg_light.png">
       <S.Group isMobile={isMobile}>
         <Layout>
           <S.Title>

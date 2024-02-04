@@ -19,7 +19,7 @@ const contacts = [
 
 export default function Contact() {
   return (
-    <Layout>
+    <Layout backgroundImage="/bg_dark.png">
       <S.Wrapper>
         <S.Group>
           <S.Title>

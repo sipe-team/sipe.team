@@ -1,12 +1,11 @@
 import { ThemeProvider } from '@emotion/react';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
 import {
-    createBrowserRouter, createHashRouter,
-    Outlet,
-    RouterProvider,
-    useLocation,
+  createHashRouter,
+  Outlet,
+  RouterProvider,
+  useLocation,
 } from 'react-router-dom';
 
 import Footer from './components/Footer';
@@ -20,7 +19,11 @@ import Recruit from './pages/Recruit';
 import GlobalStyle from './styles/GlobalStyle';
 import theme from './styles/theme';
 
-const Layout = () => {
+type LayoutProps = {
+  backgroundImage?: string;
+};
+
+const Layout = ({ backgroundImage }: LayoutProps) => {
   const { pathname } = useLocation();
 
   return (
@@ -31,6 +34,7 @@ const Layout = () => {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
+        backgroundImage: `url(${backgroundImage})`,
       }}
     >
       <Header />

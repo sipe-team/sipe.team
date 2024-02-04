@@ -1,31 +1,7 @@
-export const activities = {
-  chips: [
-    { name: '정규 미션', value: 'mission' },
-    { name: '사담콘', value: 'sipe-concert' },
-    { name: '내친소', value: 'introduce-myFriend' },
-    { name: '사이프톤', value: 'sipe-hackathon' },
-    { name: '그 외 행사', value: 'etc' },
-  ],
-  carouselData: [
-    {
-      src: '/ogimage.png',
-      name: 'title1',
-    },
-    {
-      src: '/ogimage.png',
-      name: 'title2',
-    },
-    {
-      src: '/ogimage.png',
-      name: 'title3',
-    },
-  ],
-};
-
 export const introduces = [
   {
     index: 1,
-    src: '/og.png',
+    src: '/intro_1.png',
     badgeText: 'Goal',
     title: '사이프에서의 성장 경험으로 더 멀리 나아갈 수 있기를 바래요.',
     subTitle:
@@ -33,7 +9,7 @@ export const introduces = [
   },
   {
     index: 2,
-    src: '/og-1.png',
+    src: '/intro_2.png',
     badgeText: 'Mission',
     title: '본인만의 성장 방식을 찾고 나아갈 수 있도록 도와드려요.',
     subTitle:
@@ -41,62 +17,11 @@ export const introduces = [
   },
   {
     index: 3,
-    src: '/og-2.png',
+    src: '/intro_3.png',
     badgeText: 'Culture',
     title: '사이퍼들의 성장에 긍정적인 영향을끼치는 사람들과 함께하고 싶어요.',
     subTitle:
       '각자가 원하는 목표를 성공적으로 이루기 위해서는 그 과정을 함께하는 사람이 무척 중요하다고 생각합니다. 어떤 면이든 배울 점이 있는 사람과 함께하고 싶어요!',
-  },
-];
-
-export const sponsors = [
-  {
-    src: '/ogimage.png',
-    name: 'title1',
-  },
-  {
-    src: '/ogimage.png',
-    name: 'title2',
-  },
-  {
-    src: '/ogimage.png',
-    name: 'title3',
-  },
-  {
-    src: '/ogimage.png',
-    name: 'title4',
-  },
-  {
-    src: '/ogimage.png',
-    name: 'title5',
-  },
-  {
-    src: '/ogimage.png',
-    name: 'title6',
-  },
-  {
-    src: '/ogimage.png',
-    name: 'title7',
-  },
-  {
-    src: '/ogimage.png',
-    name: 'title8',
-  },
-  {
-    src: '/ogimage.png',
-    name: 'title9',
-  },
-  {
-    src: '/ogimage.png',
-    name: 'title10',
-  },
-  {
-    src: '/ogimage.png',
-    name: 'title11',
-  },
-  {
-    src: '/ogimage.png',
-    name: 'title12',
   },
 ];
 

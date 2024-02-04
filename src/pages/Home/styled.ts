@@ -1,10 +1,17 @@
-import Layout from '@/components/Layout';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<{ backgroundImage?: string }>`
   width: 100%;
   height: calc(100vh - 64px);
   background-color: ${({ theme }) => theme.colors.gray6};
+  ${({ backgroundImage }) =>
+    backgroundImage &&
+    css`
+      background-image: url(${backgroundImage});
+      background-size: cover;
+      background-position: center;
+    `}
 `;
 
 export const Group = styled.div<{ isMobile: boolean }>`
@@ -52,6 +59,11 @@ export const MobileContent = styled.div`
   overflow-x: scroll;
   padding: 0 20px;
 `;
+
+// export const MobileCenterContent = styled(MobileContent)`
+//   display: flex;
+//   justify-content: center;
+// `;
 
 export const Carousels = styled.div`
   gap: 16px;
