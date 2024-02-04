@@ -6,9 +6,9 @@
   "scripts": {
     "lint": "eslint --ext .tsx --ext .ts .",
     "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "script": "node .script/gSheet.cjs"
+    "script": "node .script/gSheet.cjs",
+    "build": "pnpm run script && tsc && vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@emotion/react": "^11.10.8",
