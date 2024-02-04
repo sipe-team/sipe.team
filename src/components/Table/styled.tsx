@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 interface TableProps {
@@ -21,9 +22,9 @@ export const Wrapper = styled.div<{ isMobile: boolean }>`
   padding: ${({ isMobile }) => (isMobile ? '0 20px' : '0')};
 `;
 
-export const Table = styled.div<{ isMobile: boolean }>`
+export const Table = styled.div<{ isMobile: boolean; isApplicant: boolean }>`
   width: ${({ isMobile }) => (isMobile ? '100%' : '560px')};
-  height: auto;
+  height: ${({ isApplicant }) => (isApplicant ? '64px' : '80px')};
   padding: 20px;
   border-radius: 12px;
   gap: 20px;
@@ -37,6 +38,14 @@ export const Table = styled.div<{ isMobile: boolean }>`
   flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'row')};
   font-weight: 500;
   line-height: 19.6px;
+
+  ${({ isApplicant }) =>
+    isApplicant &&
+    css`
+      &:last-child {
+        background-color: #2d3748;
+      }
+    `}
 `;
 
 export const Text = styled.div<TableProps>`

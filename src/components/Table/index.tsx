@@ -1,7 +1,8 @@
+import { ReactComponent as Circle } from '@/assets/check_circle.svg';
 import useDeviceType from '@/hook/useDeviceType';
+
 import Badge from '../Badge';
 import * as S from './styled';
-import { ReactComponent as Circle } from '@/assets/check_circle.svg';
 
 interface TableProps {
   isApplicant: boolean;
@@ -20,7 +21,7 @@ const Table = ({ dataList, isApplicant }: TableProps) => {
   return (
     <S.Wrapper isMobile={isMobile}>
       {dataList.map((data) => (
-        <S.Table isMobile={isMobile}>
+        <S.Table isMobile={isMobile} isApplicant={isApplicant}>
           {isApplicant ? (
             <Circle />
           ) : (
