@@ -19,6 +19,9 @@ const menus = [
   { name: 'Contact', path: '/contact' },
 ];
 
+const JOIN_FORM_URL =
+  'https://docs.google.com/forms/d/e/1FAIpQLSeckE6-2KAqW2-zqUMMOlN1LhGTMPIFmPWRTUZk4GKKis-hgg/viewform?usp=sf_link';
+
 export default function Navigation() {
   const { isDesktop } = useDeviceType();
   const navigate = useNavigate();
@@ -30,6 +33,11 @@ export default function Navigation() {
     setIsMobileMenuOpen(false);
     navigate(path);
     scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleClickJoinButton = () => {
+    setIsMobileMenuOpen(false);
+    window.open(JOIN_FORM_URL);
   };
 
   return (
@@ -56,7 +64,12 @@ export default function Navigation() {
                   </Button>
                 ))}
               </S.Menus>
-              <ApplyButton isDesktop={isDesktop}>Join Us</ApplyButton>
+              <ApplyButton
+                isDesktop={isDesktop}
+                onClick={handleClickJoinButton}
+              >
+                Join Us
+              </ApplyButton>
             </S.Buttons>
           ) : isMobileMenuOpen ? (
             <MenuClose
@@ -82,7 +95,9 @@ export default function Navigation() {
                 {menu.name}
               </Button>
             ))}
-            <ApplyButton isDesktop={isDesktop}>Join Us</ApplyButton>
+            <ApplyButton isDesktop={isDesktop} onClick={handleClickJoinButton}>
+              Join Us
+            </ApplyButton>
           </S.MobileMenus>
         )}
       </Layout>
