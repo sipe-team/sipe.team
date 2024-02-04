@@ -156,12 +156,16 @@ function getGoogleSheet() {
           const row = it['_rawData'];
           const key = row[0];
           const name = row[1];
+          const title = row[2];
+          const description = row[3];
           const activities =
-            row[2]?.split(',').map((imageId) => imageBaseUrl + imageId) || [];
+            row[4]?.split(',').map((imageId) => imageBaseUrl + imageId) || [];
 
           aboutMap.activity[key] = {
             key,
             name,
+            title,
+            description,
             activities,
           };
         });
