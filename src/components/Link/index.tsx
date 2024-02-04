@@ -27,9 +27,16 @@ const LinkIcon = styled.a`
   display: inline-block;
   width: 24px;
   height: 24px;
+  cursor: pointer;
+
+  svg path {
+    transition: fill 0.3s ease;
+  }
 
   &:hover {
-    cursor: pointer;
+    svg path {
+      fill: ${({ theme }) => theme.colors.gray4};
+    }
   }
 `;
 
