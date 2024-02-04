@@ -24,7 +24,8 @@ export const Wrapper = styled.div<{ isMobile: boolean }>`
 
 export const Table = styled.div<{ isMobile: boolean; isApplicant: boolean }>`
   width: ${({ isMobile }) => (isMobile ? '100%' : '560px')};
-  height: ${({ isApplicant }) => (isApplicant ? '64px' : '80px')};
+  height: ${({ isMobile, isApplicant }) =>
+    isMobile ? 'auto' : isApplicant ? '64px' : '80px'};
   padding: 20px;
   border-radius: 12px;
   gap: 20px;
