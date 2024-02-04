@@ -8,6 +8,7 @@ import * as S from './styled';
 
 type ActiveCardProps = React.ComponentProps<'div'> & {
   thumbnail?: string;
+  profile?: string;
   contentTitle: string;
   contentBody: string;
   userName: string;
@@ -17,6 +18,7 @@ type ActiveCardProps = React.ComponentProps<'div'> & {
 
 export const ActiveCard = ({
   thumbnail,
+  profile,
   contentTitle,
   contentBody,
   userName,
@@ -38,7 +40,11 @@ export const ActiveCard = ({
       className={className}
     >
       <S.Wrapper isMobile={isMobile}>
-        <Image className="thumbnail" src={thumbnail} />
+        <Image
+          style={{ borderRadius: '4px' }}
+          className="thumbnail"
+          src={thumbnail}
+        />
         <S.ContentsWrapper isMobile={isMobile}>
           <section className="contents">
             <StyledH5 className="title">{contentTitle}</StyledH5>
@@ -46,7 +52,11 @@ export const ActiveCard = ({
           </section>
           <section className="poster-user-info">
             <div className="user-wrapper">
-              <UserIcon className="user-icon" />
+              {profile ? (
+                <img src={profile} alt="user profile" className="user-icon" />
+              ) : (
+                <UserIcon className="user-icon" />
+              )}
               <label className="user-name">{userName}</label>
             </div>
             <label className="create-date">{createDate}</label>

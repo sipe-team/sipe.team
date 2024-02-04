@@ -6,7 +6,8 @@ export const Wrapper = styled.section<{ isMobile: boolean }>`
 
   .thumbnail {
     min-width: ${({ isMobile }) => (isMobile ? '100%' : '320px')};
-    height: ${({ isMobile }) => (isMobile ? '155px' : '220px')};
+    height: ${({ isMobile }) => (isMobile ? '200px' : '220px')};
+    object-fit: cover;
   }
 `;
 
@@ -55,6 +56,10 @@ export const ContentsWrapper = styled.article<{ isMobile: boolean }>`
         margin-right: 12px;
         width: 32px;
         height: 32px;
+      }
+
+      img.user-icon {
+        border-radius: 50%;
       }
 
       .user-name {

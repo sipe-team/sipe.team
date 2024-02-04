@@ -1,17 +1,15 @@
 import React, { forwardRef } from 'react';
 
-import { ReactComponent as BaseImage } from '@/assets/empty_image.svg';
-
 type ImageProps = React.DetailedHTMLProps<
   React.ImgHTMLAttributes<HTMLImageElement>,
   HTMLImageElement
 >;
 
-const Image = ({ src, alt, className }: ImageProps) => {
+const Image = ({ src, alt, className, style }: ImageProps) => {
   if (!src) {
-    return <BaseImage className={className} />;
+    return <img src={'/empty_image.png'} className={className} style={style} />;
   }
-  return <img src={src} alt={alt} className={className} />;
+  return <img src={src} alt={alt} className={className} style={style} />;
 };
 
 export default forwardRef(Image);

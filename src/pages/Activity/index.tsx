@@ -4,8 +4,8 @@ import Button from '@/components/Button';
 import ContentWithTitle from '@/components/ContentWithTitle';
 import InfiniteScroll from '@/components/InfiniteScroll';
 import Layout from '@/components/Layout';
-import { ActiveCard } from '@/pages/Activity/components/ActiveCard';
 import * as db from '@/db/index.json';
+import { ActiveCard } from '@/pages/Activity/components/ActiveCard';
 
 import * as S from './styled';
 
@@ -14,6 +14,8 @@ import * as S from './styled';
 const ActivityCard = ({ activity }) => {
   return (
     <ActiveCard
+      thumbnail={activity.thumbnail}
+      profile={activity.profile}
       contentTitle={activity.title}
       contentBody={activity.description}
       userName={activity.name}
@@ -53,21 +55,25 @@ export default function Activity() {
   useEffect(() => {
     setActivities(activityData(type));
   }, [type]);
+
   return (
     <Layout>
       <ContentWithTitle title="사이퍼 활동">
         <S.TypeWrapper>
-          {types.map((_type) => (
-            <Button
-              key={_type.value}
-              className="period-button"
-              buttonType="chip"
-              selected={_type.value === type}
-              onClick={() => setType(_type.value)}
-            >
-              {_type.name}
-            </Button>
-          ))}
+          {types.map((_type) => {
+            if (_type.value === 'V') return;
+            return (
+              <Button
+                key={_type.value}
+                className="period-button"
+                buttonType="chip"
+                selected={_type.value === type}
+                onClick={() => setType(_type.value)}
+              >
+                {_type.name}
+              </Button>
+            );
+          })}
         </S.TypeWrapper>
         <S.Wrapper>
           <InfiniteScroll
