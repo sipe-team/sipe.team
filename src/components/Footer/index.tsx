@@ -1,12 +1,13 @@
 import { useLocation } from 'react-router-dom';
-import { ReactComponent as Instagram } from '@/assets/instagram.svg';
-import { ReactComponent as Github } from '@/assets/github.svg';
-import { ReactComponent as Youtube } from '@/assets/youtube.svg';
-import { ReactComponent as Linkedin } from '@/assets/linkedin.svg';
 
-import * as S from './styled';
+import { ReactComponent as Github } from '@/assets/github.svg';
+import { ReactComponent as Instagram } from '@/assets/instagram.svg';
+import { ReactComponent as Linkedin } from '@/assets/linkedin.svg';
+import { ReactComponent as Youtube } from '@/assets/youtube.svg';
 import useDeviceType from '@/hook/useDeviceType';
+
 import Layout from '../Layout';
+import * as S from './styled';
 
 const sns = [
   {
@@ -15,8 +16,8 @@ const sns = [
     icon: <Instagram />,
   },
   { name: 'Github', url: 'https://github.com/sipe-team', icon: <Github /> },
-  { name: 'Youtube', url: '', icon: <Youtube /> },
-  { name: 'Linkedin', url: '', icon: <Linkedin /> },
+  // { name: 'Youtube', url: '', icon: <Youtube /> },
+  // { name: 'Linkedin', url: '', icon: <Linkedin /> },
 ];
 
 type FooterProps = {
