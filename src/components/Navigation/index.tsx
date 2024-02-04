@@ -1,3 +1,4 @@
+import { AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -77,23 +78,32 @@ export default function Navigation() {
             />
           )}
         </S.Group>
-        {!isDesktop && (
-          <S.MobileMenus isOpened={isMobileMenuOpen}>
-            {menus.map((menu) => (
-              <Button
-                key={menu.name}
-                buttonType="menu"
-                selected={menu.path === location.pathname}
-                onClick={() => handleNavigate(menu.path)}
+        <AnimatePresence>
+          {isMobileMenuOpen && !isDesktop && (
+            <S.MobileMenus
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, backgroundColor: 'inherit' }}
+              exit={{ opacity: 0 }}
+            >
+              {menus.map((menu) => (
+                <Button
+                  key={menu.name}
+                  buttonType="menu"
+                  selected={menu.path === location.pathname}
+                  onClick={() => handleNavigate(menu.path)}
+                >
+                  {menu.name}
+                </Button>
+              ))}
+              <ApplyButton
+                isDesktop={isDesktop}
+                onClick={handleClickJoinButton}
               >
-                {menu.name}
-              </Button>
-            ))}
-            <ApplyButton isDesktop={isDesktop} onClick={handleClickJoinButton}>
-              Join Us
-            </ApplyButton>
-          </S.MobileMenus>
-        )}
+                Join Us
+              </ApplyButton>
+            </S.MobileMenus>
+          )}
+        </AnimatePresence>
       </Layout>
     </S.Wrapper>
   );

@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { motion } from 'framer-motion';
 
 export const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.black};
@@ -33,7 +34,7 @@ export const Menus = styled.div`
   gap: 16px;
 `;
 
-export const MobileMenus = styled.div`
+export const MobileMenus = styled(motion.div)`
   width: 100%;
   display: flex;
   flex-direction: column;
