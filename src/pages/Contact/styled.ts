@@ -56,4 +56,9 @@ export const ContactBox = styled.div`
   font-size: 15px;
   font-weight: 600;
   line-height: 21px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.gray3};
+  }
 `;

@@ -1,10 +1,8 @@
-import Button from '@/components/Button';
-import * as S from './styled';
 import { ReactComponent as Email } from '@/assets/email.svg';
 import { ReactComponent as Kakao } from '@/assets/kakao_logo.svg';
 import Layout from '@/components/Layout';
 
-const DUE_DATE = new Date('2024-03-03:00:00:00');
+import * as S from './styled';
 
 const contacts = [
   {
@@ -14,7 +12,7 @@ const contacts = [
   },
   {
     text: '@sipe',
-    url: '',
+    url: 'http://pf.kakao.com/_Bqxbxgxj',
     icon: <Kakao />,
   },
 ];
