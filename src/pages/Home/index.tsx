@@ -10,14 +10,17 @@ const DUE_DATE = new Date('2024-03-03:00:00:00');
 
 const carouselItems = [
   {
+    id: 1,
     title: '누적 지원자 수',
     value: '200+',
   },
   {
+    id: 2,
     title: '총 참여자 수',
     value: '100+',
   },
   {
+    id: 3,
     title: '누적 미션 수',
     value: '14',
   },
@@ -48,7 +51,11 @@ export default function Home() {
               {!isFinished ? (
                 <S.Carousels>
                   {carouselItems.map((item) => (
-                    <CarouselCard title={item.title} value={item.value} />
+                    <CarouselCard
+                      key={item.id}
+                      title={item.title}
+                      value={item.value}
+                    />
                   ))}
                 </S.Carousels>
               ) : (

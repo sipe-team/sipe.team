@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 
 type ImageProps = React.DetailedHTMLProps<
   React.ImgHTMLAttributes<HTMLImageElement>,
@@ -12,4 +12,4 @@ const Image = ({ src, alt, className, style }: ImageProps) => {
   return <img src={src} alt={alt} className={className} style={style} />;
 };
 
-export default forwardRef(Image);
+export default Image;

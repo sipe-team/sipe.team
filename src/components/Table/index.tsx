@@ -20,8 +20,8 @@ const Table = ({ dataList, isApplicant }: TableProps) => {
 
   return (
     <S.Wrapper isMobile={isMobile}>
-      {dataList.map((data) => (
-        <S.Table isMobile={isMobile} isApplicant={isApplicant}>
+      {dataList.map((data, index) => (
+        <S.Table key={index} isMobile={isMobile} isApplicant={isApplicant}>
           {isApplicant ? (
             <Circle />
           ) : (

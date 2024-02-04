@@ -6,11 +6,13 @@ import * as S from './styled';
 
 const contacts = [
   {
+    id: 1,
     text: 'sipe.team@gmail.com',
     url: 'mailto:sipe.team@gmail.com',
     icon: <Email />,
   },
   {
+    id: 2,
     text: '@sipe',
     url: 'http://pf.kakao.com/_Bqxbxgxj',
     icon: <Kakao />,
@@ -31,6 +33,7 @@ export default function Contact() {
           <S.Content>
             {contacts.map((contact) => (
               <S.ContactBox
+                key={contact.id}
                 onClick={() => {
                   window.open(contact.url);
                 }}

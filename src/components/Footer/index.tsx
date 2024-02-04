@@ -2,8 +2,8 @@ import { useLocation } from 'react-router-dom';
 
 import { ReactComponent as Github } from '@/assets/github.svg';
 import { ReactComponent as Instagram } from '@/assets/instagram.svg';
-import { ReactComponent as Linkedin } from '@/assets/linkedin.svg';
-import { ReactComponent as Youtube } from '@/assets/youtube.svg';
+// import { ReactComponent as Linkedin } from '@/assets/linkedin.svg';
+// import { ReactComponent as Youtube } from '@/assets/youtube.svg';
 import useDeviceType from '@/hook/useDeviceType';
 
 import Layout from '../Layout';
@@ -11,13 +11,19 @@ import * as S from './styled';
 
 const sns = [
   {
+    id: 1,
     name: 'Instagram',
     url: 'https://www.instagram.com/sipe_team/',
     icon: <Instagram />,
   },
-  { name: 'Github', url: 'https://github.com/sipe-team', icon: <Github /> },
-  // { name: 'Youtube', url: '', icon: <Youtube /> },
-  // { name: 'Linkedin', url: '', icon: <Linkedin /> },
+  {
+    id: 2,
+    name: 'Github',
+    url: 'https://github.com/sipe-team',
+    icon: <Github />,
+  },
+  // { id: 3, name: 'Youtube', url: '', icon: <Youtube /> },
+  // { id: 4, name: 'Linkedin', url: '', icon: <Linkedin /> },
 ];
 
 type FooterProps = {
@@ -38,6 +44,7 @@ export default function Footer({ fixed = false }: FooterProps) {
           <S.Logos>
             {sns.map((s) => (
               <S.Icon
+                key={s.id}
                 color={color}
                 onClick={() => {
                   window.open(s.url);

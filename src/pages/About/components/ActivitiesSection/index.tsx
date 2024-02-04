@@ -80,8 +80,8 @@ const Activity = () => {
         {
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
-          activityData?.activities?.map((data) => (
-            <SwiperSlide>
+          activityData?.activities?.map((data, index) => (
+            <SwiperSlide key={index}>
               <S.Image src={data} />
             </SwiperSlide>
           ))
