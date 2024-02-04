@@ -2,12 +2,11 @@ import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { ReactComponent as Logo } from '@/assets/logo.svg';
-import { ReactComponent as Menu } from '@/assets/menu.svg';
-import { ReactComponent as MenuClose } from '@/assets/menu_close.svg';
 import useDeviceType from '@/hook/useDeviceType';
 
 import Button from '../Button';
 import { ApplyButton } from '../Button/styled';
+import HamburgerButton from '../HamburgerButton';
 import Layout from '../Layout';
 import * as S from './styled';
 
@@ -71,20 +70,15 @@ export default function Navigation() {
                 Join Us
               </ApplyButton>
             </S.Buttons>
-          ) : isMobileMenuOpen ? (
-            <MenuClose
-              style={{ cursor: 'pointer' }}
-              onClick={() => setIsMobileMenuOpen(false)}
-            />
           ) : (
-            <Menu
-              style={{ cursor: 'pointer' }}
-              onClick={() => setIsMobileMenuOpen(true)}
+            <HamburgerButton
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              isOpened={isMobileMenuOpen}
             />
           )}
         </S.Group>
-        {isMobileMenuOpen && !isDesktop && (
-          <S.MobileMenus>
+        {!isDesktop && (
+          <S.MobileMenus isOpened={isMobileMenuOpen}>
             {menus.map((menu) => (
               <Button
                 key={menu.name}
