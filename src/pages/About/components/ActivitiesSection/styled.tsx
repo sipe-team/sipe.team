@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Swiper } from 'swiper/react';
 
 export const Description = styled.div`
   width: 100%;
@@ -58,4 +59,14 @@ export const Image = styled.img`
   width: 480px;
   height: 270px;
   border-radius: 12px;
+`;
+
+export const SwiperContainer = styled(Swiper)`
+  .swiper-pagination-bullet {
+    background: ${({ theme }) => theme.colors.gray4};
+  }
+
+  .swiper-pagination-bullet-active {
+    background: ${({ theme }) => theme.colors.green};
+  }
 `;

@@ -3,14 +3,14 @@ import 'swiper/css/pagination';
 
 import { useEffect, useState } from 'react';
 import { Autoplay, Pagination } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { SwiperSlide } from 'swiper/react';
 
 import ContentWithTitle from '@/components/ContentWithTitle';
+import * as db from '@/db/index.json';
 import useDeviceType from '@/hook/useDeviceType';
 
 import Button from '../../../../components/Button';
 import * as S from './styled';
-import * as db from '@/db/index.json';
 
 const aboutActivity = db.abouts.activity;
 
@@ -29,16 +29,16 @@ const Activity = () => {
     aboutActivityNames[0].value
   );
 
-  const [carouselData, setCarouselData] = useState(
+  const [activityData, setActivityData] = useState(
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    aboutActivity[selectChip].activities
+    aboutActivity[selectChip]
   );
 
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    setCarouselData(aboutActivity[selectChip].activities);
+    setActivityData(aboutActivity[selectChip]);
   }, [selectChip]);
 
   const { isMobile } = useDeviceType();
@@ -58,7 +58,7 @@ const Activity = () => {
           </Button>
         ))}
       </S.Menus>
-      <Swiper
+      <S.SwiperContainer
         loop={true}
         centeredSlides={true}
         slidesPerView={1}
@@ -80,29 +80,18 @@ const Activity = () => {
         {
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
-          carouselData?.map((data) => (
+          activityData?.activities?.map((data) => (
             <SwiperSlide>
               <S.Image src={data} />
             </SwiperSlide>
           ))
         }
-        {
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore
-          carouselData?.map((data) => (
-            <SwiperSlide>
-              <S.Image src={data} />
-            </SwiperSlide>
-          ))
-        }
-      </Swiper>
+      </S.SwiperContainer>
 
       <S.Description>
-        <S.DescriptionTitle>2번의 정규 미션 진행</S.DescriptionTitle>
+        <S.DescriptionTitle>{activityData?.title}</S.DescriptionTitle>
         <S.DescriptionSubTitle>
-          활동 회원은 한 기수 동안 2번의 미션을 진행합니다. 본인이 개발자로서
-          성장할 수 있는 방법이라면 어떤 방식이든 수용하며, 내부 투표에 따라
-          자유롭게 팀을 구성하고 미션을 진행해요.
+          {activityData?.description}
         </S.DescriptionSubTitle>
       </S.Description>
     </ContentWithTitle>
