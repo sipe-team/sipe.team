@@ -107,7 +107,7 @@ function getGoogleSheet() {
           activityMap[type].push({
             id: key,
             type: type || 'B',
-            thumbnail: thumbnail || '',
+            thumbnail: thumbnail ? imageBaseUrl + thumbnail : '',
             title: title || '',
             description: description || '',
             name: name || '',
