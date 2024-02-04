@@ -37,6 +37,7 @@ const PeopleCard = ({ people }) => {
   return (
     <UserCard
       key={people.id}
+      period={people.period}
       img={people.thumbnail}
       name={people.name}
       part={people.part}

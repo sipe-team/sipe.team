@@ -8,6 +8,7 @@ import Link from '../../../../components/Link';
 import * as S from './styled';
 
 type UserCardProps = ComponentProps<'div'> & {
+  period: string;
   img?: string;
   name: string;
   links?: { type: 'GITHUB' | 'LINKEDIN' | 'LINK'; url: string }[];
@@ -18,6 +19,7 @@ type UserCardProps = ComponentProps<'div'> & {
 };
 
 const UserCard = ({
+  period,
   img,
   name,
   links = [],
@@ -26,8 +28,14 @@ const UserCard = ({
   introduce = '',
   review = '',
 }: UserCardProps) => {
+  const isContributor = period === 'contribute';
+
   return (
-    <CardWrapper type="CONTENT" className="people-box" minHeight={270}>
+    <CardWrapper
+      type="CONTENT"
+      className="people-box"
+      minHeight={isContributor ? undefined : 270}
+    >
       <S.Meta>
         <section className="profile-bg">
           <Image className="profile" alt="user image" src={img} />
@@ -52,10 +60,12 @@ const UserCard = ({
         </section>
       </S.Meta>
       <S.Introduce>{introduce}</S.Introduce>
-      <S.Review>
-        <h3>활동후기</h3>
-        <p>{review}</p>
-      </S.Review>
+      {!isContributor && (
+        <S.Review>
+          <h3>활동후기</h3>
+          <p>{review}</p>
+        </S.Review>
+      )}
     </CardWrapper>
   );
 };
