@@ -1,37 +1,48 @@
 import styled from '@emotion/styled';
 
-import { mobile } from '@/styles/media-query';
-
-export const Wrapper = styled.div`
-  border-top: 1px solid #383838;
-  padding: 64px 43px 80px 40px;
+export const Wrapper = styled.div<{ fixed: boolean }>`
   width: 100%;
+  display: flex;
+  justify-content: center;
+  position: ${({ fixed }) => (fixed ? 'fixed' : 'relative')};
+  bottom: 0;
+  left: 0;
+`;
 
-  ${mobile} {
-    padding: 52px 24px 88px 24px;
-  }
+export const Group = styled.div<{ isDesktop: boolean }>`
+  width: 100%;
+  height: ${({ isDesktop }) => (isDesktop ? '100px' : '113px')};
+  display: flex;
+  flex-direction: ${({ isDesktop }) => (isDesktop ? 'row' : 'column-reverse')};
+  align-items: center;
+  justify-content: ${({ isDesktop }) =>
+    isDesktop ? 'space-between' : 'center'};
+  gap: ${({ isDesktop }) => (isDesktop ? '0' : '16px')};
+`;
+
+export const Copyright = styled.div<{ color: 'black' | 'gray' }>`
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 17px;
+  color: ${({ theme, color }) =>
+    color === 'black' ? theme.colors.black : theme.colors.gray4};
 `;
 
 export const Logos = styled.div`
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  gap: 8px;
 `;
 
-export const Sns = styled.div`
+export const Icon = styled.div<{ color: 'black' | 'gray' }>`
   cursor: pointer;
-`;
-
-export const Email = styled.div`
-  color: ${({ theme }) => theme.colors.gray02};
-  margin-top: 27px;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 140%;
-
-  ${mobile} {
-    font-size: 14px;
-    line-height: 140%;
+  path {
+    fill: ${({ theme, color }) =>
+      color === 'black' ? theme.colors.black : theme.colors.gray4};
+    transition: fill 0.3s ease;
+  }
+  &:hover {
+    path {
+      fill: ${({ theme }) => theme.colors.gray4};
+    }
   }
 `;

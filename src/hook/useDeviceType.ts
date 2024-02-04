@@ -6,9 +6,9 @@ export const DEVICE_TYPE = {
 } as const;
 
 const useDeviceType = () => {
-  const isMobile = useMediaQuery({ query: '(max-width: 799px)' });
-  const isTablet = useMediaQuery({ query: '(min-width: 800px)' });
-  const isDesktop = useMediaQuery({ query: '(min-width: 1100px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 780px)' });
+  const isTablet = useMediaQuery({ query: '(max-width: 1060px)' });
+  const isDesktop = useMediaQuery({ query: '(min-width: 1060px)' });
 
   return { isMobile, isTablet, isDesktop };
 };
