@@ -107,7 +107,7 @@ function getGoogleSheet() {
           activityMap[type].push({
             id: key,
             type: type || 'B',
-            thumbnail: thumbnail ? imageBaseUrl + thumbnail : '',
+            thumbnail: thumbnail ? imageBaseUrl + thumbnail + '&sz=w1000' : '',
             title: title || '',
             description: description || '',
             name: name || '',
@@ -159,7 +159,7 @@ function getGoogleSheet() {
           const title = row[2];
           const description = row[3];
           const activities =
-            row[4]?.split(',').map((imageId) => imageBaseUrl + imageId) || [];
+            row[4]?.split(',').map((imageId) => imageBaseUrl + imageId +'&sz=w1000') || [];
 
           aboutMap.activity[key] = {
             key,
@@ -174,7 +174,7 @@ function getGoogleSheet() {
           const row = it['_rawData'];
           const key = row[0];
           const name = row[1] || '';
-          const link = imageBaseUrl + row[2] || '';
+          const link = imageBaseUrl + row[2] + '&sz=w1000' || '';
 
           aboutMap.sponsor[key] = {
             key,
