@@ -1,6 +1,7 @@
 import Button from '@/components/Button';
 import Layout from '@/components/Layout';
 import useDeviceType from '@/hook/useDeviceType';
+import { useJoinUs } from '@/hook/useJoinUs';
 
 import CarouselCard from './components/CarouselCard';
 import Timer from './components/Timer';
@@ -30,6 +31,7 @@ export default function Home() {
   const isFinished = DUE_DATE.getTime() < Date.now();
 
   const { isMobile, isDesktop } = useDeviceType();
+  const { handleJoinUs } = useJoinUs();
 
   return (
     <S.Wrapper backgroundImage="/bg_light.png">
@@ -61,7 +63,11 @@ export default function Home() {
               ) : (
                 <Timer dueDate={DUE_DATE.getTime()} />
               )}
-              <Button buttonType="home" buttonColor="green">
+              <Button
+                buttonType="home"
+                buttonColor="green"
+                onClick={handleJoinUs}
+              >
                 {isFinished ? '3기 모집 알림 신청' : '2기 모집 신청'}
               </Button>
             </S.Content>
@@ -81,7 +87,11 @@ export default function Home() {
               )}
             </S.MobileContent>
             <Layout>
-              <Button buttonType="home" buttonColor="green">
+              <Button
+                buttonType="home"
+                buttonColor="green"
+                onClick={handleJoinUs}
+              >
                 {isFinished ? '3기 모집 알림 신청' : '2기 모집 신청'}
               </Button>
             </Layout>

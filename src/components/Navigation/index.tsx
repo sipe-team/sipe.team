@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 import { ReactComponent as Logo } from '@/assets/logo.svg';
 import useDeviceType from '@/hook/useDeviceType';
+import { useJoinUs } from '@/hook/useJoinUs';
 
 import Button from '../Button';
 import { ApplyButton } from '../Button/styled';
@@ -19,15 +20,14 @@ const menus = [
   { name: 'Contact', path: '/contact' },
 ];
 
-const JOIN_FORM_URL =
-  'https://docs.google.com/forms/d/e/1FAIpQLSeckE6-2KAqW2-zqUMMOlN1LhGTMPIFmPWRTUZk4GKKis-hgg/viewform?usp=sf_link';
-
 export default function Navigation() {
   const { isDesktop } = useDeviceType();
   const navigate = useNavigate();
   const location = useLocation();
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const { handleJoinUs } = useJoinUs();
 
   const handleNavigate = (path: string) => {
     setIsMobileMenuOpen(false);
@@ -37,7 +37,7 @@ export default function Navigation() {
 
   const handleClickJoinButton = () => {
     setIsMobileMenuOpen(false);
-    window.open(JOIN_FORM_URL);
+    handleJoinUs();
   };
 
   return (
