@@ -69,7 +69,10 @@ export const ApplyButton = styled(Common)<{ isDesktop: boolean }>`
   line-height: 22.4px;
 `;
 
-export const ChipButton = styled(Common)<{ selected: boolean }>`
+export const ChipButton = styled(Common)<{
+  disabled?: boolean;
+  selected: boolean;
+}>`
   background-color: ${({ theme, selected }) =>
     selected ? theme.colors.green : theme.colors.gray1};
   color: ${({ theme, selected }) =>
@@ -85,5 +88,11 @@ export const ChipButton = styled(Common)<{ selected: boolean }>`
       selected ? theme.colors.green : theme.colors.gray2};
     color: ${({ theme, selected }) =>
       selected ? theme.colors.black : theme.colors.white};
+  }
+
+  :disabled {
+    background-color: ${({ theme }) => theme.colors.gray1};
+    color: ${({ theme }) => theme.colors.gray2};
+    cursor: not-allowed;
   }
 `;

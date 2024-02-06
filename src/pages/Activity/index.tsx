@@ -4,6 +4,7 @@ import Button from '@/components/Button';
 import ContentWithTitle from '@/components/ContentWithTitle';
 import InfiniteScroll from '@/components/InfiniteScroll';
 import Layout from '@/components/Layout';
+import Tooltip from '@/components/Tooltip';
 import * as db from '@/db/index.json';
 import { ActiveCard } from '@/pages/Activity/components/ActiveCard';
 
@@ -61,7 +62,21 @@ export default function Activity() {
       <ContentWithTitle title="사이퍼 활동">
         <S.TypeWrapper>
           {types.map((_type) => {
-            if (_type.value === 'V') return;
+            if (_type.value === 'V')
+              return (
+                <Tooltip title="Comming Soon!">
+                  <Button
+                    key={_type.value}
+                    className="period-button"
+                    buttonType="chip"
+                    selected={_type.value === type}
+                    onClick={() => setType(_type.value)}
+                    disabled
+                  >
+                    {_type.name}
+                  </Button>
+                </Tooltip>
+              );
             return (
               <Button
                 key={_type.value}
