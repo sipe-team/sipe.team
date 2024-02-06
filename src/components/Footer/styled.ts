@@ -38,11 +38,11 @@ export const Icon = styled.div<{ color: 'black' | 'gray' }>`
   path {
     fill: ${({ theme, color }) =>
       color === 'black' ? theme.colors.black : theme.colors.gray4};
-    transition: fill 0.3s ease;
+    transition: opacity 0.3s ease;
   }
   &:hover {
     path {
-      fill: ${({ theme }) => theme.colors.gray4};
+      opacity: 0.6;
     }
   }
 `;
