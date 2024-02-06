@@ -60,6 +60,7 @@ export default function Home() {
               <Button
                 buttonType="home"
                 buttonColor="black"
+            
                 onClick={handleJoinUs}
               >
                 {isFinished ? '3기 모집 알림 신청' : '2기 모집 신청'}
