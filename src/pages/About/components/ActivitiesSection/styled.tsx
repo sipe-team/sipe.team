@@ -47,7 +47,6 @@ export const Menus = styled.div<{ isMobile: boolean }>`
     min-width: 85px;
     padding: 0 24px;
     font-family: Pretendard;
-    font-size: 14px;
     font-weight: 700;
     line-height: 20px;
     letter-spacing: -0.002em;

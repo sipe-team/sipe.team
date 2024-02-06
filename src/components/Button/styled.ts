@@ -77,9 +77,9 @@ export const ChipButton = styled(Common)<{
     selected ? theme.colors.green : theme.colors.gray1};
   color: ${({ theme, selected }) =>
     selected ? theme.colors.black : theme.colors.white};
-  font-size: 24px;
+  font-size: 14px;
   line-height: 19.6px;
-  padding: 24px;
+  padding: 10px 24px;
   border-radius: 100px;
   white-space: nowrap;
 

@@ -1,7 +1,8 @@
+import ContentWithTitle from '@/components/ContentWithTitle';
 import Layout from '@/components/Layout';
+
 import Card from '../../../../components/About/Card';
 import { introduces } from '../../data';
-import ContentWithTitle from '@/components/ContentWithTitle';
 
 const Introduce = () => {
   return (
