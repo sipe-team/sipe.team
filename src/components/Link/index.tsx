@@ -30,12 +30,12 @@ const LinkIcon = styled.a`
   cursor: pointer;
 
   svg path {
-    transition: fill 0.3s ease;
+    transition: opacity 0.3s ease;
   }
 
   &:hover {
     svg path {
-      fill: ${({ theme }) => theme.colors.gray4};
+      opacity: 0.6;
     }
   }
 `;

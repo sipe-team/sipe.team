@@ -51,7 +51,12 @@ export default function Button({
       );
     case 'chip':
       return (
-        <S.ChipButton onClick={onClick} selected={selected} {...props}>
+        <S.ChipButton
+          disabled={disabled}
+          onClick={onClick}
+          selected={selected}
+          {...props}
+        >
           {children}
         </S.ChipButton>
       );
