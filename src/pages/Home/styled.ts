@@ -23,21 +23,21 @@ export const Group = styled.div<{ isMobile: boolean }>`
   gap: ${({ isMobile }) => (isMobile ? 0 : '16px')};
 `;
 
-export const Title = styled.div`
+export const Title = styled.div<{ isMobile: boolean }>`
   display: flex;
   flex-direction: column;
   gap: 16px;
   align-items: center;
 
   div:first-of-type {
-    font-size: 48px;
     font-weight: 900;
-    line-height: 67px;
+    line-height: ${({ isMobile }) => (isMobile ? '29.9px' : '67px')};
+    font-size: ${({ isMobile }) => (isMobile ? '26px' : '48px')};
   }
   div:last-of-type {
-    font-size: 22px;
+    font-size: ${({ isMobile }) => (isMobile ? '12px' : '22px')};
     font-weight: 600;
-    line-height: 31px;
+    line-height: ${({ isMobile }) => (isMobile ? '16.8px' : '31px')};
     text-align: center;
   }
 `;
@@ -52,7 +52,8 @@ export const Content = styled.div`
 `;
 
 export const MobileContent = styled.div`
-  align-items: flex-start;
+  display: flex;
+  justify-content: center;
   margin-top: 40px;
   margin-bottom: 24px;
   width: 100%;

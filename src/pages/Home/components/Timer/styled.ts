@@ -12,8 +12,8 @@ export const Wrapper = styled.div`
 export const Time = styled.div`
   width: 43px;
   height: 34px;
-  background-color: ${({ theme }) => theme.colors.gray2};
-  color: ${({ theme }) => theme.colors.green};
+  background-color: ${({ theme }) => theme.colors.green};
+  color: ${({ theme }) => theme.colors.black};
   font-size: 24px;
   line-height: 34px;
   border-radius: 8px;

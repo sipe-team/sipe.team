@@ -37,20 +37,15 @@ export default function Home() {
     <S.Wrapper backgroundImage="/bg_light.png">
       <S.Group isMobile={isMobile}>
         <Layout>
-          <S.Title>
-            <div>
-              {isDesktop
-                ? 'Sharing Insights with People Everyday'
-                : 'SIPE 2기 모집 중'}
+          <S.Title isMobile={isMobile}>
+            <div style={{ textAlign: 'center' }}>
+              Sharing Insights <br /> with People Everyday
             </div>
-            <div>
-              현직 개발자들이 함께 경험을 쌓으며 {isMobile && <br />}성장하는 IT
-              커뮤니티
-            </div>
+            <div>현직 개발자들이 함께 경험을 쌓으며 성장하는 IT 커뮤니티</div>
           </S.Title>
           {!isMobile && (
             <S.Content>
-              {!isFinished ? (
+              {/* {!isFinished ? (
                 <S.Carousels>
                   {carouselItems.map((item) => (
                     <CarouselCard
@@ -60,12 +55,11 @@ export default function Home() {
                     />
                   ))}
                 </S.Carousels>
-              ) : (
-                <Timer dueDate={DUE_DATE.getTime()} />
-              )}
+              ) : ( */}
+              <Timer dueDate={DUE_DATE.getTime()} />
               <Button
                 buttonType="home"
-                buttonColor="green"
+                buttonColor="black"
                 onClick={handleJoinUs}
               >
                 {isFinished ? '3기 모집 알림 신청' : '2기 모집 신청'}
@@ -76,20 +70,20 @@ export default function Home() {
         {isMobile && (
           <>
             <S.MobileContent>
-              {!isFinished ? (
+              {/* {!isFinished ? (
                 <S.Carousels>
                   {carouselItems.map((item) => (
                     <CarouselCard title={item.title} value={item.value} />
                   ))}
                 </S.Carousels>
-              ) : (
-                <Timer dueDate={DUE_DATE.getTime()} />
-              )}
+              ) : ( */}
+              <Timer dueDate={DUE_DATE.getTime()} />
+              {/* )} */}
             </S.MobileContent>
             <Layout>
               <Button
                 buttonType="home"
-                buttonColor="green"
+                buttonColor="black"
                 onClick={handleJoinUs}
               >
                 {isFinished ? '3기 모집 알림 신청' : '2기 모집 신청'}
