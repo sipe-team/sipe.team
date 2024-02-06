@@ -16,7 +16,6 @@ const Common = styled.button`
   :active {
     background-color: ${({ theme }) => theme.colors.gray1};
     color: ${({ theme }) => theme.colors.gray4};
-    border-radius: 100px;
   }
 `;
 
