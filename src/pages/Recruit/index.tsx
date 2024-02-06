@@ -91,7 +91,7 @@ const InActivity = [
 const CardList = [
   {
     title: '서류 접수',
-    processDate: '02.05(월) ~ 02.16(금)',
+    processDate: '02.07(수) ~ 02.17(토)',
     subTitle: '23:59:59 마감',
   },
   {
