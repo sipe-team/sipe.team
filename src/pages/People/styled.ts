@@ -2,10 +2,10 @@ import styled from '@emotion/styled';
 
 export const Wrapper = styled.article<{ isMobile: boolean }>`
   padding: 0 20px;
-
+  box-sizing: border-box;
   .contents {
     display: grid;
-    grid-template-columns: ${({ isMobile }) => (isMobile ? '100%' : '50% 50%')};
+    grid-template-columns: ${({ isMobile }) => (isMobile ? '100%' : '1fr 1fr')};
     gap: 32px;
   }
 `;
