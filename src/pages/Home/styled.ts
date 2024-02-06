@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 export const Wrapper = styled.div<{ backgroundImage?: string }>`
   width: 100%;
   height: calc(100vh - 64px);
-  background-color: ${({ theme }) => theme.colors.gray6};
+  background-color: ${({ theme }) => theme.colors.black};
   ${({ backgroundImage }) =>
     backgroundImage &&
     css`

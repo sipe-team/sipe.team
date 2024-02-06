@@ -30,7 +30,7 @@ const carouselItems = [
 export default function Home() {
   const isFinished = DUE_DATE.getTime() < Date.now();
 
-  const { isMobile, isDesktop } = useDeviceType();
+  const { isMobile } = useDeviceType();
   const { handleJoinUs } = useJoinUs();
 
   return (
@@ -60,7 +60,6 @@ export default function Home() {
               <Button
                 buttonType="home"
                 buttonColor="black"
-            
                 onClick={handleJoinUs}
               >
                 {isFinished ? '3기 모집 알림 신청' : '2기 모집 신청'}
