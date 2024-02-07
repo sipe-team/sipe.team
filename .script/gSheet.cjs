@@ -187,6 +187,7 @@ function getGoogleSheet() {
           peoples: periodsMap,
           activities: activityMap,
           abouts: aboutMap,
+          faq: faqMap,
         };
 
         fs.writeFile(

@@ -1,33 +1,17 @@
-import Faq from '@/components/Faq';
-import Table from '@/components/Table';
-import * as S from './styled';
-import ScheduleCard from './components/ScheduleCard';
 import ContentWithTitle from '@/components/ContentWithTitle';
+import Faq from '@/components/Faq';
 import Layout from '@/components/Layout';
+import Table from '@/components/Table';
+import * as db from '@/db/index.json';
 import useDeviceType from '@/hook/useDeviceType';
 
-const faqs = [
-  {
-    q: '2기 선발 기준은 어떻게 되나요?',
-    a: '사이프는 현재 개발자로 일을 하고 있으며, 자신의 경험을 나누는 것을 좋아하고,  다른 사람의 고민이나 경험들을 경청해줄 사람들을 선발하고 있습니다.',
-  },
-  {
-    q: '현재 개발자로 일은 안하고 있지만 개발 경력이 있는데 참여 가능한가요?',
-    a: '아니요! 사이프는 현재 개발자로 근무를 하고 있는 사람이라면 누구든 지원 가능합니다.',
-  },
-  {
-    q: '2기 선발 인원은 몇 명인가요?',
-    a: '2기는 총 60명으로 선발할 예정이며, 인원은 지원자 수에 따라서 변동될 수 있습니다',
-  },
-  {
-    q: '수도권에 거주하고 있지 않아도 지원이 가능한가요?',
-    a: '가능합니다! 다만, 모든 활동이 수도권에 위치한 오프라인 장소에서 진행 될 예정이며, 결석이나 지각을 하는 경우 수료 조건에 영향이 있을 수 있으니 주의가 필요합니다.',
-  },
-  {
-    q: '미성년자이지만 개발자로 근무하고 있어요. 그래도 지원이 가능한가요?',
-    a: '아니요! 아쉽지만 사이프는 미성년자 선발은 제외하고 있습니다.',
-  },
-];
+import ScheduleCard from './components/ScheduleCard';
+import * as S from './styled';
+
+const faqs = db.faq.recruit.map((it) => ({
+  q: it.question,
+  a: it.answer,
+}));
 
 const Applicants = [
   {
