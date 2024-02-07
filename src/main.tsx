@@ -10,6 +10,7 @@ import {
 
 import Footer from './components/Footer';
 import Header from './components/Navigation';
+import { pageViewGA } from './libs/utils/googleAnalytics';
 import About from './pages/About';
 import Activity from './pages/Activity';
 import Contact from './pages/Contact';
@@ -22,6 +23,8 @@ import theme from './styles/theme';
 type LayoutProps = {
   backgroundImage?: string;
 };
+
+pageViewGA();
 
 const Layout = ({ backgroundImage }: LayoutProps) => {
   const { pathname } = useLocation();

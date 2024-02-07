@@ -82,7 +82,7 @@ export default function Navigation() {
           {isMobileMenuOpen && !isDesktop && (
             <S.MobileMenus
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1, backgroundColor: 'inherit' }}
+              animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
               {menus.map((menu) => (
