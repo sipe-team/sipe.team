@@ -21,17 +21,17 @@ export const Wrapper = styled.div<{ isOpened: boolean }>`
     transition: 0.2s ease-in-out;
   }
 
-  span:nth-child(1) {
+  span:nth-of-type(1) {
     top: 0px;
     transform-origin: left center;
   }
 
-  span:nth-child(2) {
+  span:nth-of-type(2) {
     top: 7px;
     transform-origin: left center;
   }
 
-  span:nth-child(3) {
+  span:nth-of-type(3) {
     top: 14px;
     transform-origin: left center;
   }
@@ -39,16 +39,16 @@ export const Wrapper = styled.div<{ isOpened: boolean }>`
   ${({ isOpened }) =>
     isOpened &&
     css`
-      span:nth-child(1) {
+      span:nth-of-type(1) {
         transform: rotate(45deg);
         top: 1px;
         left: 0px;
       }
-      span:nth-child(2) {
+      span:nth-of-type(2) {
         width: 0%;
         opacity: 0;
       }
-      span:nth-child(3) {
+      span:nth-of-type(3) {
         transform: rotate(-45deg);
         top: 16px;
         left: 0px;
