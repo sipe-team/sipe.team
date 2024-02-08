@@ -61,12 +61,12 @@ export default function Activity() {
     <Layout>
       <ContentWithTitle title="사이퍼 활동">
         <S.TypeWrapper>
-          {types.map((_type) => {
+          {types.map((_type, index) => {
             if (_type.value === 'V')
               return (
-                <Tooltip title="Comming Soon!">
+                <Tooltip key={index} title="Comming Soon!">
                   <Button
-                    key={_type.value}
+                    key={index}
                     className="period-button"
                     buttonType="chip"
                     selected={_type.value === type}
@@ -79,7 +79,7 @@ export default function Activity() {
               );
             return (
               <Button
-                key={_type.value}
+                key={index}
                 className="period-button"
                 buttonType="chip"
                 selected={_type.value === type}

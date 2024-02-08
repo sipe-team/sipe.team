@@ -10,7 +10,7 @@ import {
 
 import Footer from './components/Footer';
 import Header from './components/Navigation';
-import { pageViewGA } from './libs/utils/googleAnalytics';
+import useGARouteChange from './hook/useGARouteChange';
 import About from './pages/About';
 import Activity from './pages/Activity';
 import Contact from './pages/Contact';
@@ -24,10 +24,9 @@ type LayoutProps = {
   backgroundImage?: string;
 };
 
-pageViewGA();
-
 const Layout = ({ backgroundImage }: LayoutProps) => {
   const { pathname } = useLocation();
+  useGARouteChange();
 
   return (
     <div
