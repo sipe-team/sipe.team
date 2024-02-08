@@ -19,7 +19,6 @@ const useGARouteChange = () => {
         setInitialized(true);
       }
     }
-    console.log(initialized, key, location.pathname);
   }, []);
 
   // location 변경 감지시 pageview 이벤트 전송
