@@ -1,9 +1,9 @@
 import Button from '@/components/Button';
 import Layout from '@/components/Layout';
 import useDeviceType from '@/hook/useDeviceType';
+import useGARouteChange from '@/hook/useGARouteChange';
 import { useJoinUs } from '@/hook/useJoinUs';
 
-import CarouselCard from './components/CarouselCard';
 import Timer from './components/Timer';
 import * as S from './styled';
 
@@ -32,6 +32,7 @@ export default function Home() {
 
   const { isMobile, isDesktop } = useDeviceType();
   const { handleJoinUs } = useJoinUs();
+  useGARouteChange();
 
   return (
     <S.Wrapper backgroundImage="/bg_light.png">
@@ -60,7 +61,6 @@ export default function Home() {
               <Button
                 buttonType="home"
                 buttonColor="black"
-            
                 onClick={handleJoinUs}
               >
                 {isFinished ? '3기 모집 알림 신청' : '2기 모집 신청'}

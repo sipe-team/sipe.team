@@ -64,7 +64,7 @@ export default function Activity() {
           {types.map((_type, index) => {
             if (_type.value === 'V')
               return (
-                <Tooltip title="Comming Soon!">
+                <Tooltip key={index} title="Comming Soon!">
                   <Button
                     key={index}
                     className="period-button"
