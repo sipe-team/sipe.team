@@ -1,7 +1,6 @@
 import Button from '@/components/Button';
 import Layout from '@/components/Layout';
 import useDeviceType from '@/hook/useDeviceType';
-import useGARouteChange from '@/hook/useGARouteChange';
 import { useJoinUs } from '@/hook/useJoinUs';
 
 import Timer from './components/Timer';
@@ -32,7 +31,6 @@ export default function Home() {
 
   const { isMobile, isDesktop } = useDeviceType();
   const { handleJoinUs } = useJoinUs();
-  useGARouteChange();
 
   return (
     <S.Wrapper backgroundImage="/bg_light.png">
