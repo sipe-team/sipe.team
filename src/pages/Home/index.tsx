@@ -6,7 +6,7 @@ import { useJoinUs } from '@/hook/useJoinUs';
 import Timer from './components/Timer';
 import * as S from './styled';
 
-const DUE_DATE = new Date('2024-02-17 00:00:00');
+const DUE_DATE = new Date('2024-02-17 23:59:59');
 
 // const carouselItems = [
 //   {
