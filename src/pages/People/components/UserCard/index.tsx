@@ -38,7 +38,12 @@ const UserCard = ({
     >
       <S.Meta>
         <section className="profile-bg">
-          <Image className="profile" alt="user image" src={img} />
+          <Image
+            className="profile"
+            alt="user image"
+            src={img}
+            style={{ objectFit: 'cover' }}
+          />
         </section>
         <section className="info">
           <section className="main-info">
