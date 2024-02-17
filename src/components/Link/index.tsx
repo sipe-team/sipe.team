@@ -11,6 +11,9 @@ type LinkProps = {
 
 const Link = ({ type, url }: LinkProps) => {
   const handleClick = () => {
+    if (!url.match(/^https?:\/\//i)) {
+      url = 'https://' + url;
+    }
     window.open(url);
   };
 

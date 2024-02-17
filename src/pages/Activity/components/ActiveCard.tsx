@@ -27,6 +27,9 @@ export const ActiveCard = ({
   className,
 }: ActiveCardProps) => {
   const handleClick = () => {
+    if (!link.match(/^https?:\/\//i)) {
+      link = 'https://' + link;
+    }
     window.open(link);
   };
 
