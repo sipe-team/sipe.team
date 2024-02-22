@@ -55,7 +55,7 @@ export default function Home() {
                   ))}
                 </S.Carousels>
               ) : ( */}
-              <Timer dueDate={DUE_DATE.getTime()} />
+              <Timer dueDate={DUE_DATE.getTime()} isRecruiting={false} />
               <Button
                 buttonType="home"
                 buttonColor="black"
@@ -76,7 +76,7 @@ export default function Home() {
                   ))}
                 </S.Carousels>
               ) : ( */}
-              <Timer dueDate={DUE_DATE.getTime()} />
+              <Timer dueDate={DUE_DATE.getTime()} isRecruiting={false} />
               {/* )} */}
             </S.MobileContent>
             <Layout>
