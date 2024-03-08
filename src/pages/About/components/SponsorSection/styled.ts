@@ -40,6 +40,5 @@ export const SponsorImage = styled(Image)`
   width: 320px;
   height: 180px;
   position: relative;
-  border-radius: 12px;
-  object-fit: cover;
+  object-fit: contain;
 `;
