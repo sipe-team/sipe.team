@@ -32,12 +32,12 @@ const InActivity = [
   },
   {
     recurring_date: '2회차 (03.30)',
-    text: '액티비티',
+    text: '사이프챗',
     badge: '1차 미션 시작',
   },
   {
     recurring_date: '3회차 (04.13)',
-    text: '사이프챗',
+    text: '액티비티',
     badge: '',
   },
   {
