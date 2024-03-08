@@ -37,7 +37,7 @@ const InActivity = [
   },
   {
     recurring_date: '3회차 (04.13)',
-    text: '액티비티',
+    text: '사이데이션',
     badge: '',
   },
   {
@@ -57,7 +57,7 @@ const InActivity = [
   },
   {
     recurring_date: '7회차 (06.08)',
-    text: '나들이',
+    text: '사이데이션',
     badge: '',
   },
   {
