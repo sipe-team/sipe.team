@@ -40,6 +40,35 @@ export default function Navigation() {
     handleJoinUs();
   };
 
+  const mobileMenuVariant = {
+    opened: {
+      height: 'auto',
+      transition: {
+        delay: 0.15,
+        duration: 1,
+        ease: [0.74, 0, 0.19, 1.02],
+      },
+    },
+    closed: {
+      height: 0,
+      transition: {
+        delay: 0.35,
+        duration: 0.63,
+        ease: [0.74, 0, 0.19, 1.02],
+      },
+    },
+  };
+
+  const fadeInVariant = {
+    opened: {
+      opacity: 1,
+      transition: {
+        delay: 1.1,
+      },
+    },
+    closed: { opacity: 0 },
+  };
+
   return (
     <S.Wrapper>
       <Layout>
@@ -79,28 +108,31 @@ export default function Navigation() {
           )}
         </S.Group>
         <AnimatePresence>
-          {isMobileMenuOpen && !isDesktop && (
+          {!isDesktop && (
             <S.MobileMenus
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+              initial="closed"
+              animate={isMobileMenuOpen ? 'opened' : 'closed'}
+              variants={mobileMenuVariant}
             >
-              {menus.map((menu) => (
-                <Button
-                  key={menu.name}
-                  buttonType="menu"
-                  selected={menu.path === location.pathname}
-                  onClick={() => handleNavigate(menu.path)}
+              <S.MenuList variants={fadeInVariant}>
+                {/* <S.MenuList> */}
+                {menus.map((menu) => (
+                  <Button
+                    key={menu.name}
+                    buttonType="menu"
+                    selected={menu.path === location.pathname}
+                    onClick={() => handleNavigate(menu.path)}
+                  >
+                    {menu.name}
+                  </Button>
+                ))}
+                <ApplyButton
+                  isDesktop={isDesktop}
+                  onClick={handleClickJoinButton}
                 >
-                  {menu.name}
-                </Button>
-              ))}
-              <ApplyButton
-                isDesktop={isDesktop}
-                onClick={handleClickJoinButton}
-              >
-                Join Us
-              </ApplyButton>
+                  Join Us
+                </ApplyButton>
+              </S.MenuList>
             </S.MobileMenus>
           )}
         </AnimatePresence>

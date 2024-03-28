@@ -34,7 +34,12 @@ export const Menus = styled.div`
   gap: 16px;
 `;
 
-export const MobileMenus = styled(motion.div)`
+export const MobileMenus = styled(motion.nav)`
+  width: 100%;
+  display: flex;
+`;
+
+export const MenuList = styled(motion.div)`
   width: 100%;
   display: flex;
   flex-direction: column;
