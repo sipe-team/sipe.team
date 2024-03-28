@@ -8,7 +8,7 @@ const contacts = [
   {
     id: 1,
     text: 'sipe.team@gmail.com',
-    url: 'mailto:sipe.team@gmail.com',
+    // url: 'mailto:sipe.team@gmail.com',
     icon: <Email />,
   },
   {
@@ -35,8 +35,9 @@ export default function Contact() {
               <S.ContactBox
                 key={contact.id}
                 onClick={() => {
-                  window.open(contact.url);
+                  contact.url && window.open(contact.url);
                 }}
+                clickable={!!contact.url}
               >
                 {contact.icon}
                 {contact.text}

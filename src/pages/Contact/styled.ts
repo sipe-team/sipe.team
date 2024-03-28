@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
@@ -41,8 +42,7 @@ export const Content = styled.div`
   gap: 20px;
 `;
 
-export const ContactBox = styled.div`
-  cursor: pointer;
+export const ContactBox = styled.div<{ clickable?: boolean }>`
   width: 240px;
   height: 53px;
   border-radius: 8px;
@@ -58,7 +58,12 @@ export const ContactBox = styled.div`
   line-height: 21px;
   transition: background-color 0.3s ease;
 
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.gray3};
-  }
+  ${({ theme, clickable }) =>
+    clickable &&
+    css`
+      cursor: pointer;
+      &:hover {
+        background-color: ${theme.colors.gray3};
+      }
+    `}
 `;
