@@ -15,7 +15,6 @@ export const Wrapper = styled.div`
 export const Text = styled.div`
   color: #01ff13;
   font-size: 15px;
-  font-family: Pretendard;
   font-weight: 600;
   line-height: 21px;
   letter-spacing: 0.3px;

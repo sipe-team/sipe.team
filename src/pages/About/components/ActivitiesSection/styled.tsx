@@ -17,7 +17,6 @@ export const DescriptionTitle = styled.div`
   text-align: center;
   color: white;
   font-size: 28px;
-  font-family: Pretendard;
   font-weight: 700;
   line-height: 39.2px;
   letter-spacing: 0.56px;
@@ -46,7 +45,6 @@ export const Menus = styled.div<{ isMobile: boolean }>`
   .activity-button {
     min-width: 85px;
     padding: 0 24px;
-    font-family: Pretendard;
     font-weight: 700;
     line-height: 20px;
     letter-spacing: -0.002em;

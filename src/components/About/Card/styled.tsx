@@ -42,7 +42,6 @@ export const Description = styled.div<SectionProps>`
 export const Title = styled.div<SectionProps>`
   color: white;
   font-size: ${({ isTablet }) => (isTablet ? '36px' : '32px')};
-  font-family: Pretendard;
   font-weight: 800;
   line-height: 1.4;
   letter-spacing: 0.72px;
@@ -52,7 +51,6 @@ export const Title = styled.div<SectionProps>`
 export const SubTitle = styled.div`
   color: #e2e8f0;
   font-size: 14px;
-  font-family: Pretendard;
   font-weight: 400;
   line-height: 19.6px;
   word-wrap: break-word;

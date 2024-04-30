@@ -1,5 +1,6 @@
-import CardWrapper from '@/components/CardWrapper';
 import styled from '@emotion/styled';
+
+import CardWrapper from '@/components/CardWrapper';
 
 export const Wrapper = styled(CardWrapper)`
   height: 100%;
@@ -45,7 +46,6 @@ export const SubTitle = styled.div`
   text-align: center;
   color: #e2e8f0;
   font-size: 14px;
-  font-family: Pretendard;
   font-weight: 500;
   line-height: 19.6px;
   word-wrap: break-word;
