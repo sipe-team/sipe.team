@@ -1,10 +1,7 @@
 import styled from '@emotion/styled';
 
-export const Wrapper = styled.div`
-  display: flex;
+export const Wrapper = styled.div<{ isMobile: boolean }>`
   width: 100%;
-  flex-direction: column;
-  padding: 0 20px;
 
   .cards {
     display: flex;
@@ -16,6 +13,12 @@ export const Wrapper = styled.div`
         cursor: pointer;
       }
     }
+  }
+
+  .video-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 32px;
   }
 `;
 

@@ -4,10 +4,11 @@ import Button from '@/components/Button';
 import ContentWithTitle from '@/components/ContentWithTitle';
 import InfiniteScroll from '@/components/InfiniteScroll';
 import Layout from '@/components/Layout';
-import Tooltip from '@/components/Tooltip';
 import * as db from '@/db/index.json';
+import useDeviceType from '@/hook/useDeviceType';
 import { ActiveCard } from '@/pages/Activity/components/ActiveCard';
 
+import { ActiveVideoCard } from './components/ActiveVideoCard';
 import * as S from './styled';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -19,6 +20,21 @@ const ActivityCard = ({ activity }) => {
       profile={activity.profile}
       contentTitle={activity.title}
       contentBody={activity.description}
+      userName={activity.name}
+      link={activity.link}
+      createDate={activity.date}
+      className="card"
+    />
+  );
+};
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+const ActivityVideoCard = ({ activity }) => {
+  return (
+    <ActiveVideoCard
+      thumbnail={activity.thumbnail}
+      contentTitle={activity.title}
       userName={activity.name}
       link={activity.link}
       createDate={activity.date}
@@ -53,9 +69,21 @@ export default function Activity() {
   const [type, setType] = useState(types[0].value);
   const [acticities, setActivities] = useState(activityData(type));
 
+  const { isMobile } = useDeviceType();
+
   useEffect(() => {
     setActivities(activityData(type));
   }, [type]);
+
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  const renderComponent = (activity) => {
+    if (type === 'B') {
+      return <ActivityCard activity={activity} />;
+    } else if (type === 'V') {
+      return <ActivityVideoCard activity={activity} />;
+    }
+  };
 
   return (
     <Layout>
@@ -64,18 +92,15 @@ export default function Activity() {
           {types.map((_type, index) => {
             if (_type.value === 'V')
               return (
-                <Tooltip key={index} title="Comming Soon!">
-                  <Button
-                    key={index}
-                    className="period-button"
-                    buttonType="chip"
-                    selected={_type.value === type}
-                    onClick={() => setType(_type.value)}
-                    disabled
-                  >
-                    {_type.name}
-                  </Button>
-                </Tooltip>
+                <Button
+                  key={index}
+                  className="period-button"
+                  buttonType="chip"
+                  selected={_type.value === type}
+                  onClick={() => setType(_type.value)}
+                >
+                  {_type.name}
+                </Button>
               );
             return (
               <Button
@@ -90,11 +115,11 @@ export default function Activity() {
             );
           })}
         </S.TypeWrapper>
-        <S.Wrapper>
+        <S.Wrapper isMobile={isMobile}>
           <InfiniteScroll
             items={acticities}
-            className="cards"
-            components={(activity) => <ActivityCard activity={activity} />}
+            className={type === 'B' ? 'cards' : 'video-cards'}
+            components={(activity) => renderComponent(activity)}
           />
         </S.Wrapper>
       </ContentWithTitle>
