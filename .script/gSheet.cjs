@@ -47,10 +47,14 @@ function getGoogleSheet() {
         ];
         const periods = configRow
           .find((it) => it._rowNumber === 2)
-          ['_rawData'].slice(1);
+          ['_rawData'].slice(1)[0]
+          .split(',')
+          .map((it) => it.trim());
         const activitiesType = configRow
           .find((it) => it._rowNumber === 4)
-          ['_rawData'].slice(1);
+          ['_rawData'].slice(1)[0]
+          .split(',')
+          .map((it) => it.trim());
         const imageBaseUrl = driveData[1].trim();
 
         const periodsMap = {};
@@ -159,7 +163,9 @@ function getGoogleSheet() {
           const title = row[2];
           const description = row[3];
           const activities =
-            row[4]?.split(',').map((imageId) => imageBaseUrl + imageId +'&sz=w1000') || [];
+            row[4]
+              ?.split(',')
+              .map((imageId) => imageBaseUrl + imageId + '&sz=w1000') || [];
 
           aboutMap.activity[key] = {
             key,
