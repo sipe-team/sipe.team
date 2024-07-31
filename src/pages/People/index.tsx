@@ -57,12 +57,18 @@ const peopleData = (period) => {
   return db.peoples[period];
 };
 
-const periods = Object.keys(db.peoples).map((period) => {
-  return {
-    name: period === 'contribute' ? '기여자' : `${period}기`,
-    value: period,
-  };
-});
+const periods = Object.keys(db.peoples)
+  .sort((a, b) => {
+    if (a === 'contribute') return 1;
+    if (b === 'contribute') return -1;
+    return parseInt(b) - parseInt(a);
+  })
+  .map((period) => {
+    return {
+      name: period === 'contribute' ? '기여자' : `${period}기`,
+      value: period,
+    };
+  });
 
 const People = () => {
   const { isMobile } = useDeviceType();
