@@ -9,6 +9,7 @@ import InfiniteScroll from '../../components/InfiniteScroll';
 import * as db from '../../db/index.json';
 import UserCard from './components/UserCard';
 import * as S from './styled';
+
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 const PeopleCard = ({ people }) => {
@@ -76,7 +77,29 @@ const People = () => {
   const [peoples, setPeoples] = useState(peopleData(period));
 
   useEffect(() => {
-    setPeoples(peopleData(period));
+    const _peoples = peopleData(period);
+
+    const { organizers, members } = _peoples.reduce(
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      (acc, cur) => {
+        if (cur.isOrganizer) {
+          acc.organizers.push(cur);
+        } else {
+          acc.members.push(cur);
+        }
+        return acc;
+      },
+      { organizers: [], members: [] }
+    );
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    const sortedMembers = members.sort((a, b) => {
+      return a.name > b.name ? 1 : -1;
+    });
+
+    setPeoples([...organizers, ...sortedMembers]);
   }, [period]);
 
   return (
