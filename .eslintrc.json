@@ -9,6 +9,7 @@
   },
   "plugins": ["react", "@typescript-eslint", "simple-import-sort"],
   "extends": [
+    "plugin:@next/next/recommended",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended"
