@@ -7,8 +7,7 @@
     "build": "yarn run script && next build",
     "start": "next start",
     "lint": "eslint --ext .tsx --ext .ts .",
-    "script": "node .script/gSheet.cjs",
-    "preview": "vite preview"
+    "script": "node .script/gSheet.cjs"
   },
   "dependencies": {
     "@emotion/react": "^11.10.8",
