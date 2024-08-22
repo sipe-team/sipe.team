@@ -1,4 +1,4 @@
-import Badge from '@/components/Badge';
+import Badge from '@/components/common/Badge';
 import useDeviceType from '@/hook/useDeviceType';
 
 import * as S from './styled';

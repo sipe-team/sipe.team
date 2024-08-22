@@ -1,7 +1,7 @@
-import { useLocation } from 'react-router-dom';
+import { usePathname } from 'next/navigation';
 
-import { ReactComponent as Github } from '@/assets/github.svg';
-import { ReactComponent as Instagram } from '@/assets/instagram.svg';
+import Github from '@/assets/github.svg';
+import Instagram from '@/assets/instagram.svg';
 // import { ReactComponent as Linkedin } from '@/assets/linkedin.svg';
 // import { ReactComponent as Youtube } from '@/assets/youtube.svg';
 import useDeviceType from '@/hook/useDeviceType';
@@ -31,7 +31,7 @@ type FooterProps = {
 };
 
 export default function Footer({ fixed = false }: FooterProps) {
-  const { pathname } = useLocation();
+  const pathname = usePathname();
   const { isDesktop } = useDeviceType();
 
   const color = pathname === '/' ? 'black' : 'gray';

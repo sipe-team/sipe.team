@@ -1,4 +1,4 @@
-import Accordion, { AccordionProps } from '../Accordion';
+import Accordion, { AccordionProps } from '../common/Accordion';
 import ContentWithTitle from '../ContentWithTitle';
 import Layout from '../Layout';
 import * as S from './styled';
