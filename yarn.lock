@@ -2422,15 +2422,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"abort-controller@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "abort-controller@npm:3.0.0"
-  dependencies:
-    event-target-shim: "npm:^5.0.0"
-  checksum: 10/ed84af329f1828327798229578b4fe03a4dd2596ba304083ebd2252666bdc1d7647d66d0b18704477e1f8aa315f055944aa6e859afebd341f12d0a53c37b4b40
-  languageName: node
-  linkType: hard
-
 "acorn-import-attributes@npm:^1.9.5":
   version: 1.9.5
   resolution: "acorn-import-attributes@npm:1.9.5"
@@ -2455,15 +2446,6 @@ __metadata:
   bin:
     acorn: bin/acorn
   checksum: 10/d08c2d122bba32d0861e0aa840b2ee25946c286d5dc5990abca991baf8cdbfbe199b05aacb221b979411a2fea36f83e26b5ac4f6b4e0ce49038c62316c1848f0
-  languageName: node
-  linkType: hard
-
-"agent-base@npm:6":
-  version: 6.0.2
-  resolution: "agent-base@npm:6.0.2"
-  dependencies:
-    debug: "npm:4"
-  checksum: 10/21fb903e0917e5cb16591b4d0ef6a028a54b83ac30cd1fca58dece3d4e0990512a8723f9f83130d88a41e2af8b1f7be1386fda3ea2d181bb1a62155e75e95e23
   languageName: node
   linkType: hard
 
@@ -2661,10 +2643,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"arrify@npm:^2.0.0":
-  version: 2.0.1
-  resolution: "arrify@npm:2.0.1"
-  checksum: 10/067c4c1afd182806a82e4c1cb8acee16ab8b5284fbca1ce29408e6e91281c36bb5b612f6ddfbd40a0f7a7e0c75bf2696eb94c027f6e328d6e9c52465c98e4209
+"asynckit@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "asynckit@npm:0.4.0"
+  checksum: 10/3ce727cbc78f69d6a4722517a58ee926c8c21083633b1d3fdf66fd688f6c127a53a592141bd4866f9b63240a86e9d8e974b13919450bd17fa33c2d22c4558ad8
   languageName: node
   linkType: hard
 
@@ -2677,12 +2659,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^0.21.4":
-  version: 0.21.4
-  resolution: "axios@npm:0.21.4"
+"axios@npm:^1.4.0":
+  version: 1.7.4
+  resolution: "axios@npm:1.7.4"
   dependencies:
-    follow-redirects: "npm:^1.14.0"
-  checksum: 10/da644592cb6f8f9f8c64fdabd7e1396d6769d7a4c1ea5f8ae8beb5c2eb90a823e3a574352b0b934ac62edc762c0f52647753dc54f7d07279127a7e5c4cd20272
+    follow-redirects: "npm:^1.15.6"
+    form-data: "npm:^4.0.0"
+    proxy-from-env: "npm:^1.1.0"
+  checksum: 10/7a1429be1e3d0c2e1b96d4bba4d113efbfabc7c724bed107beb535c782c7bea447ff634886b0c7c43395a264d085450d009eb1154b5f38a8bae49d469fdcbc61
   languageName: node
   linkType: hard
 
@@ -2994,6 +2978,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"combined-stream@npm:^1.0.8":
+  version: 1.0.8
+  resolution: "combined-stream@npm:1.0.8"
+  dependencies:
+    delayed-stream: "npm:~1.0.0"
+  checksum: 10/2e969e637d05d09fa50b02d74c83a1186f6914aae89e6653b62595cc75a221464f884f55f231b8f4df7a49537fba60bdc0427acd2bf324c09a1dbb84837e36e4
+  languageName: node
+  linkType: hard
+
 "commander@npm:^2.20.0":
   version: 2.20.3
   resolution: "commander@npm:2.20.3"
@@ -3220,6 +3213,13 @@ __metadata:
     has-property-descriptors: "npm:^1.0.0"
     object-keys: "npm:^1.1.1"
   checksum: 10/b4ccd00597dd46cb2d4a379398f5b19fca84a16f3374e2249201992f36b30f6835949a9429669ee6b41b6e837205a163eadd745e472069e70dfc10f03e5fcc12
+  languageName: node
+  linkType: hard
+
+"delayed-stream@npm:~1.0.0":
+  version: 1.0.0
+  resolution: "delayed-stream@npm:1.0.0"
+  checksum: 10/46fe6e83e2cb1d85ba50bd52803c68be9bd953282fa7096f51fc29edd5d67ff84ff753c51966061e5ba7cb5e47ef6d36a91924eddb7f3f3483b1c560f77a0020
   languageName: node
   linkType: hard
 
@@ -3748,13 +3748,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"event-target-shim@npm:^5.0.0":
-  version: 5.0.1
-  resolution: "event-target-shim@npm:5.0.1"
-  checksum: 10/49ff46c3a7facbad3decb31f597063e761785d7fdb3920d4989d7b08c97a61c2f51183e2f3a03130c9088df88d4b489b1b79ab632219901f184f85158508f4c8
-  languageName: node
-  linkType: hard
-
 "events@npm:^3.2.0":
   version: 3.3.0
   resolution: "events@npm:3.3.0"
@@ -3814,13 +3807,6 @@ __metadata:
   version: 2.0.6
   resolution: "fast-levenshtein@npm:2.0.6"
   checksum: 10/eb7e220ecf2bab5159d157350b81d01f75726a4382f5a9266f42b9150c4523b9795f7f5d9fbbbeaeac09a441b2369f05ee02db48ea938584205530fe5693cfe1
-  languageName: node
-  linkType: hard
-
-"fast-text-encoding@npm:^1.0.0":
-  version: 1.0.6
-  resolution: "fast-text-encoding@npm:1.0.6"
-  checksum: 10/f7b9e2e7a21e4ae5f4b8d3729850be83fb45052b28c9c38c09b8366463a291d6dc5448359238bdaf87f6a9e907d5895a94319a2c5e0e9f0786859ad6312d1d06
   languageName: node
   linkType: hard
 
@@ -3886,7 +3872,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.14.0":
+"follow-redirects@npm:^1.15.6":
   version: 1.15.6
   resolution: "follow-redirects@npm:1.15.6"
   peerDependenciesMeta:
@@ -3912,6 +3898,17 @@ __metadata:
     cross-spawn: "npm:^7.0.0"
     signal-exit: "npm:^4.0.1"
   checksum: 10/e3a60480f3a09b12273ce2c5fcb9514d98dd0e528f58656a1b04680225f918d60a2f81f6a368f2f3b937fcee9cfc0cbf16f1ad9a0bc6a3a6e103a84c9a90087e
+  languageName: node
+  linkType: hard
+
+"form-data@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "form-data@npm:4.0.0"
+  dependencies:
+    asynckit: "npm:^0.4.0"
+    combined-stream: "npm:^1.0.8"
+    mime-types: "npm:^2.1.12"
+  checksum: 10/7264aa760a8cf09482816d8300f1b6e2423de1b02bba612a136857413fdc96d7178298ced106817655facc6b89036c6e12ae31c9eb5bdc16aabf502ae8a5d805
   languageName: node
   linkType: hard
 
@@ -4005,26 +4002,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gaxios@npm:^4.0.0":
-  version: 4.3.3
-  resolution: "gaxios@npm:4.3.3"
+"gaxios@npm:^6.0.0, gaxios@npm:^6.1.1":
+  version: 6.7.1
+  resolution: "gaxios@npm:6.7.1"
   dependencies:
-    abort-controller: "npm:^3.0.0"
     extend: "npm:^3.0.2"
-    https-proxy-agent: "npm:^5.0.0"
+    https-proxy-agent: "npm:^7.0.1"
     is-stream: "npm:^2.0.0"
-    node-fetch: "npm:^2.6.7"
-  checksum: 10/1db4dae18b574e77aab70ba50fa932feb4c808293b464bcb8fed20e3112267ae5a5e2cdce90940598af802dba9fd12cf8d6566dedb6ba429f91cc86166b470ae
+    node-fetch: "npm:^2.6.9"
+    uuid: "npm:^9.0.1"
+  checksum: 10/c85599162208884eadee91215ebbfa1faa412551df4044626cb561300e15193726e8f23d63b486533e066dadad130f58ed872a23acab455238d8d48b531a0695
   languageName: node
   linkType: hard
 
-"gcp-metadata@npm:^4.2.0":
-  version: 4.3.1
-  resolution: "gcp-metadata@npm:4.3.1"
+"gcp-metadata@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "gcp-metadata@npm:6.1.0"
   dependencies:
-    gaxios: "npm:^4.0.0"
+    gaxios: "npm:^6.0.0"
     json-bigint: "npm:^1.0.0"
-  checksum: 10/fe343dd34e23acea4cb84776238da1fd1e6a1dece237eedfd720fc40ab69136af778a749a73c13a3c40177eee462ce4c7e2770ab95c951f13fcaa93a2fed15d5
+  checksum: 10/a0d12a9cb7499fdb9de0fff5406aa220310c1326b80056be8d9b747aae26414f99d14bd795c0ec52ef7d0473eef9d61bb657b8cd3d8186c8a84c4ddbff025fe9
   languageName: node
   linkType: hard
 
@@ -4169,42 +4166,32 @@ __metadata:
   languageName: node
   linkType: hard
 
-"google-auth-library@npm:^6.1.3":
-  version: 6.1.6
-  resolution: "google-auth-library@npm:6.1.6"
+"google-auth-library@npm:^9.14.0":
+  version: 9.14.0
+  resolution: "google-auth-library@npm:9.14.0"
   dependencies:
-    arrify: "npm:^2.0.0"
     base64-js: "npm:^1.3.0"
     ecdsa-sig-formatter: "npm:^1.0.11"
-    fast-text-encoding: "npm:^1.0.0"
-    gaxios: "npm:^4.0.0"
-    gcp-metadata: "npm:^4.2.0"
-    gtoken: "npm:^5.0.4"
+    gaxios: "npm:^6.1.1"
+    gcp-metadata: "npm:^6.1.0"
+    gtoken: "npm:^7.0.0"
     jws: "npm:^4.0.0"
-    lru-cache: "npm:^6.0.0"
-  checksum: 10/67e03da027a697130b116ae23672c94a94cc2f9329081725d42ba1832ac520ba916c85dcb47a6661f78a8e3b5c6b974c6adebf6ec3f34f1c6d62593e864dbf1a
+  checksum: 10/5fd9fe7cfeb6aaec39e37326e8c856db7dd612a8a484f8f74bc389a7121da7f00eb6d487b2d904b46e0881afb0c867d7650ae945da63027388f7eb459d06dd56
   languageName: node
   linkType: hard
 
-"google-p12-pem@npm:^3.1.3":
-  version: 3.1.4
-  resolution: "google-p12-pem@npm:3.1.4"
+"google-spreadsheet@npm:^4.1.2":
+  version: 4.1.2
+  resolution: "google-spreadsheet@npm:4.1.2"
   dependencies:
-    node-forge: "npm:^1.3.1"
-  bin:
-    gp12-pem: build/src/bin/gp12-pem.js
-  checksum: 10/cd9b868d1627963b108d1520db7ed935f1b4af97f8e46b48e8464c0e40f5145cd74b0ee49612f05541ae371ca5ceee054135c99df9034c6c231612a7ba38f361
-  languageName: node
-  linkType: hard
-
-"google-spreadsheet@npm:^3.2.0":
-  version: 3.3.0
-  resolution: "google-spreadsheet@npm:3.3.0"
-  dependencies:
-    axios: "npm:^0.21.4"
-    google-auth-library: "npm:^6.1.3"
+    axios: "npm:^1.4.0"
     lodash: "npm:^4.17.21"
-  checksum: 10/76522358dd2595829b35631398e6790573722f88318a543550a66072fd4c156b34e9a84fa98ef717d6d03d06632bc07d97443a6c17990220d25bac2aa209069f
+  peerDependencies:
+    google-auth-library: ^8.8.0 || ^9.0.0
+  peerDependenciesMeta:
+    google-auth-library:
+      optional: true
+  checksum: 10/7121b13050e622c1aec0595cda70210b3f354683a06dea6a7a73514bf0c8b34f38e30b5dd59e055687d7da0b466ae26d748a49fc75b612289f04c090ea62f207
   languageName: node
   linkType: hard
 
@@ -4231,14 +4218,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gtoken@npm:^5.0.4":
-  version: 5.3.2
-  resolution: "gtoken@npm:5.3.2"
+"gtoken@npm:^7.0.0":
+  version: 7.1.0
+  resolution: "gtoken@npm:7.1.0"
   dependencies:
-    gaxios: "npm:^4.0.0"
-    google-p12-pem: "npm:^3.1.3"
+    gaxios: "npm:^6.0.0"
     jws: "npm:^4.0.0"
-  checksum: 10/357e78e6ad35154e8b291cf29237be9b636f946cd5eaa1c50317610a345048512a2023670273589d5b09585d5970ca782ac45ec12dee069cceab86bf836d8102
+  checksum: 10/640392261e55c9242137a81a4af8feb053b57061762cedddcbb6a0d62c2314316161808ac2529eea67d06d69fdc56d82361af50f2d840a04a87ea29e124d7382
   languageName: node
   linkType: hard
 
@@ -4327,16 +4313,6 @@ __metadata:
     agent-base: "npm:^7.1.0"
     debug: "npm:^4.3.4"
   checksum: 10/d062acfa0cb82beeb558f1043c6ba770ea892b5fb7b28654dbc70ea2aeea55226dd34c02a294f6c1ca179a5aa483c4ea641846821b182edbd9cc5d89b54c6848
-  languageName: node
-  linkType: hard
-
-"https-proxy-agent@npm:^5.0.0":
-  version: 5.0.1
-  resolution: "https-proxy-agent@npm:5.0.1"
-  dependencies:
-    agent-base: "npm:6"
-    debug: "npm:4"
-  checksum: 10/f0dce7bdcac5e8eaa0be3c7368bb8836ed010fb5b6349ffb412b172a203efe8f807d9a6681319105ea1b6901e1972c7b5ea899672a7b9aad58309f766dcbe0df
   languageName: node
   linkType: hard
 
@@ -4993,15 +4969,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lru-cache@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "lru-cache@npm:6.0.0"
-  dependencies:
-    yallist: "npm:^4.0.0"
-  checksum: 10/fc1fe2ee205f7c8855fa0f34c1ab0bcf14b6229e35579ec1fd1079f31d6fc8ef8eb6fd17f2f4d99788d7e339f50e047555551ebd5e434dda503696e7c6591825
-  languageName: node
-  linkType: hard
-
 "make-fetch-happen@npm:^13.0.0":
   version: 13.0.1
   resolution: "make-fetch-happen@npm:13.0.1"
@@ -5076,7 +5043,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mime-types@npm:^2.1.27":
+"mime-types@npm:^2.1.12, mime-types@npm:^2.1.27":
   version: 2.1.35
   resolution: "mime-types@npm:2.1.35"
   dependencies:
@@ -5301,7 +5268,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:^2.6.7":
+"node-fetch@npm:^2.6.9":
   version: 2.7.0
   resolution: "node-fetch@npm:2.7.0"
   dependencies:
@@ -5312,13 +5279,6 @@ __metadata:
     encoding:
       optional: true
   checksum: 10/b24f8a3dc937f388192e59bcf9d0857d7b6940a2496f328381641cb616efccc9866e89ec43f2ec956bbd6c3d3ee05524ce77fe7b29ccd34692b3a16f237d6676
-  languageName: node
-  linkType: hard
-
-"node-forge@npm:^1.3.1":
-  version: 1.3.1
-  resolution: "node-forge@npm:1.3.1"
-  checksum: 10/05bab6868633bf9ad4c3b1dd50ec501c22ffd69f556cdf169a00998ca1d03e8107a6032ba013852f202035372021b845603aeccd7dfcb58cdb7430013b3daa8d
   languageName: node
   linkType: hard
 
@@ -5648,6 +5608,13 @@ __metadata:
     object-assign: "npm:^4.1.1"
     react-is: "npm:^16.13.1"
   checksum: 10/7d959caec002bc964c86cdc461ec93108b27337dabe6192fb97d69e16a0c799a03462713868b40749bfc1caf5f57ef80ac3e4ffad3effa636ee667582a75e2c0
+  languageName: node
+  linkType: hard
+
+"proxy-from-env@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "proxy-from-env@npm:1.1.0"
+  checksum: 10/f0bb4a87cfd18f77bc2fba23ae49c3b378fb35143af16cc478171c623eebe181678f09439707ad80081d340d1593cd54a33a0113f3ccb3f4bc9451488780ee23
   languageName: node
   linkType: hard
 
@@ -6115,7 +6082,8 @@ __metadata:
     eslint-plugin-react-hooks: "npm:^4.6.0"
     eslint-plugin-simple-import-sort: "npm:^12.1.1"
     framer-motion: "npm:^11.0.3"
-    google-spreadsheet: "npm:^3.2.0"
+    google-auth-library: "npm:^9.14.0"
+    google-spreadsheet: "npm:^4.1.2"
     next: "npm:^14.2.6"
     prettier: "npm:^2.8.8"
     react: "npm:^18.3.1"
@@ -6719,6 +6687,15 @@ __metadata:
   peerDependencies:
     react: ^16.8.0  || ^17 || ^18
   checksum: 10/6aef8affd3c053a3040b7421816dab85eb21601c5203496a705bafc32eb973fb519a2b0ddda527962e361d248f3a1c49df130620efe871c8f89e897451ed1cc7
+  languageName: node
+  linkType: hard
+
+"uuid@npm:^9.0.1":
+  version: 9.0.1
+  resolution: "uuid@npm:9.0.1"
+  bin:
+    uuid: dist/bin/uuid
+  checksum: 10/9d0b6adb72b736e36f2b1b53da0d559125ba3e39d913b6072f6f033e0c87835b414f0836b45bcfaf2bdf698f92297fea1c3cc19b0b258bc182c9c43cc0fab9f2
   languageName: node
   linkType: hard
 
