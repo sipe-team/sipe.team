@@ -1,5 +1,4 @@
 import { RefObject, useEffect, useState } from 'react';
-import { off } from 'react-use/lib/misc/util';
 
 import { getIntersectionObserver } from '@/libs/observers/getIntersectionObserver';
 

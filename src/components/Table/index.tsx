@@ -1,7 +1,7 @@
-import { ReactComponent as Circle } from '@/assets/check_circle.svg';
+import Circle from '@/assets/check_circle.svg';
 import useDeviceType from '@/hook/useDeviceType';
 
-import Badge from '../Badge';
+import Badge from '../common/Badge';
 import * as S from './styled';
 
 interface TableProps {
