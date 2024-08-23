@@ -1,7 +1,6 @@
 import { usePathname } from 'next/navigation';
 
-import Github from '@/assets/github.svg';
-import Instagram from '@/assets/instagram.svg';
+import { GithubLogo, InstagramLogo } from '@/assets/logos';
 // import { ReactComponent as Linkedin } from '@/assets/linkedin.svg';
 // import { ReactComponent as Youtube } from '@/assets/youtube.svg';
 import useDeviceType from '@/hook/useDeviceType';
@@ -14,13 +13,13 @@ const sns = [
     id: 1,
     name: 'Instagram',
     url: 'https://www.instagram.com/sipe_team/',
-    icon: <Instagram />,
+    icon: <InstagramLogo />,
   },
   {
     id: 2,
     name: 'Github',
     url: 'https://github.com/sipe-team',
-    icon: <Github />,
+    icon: <GithubLogo />,
   },
   // { id: 3, name: 'Youtube', url: '', icon: <Youtube /> },
   // { id: 4, name: 'Linkedin', url: '', icon: <Linkedin /> },

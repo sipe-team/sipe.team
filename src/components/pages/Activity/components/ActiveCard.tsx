@@ -1,4 +1,4 @@
-import UserIcon from '@/assets/ico_user.svg';
+import { UserIcon } from '@/assets/icons';
 import CardWrapper from '@/components/CardWrapper';
 import Image from '@/components/Image';
 import useDeviceType from '@/hook/useDeviceType';

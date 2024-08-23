@@ -1,5 +1,5 @@
-import Email from '@/assets/email.svg';
-import Kakao from '@/assets/kakao_logo.svg';
+import { EmailIcon } from '@/assets/icons';
+import { KakaoLogo } from '@/assets/logos';
 import Layout from '@/components/Layout';
 
 import * as S from './styled';
@@ -9,13 +9,13 @@ const contacts = [
     id: 1,
     text: 'sipe.team@gmail.com',
     // url: 'mailto:sipe.team@gmail.com',
-    icon: <Email />,
+    icon: <EmailIcon />,
   },
   {
     id: 2,
     text: '@sipe',
     url: 'http://pf.kakao.com/_Bqxbxgxj',
-    icon: <Kakao />,
+    icon: <KakaoLogo />,
   },
 ];
 

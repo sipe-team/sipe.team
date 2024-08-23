@@ -1,4 +1,4 @@
-import Circle from '@/assets/check_circle.svg';
+import { CheckCircleIcon } from '@/assets/icons';
 import useDeviceType from '@/hook/useDeviceType';
 
 import Badge from '../common/Badge';
@@ -23,7 +23,7 @@ const Table = ({ dataList, isApplicant }: TableProps) => {
       {dataList.map((data, index) => (
         <S.Table key={index} isMobile={isMobile} isApplicant={isApplicant}>
           {isApplicant ? (
-            <Circle />
+            <CheckCircleIcon />
           ) : (
             <S.SubText>{data.recurring_date}</S.SubText>
           )}

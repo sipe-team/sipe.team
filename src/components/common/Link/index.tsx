@@ -1,8 +1,7 @@
 import styled from '@emotion/styled';
 
-import Github from '@/assets/ico_github.svg';
-import ETCLink from '@/assets/ico_link.svg';
-import LinkedIn from '@/assets/ico_linkedin.svg';
+import { LinkIcon } from '@/assets/icons';
+import { GithubIconLogo, LinkedInIconLogo } from '@/assets/logos';
 
 type LinkProps = {
   type: 'GITHUB' | 'LINKEDIN' | 'LINK';
@@ -18,15 +17,15 @@ const Link = ({ type, url }: LinkProps) => {
   };
 
   return (
-    <LinkIcon onClick={handleClick}>
-      {type === 'GITHUB' && <Github />}
-      {type === 'LINKEDIN' && <LinkedIn />}
-      {type === 'LINK' && <ETCLink />}
-    </LinkIcon>
+    <Anchor onClick={handleClick}>
+      {type === 'GITHUB' && <GithubIconLogo />}
+      {type === 'LINKEDIN' && <LinkedInIconLogo />}
+      {type === 'LINK' && <LinkIcon />}
+    </Anchor>
   );
 };
 
-const LinkIcon = styled.a`
+const Anchor = styled.a`
   display: inline-block;
   width: 24px;
   height: 24px;

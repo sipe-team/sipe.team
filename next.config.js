@@ -1,3 +1,5 @@
+const path = require('path');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -16,6 +18,9 @@ const nextConfig = {
   swcMinify: true,
   experimental: {
     typedRoutes: true,
+  },
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
   },
   webpack(config) {
     const fileLoaderRule = config.module.rules.find((rule) =>
@@ -44,5 +49,4 @@ const nextConfig = {
   },
 };
 
-// eslint-disable-next-line no-undef
 module.exports = nextConfig;
