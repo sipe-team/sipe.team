@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import Arrow from '@/assets/accordion_arrow.svg';
+import { AccordionArrowIcon } from '@/assets/icons';
 import useDeviceType from '@/hook/useDeviceType';
 
 import * as S from './styled';
@@ -19,7 +19,7 @@ export default function Accordion({ q, a }: AccordionProps) {
       <S.Question isDesktop={isDesktop}>
         {q}
         <S.Arrow isOpen={isOpen} isDesktop={isDesktop}>
-          <Arrow />
+          <AccordionArrowIcon />
         </S.Arrow>
       </S.Question>
       {isOpen && <S.Answer isDesktop={isDesktop}>{a}</S.Answer>}

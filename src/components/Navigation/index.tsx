@@ -3,7 +3,7 @@ import { Route } from 'next';
 import { usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
 
-import Logo from '@/assets/logo.svg';
+import { SipeLogo } from '@/assets/logos';
 import useDeviceType from '@/hook/useDeviceType';
 import { useJoinUs } from '@/hook/useJoinUs';
 
@@ -78,7 +78,7 @@ export default function Navigation() {
             onClick={() => handleNavigate('/')}
             style={{ cursor: 'pointer' }}
           >
-            <Logo />
+            <SipeLogo />
           </div>
           {isDesktop ? (
             <S.Buttons>

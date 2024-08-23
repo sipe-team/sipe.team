@@ -1,6 +1,6 @@
 import { ComponentProps } from 'react';
 
-import OrganizerMark from '@/assets/organizer.svg';
+import { OrganizerIcon } from '@/assets/icons';
 import CardWrapper from '@/components/CardWrapper';
 import Link from '@/components/common/Link';
 import Image from '@/components/Image';
@@ -58,7 +58,7 @@ const UserCard = ({
             <p className="part">{part}</p>
             {isOrganizer && (
               <p className="organizer">
-                Organizer <OrganizerMark className="organizer-mark" />
+                Organizer <OrganizerIcon className="organizer-mark" />
               </p>
             )}
           </section>
