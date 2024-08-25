@@ -1,5 +1,3 @@
-import clsx from 'clsx';
-
 import Badge from '@/components/common/Badge';
 import useDeviceType from '@/hook/useDeviceType';
 
@@ -17,7 +15,7 @@ const Card = ({ src, index, badgeText, title, subTitle }: CardProps) => {
   const { isTablet } = useDeviceType();
   const isOdd = index % 2 !== 0;
   return (
-    <div className={clsx(styles.section, { [styles.index3]: index === 3 })}>
+    <div className={styles.section}>
       {isOdd || (!isOdd && isTablet) ? (
         <img className={styles.image} src={src} />
       ) : null}

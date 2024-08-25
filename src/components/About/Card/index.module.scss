@@ -8,14 +8,14 @@
   margin-bottom: 60px;
   flex-direction: column;
 
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
   @include desktop {
     flex-direction: row;
     margin-bottom: 120px;
   }
-}
-
-.index3 {
-  margin-bottom: 0;
 }
 
 .image {
