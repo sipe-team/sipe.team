@@ -1,4 +1,5 @@
-@import '~sanitize.css';
+@import "~sanitize.css";
+@import "./variables";
 
 * {
   box-sizing: border-box;
@@ -54,8 +55,8 @@ html {
   height: 100%;
   overflow-y: scroll;
   font-size: 14px;
-  color: color('black');
-  background-color: color('black');
+  color: color("black");
+  background-color: color("black");
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
