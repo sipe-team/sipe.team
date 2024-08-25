@@ -1,0 +1,11 @@
+.wrapper {
+  position: relative;
+  display: inline-block;
+
+  &:hover {
+    .tooltip-container {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
