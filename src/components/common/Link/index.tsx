@@ -1,7 +1,7 @@
-import styled from '@emotion/styled';
-
 import { LinkIcon } from '@/assets/icons';
 import { GithubIconLogo, LinkedInIconLogo } from '@/assets/logos';
+
+import styles from './index.module.scss';
 
 type LinkProps = {
   type: 'GITHUB' | 'LINKEDIN' | 'LINK';
@@ -17,29 +17,12 @@ const Link = ({ type, url }: LinkProps) => {
   };
 
   return (
-    <Anchor onClick={handleClick}>
+    <a className={styles.anchor} onClick={handleClick}>
       {type === 'GITHUB' && <GithubIconLogo />}
       {type === 'LINKEDIN' && <LinkedInIconLogo />}
       {type === 'LINK' && <LinkIcon />}
-    </Anchor>
+    </a>
   );
 };
-
-const Anchor = styled.a`
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-
-  svg path {
-    transition: opacity 0.3s ease;
-  }
-
-  &:hover {
-    svg path {
-      opacity: 0.6;
-    }
-  }
-`;
 
 export default Link;

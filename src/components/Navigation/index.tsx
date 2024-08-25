@@ -11,6 +11,7 @@ import Button from '../common/Button';
 import { ApplyButton } from '../common/Button/styled';
 import HamburgerButton from '../HamburgerButton';
 import Layout from '../Layout';
+import styles from './index.module.scss';
 import * as S from './styled';
 
 const menus = [
@@ -73,7 +74,7 @@ export default function Navigation() {
   return (
     <S.Wrapper>
       <Layout>
-        <S.Group>
+        <div className={styles.group}>
           <div
             onClick={() => handleNavigate('/')}
             style={{ cursor: 'pointer' }}
@@ -81,8 +82,8 @@ export default function Navigation() {
             <SipeLogo />
           </div>
           {isDesktop ? (
-            <S.Buttons>
-              <S.Menus>
+            <div className={styles.buttons}>
+              <div className={styles.menus}>
                 {menus.map((menu) => (
                   <Button
                     key={menu.name}
@@ -93,21 +94,21 @@ export default function Navigation() {
                     {menu.name}
                   </Button>
                 ))}
-              </S.Menus>
+              </div>
               <ApplyButton
                 isDesktop={isDesktop}
                 onClick={handleClickJoinButton}
               >
                 Join Us
               </ApplyButton>
-            </S.Buttons>
+            </div>
           ) : (
             <HamburgerButton
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               isOpened={isMobileMenuOpen}
             />
           )}
-        </S.Group>
+        </div>
         <AnimatePresence>
           {!isDesktop && (
             <S.MobileMenus

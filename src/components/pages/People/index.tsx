@@ -3,12 +3,11 @@ import { useEffect, useState } from 'react';
 import Button from '@/components/common/Button';
 import ContentWithTitle from '@/components/ContentWithTitle';
 import Layout from '@/components/Layout';
-import useDeviceType from '@/hook/useDeviceType';
 
-import InfiniteScroll from '../../InfiniteScroll';
 import * as db from '../../../db/index.json';
+import InfiniteScroll from '../../InfiniteScroll';
 import UserCard from './components/UserCard';
-import * as S from './styled';
+import styles from './index.module.scss';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
@@ -72,7 +71,6 @@ const periods = Object.keys(db.peoples)
   });
 
 const People = () => {
-  const { isMobile } = useDeviceType();
   const [period, setPeriod] = useState(periods[0].value);
   const [peoples, setPeoples] = useState(peopleData(period));
 
@@ -105,11 +103,11 @@ const People = () => {
   return (
     <Layout>
       <ContentWithTitle title="사이퍼 소개">
-        <S.PeriodsWrapper>
+        <article className={styles.periodsWrapper}>
           {periods.map((_period) => (
             <Button
               key={_period.value}
-              className="period-button"
+              className={styles.button}
               buttonType="chip"
               selected={_period.value === period}
               onClick={() => setPeriod(_period.value)}
@@ -117,14 +115,14 @@ const People = () => {
               {_period.name}
             </Button>
           ))}
-        </S.PeriodsWrapper>
-        <S.Wrapper isMobile={isMobile}>
+        </article>
+        <article className={styles.wrapper}>
           <InfiniteScroll
             items={peoples}
-            className="contents"
+            className={styles.contents}
             components={(people) => <PeopleCard people={people} />}
           />
-        </S.Wrapper>
+        </article>
       </ContentWithTitle>
     </Layout>
   );
