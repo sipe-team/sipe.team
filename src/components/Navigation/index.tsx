@@ -1,13 +1,14 @@
 import { AnimatePresence } from 'framer-motion';
+import { Route } from 'next';
+import { usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
 
-import { ReactComponent as Logo } from '@/assets/logo.svg';
+import { SipeLogo } from '@/assets/logos';
 import useDeviceType from '@/hook/useDeviceType';
 import { useJoinUs } from '@/hook/useJoinUs';
 
-import Button from '../Button';
-import { ApplyButton } from '../Button/styled';
+import Button from '../common/Button';
+import { ApplyButton } from '../common/Button/styled';
 import HamburgerButton from '../HamburgerButton';
 import Layout from '../Layout';
 import * as S from './styled';
@@ -22,8 +23,8 @@ const menus = [
 
 export default function Navigation() {
   const { isDesktop } = useDeviceType();
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
+  const pathname = usePathname();
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -31,7 +32,7 @@ export default function Navigation() {
 
   const handleNavigate = (path: string) => {
     setIsMobileMenuOpen(false);
-    navigate(path);
+    router.push(path as Route);
     scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -77,7 +78,7 @@ export default function Navigation() {
             onClick={() => handleNavigate('/')}
             style={{ cursor: 'pointer' }}
           >
-            <Logo />
+            <SipeLogo />
           </div>
           {isDesktop ? (
             <S.Buttons>
@@ -86,7 +87,7 @@ export default function Navigation() {
                   <Button
                     key={menu.name}
                     buttonType="menu"
-                    selected={menu.path === location.pathname}
+                    selected={menu.path === pathname}
                     onClick={() => handleNavigate(menu.path)}
                   >
                     {menu.name}
@@ -120,7 +121,7 @@ export default function Navigation() {
                   <Button
                     key={menu.name}
                     buttonType="menu"
-                    selected={menu.path === location.pathname}
+                    selected={menu.path === pathname}
                     onClick={() => handleNavigate(menu.path)}
                   >
                     {menu.name}

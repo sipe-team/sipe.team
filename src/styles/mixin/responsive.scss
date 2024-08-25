@@ -1,0 +1,22 @@
+// Breakpoints
+$sm: 0px;
+$md: 780px;
+$lg: 1060px;
+
+@mixin mobile {
+	@media (min-width: #{$sm}) and (max-width: #{$md - 1px}) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (min-width: #{$md}) and (max-width: #{$lg - 1px}) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: #{$lg}) {
+		@content;
+	}
+}
