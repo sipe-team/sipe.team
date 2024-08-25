@@ -18,7 +18,7 @@ export const InActivity = [
   {
     recurring_date: '2회차 (10.26)',
     text: 'MT',
-    badge: '',
+    badge: '1차 미션 시작',
   },
   {
     recurring_date: '3회차 (11.09)',
