@@ -1,11 +1,9 @@
-import styled from '@emotion/styled';
-
-export const Meta = styled.section`
+.Metawrapper {
   display: flex;
   height: 70px;
   margin-bottom: 20px;
 
-  .profile-bg {
+  .profileBg {
     width: 70px;
     height: 70px;
     min-width: 70px;
@@ -19,7 +17,7 @@ export const Meta = styled.section`
     width: 100%;
     height: 100%;
     border-radius: 4px;
-    object-fit: contain;
+    object-fit: cover;
   }
 
   .info {
@@ -29,73 +27,78 @@ export const Meta = styled.section`
     margin: 8.5px 0 8.5px 16px;
   }
 
-  .main-info {
+  .mainInfo {
     display: flex;
     justify-content: space-between;
     height: 100%;
+
     .name {
       display: inline;
       font-weight: 800;
       font-size: 16px;
       line-height: 137%;
-      color: ${({ theme }) => theme.colors.white};
+      color: color("white");
     }
+
     .links {
       display: flex;
       gap: 12px;
     }
   }
 
-  .sub-info {
+  .subInfo {
     display: flex;
     justify-content: space-between;
+
     .part {
       font-size: 12px;
       font-weight: 500;
       line-height: 17px;
       letter-spacing: -0.002em;
       text-align: left;
-      color: ${({ theme }) => theme.colors.gray6};
+      color: color("gray500");
     }
+
     .organizer {
       display: flex;
       justify-content: center;
       align-items: center;
-      color: ${({ theme }) => theme.colors.green};
+      color: color("primary");
     }
 
-    .organizer-mark {
+    .organizerMark {
       margin-left: 4px;
     }
   }
-`;
+}
 
-export const Introduce = styled.section`
+.introduceWrapper {
   font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   letter-spacing: -0.002em;
   text-align: left;
-  color: ${({ theme }) => theme.colors.gray8};
+  color: color("gray700");
   margin-bottom: 20px;
-`;
+}
 
-export const Review = styled.section`
+.reviewWrapper {
   h3 {
     font-size: 14px;
     font-weight: 700;
     line-height: 20px;
     letter-spacing: -0.002em;
     text-align: left;
-    color: ${({ theme }) => theme.colors.white};
+    color: color("white");
     margin-bottom: 8px;
   }
+
   p {
     font-size: 14px;
     font-weight: 400;
     line-height: 19px;
     letter-spacing: -0.002em;
     text-align: left;
-    color: ${({ theme }) => theme.colors.gray8};
+    color: color("gray700");
   }
-`;
+}

@@ -1,5 +1,5 @@
 import useTimer from '../../hooks/useTimer';
-import * as S from './styled';
+import styles from './index.module.scss';
 
 export interface TimerProps {
   /**
@@ -15,15 +15,23 @@ export default function Timer({ dueDate, isRecruiting }: TimerProps) {
   const formattedTime = (number: number) => String(number).padStart(2, '0');
 
   return (
-    <S.Wrapper>
-      <S.Time>{isRecruiting ? formattedTime(dates) : 0}</S.Time>
+    <div className={styles.wrapper}>
+      <div className={styles.time}>
+        {isRecruiting ? formattedTime(dates) : 0}
+      </div>
       <div>일</div>
-      <S.Time>{isRecruiting ? formattedTime(hours) : 0}</S.Time>
+      <div className={styles.time}>
+        {isRecruiting ? formattedTime(hours) : 0}
+      </div>
       <div>시간</div>
-      <S.Time>{isRecruiting ? formattedTime(minutes) : 0}</S.Time>
+      <div className={styles.time}>
+        {isRecruiting ? formattedTime(minutes) : 0}
+      </div>
       <div>분</div>
-      <S.Time>{isRecruiting ? formattedTime(seconds) : 0}</S.Time>
+      <div className={styles.time}>
+        {isRecruiting ? formattedTime(seconds) : 0}
+      </div>
       <div>초</div>
-    </S.Wrapper>
+    </div>
   );
 }

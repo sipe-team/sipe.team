@@ -5,7 +5,7 @@ import CardWrapper from '@/components/CardWrapper';
 import Link from '@/components/common/Link';
 import Image from '@/components/Image';
 
-import * as S from './styled';
+import styles from './index.module.scss';
 
 type UserCardProps = ComponentProps<'div'> & {
   period: string;
@@ -36,40 +36,35 @@ const UserCard = ({
       className="people-box"
       minHeight={isContributor ? undefined : 270}
     >
-      <S.Meta>
-        <section className="profile-bg">
-          <Image
-            className="profile"
-            alt="user image"
-            src={img}
-            style={{ objectFit: 'cover' }}
-          />
+      <section className={styles.Metawrapper}>
+        <section className={styles.profileBg}>
+          <Image className={styles.profile} alt="user image" src={img} />
         </section>
-        <section className="info">
-          <section className="main-info">
-            <h3 className="name">{name}</h3>
-            <article className="links">
+        <section className={styles.info}>
+          <section className={styles.mainInfo}>
+            <h3 className={styles.name}>{name}</h3>
+            <article className={styles.links}>
               {links.map((link) => (
                 <Link type={link.type} url={link.url} key={link.type} />
               ))}
             </article>
           </section>
-          <section className="sub-info">
-            <p className="part">{part}</p>
+          <section className={styles.subInfo}>
+            <p className={styles.part}>{part}</p>
             {isOrganizer && (
-              <p className="organizer">
-                Organizer <OrganizerIcon className="organizer-mark" />
+              <p className={styles.organizer}>
+                Organizer <OrganizerIcon className={styles.organizerMark} />
               </p>
             )}
           </section>
         </section>
-      </S.Meta>
-      <S.Introduce>{introduce}</S.Introduce>
+      </section>
+      <section className={styles.introduceWrapper}>{introduce}</section>
       {!isContributor && (
-        <S.Review>
+        <section className={styles.reviewWrapper}>
           <h3>활동후기</h3>
           <p>{review}</p>
-        </S.Review>
+        </section>
       )}
     </CardWrapper>
   );

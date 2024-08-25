@@ -1,4 +1,6 @@
-import * as S from './styled';
+import CardWrapper from '@/components/CardWrapper';
+
+import styles from './index.module.scss';
 
 type CarouselCardProps = {
   title: string;
@@ -7,9 +9,9 @@ type CarouselCardProps = {
 
 export default function CarouselCard({ title, value }: CarouselCardProps) {
   return (
-    <S.Wrapper>
+    <CardWrapper className={styles.wrapper}>
       <div>{title}</div>
       <div>{value}</div>
-    </S.Wrapper>
+    </CardWrapper>
   );
 }

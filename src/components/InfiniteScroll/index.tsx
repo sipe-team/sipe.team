@@ -3,8 +3,6 @@ import { useRef } from 'react';
 
 import { useInfiniteScroll } from '@/components/InfiniteScroll/hooks/useInfiniteScroll';
 
-import * as S from './styled';
-
 type InfiniteScrollProps = React.ComponentProps<'div'> & {
   items: Array<unknown>;
   components: (props: unknown) => React.ReactNode;
@@ -19,7 +17,7 @@ const InfiniteScroll = ({
   const { elements, isEnd } = useInfiniteScroll(containerRef, items);
 
   return (
-    <S.Wrapper className={className}>
+    <div className={className}>
       {elements.map((element, index) => (
         <React.Fragment key={index}>{components(element)}</React.Fragment>
       ))}
@@ -30,7 +28,7 @@ const InfiniteScroll = ({
           ref={containerRef}
         ></div>
       )}
-    </S.Wrapper>
+    </div>
   );
 };
 
