@@ -7,7 +7,6 @@ import React, { PropsWithChildren } from 'react';
 import Footer from '@/components/Footer';
 import Header from '@/components/Navigation';
 import useGARouteChange from '@/hook/useGARouteChange';
-import GlobalStyle from '@/styles/GlobalStyle';
 import theme from '@/styles/theme';
 
 function ClientProvider({ children }: PropsWithChildren) {
@@ -16,7 +15,6 @@ function ClientProvider({ children }: PropsWithChildren) {
 
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
       <div
         style={{
           minHeight: 'calc(100vh - 64px)',

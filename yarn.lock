@@ -5933,6 +5933,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"sanitize.css@npm:^13.0.0":
+  version: 13.0.0
+  resolution: "sanitize.css@npm:13.0.0"
+  checksum: 10/508cde59d1c99a885806387ca8350c594c4211cab16804fe66ed75cd7e1ba7ebd4079224128b1aea4d4227f0d1add3e83a85a51a6a7e4419c083f4cce70d010f
+  languageName: node
+  linkType: hard
+
 "sass@npm:1.77.8":
   version: 1.77.8
   resolution: "sass@npm:1.77.8"
@@ -6091,6 +6098,7 @@ __metadata:
     react-ga4: "npm:^2.1.0"
     react-responsive: "npm:^9.0.2"
     react-responsive-carousel: "npm:^3.2.23"
+    sanitize.css: "npm:^13.0.0"
     sass: "npm:1.77.8"
     swiper: "npm:^11.0.5"
     typescript: "npm:^5.5.4"
