@@ -1,3 +1,5 @@
+'use client';
+
 import Button from '@/components/common/Button';
 import Layout from '@/components/Layout';
 import useDeviceType from '@/hook/useDeviceType';

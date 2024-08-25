@@ -6,12 +6,10 @@ import React, { PropsWithChildren } from 'react';
 
 import Footer from '@/components/Footer';
 import Header from '@/components/Navigation';
-import useGARouteChange from '@/hook/useGARouteChange';
 import theme from '@/styles/theme';
 
 function ClientProvider({ children }: PropsWithChildren) {
   const pathname = usePathname();
-  useGARouteChange();
 
   return (
     <ThemeProvider theme={theme}>
