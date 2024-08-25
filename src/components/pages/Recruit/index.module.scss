@@ -1,0 +1,19 @@
+.wrapper {
+  width: 100%;
+}
+
+.cardList {
+  height: 100%;
+  align-items: center;
+  gap: 20px;
+  display: inline-flex;
+}
+
+.mobileContent {
+  align-items: flex-start;
+  margin-top: 40px;
+  margin-bottom: 24px;
+  width: 100%;
+  overflow-x: scroll;
+  padding: 0 20px;
+}
