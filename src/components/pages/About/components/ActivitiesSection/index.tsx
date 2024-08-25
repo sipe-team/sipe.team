@@ -4,13 +4,13 @@ import 'swiper/css/pagination';
 import { useEffect, useState } from 'react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { SwiperSlide } from 'swiper/react';
+import { Swiper } from 'swiper/react';
 
 import ContentWithTitle from '@/components/ContentWithTitle';
 import * as db from '@/db/index.json';
-import useDeviceType from '@/hook/useDeviceType';
 
 import Button from '../../../../common/Button';
-import * as S from './styled';
+import styles from './index.module.scss';
 
 const aboutActivity = db.abouts.activity;
 
@@ -41,14 +41,12 @@ const Activity = () => {
     setActivityData(aboutActivity[selectChip]);
   }, [selectChip]);
 
-  const { isMobile } = useDeviceType();
-
   return (
     <ContentWithTitle title="주요 활동">
-      <S.Menus isMobile={isMobile}>
+      <div className={styles.menus}>
         {aboutActivityNames.map((chip) => (
           <Button
-            className="activity-button"
+            className={styles.activityButton}
             key={chip.name}
             buttonType="chip"
             onClick={() => setSelectChip(chip.value)}
@@ -57,10 +55,10 @@ const Activity = () => {
             {chip.name}
           </Button>
         ))}
-      </S.Menus>
-      <S.SwiperContainer
-        loop={true}
-        centeredSlides={true}
+      </div>
+      <Swiper
+        loop
+        centeredSlides
         slidesPerView={1}
         autoplay={{
           delay: 2500,
@@ -82,18 +80,16 @@ const Activity = () => {
           // @ts-ignore
           activityData?.activities?.map((data, index) => (
             <SwiperSlide key={index}>
-              <S.Image src={data} />
+              <img className={styles.image} src={data} />
             </SwiperSlide>
           ))
         }
-      </S.SwiperContainer>
+      </Swiper>
 
-      <S.Description>
-        <S.DescriptionTitle>{activityData?.title}</S.DescriptionTitle>
-        <S.DescriptionSubTitle>
-          {activityData?.description}
-        </S.DescriptionSubTitle>
-      </S.Description>
+      <div className={styles.description}>
+        <div className={styles.title}>{activityData?.title}</div>
+        <div className={styles.subTitle}>{activityData?.description}</div>
+      </div>
     </ContentWithTitle>
   );
 };

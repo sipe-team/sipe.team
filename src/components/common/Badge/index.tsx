@@ -1,4 +1,4 @@
-import * as S from './styled';
+import styles from './index.module.scss';
 
 interface Text {
   text: string | undefined;
@@ -6,9 +6,9 @@ interface Text {
 
 const Badge = ({ text }: Text) => {
   return (
-    <S.Wrapper>
-      <S.Text>{text}</S.Text>
-    </S.Wrapper>
+    <div className={styles.wrapper}>
+      <div className={styles.text}>{text}</div>
+    </div>
   );
 };
 

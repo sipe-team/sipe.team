@@ -1,8 +1,7 @@
 import React from 'react';
 
-import useDeviceType from '@/hook/useDeviceType';
+import styles from './index.module.scss';
 
-import * as S from './styled';
 const Layout = ({
   children,
   backgroundImage,
@@ -10,12 +9,13 @@ const Layout = ({
   children: React.ReactNode;
   backgroundImage?: string;
 }) => {
-  const { isDesktop } = useDeviceType();
-
   return (
-    <S.Wrapper isDesktop={isDesktop} backgroundImage={backgroundImage}>
-      <div className="layout">{children}</div>
-    </S.Wrapper>
+    <div
+      className={styles.wrapper}
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
+      <div className={styles.layout}>{children}</div>
+    </div>
   );
 };
 

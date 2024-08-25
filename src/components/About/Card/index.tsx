@@ -1,7 +1,7 @@
 import Badge from '@/components/common/Badge';
 import useDeviceType from '@/hook/useDeviceType';
 
-import * as S from './styled';
+import styles from './index.module.scss';
 
 interface CardProps {
   src: string;
@@ -12,22 +12,20 @@ interface CardProps {
 }
 
 const Card = ({ src, index, badgeText, title, subTitle }: CardProps) => {
-  const { isTablet, isMobile } = useDeviceType();
+  const { isTablet } = useDeviceType();
   const isOdd = index % 2 !== 0;
   return (
-    <S.Section index={index} isTablet={isTablet}>
+    <div className={styles.section}>
       {isOdd || (!isOdd && isTablet) ? (
-        <S.Image isTablet={isTablet} isMobile={isMobile} src={src} />
+        <img className={styles.image} src={src} />
       ) : null}
-      <S.Description isTablet={isTablet}>
+      <div className={styles.titleWrapper}>
         <Badge text={badgeText} />
-        <S.Title isTablet={isTablet}>{title}</S.Title>
-        <S.SubTitle>{subTitle}</S.SubTitle>
-      </S.Description>
-      {!isOdd && !isTablet ? (
-        <S.Image isTablet={isTablet} isMobile={isMobile} src={src} />
-      ) : null}
-    </S.Section>
+        <div className={styles.title}>{title}</div>
+        <div className={styles.subTitle}>{subTitle}</div>
+      </div>
+      {!isOdd && !isTablet ? <img className={styles.image} src={src} /> : null}
+    </div>
   );
 };
 

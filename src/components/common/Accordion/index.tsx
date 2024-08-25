@@ -1,9 +1,9 @@
+import clsx from 'clsx';
 import { useState } from 'react';
 
 import { AccordionArrowIcon } from '@/assets/icons';
-import useDeviceType from '@/hook/useDeviceType';
 
-import * as S from './styled';
+import styles from './index.module.scss';
 
 export type AccordionProps = {
   q: string;
@@ -12,17 +12,16 @@ export type AccordionProps = {
 
 export default function Accordion({ q, a }: AccordionProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const { isDesktop } = useDeviceType();
 
   return (
-    <S.Wrapper isDesktop={isDesktop} onClick={() => setIsOpen((v) => !v)}>
-      <S.Question isDesktop={isDesktop}>
+    <div className={styles.wrapper} onClick={() => setIsOpen((v) => !v)}>
+      <div className={styles.question}>
         {q}
-        <S.Arrow isOpen={isOpen} isDesktop={isDesktop}>
+        <div className={clsx(styles.arrow, { [styles.isOpen]: isOpen })}>
           <AccordionArrowIcon />
-        </S.Arrow>
-      </S.Question>
-      {isOpen && <S.Answer isDesktop={isDesktop}>{a}</S.Answer>}
-    </S.Wrapper>
+        </div>
+      </div>
+      {isOpen && <div className={styles.answer}>{a}</div>}
+    </div>
   );
 }
