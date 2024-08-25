@@ -2,6 +2,7 @@ import { CheckCircleIcon } from '@/assets/icons';
 import useDeviceType from '@/hook/useDeviceType';
 
 import Badge from '../common/Badge';
+import styles from './index.module.scss';
 import * as S from './styled';
 
 interface TableProps {
@@ -25,7 +26,7 @@ const Table = ({ dataList, isApplicant }: TableProps) => {
           {isApplicant ? (
             <CheckCircleIcon />
           ) : (
-            <S.SubText>{data.recurring_date}</S.SubText>
+            <div className={styles.subText}>{data.recurring_date}</div>
           )}
           <S.Text isApplicant={isApplicant}>{data.text}</S.Text>
           {!isApplicant && data.badge && <Badge text={data.badge} />}

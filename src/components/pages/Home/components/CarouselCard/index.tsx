@@ -1,4 +1,3 @@
-import CardWrapper from '@/components/CardWrapper';
 import * as S from './styled';
 
 type CarouselCardProps = {
