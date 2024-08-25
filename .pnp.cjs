@@ -53,6 +53,7 @@ const RAW_RUNTIME_STATE =
           ["react-ga4", "npm:2.1.0"],\
           ["react-responsive", "virtual:5f85de5545bdf69af1d0de8ab8cd00a40f1e474c5581aca23c5337afa460a456890bdf1462b39697b558b5d28f831142034715dfeff95fce8312e07dc2f32c22#npm:9.0.2"],\
           ["react-responsive-carousel", "npm:3.2.23"],\
+          ["sanitize.css", "npm:13.0.0"],\
           ["sass", "npm:1.77.8"],\
           ["swiper", "npm:11.1.10"],\
           ["typescript", "patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>::version=5.5.4&hash=379a07"],\
@@ -8109,6 +8110,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["sanitize.css", [\
+      ["npm:13.0.0", {\
+        "packageLocation": "./.yarn/cache/sanitize.css-npm-13.0.0-3424903b5d-508cde59d1.zip/node_modules/sanitize.css/",\
+        "packageDependencies": [\
+          ["sanitize.css", "npm:13.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["sass", [\
       ["npm:1.77.8", {\
         "packageLocation": "./.yarn/cache/sass-npm-1.77.8-d0ad322666-4bf6e3007f.zip/node_modules/sass/",\
@@ -8278,6 +8288,7 @@ const RAW_RUNTIME_STATE =
           ["react-ga4", "npm:2.1.0"],\
           ["react-responsive", "virtual:5f85de5545bdf69af1d0de8ab8cd00a40f1e474c5581aca23c5337afa460a456890bdf1462b39697b558b5d28f831142034715dfeff95fce8312e07dc2f32c22#npm:9.0.2"],\
           ["react-responsive-carousel", "npm:3.2.23"],\
+          ["sanitize.css", "npm:13.0.0"],\
           ["sass", "npm:1.77.8"],\
           ["swiper", "npm:11.1.10"],\
           ["typescript", "patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>::version=5.5.4&hash=379a07"],\

@@ -1,3 +1,5 @@
+import 'src/styles/global.scss';
+
 import { Montserrat } from 'next/font/google';
 
 import ClientProvider from '@/components/ClientProvider';
