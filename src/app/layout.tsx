@@ -1,8 +1,10 @@
 import 'src/styles/global.scss';
 
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { Montserrat } from 'next/font/google';
 
 import ClientProvider from '@/components/ClientProvider';
+import { DEFAULT_METADATA } from '@/constants/metadata';
 
 const montserrat = Montserrat({
   display: 'swap',
@@ -10,11 +12,14 @@ const montserrat = Montserrat({
   weight: ['400', '500', '600', '700', '800', '900'],
 });
 
+export const metadata = DEFAULT_METADATA;
+
 function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko" className={montserrat.className}>
       <body>
         <ClientProvider>{children}</ClientProvider>
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
       </body>
     </html>
   );

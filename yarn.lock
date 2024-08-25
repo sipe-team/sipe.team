@@ -1806,6 +1806,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@next/third-parties@npm:^14.2.6":
+  version: 14.2.6
+  resolution: "@next/third-parties@npm:14.2.6"
+  dependencies:
+    third-party-capital: "npm:1.0.20"
+  peerDependencies:
+    next: ^13.0.0 || ^14.0.0
+    react: ^18.2.0
+  checksum: 10/e08818e1d8b48d0c70f6ff2bc47a037e01377dec43596193e43d1a39a7d13c64932e739674f196ffb3e65ded7d9212afa90b770eb854875d016d13e8eb0d5a47
+  languageName: node
+  linkType: hard
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -5662,13 +5674,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-ga4@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "react-ga4@npm:2.1.0"
-  checksum: 10/e47edd040b7a272d35df732e08c4a8b6b14add659db04fb81a3a2cbde59bf34dc6eae9e0b8b4abd8937d11c837954773a6ba86feb2c605e5eb916f4c99e420c7
-  languageName: node
-  linkType: hard
-
 "react-is@npm:^16.13.1, react-is@npm:^16.7.0":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
@@ -6075,6 +6080,7 @@ __metadata:
     "@emotion/react": "npm:^11.10.8"
     "@emotion/styled": "npm:^11.10.8"
     "@next/eslint-plugin-next": "npm:^14.2.6"
+    "@next/third-parties": "npm:^14.2.6"
     "@svgr/webpack": "npm:8.1.0"
     "@types/node": "npm:^20.12.2"
     "@types/react": "npm:^18.3.4"
@@ -6095,7 +6101,6 @@ __metadata:
     prettier: "npm:^2.8.8"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
-    react-ga4: "npm:^2.1.0"
     react-responsive: "npm:^9.0.2"
     react-responsive-carousel: "npm:^3.2.23"
     sanitize.css: "npm:^13.0.0"
@@ -6466,6 +6471,13 @@ __metadata:
   version: 0.2.0
   resolution: "text-table@npm:0.2.0"
   checksum: 10/4383b5baaeffa9bb4cda2ac33a4aa2e6d1f8aaf811848bf73513a9b88fd76372dc461f6fd6d2e9cb5100f48b473be32c6f95bd983509b7d92bb4d92c10747452
+  languageName: node
+  linkType: hard
+
+"third-party-capital@npm:1.0.20":
+  version: 1.0.20
+  resolution: "third-party-capital@npm:1.0.20"
+  checksum: 10/40e2531b428a21f05531fc62ef82859c0071211eff09588baf75d4b525096bbdb4f93e17e2d538849db8d4fc3cceb074933d7be59fddc26f86718fbbe852a97f
   languageName: node
   linkType: hard
 
