@@ -21,6 +21,7 @@ const nextConfig = {
   },
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
+    additionalData: "@import '/src/styles/main';",
   },
   webpack(config) {
     const fileLoaderRule = config.module.rules.find((rule) =>
