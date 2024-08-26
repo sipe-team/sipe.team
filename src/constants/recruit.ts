@@ -1,3 +1,8 @@
+export const JOIN_FORM_URL =
+  //2기모집 폼 : 'https://docs.google.com/forms/d/e/1FAIpQLSeckE6-2KAqW2-zqUMMOlN1LhGTMPIFmPWRTUZk4GKKis-hgg/viewform?usp=sf_link';
+  //3기 정보수집 폼
+  'https://forms.gle/K2DiBkmJbhSM7MAx9';
+
 export const Applicants = [
   {
     text: '격주 토요일 오후 2시 ~ 6시에 진행되는 정규 활동에 성실하게 참여할 수 있는',

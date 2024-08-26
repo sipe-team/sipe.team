@@ -109,7 +109,7 @@ const People = () => {
               key={_period.value}
               className={styles.button}
               buttonType="chip"
-              selected={_period.value === period}
+              active={_period.value === period}
               onClick={() => setPeriod(_period.value)}
             >
               {_period.name}
