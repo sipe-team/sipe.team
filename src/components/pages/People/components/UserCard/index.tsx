@@ -51,6 +51,7 @@ const UserCard = ({
                   type={link.type}
                   url={link.url}
                   key={link.type}
+                  size="small"
                 />
               ))}
             </article>
