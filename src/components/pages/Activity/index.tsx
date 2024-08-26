@@ -96,7 +96,7 @@ export default function Activity() {
                   key={index}
                   className="period-button"
                   buttonType="chip"
-                  selected={_type.value === type}
+                  active={_type.value === type}
                   onClick={() => setType(_type.value)}
                 >
                   {_type.name}
@@ -107,7 +107,7 @@ export default function Activity() {
                 key={index}
                 className="period-button"
                 buttonType="chip"
-                selected={_type.value === type}
+                active={_type.value === type}
                 onClick={() => setType(_type.value)}
               >
                 {_type.name}

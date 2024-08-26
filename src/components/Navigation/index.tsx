@@ -1,20 +1,20 @@
 import { AnimatePresence } from 'framer-motion';
 import { Route } from 'next';
-import { usePathname, useRouter } from 'next/navigation';
-import { useState } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 import { SipeLogo } from '@/assets/logos';
+import { JOIN_FORM_URL } from '@/constants/recruit';
 import useDeviceType from '@/hook/useDeviceType';
-import { useJoinUs } from '@/hook/useJoinUs';
 
 import Button from '../common/Button';
-import { ApplyButton } from '../common/Button/styled';
 import HamburgerButton from '../HamburgerButton';
 import Layout from '../Layout';
 import styles from './index.module.scss';
 import * as S from './styled';
 
-const menus = [
+const menus: { name: string; path: Route }[] = [
   { name: 'About', path: '/about' },
   { name: 'Recruit', path: '/recruit' },
   { name: 'People', path: '/people' },
@@ -24,23 +24,9 @@ const menus = [
 
 export default function Navigation() {
   const { isDesktop } = useDeviceType();
-  const router = useRouter();
   const pathname = usePathname();
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const { handleJoinUs } = useJoinUs();
-
-  const handleNavigate = (path: string) => {
-    setIsMobileMenuOpen(false);
-    router.push(path as Route);
-    scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const handleClickJoinButton = () => {
-    setIsMobileMenuOpen(false);
-    handleJoinUs();
-  };
 
   const mobileMenuVariant = {
     opened: {
@@ -71,16 +57,17 @@ export default function Navigation() {
     closed: { opacity: 0 },
   };
 
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [pathname]);
+
   return (
     <S.Wrapper>
       <Layout>
         <div className={styles.group}>
-          <div
-            onClick={() => handleNavigate('/')}
-            style={{ cursor: 'pointer' }}
-          >
+          <Link href="/">
             <SipeLogo />
-          </div>
+          </Link>
           {isDesktop ? (
             <div className={styles.buttons}>
               <div className={styles.menus}>
@@ -88,19 +75,16 @@ export default function Navigation() {
                   <Button
                     key={menu.name}
                     buttonType="menu"
-                    selected={menu.path === pathname}
-                    onClick={() => handleNavigate(menu.path)}
+                    href={menu.path}
+                    active={menu.path === pathname}
                   >
                     {menu.name}
                   </Button>
                 ))}
               </div>
-              <ApplyButton
-                isDesktop={isDesktop}
-                onClick={handleClickJoinButton}
-              >
+              <Button isExternalLink href={JOIN_FORM_URL} buttonType="apply">
                 Join Us
-              </ApplyButton>
+              </Button>
             </div>
           ) : (
             <HamburgerButton
@@ -117,23 +101,19 @@ export default function Navigation() {
               variants={mobileMenuVariant}
             >
               <S.MenuList variants={fadeInVariant}>
-                {/* <S.MenuList> */}
                 {menus.map((menu) => (
                   <Button
                     key={menu.name}
                     buttonType="menu"
-                    selected={menu.path === pathname}
-                    onClick={() => handleNavigate(menu.path)}
+                    active={menu.path === pathname}
+                    href={menu.path}
                   >
                     {menu.name}
                   </Button>
                 ))}
-                <ApplyButton
-                  isDesktop={isDesktop}
-                  onClick={handleClickJoinButton}
-                >
+                <Button isExternalLink href={JOIN_FORM_URL} buttonType="apply">
                   Join Us
-                </ApplyButton>
+                </Button>
               </S.MenuList>
             </S.MobileMenus>
           )}

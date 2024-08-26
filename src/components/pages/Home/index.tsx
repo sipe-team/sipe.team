@@ -2,8 +2,8 @@
 
 import Button from '@/components/common/Button';
 import Layout from '@/components/Layout';
+import { JOIN_FORM_URL } from '@/constants/recruit';
 import useDeviceType from '@/hook/useDeviceType';
-import { useJoinUs } from '@/hook/useJoinUs';
 
 import Timer from './components/Timer';
 import * as S from './styled';
@@ -32,7 +32,6 @@ export default function Home() {
   const isFinished = DUE_DATE.getTime() < Date.now();
 
   const { isMobile } = useDeviceType();
-  const { handleJoinUs } = useJoinUs();
 
   return (
     <S.Wrapper backgroundImage="/bg_light.png">
@@ -59,9 +58,10 @@ export default function Home() {
               ) : ( */}
               <Timer dueDate={DUE_DATE.getTime()} isRecruiting={false} />
               <Button
+                href={JOIN_FORM_URL}
+                isExternalLink
                 buttonType="home"
                 buttonColor="black"
-                onClick={handleJoinUs}
               >
                 {isFinished ? '3기 모집 알림 신청' : '2기 모집 신청'}
               </Button>
@@ -85,7 +85,8 @@ export default function Home() {
               <Button
                 buttonType="home"
                 buttonColor="black"
-                onClick={handleJoinUs}
+                href={JOIN_FORM_URL}
+                isExternalLink
               >
                 {isFinished ? '3기 모집 알림 신청' : '2기 모집 신청'}
               </Button>

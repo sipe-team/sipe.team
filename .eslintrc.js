@@ -5,6 +5,14 @@ module.exports = {
     es2021: true,
     node: true,
   },
+  ignorePatterns: [
+    'node_modules/',
+    '.pnp.cjs',
+    '.next/',
+    '.pnp.loader.cjs',
+    'public/',
+    '.yarn/',
+  ],
   plugins: ['react', '@typescript-eslint', 'simple-import-sort'],
   overrides: [
     {

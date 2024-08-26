@@ -50,7 +50,7 @@ const Activity = () => {
             key={chip.name}
             buttonType="chip"
             onClick={() => setSelectChip(chip.value)}
-            selected={chip.value === selectChip}
+            active={chip.value === selectChip}
           >
             {chip.name}
           </Button>
