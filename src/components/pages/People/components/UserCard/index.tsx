@@ -2,7 +2,9 @@ import { ComponentProps } from 'react';
 
 import { OrganizerIcon } from '@/assets/icons';
 import CardWrapper from '@/components/CardWrapper';
-import Link from '@/components/common/Link';
+import SocialIconLink, {
+  type LogoType,
+} from '@/components/common/SocialIconLink';
 import Image from '@/components/Image';
 
 import styles from './index.module.scss';
@@ -11,7 +13,7 @@ type UserCardProps = ComponentProps<'div'> & {
   period: string;
   img?: string;
   name: string;
-  links?: { type: 'GITHUB' | 'LINKEDIN' | 'LINK'; url: string }[];
+  links?: { type: LogoType; url: string }[];
   part: string;
   isOrganizer?: boolean;
   introduce?: string;
@@ -45,7 +47,12 @@ const UserCard = ({
             <h3 className={styles.name}>{name}</h3>
             <article className={styles.links}>
               {links.map((link) => (
-                <Link type={link.type} url={link.url} key={link.type} />
+                <SocialIconLink
+                  type={link.type}
+                  url={link.url}
+                  key={link.type}
+                  size="small"
+                />
               ))}
             </article>
           </section>
