@@ -1,0 +1,18 @@
+.socialIcon {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
+
+  path {
+    transition: opacity 0.1s ease-in-out;
+    opacity: 1;
+    fill: color('gray900');
+  }
+
+  &:hover {
+    path {
+      opacity: 0.8;
+    }
+  }
+}

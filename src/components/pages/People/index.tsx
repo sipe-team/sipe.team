@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import Button from '@/components/common/Button';
+import { type LogoType } from '@/components/common/SocialIconLink';
 import ContentWithTitle from '@/components/ContentWithTitle';
 import Layout from '@/components/Layout';
 
@@ -12,7 +13,7 @@ import styles from './index.module.scss';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 const PeopleCard = ({ people }) => {
-  const links: { type: 'GITHUB' | 'LINKEDIN' | 'LINK'; url: string }[] = [];
+  const links: { type: LogoType; url: string }[] = [];
   if (people.github) {
     links.push({
       type: 'GITHUB',
