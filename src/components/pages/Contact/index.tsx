@@ -1,8 +1,10 @@
+import clsx from 'clsx';
+
 import { EmailIcon } from '@/assets/icons';
 import { KakaoLogo } from '@/assets/logos';
 import Layout from '@/components/Layout';
 
-import * as S from './styled';
+import styles from './index.module.scss';
 
 const contacts = [
   {
@@ -22,32 +24,34 @@ const contacts = [
 export default function Contact() {
   return (
     <Layout backgroundImage="/bg_dark.png">
-      <S.Wrapper>
-        <S.Group>
-          <S.Title>
+      <div className={styles.wrapper}>
+        <div className={styles.group}>
+          <div className={styles.title}>
             <div>Contact</div>
             <div>
               더 궁금한 질문이 있거나 후원을 원하신다면 언제든 연락해주세요!
             </div>
-          </S.Title>
-          <S.Content>
+          </div>
+          <div className={styles.content}>
             {contacts.map((contact) => (
-              <S.ContactBox
+              <div
+                className={clsx(styles.contentBox, {
+                  [styles.clickable]: !!contact.url,
+                })}
                 key={contact.id}
                 onClick={() => {
                   if (contact.url) {
                     window.open(contact.url);
                   }
                 }}
-                clickable={!!contact.url}
               >
                 {contact.icon}
                 {contact.text}
-              </S.ContactBox>
+              </div>
             ))}
-          </S.Content>
-        </S.Group>
-      </S.Wrapper>
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 }

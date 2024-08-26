@@ -1,4 +1,5 @@
 import { AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Route } from 'next';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -12,7 +13,6 @@ import Button from '../common/Button';
 import HamburgerButton from '../HamburgerButton';
 import Layout from '../Layout';
 import styles from './index.module.scss';
-import * as S from './styled';
 
 const menus: { name: string; path: Route }[] = [
   { name: 'About', path: '/about' },
@@ -95,12 +95,13 @@ export default function Navigation() {
         </div>
         <AnimatePresence>
           {!isDesktop && (
-            <S.MobileMenus
+            <motion.nav
+              className={styles.mobileMenus}
               initial="closed"
               animate={isMobileMenuOpen ? 'opened' : 'closed'}
               variants={mobileMenuVariant}
             >
-              <S.MenuList variants={fadeInVariant}>
+              <motion.div className={styles.menuList} variants={fadeInVariant}>
                 {menus.map((menu) => (
                   <Button
                     key={menu.name}
@@ -114,8 +115,8 @@ export default function Navigation() {
                 <Button isExternalLink href={JOIN_FORM_URL} buttonType="apply">
                   Join Us
                 </Button>
-              </S.MenuList>
-            </S.MobileMenus>
+              </motion.div>
+            </motion.nav>
           )}
         </AnimatePresence>
       </Layout>

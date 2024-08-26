@@ -30,3 +30,17 @@
   display: flex;
   gap: 16px;
 }
+
+.mobileMenus {
+  width: 100%;
+  display: flex;
+}
+
+.menuList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  padding-bottom: 20px;
+}
