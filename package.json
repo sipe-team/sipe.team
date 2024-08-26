@@ -3,7 +3,8 @@
   "private": true,
   "version": "3.0.0",
   "scripts": {
-    "dev": "next dev",
+    "open-browser": "open http://localhost:6100",
+    "dev": "next dev -p 6100 & yarn open-browser",
     "build": "yarn run script && next build",
     "start": "next start",
     "lint": "eslint --ext .tsx --ext .ts .",
