@@ -2,9 +2,8 @@ import { UserIcon } from '@/assets/icons';
 import CardWrapper from '@/components/CardWrapper';
 import Image from '@/components/Image';
 import useDeviceType from '@/hook/useDeviceType';
-import { StyledH5 } from '@/styles/common';
 
-import * as S from './styled';
+import styles from './index.module.scss';
 
 type ActiveCardProps = React.ComponentProps<'div'> & {
   thumbnail?: string;
@@ -42,30 +41,30 @@ export const ActiveCard = ({
       onClick={handleClick}
       className={className}
     >
-      <S.Wrapper isMobile={isMobile}>
-        <Image
-          style={{ borderRadius: '4px' }}
-          className="thumbnail"
-          src={thumbnail}
-        />
-        <S.ContentsWrapper isMobile={isMobile}>
-          <section className="contents">
-            <StyledH5 className="title">{contentTitle}</StyledH5>
-            <p className="body">{contentBody}</p>
+      <section className={styles.wrapper}>
+        <Image className={styles.thumbnail} src={thumbnail} />
+        <article className={styles.contentsWrapper}>
+          <section className={styles.contents}>
+            <div className={styles.title}>{contentTitle}</div>
+            <p className={styles.body}>{contentBody}</p>
           </section>
-          <section className="poster-user-info">
-            <div className="user-wrapper">
+          <section className={styles.posterUserInfo}>
+            <div className={styles.userWrapper}>
               {profile ? (
-                <img src={profile} alt="user profile" className="user-icon" />
+                <img
+                  src={profile}
+                  alt="user profile"
+                  className={styles.userIcon}
+                />
               ) : (
-                <UserIcon className="user-icon" />
+                <UserIcon className={styles.userIcon} />
               )}
-              <label className="user-name">{userName}</label>
+              <label className={styles.userName}>{userName}</label>
             </div>
-            <label className="create-date">{createDate}</label>
+            <label className={styles.createDate}>{createDate}</label>
           </section>
-        </S.ContentsWrapper>
-      </S.Wrapper>
+        </article>
+      </section>
     </CardWrapper>
   );
 };

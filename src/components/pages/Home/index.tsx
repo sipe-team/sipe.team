@@ -6,7 +6,7 @@ import { JOIN_FORM_URL } from '@/constants/recruit';
 import useDeviceType from '@/hook/useDeviceType';
 
 import Timer from './components/Timer';
-import * as S from './styled';
+import styles from './index.module.scss';
 
 const DUE_DATE = new Date('2024-02-17 23:59:59');
 
@@ -34,17 +34,20 @@ export default function Home() {
   const { isMobile } = useDeviceType();
 
   return (
-    <S.Wrapper backgroundImage="/bg_light.png">
-      <S.Group isMobile={isMobile}>
+    <div
+      className={styles.wrapper}
+      style={{ backgroundImage: `url(${'/bg_light.png'})` }}
+    >
+      <div className={styles.group}>
         <Layout>
-          <S.Title isMobile={isMobile}>
-            <div style={{ textAlign: 'center' }}>
+          <div className={styles.title}>
+            <div>
               Sharing Insights <br /> with People Everyday
             </div>
-            <div>현직 개발자들이 함께 경험을 쌓으며 성장하는 IT 커뮤니티</div>
-          </S.Title>
+            <div>개발자들이 함께 경험을 쌓으며 성장하는 IT 커뮤니티</div>
+          </div>
           {!isMobile && (
-            <S.Content>
+            <div className={styles.content}>
               {/* {!isFinished ? (
                 <S.Carousels>
                   {carouselItems.map((item) => (
@@ -65,12 +68,12 @@ export default function Home() {
               >
                 {isFinished ? '3기 모집 알림 신청' : '2기 모집 신청'}
               </Button>
-            </S.Content>
+            </div>
           )}
         </Layout>
         {isMobile && (
           <>
-            <S.MobileContent>
+            <div className={styles.mobileContent}>
               {/* {!isFinished ? (
                 <S.Carousels>
                   {carouselItems.map((item) => (
@@ -80,7 +83,7 @@ export default function Home() {
               ) : ( */}
               <Timer dueDate={DUE_DATE.getTime()} isRecruiting={false} />
               {/* )} */}
-            </S.MobileContent>
+            </div>
             <Layout>
               <Button
                 buttonType="home"
@@ -93,7 +96,7 @@ export default function Home() {
             </Layout>
           </>
         )}
-      </S.Group>
-    </S.Wrapper>
+      </div>
+    </div>
   );
 }

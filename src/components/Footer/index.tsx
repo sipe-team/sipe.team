@@ -1,10 +1,10 @@
+import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
 
 import SocialIconLink from '@/components/common/SocialIconLink';
-import useDeviceType from '@/hook/useDeviceType';
 
 import Layout from '../Layout';
-import * as S from './styled';
+import styles from './index.module.scss';
 
 type FooterProps = {
   fixed?: boolean;
@@ -12,16 +12,20 @@ type FooterProps = {
 
 export default function Footer({ fixed = false }: FooterProps) {
   const pathname = usePathname();
-  const { isDesktop } = useDeviceType();
 
   const color = pathname === '/' ? 'black' : 'gray';
 
   return (
-    <S.Wrapper fixed={fixed}>
+    <div className={clsx(styles.wrapper, { [styles.fixed]: fixed })}>
       <Layout>
-        <S.Group isDesktop={isDesktop}>
-          <S.Copyright color={color}>All rights reserved ⓒ SIPE</S.Copyright>
-          <S.Logos>
+        <div className={styles.group}>
+          <div
+            className={clsx(styles.copyright, { [styles[color]]: color })}
+            color={color}
+          >
+            All rights reserved ⓒ SIPE
+          </div>
+          <div className={styles.logos}>
             <SocialIconLink
               type="INSTAGRAM"
               url="https://www.instagram.com/sipe_team"
@@ -35,9 +39,9 @@ export default function Footer({ fixed = false }: FooterProps) {
               type="LINKEDIN"
               url="https://www.linkedin.com/company/sipe.team"
             />
-          </S.Logos>
-        </S.Group>
+          </div>
+        </div>
       </Layout>
-    </S.Wrapper>
+    </div>
   );
 }

@@ -129,11 +129,11 @@ button {
 }
 
 .swiper-pagination-bullet {
-  background-color: color('gray300');
+  background-color: color('gray300') !important;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: color('primary');
+  background-color: color('primary') !important;
 }
 
 /* todo: 공통으로 처리하는걸로 대체 */

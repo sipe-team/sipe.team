@@ -1,6 +1,4 @@
-import styled from '@emotion/styled';
-
-export const Wrapper = styled.div<{ isMobile: boolean }>`
+.wrapper {
   width: 100%;
 
   .cards {
@@ -15,19 +13,19 @@ export const Wrapper = styled.div<{ isMobile: boolean }>`
     }
   }
 
-  .video-cards {
+  .videoCards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 32px;
   }
-`;
+}
 
-export const TypeWrapper = styled.article`
+.typeWrapper {
   display: flex;
   margin-bottom: 40px;
   gap: 16px;
 
-  .period-button {
+  .periodButton {
     height: 40px;
   }
-`;
+}

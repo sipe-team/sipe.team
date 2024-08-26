@@ -62,7 +62,7 @@ export default function Navigation() {
   }, [pathname]);
 
   return (
-    <S.Wrapper>
+    <div className={styles.wrapper}>
       <Layout>
         <div className={styles.group}>
           <Link href="/">
@@ -119,6 +119,6 @@ export default function Navigation() {
           )}
         </AnimatePresence>
       </Layout>
-    </S.Wrapper>
+    </div>
   );
 }
