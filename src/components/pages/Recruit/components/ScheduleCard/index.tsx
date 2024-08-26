@@ -1,5 +1,6 @@
+import CardWrapper from '@/components/CardWrapper';
+
 import styles from './index.module.scss';
-import * as S from './styled';
 
 type ScheduleCardProps = {
   title: string;
@@ -9,11 +10,11 @@ type ScheduleCardProps = {
 
 const ScheduleCard = ({ title, processDate, subTitle }: ScheduleCardProps) => {
   return (
-    <S.Wrapper>
+    <CardWrapper className={styles.wrapper}>
       <div className={styles.title}>{title}</div>
       <div className={styles.highlightTitle}>{processDate}</div>
       <div className={styles.subTitle}>{subTitle}</div>
-    </S.Wrapper>
+    </CardWrapper>
   );
 };
 

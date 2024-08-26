@@ -1,4 +1,63 @@
+.wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+  padding: 0;
+
+  @include mobile {
+    padding: 0 20px;
+  }
+}
+
+.table {
+  width: 560px;
+  height: 80px;
+  padding: 20px;
+  border-radius: 12px;
+  gap: 20px;
+  background: color('gray000');
+  overflow: hidden;
+  border: 1px color('gray100') solid;
+  justify-content: space-between;
+  align-items: center;
+  display: inline-flex;
+  flex-direction: row;
+  font-weight: 500;
+  line-height: 19.6px;
+
+  &.isApplicant {
+    height: 64px;
+    &:last-child {
+      background-color: color('gray100');
+    }
+
+    @include mobile {
+      height: auto;
+    }
+  }
+
+  @include mobile {
+    width: 100%;
+    height: auto;
+    align-items: start;
+    flex-direction: column;
+  }
+}
+
+.text {
+  flex: 1 1 0;
+  color: color('white');
+  font-size: 20px;
+
+  &.isApplicant {
+    font-size: 14px;
+  }
+}
+
 .subText {
-  color: #e2e8f0;
+  color: color('gray700');
   font-size: 14px;
 }

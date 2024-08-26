@@ -1,9 +1,9 @@
 import ContentWithTitle from '@/components/ContentWithTitle';
+import Image from '@/components/Image';
 import Layout from '@/components/Layout';
 import * as db from '@/db/index.json';
-import useDeviceType from '@/hook/useDeviceType';
 
-import * as S from './styled';
+import styles from './index.module.scss';
 
 const sponsors = Object.keys(db.abouts.sponsor).map((key) => {
   const sponsor = db.abouts.sponsor;
@@ -19,19 +19,19 @@ const sponsors = Object.keys(db.abouts.sponsor).map((key) => {
 });
 
 const Sponsor = () => {
-  const { isMobile, isTablet } = useDeviceType();
   return (
     <Layout>
       <ContentWithTitle title="후원사 소개">
-        <S.ImageList
-          isFlex={sponsors.length < 3}
-          isMobile={isMobile}
-          isTablet={isTablet}
+        <div
+          className={styles.imageList}
+          // isFlex={sponsors.length < 3}
+          // isMobile={isMobile}
+          // isTablet={isTablet}
         >
-          {sponsors.map((image) => (
-            <S.SponsorImage src={image.src} key={image.key} />
+          {sponsors?.slice(0, 2).map((image) => (
+            <Image className={styles.image} src={image.src} key={image.key} />
           ))}
-        </S.ImageList>
+        </div>
       </ContentWithTitle>
     </Layout>
   );

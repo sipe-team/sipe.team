@@ -11,8 +11,6 @@
     "script": "node .script/gSheet.cjs"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.8",
-    "@emotion/styled": "^11.10.8",
     "@next/third-parties": "^14.2.6",
     "clsx": "^2.1.1",
     "framer-motion": "^11.0.3",

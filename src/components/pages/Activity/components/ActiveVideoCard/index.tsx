@@ -1,9 +1,9 @@
+import clsx from 'clsx';
 import React from 'react';
 
 import Image from '@/components/Image';
-import { StyledH6 } from '@/styles/common';
 
-import * as S from './styled';
+import styles from './index.module.scss';
 
 type ActiveVideoCardProps = React.ComponentProps<'div'> & {
   thumbnail: string;
@@ -29,24 +29,24 @@ export const ActiveVideoCard = ({
   };
 
   return (
-    <S.VideoWrapper className={className}>
+    <article className={clsx(styles.wrapper, className)}>
       <Image
         style={{ borderRadius: '12px' }}
-        className="thumbnail"
+        className={styles.thumbnail}
         src={thumbnail}
       />
-      <S.VideoContentsWrapper className="contents">
-        <section className="contents-info">
-          <StyledH6 className="title">{contentTitle}</StyledH6>
-          <div className="body">
-            <span className="username">{userName}</span>
-            <span className="date">{createDate}</span>
+      <section className={styles.contentsWrapper}>
+        <section className={styles.contentsInfo}>
+          <div className={styles.title}>{contentTitle}</div>
+          <div className={styles.body}>
+            <span className={styles.username}>{userName}</span>
+            <span className={styles.date}>{createDate}</span>
           </div>
         </section>
-        <button className="link-button" onClick={handleClick}>
+        <button className={styles.linkButton} onClick={handleClick}>
           보러가기
         </button>
-      </S.VideoContentsWrapper>
-    </S.VideoWrapper>
+      </section>
+    </article>
   );
 };

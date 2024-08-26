@@ -1,9 +1,9 @@
+import clsx from 'clsx';
+
 import { CheckCircleIcon } from '@/assets/icons';
-import useDeviceType from '@/hook/useDeviceType';
 
 import Badge from '../common/Badge';
 import styles from './index.module.scss';
-import * as S from './styled';
 
 interface TableProps {
   isApplicant: boolean;
@@ -17,22 +17,27 @@ interface DataListProps {
 }
 
 const Table = ({ dataList, isApplicant }: TableProps) => {
-  const { isMobile } = useDeviceType();
-
   return (
-    <S.Wrapper isMobile={isMobile}>
+    <div className={styles.wrapper}>
       {dataList.map((data, index) => (
-        <S.Table key={index} isMobile={isMobile} isApplicant={isApplicant}>
+        <div
+          className={clsx(styles.table, { [styles.isApplicant]: isApplicant })}
+          key={index}
+        >
           {isApplicant ? (
             <CheckCircleIcon />
           ) : (
             <div className={styles.subText}>{data.recurring_date}</div>
           )}
-          <S.Text isApplicant={isApplicant}>{data.text}</S.Text>
+          <div
+            className={clsx(styles.text, { [styles.isApplicant]: isApplicant })}
+          >
+            {data.text}
+          </div>
           {!isApplicant && data.badge && <Badge text={data.badge} />}
-        </S.Table>
+        </div>
       ))}
-    </S.Wrapper>
+    </div>
   );
 };
 

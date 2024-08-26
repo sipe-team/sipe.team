@@ -1,21 +1,18 @@
-import { css } from '@emotion/react';
-import styled from '@emotion/styled';
-
-export const Wrapper = styled.div`
+.wrapper {
   width: 100%;
   height: calc(100vh - 64px);
-`;
+}
 
-export const Group = styled.div`
+.group {
   height: calc(100% - 100px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 40px;
-`;
+}
 
-export const Title = styled.div`
+.title {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -26,28 +23,28 @@ export const Title = styled.div`
     font-size: 48px;
     font-weight: 700;
     line-height: 67px;
-    color: ${({ theme }) => theme.colors.green};
+    color: color('primary');
   }
   div:last-of-type {
     font-size: 20px;
     font-weight: 700;
     line-height: 28px;
-    color: ${({ theme }) => theme.colors.white};
+    color: color('white');
   }
-`;
+}
 
-export const Content = styled.div`
+.content {
   display: flex;
   flex-direction: column;
   gap: 20px;
-`;
+}
 
-export const ContactBox = styled.div<{ clickable?: boolean }>`
+.contentBox {
   width: 240px;
   height: 53px;
   border-radius: 8px;
-  background-color: ${({ theme }) => theme.colors.gray2};
-  color: ${({ theme }) => theme.colors.white};
+  background-color: color('gray100');
+  color: color('white');
   display: flex;
   align-items: center;
   padding: 16px;
@@ -58,12 +55,10 @@ export const ContactBox = styled.div<{ clickable?: boolean }>`
   line-height: 21px;
   transition: background-color 0.3s ease;
 
-  ${({ theme, clickable }) =>
-    clickable &&
-    css`
-      cursor: pointer;
-      &:hover {
-        background-color: ${theme.colors.gray3};
-      }
-    `}
-`;
+  &.clickable {
+    cursor: pointer;
+    &:hover {
+      background-color: color('gray200');
+    }
+  }
+}

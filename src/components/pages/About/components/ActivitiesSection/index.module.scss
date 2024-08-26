@@ -48,13 +48,13 @@
   @include mobile {
     justify-content: start;
   }
+}
 
-  &.activityButton {
-    min-width: 85px;
-    padding: 0 24px;
-    font-weight: 700;
-    line-height: 20px;
-    letter-spacing: -0.002em;
-    text-align: center;
-  }
+.activityButton {
+  min-width: 85px;
+  padding: 0 24px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.002em;
+  text-align: center;
 }
