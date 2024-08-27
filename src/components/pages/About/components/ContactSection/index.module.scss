@@ -1,0 +1,45 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  @include text('h5/medium', 'white');
+}
+
+.content {
+  display: flex;
+  gap: 20px;
+
+  @include mobile {
+    flex-direction: column;
+  }
+}
+
+.contentBox {
+  width: 240px;
+  height: 53px;
+  border-radius: 8px;
+  background-color: color('gray100');
+  color: color('white');
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  box-sizing: border-box;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 21px;
+  transition: background-color 0.3s ease;
+
+  &.clickable {
+    cursor: pointer;
+    &:hover {
+      background-color: color('gray200');
+    }
+  }
+}

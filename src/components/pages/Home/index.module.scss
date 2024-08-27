@@ -19,17 +19,16 @@
   }
 }
 
-.title {
+.titleWrapper {
   display: flex;
   flex-direction: column;
   gap: 16px;
   align-items: center;
+  text-align: center;
 
-  div:first-of-type {
-    font-weight: 900;
-    line-height: 67px;
-    font-size: 48px;
-    text-align: center;
+  .title {
+    @include text('h1/black', 'white');
+    font-size: 80px;
 
     @include mobile {
       line-height: 29.9px;
@@ -37,11 +36,9 @@
     }
   }
 
-  div:last-of-type {
-    font-size: 22px;
-    font-weight: 600;
-    line-height: 31px;
-    text-align: center;
+  .subTitle {
+    @include text('h2/semibold', 'white');
+    font-size: 32px;
 
     @include mobile {
       line-height: 16.8px;
