@@ -19,7 +19,6 @@ const menus: { name: string; path: Route }[] = [
   { name: 'Recruit', path: '/recruit' },
   { name: 'People', path: '/people' },
   { name: 'Activity', path: '/activity' },
-  { name: 'Contact', path: '/contact' },
 ];
 
 export default function Navigation() {
