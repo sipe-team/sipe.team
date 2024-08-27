@@ -32,7 +32,10 @@ export const ActiveVideoCard = ({
     <article className={clsx(styles.wrapper, className)}>
       <Image
         style={{ borderRadius: '12px' }}
+        objectFit="cover"
+        fill
         className={styles.thumbnail}
+        alt={contentTitle}
         src={thumbnail}
       />
       <section className={styles.contentsWrapper}>

@@ -38,10 +38,16 @@ const UserCard = ({
       className="people-box"
       minHeight={isContributor ? undefined : 270}
     >
-      <section className={styles.Metawrapper}>
-        <section className={styles.profileBg}>
-          <Image className={styles.profile} alt="user image" src={img} />
-        </section>
+      <section className={styles.userInfo}>
+        <Image
+          className={styles.profile}
+          alt="user image"
+          objectFit="cover"
+          src={img}
+          width={70}
+          height={70}
+          sizes="(max-width: 1060px) 100vw, 50vw"
+        />
         <section className={styles.info}>
           <section className={styles.mainInfo}>
             <h3 className={styles.name}>{name}</h3>

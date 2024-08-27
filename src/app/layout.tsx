@@ -3,8 +3,11 @@ import 'src/styles/global.scss';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Montserrat } from 'next/font/google';
 
-import ClientProvider from '@/components/ClientProvider';
+import Footer from '@/components/Footer';
+import Navigation from '@/components/Navigation';
 import { DEFAULT_METADATA } from '@/constants/metadata';
+
+import styles from './layout.module.scss';
 
 const montserrat = Montserrat({
   display: 'swap',
@@ -33,7 +36,11 @@ function RootLayout({ children }: { children: React.ReactNode }) {
         />
       </head>
       <body>
-        <ClientProvider>{children}</ClientProvider>
+        <main className={styles.main}>
+          <Navigation />
+          {children}
+          <Footer />
+        </main>
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
       </body>
     </html>

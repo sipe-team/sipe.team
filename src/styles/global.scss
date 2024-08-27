@@ -122,12 +122,6 @@ button {
   align-items: center;
 }
 
-.swiper-slide img {
-  display: block;
-  object-fit: cover;
-  scale: 0.5;
-}
-
 .swiper-pagination-bullet {
   background-color: color('gray300') !important;
 }
@@ -141,9 +135,4 @@ button {
   @media (min-width: 1100px) {
     display: none;
   }
-}
-
-.swiper-slide-active {
-  scale: 1.5;
-  z-index: 99;
 }

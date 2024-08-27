@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import { useInterval } from 'usehooks-ts';
 
-export default function useTimer(dueDate?: number) {
+export default function useTimer(
+  dueDate?: number,
+  delay: null | number = 1000
+) {
   const [overallTime, setOverallTime] = useState(0);
 
   const getTimeByDueDate = () => (dueDate ? Date.now() - dueDate : 0);
@@ -11,7 +14,7 @@ export default function useTimer(dueDate?: number) {
   useInterval(() => {
     const timeInSeconds = Math.round(getTime() / 1000);
     setOverallTime(timeInSeconds);
-  }, 100);
+  }, delay);
 
   // 남은 일, 시, 분, 초 계산
   const dates = Math.floor(overallTime / 86400);

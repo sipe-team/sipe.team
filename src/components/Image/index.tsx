@@ -1,15 +1,87 @@
-import React from 'react';
+import clsx from 'clsx';
+import NextImage, { ImageProps as NextImageProps } from 'next/image';
+import React, { CSSProperties, ReactNode, useCallback } from 'react';
 
-type ImageProps = React.DetailedHTMLProps<
-  React.ImgHTMLAttributes<HTMLImageElement>,
-  HTMLImageElement
->;
+import styles from './index.module.scss';
 
-const Image = ({ src, alt, className, style }: ImageProps) => {
+type ImageProps = Omit<NextImageProps, 'src'> & {
+  objectFit?: CSSProperties['objectFit'];
+  src?: string;
+};
+
+const Image = ({
+  src,
+  alt,
+  className,
+  objectFit,
+  fill,
+  width,
+  height,
+  sizes,
+  ...rest
+}: ImageProps) => {
+  const defaultClassName = clsx(
+    objectFit && styles[objectFit],
+    fill ? styles.fill : className
+  );
+  const defaultSizes = sizes || '(max-width: 1060px) 100vw, 50vw';
+
+  const renderFillImage = useCallback(
+    (children: ReactNode) => {
+      if (fill) {
+        return (
+          <div
+            className={clsx(className, styles.fillImageWrapper)}
+            style={{
+              width: width ? `${width}px` : '100%',
+              height: height ? `${height}px` : '100%',
+            }}
+          >
+            {children}
+          </div>
+        );
+      }
+
+      return children;
+    },
+    [fill, width, height, className]
+  );
+
   if (!src) {
-    return <img src={'/empty_image.png'} className={className} style={style} />;
+    return (
+      <>
+        {renderFillImage(
+          <NextImage
+            src={'/assets/empty_image.png'}
+            className={defaultClassName}
+            alt="기본 이미지"
+            fill={fill}
+            sizes={defaultSizes}
+            width={fill ? undefined : width}
+            height={fill ? undefined : height}
+            {...rest}
+          />
+        )}
+      </>
+    );
   }
-  return <img src={src} alt={alt} className={className} style={style} />;
+
+  return (
+    <>
+      {renderFillImage(
+        <NextImage
+          src={src}
+          alt={alt}
+          className={defaultClassName}
+          fill={fill}
+          sizes={defaultSizes}
+          width={fill ? undefined : width}
+          height={fill ? undefined : height}
+          {...rest}
+        />
+      )}
+    </>
+  );
 };
 
 export default Image;

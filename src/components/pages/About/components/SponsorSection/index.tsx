@@ -22,14 +22,16 @@ const Sponsor = () => {
   return (
     <Layout>
       <ContentWithTitle title="후원사 소개">
-        <div
-          className={styles.imageList}
-          // isFlex={sponsors.length < 3}
-          // isMobile={isMobile}
-          // isTablet={isTablet}
-        >
-          {sponsors?.slice(0, 2).map((image) => (
-            <Image className={styles.image} src={image.src} key={image.key} />
+        <div className={styles.imageList}>
+          {sponsors?.map((image) => (
+            <Image
+              objectFit="contain"
+              src={image.src}
+              key={image.key}
+              alt={image.name}
+              width={320}
+              height={180}
+            />
           ))}
         </div>
       </ContentWithTitle>

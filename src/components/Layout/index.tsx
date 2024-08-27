@@ -12,7 +12,11 @@ const Layout = ({
   return (
     <div
       className={styles.wrapper}
-      style={{ backgroundImage: `url(${backgroundImage})` }}
+      style={{
+        backgroundImage: backgroundImage
+          ? `url(${backgroundImage})`
+          : undefined,
+      }}
     >
       <div className={styles.layout}>{children}</div>
     </div>

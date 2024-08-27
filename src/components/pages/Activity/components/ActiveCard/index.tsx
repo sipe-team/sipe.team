@@ -42,7 +42,15 @@ export const ActiveCard = ({
       className={className}
     >
       <section className={styles.wrapper}>
-        <Image className={styles.thumbnail} src={thumbnail} />
+        <Image
+          className={styles.thumbnail}
+          src={thumbnail}
+          fill
+          height={220}
+          objectFit="cover"
+          alt="thumbnail"
+          sizes="(max-width: 1060px) 50vw, 33vw"
+        />
         <article className={styles.contentsWrapper}>
           <section className={styles.contents}>
             <div className={styles.title}>{contentTitle}</div>
@@ -51,9 +59,11 @@ export const ActiveCard = ({
           <section className={styles.posterUserInfo}>
             <div className={styles.userWrapper}>
               {profile ? (
-                <img
+                <Image
                   src={profile}
                   alt="user profile"
+                  width={32}
+                  height={32}
                   className={styles.userIcon}
                 />
               ) : (

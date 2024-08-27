@@ -1,9 +1,7 @@
-'use client';
+import Image from 'next/image';
 
 import Button from '@/components/common/Button';
-import Layout from '@/components/Layout';
 import { JOIN_FORM_URL } from '@/constants/recruit';
-import useDeviceType from '@/hook/useDeviceType';
 
 import Timer from './components/Timer';
 import styles from './index.module.scss';
@@ -31,26 +29,27 @@ const DUE_DATE = new Date('2024-02-17 23:59:59');
 export default function Home() {
   const isFinished = DUE_DATE.getTime() < Date.now();
 
-  const { isMobile } = useDeviceType();
-
   return (
-    <div
-      className={styles.wrapper}
-      style={{ backgroundImage: `url(${'/bg_light.png'})` }}
-    >
-      <div className={styles.group}>
-        <Layout>
-          <div className={styles.titleWrapper}>
-            <div className={styles.title}>
-              Sharing Insights <br /> with People Everyday
-            </div>
-            <div className={styles.subTitle}>
-              개발자들이 함께 경험을 쌓으며 성장하는 IT 커뮤니티
-            </div>
-          </div>
-          {!isMobile && (
-            <div className={styles.content}>
-              {/* {!isFinished ? (
+    <div className={styles.wrapper}>
+      <Image
+        src="/assets/home-bg.png"
+        alt="배경 이미지"
+        sizes="(max-width: 1060px) 100vw, 50vw"
+        width={0}
+        height={0}
+        priority
+        className={styles.background}
+      />
+      <div className={styles.titleWrapper}>
+        <h1 className={styles.title}>
+          Sharing Insights <br /> with People Everyday
+        </h1>
+        <h2 className={styles.subTitle}>
+          개발자들이 함께 경험을 쌓으며 성장하는 IT 커뮤니티
+        </h2>
+      </div>
+      <div className={styles.content}>
+        {/* {!isFinished ? (
                 <S.Carousels>
                   {carouselItems.map((item) => (
                     <CarouselCard
@@ -61,43 +60,15 @@ export default function Home() {
                   ))}
                 </S.Carousels>
               ) : ( */}
-              <Timer dueDate={DUE_DATE.getTime()} isRecruiting={false} />
-              <Button
-                href={JOIN_FORM_URL}
-                isExternalLink
-                buttonType="home"
-                buttonColor="primary"
-              >
-                {isFinished ? '3기 모집 알림 신청' : '2기 모집 신청'}
-              </Button>
-            </div>
-          )}
-        </Layout>
-        {isMobile && (
-          <>
-            <div className={styles.mobileContent}>
-              {/* {!isFinished ? (
-                <S.Carousels>
-                  {carouselItems.map((item) => (
-                    <CarouselCard title={item.title} value={item.value} />
-                  ))}
-                </S.Carousels>
-              ) : ( */}
-              <Timer dueDate={DUE_DATE.getTime()} isRecruiting={false} />
-              {/* )} */}
-            </div>
-            <Layout>
-              <Button
-                buttonType="home"
-                buttonColor="black"
-                href={JOIN_FORM_URL}
-                isExternalLink
-              >
-                {isFinished ? '3기 모집 알림 신청' : '2기 모집 신청'}
-              </Button>
-            </Layout>
-          </>
-        )}
+        <Timer dueDate={DUE_DATE.getTime()} isRecruiting={false} />
+        <Button
+          href={JOIN_FORM_URL}
+          isExternalLink
+          buttonType="home"
+          buttonColor="primary"
+        >
+          {isFinished ? '3기 모집 알림 신청' : '2기 모집 신청'}
+        </Button>
       </div>
     </div>
   );

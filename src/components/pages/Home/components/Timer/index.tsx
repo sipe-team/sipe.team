@@ -1,3 +1,5 @@
+'use client';
+
 import useTimer from '../../hooks/useTimer';
 import styles from './index.module.scss';
 
@@ -10,7 +12,10 @@ export interface TimerProps {
 }
 
 export default function Timer({ dueDate, isRecruiting }: TimerProps) {
-  const { dates, hours, minutes, seconds } = useTimer(dueDate);
+  const { dates, hours, minutes, seconds } = useTimer(
+    dueDate,
+    isRecruiting ? 1000 : null
+  );
 
   const formattedTime = (number: number) => String(number).padStart(2, '0');
 
