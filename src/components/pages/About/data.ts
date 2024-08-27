@@ -28,6 +28,6 @@ export const introduces = [
 ];
 
 export const faqs = db.faq.about.map((it) => ({
-  q: it.question,
-  a: it.answer,
+  question: it.question,
+  answer: it.answer,
 }));

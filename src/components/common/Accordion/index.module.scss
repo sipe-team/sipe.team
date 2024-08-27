@@ -11,10 +11,7 @@
   font-size: 14px;
   line-height: 20px;
   color: color('white');
-
-  &:hover {
-    cursor: pointer;
-  }
+  overflow: hidden;
 
   @include desktop {
     width: 1060px;
@@ -24,6 +21,7 @@
 }
 
 .question {
+  cursor: pointer;
   height: 36px;
   display: flex;
   align-items: center;
@@ -31,6 +29,8 @@
   font-weight: 700;
   padding: 0 12px;
   box-sizing: border-box;
+  color: color('white');
+  user-select: none;
 
   @include desktop {
     height: 48px;
@@ -41,25 +41,20 @@
 }
 
 .arrow {
-  cursor: pointer;
-  width: 36px;
-  height: 36px;
-  rotate: 180deg;
+  transition: transform 0.3s ease-in-out;
+  transform: rotate(180deg);
 
-  svg {
+  &.isOpen {
+    transform: rotate(0deg);
+  }
+
+  .arrowIcon {
     width: 36px;
     height: 36px;
   }
 
-  &.isOpen {
-    rotate: 0deg;
-  }
-
   @include desktop {
-    width: 48px;
-    height: 48px;
-
-    svg {
+    .arrowIcon {
       width: 48px;
       height: 48px;
     }

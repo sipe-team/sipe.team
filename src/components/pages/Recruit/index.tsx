@@ -10,8 +10,8 @@ import ScheduleCard from './components/ScheduleCard';
 import styles from './index.module.scss';
 
 export const faqs = db.faq.recruit.map((it) => ({
-  q: it.question,
-  a: it.answer,
+  question: it.question,
+  answer: it.answer,
 }));
 
 export default function Recruit() {
