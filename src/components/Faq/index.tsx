@@ -3,7 +3,7 @@ import ContentWithTitle from '../ContentWithTitle';
 import styles from './index.module.scss';
 
 type FaqProps = {
-  faqs: (AccordionProps & { id: string })[];
+  faqs: (AccordionProps & { key: string })[];
 };
 
 export default function Faq({ faqs }: FaqProps) {
@@ -11,7 +11,11 @@ export default function Faq({ faqs }: FaqProps) {
     <ContentWithTitle title="자주 묻는 질문">
       <div className={styles.faqs}>
         {faqs.map((faq) => (
-          <Accordion key={faq.id} question={faq.question} answer={faq.answer} />
+          <Accordion
+            key={faq.key}
+            question={faq.question}
+            answer={faq.answer}
+          />
         ))}
       </div>
     </ContentWithTitle>

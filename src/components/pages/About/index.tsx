@@ -5,8 +5,7 @@ import Layout from '@/components/Layout';
 import Contact from '@/components/pages/About/components/ContactSection';
 import Introduce from '@/components/pages/About/components/IntroduceSection';
 import Sponsor from '@/components/pages/About/components/SponsorSection';
-
-import { faqs } from './data';
+import * as db from '@/db/index.json';
 
 const Activity = dynamic(
   () => import('@/components/pages/About/components/ActivitiesSection'),
@@ -21,7 +20,7 @@ export default function About() {
       <Introduce />
       <Activity />
       <Sponsor />
-      <Faq faqs={faqs} />
+      <Faq faqs={db.faq.about} />
       <Contact />
     </Layout>
   );

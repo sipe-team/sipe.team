@@ -9,12 +9,6 @@ import useDeviceType from '@/hook/useDeviceType';
 import ScheduleCard from './components/ScheduleCard';
 import styles from './index.module.scss';
 
-export const faqs = db.faq.recruit.map((it) => ({
-  question: it.question,
-  answer: it.answer,
-  id: it.key,
-}));
-
 export default function Recruit() {
   const { isDesktop } = useDeviceType();
 
@@ -45,7 +39,7 @@ export default function Recruit() {
           <Table dataList={InActivity} isApplicant={false} />
         </ContentWithTitle>
       </Layout>
-      <Faq faqs={faqs} />
+      <Faq faqs={db.faq.recruit} />
     </>
   );
 }
