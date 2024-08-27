@@ -48,34 +48,6 @@ const ContactSection = () => {
           ))}
         </div>
       </div>
-      {/* <div className={styles.wrapper}>
-        <div className={styles.group}>
-          <div className={styles.title}>
-            <div>Contact</div>
-            <div>
-              더 궁금한 질문이 있거나 후원을 원하신다면 언제든 연락해주세요!
-            </div>
-          </div>
-          <div className={styles.content}>
-            {contacts.map((contact) => (
-              <div
-                className={clsx(styles.contentBox, {
-                  [styles.clickable]: !!contact.url,
-                })}
-                key={contact.id}
-                onClick={() => {
-                  if (contact.url) {
-                    window.open(contact.url);
-                  }
-                }}
-              >
-                {contact.icon}
-                {contact.text}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div> */}
     </ContentWithTitle>
   );
 };
