@@ -19,22 +19,15 @@ export default function Footer({ fixed = false }: FooterProps) {
             <SocialIconLink
               type="INSTAGRAM"
               url="https://www.instagram.com/sipe_team"
-              theme="light"
             />
-            <SocialIconLink
-              type="GITHUB"
-              url="https://github.com/sipe-team"
-              theme="light"
-            />
+            <SocialIconLink type="GITHUB" url="https://github.com/sipe-team" />
             <SocialIconLink
               type="YOUTUBE"
               url="https://www.youtube.com/@sipe_team"
-              theme="light"
             />
             <SocialIconLink
               type="LINKEDIN"
               url="https://www.linkedin.com/company/sipe.team"
-              theme="light"
             />
           </div>
         </div>
