@@ -30,4 +30,5 @@ export const introduces = [
 export const faqs = db.faq.about.map((it) => ({
   question: it.question,
   answer: it.answer,
+  id: it.key,
 }));

@@ -12,6 +12,7 @@ import styles from './index.module.scss';
 export const faqs = db.faq.recruit.map((it) => ({
   question: it.question,
   answer: it.answer,
+  id: it.key,
 }));
 
 export default function Recruit() {
