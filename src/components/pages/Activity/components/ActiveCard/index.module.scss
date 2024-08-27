@@ -1,9 +1,15 @@
-.wrapper {
+.activeCardWrapper {
   display: flex;
   flex-direction: row;
   cursor: pointer;
+  min-height: 252px;
+  padding: 16px;
+  background-color: color('gray000');
+  border: 1px solid color('gray100');
+  border-radius: 12px;
 
   @include mobile {
+    min-height: 333px;
     flex-direction: column;
   }
 }

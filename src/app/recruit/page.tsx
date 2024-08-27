@@ -1,5 +1,3 @@
-'use client';
-
 import Recruit from '@/components/pages/Recruit';
 
 function page() {

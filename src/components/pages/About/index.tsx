@@ -14,13 +14,6 @@ const Activity = dynamic(
   }
 );
 
-const Activity = dynamic(
-  () => import('@/components/pages/About/components/ActivitiesSection'),
-  {
-    ssr: false,
-  }
-);
-
 export default function About() {
   return (
     <Layout>

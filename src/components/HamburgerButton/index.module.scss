@@ -5,6 +5,11 @@
   position: relative;
   transform: rotate(0deg);
   cursor: pointer;
+  display: block;
+
+  @include desktop {
+    display: none;
+  }
 
   span {
     display: block;

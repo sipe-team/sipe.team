@@ -9,38 +9,64 @@
   left: 0;
   right: 0;
   z-index: 100;
-}
 
-.group {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  height: 64px;
-}
+  .headerLayout {
+    display: block;
 
-.buttons {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
+    @include desktop {
+      display: flex;
+      justify-content: space-between;
+    }
 
-.menus {
-  display: flex;
-  gap: 16px;
-}
+    .header {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
 
-.mobileMenus {
-  width: 100%;
-  display: flex;
-}
+      @include desktop {
+        width: initial;
+      }
+    }
 
-.menuList {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 9px;
-  padding-bottom: 20px;
+    .menuWrapper {
+      display: flex;
+      align-items: center;
+      width: initial;
+
+      @include mobile {
+        width: 100%;
+
+        &:not(.open) {
+          display: none;
+        }
+      }
+
+      @include tablet {
+        width: 100%;
+
+        &:not(.open) {
+          display: none;
+        }
+      }
+
+      .menuList {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding-bottom: 20px;
+
+        @include desktop {
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          padding: 0;
+        }
+      }
+    }
+  }
 }

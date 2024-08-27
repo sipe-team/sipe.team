@@ -5,7 +5,7 @@ import styles from './index.module.scss';
 
 function Footer() {
   return (
-    <div className={styles.wrapper}>
+    <footer className={styles.wrapper}>
       <Layout>
         <div className={styles.group}>
           <div className={styles.copyright}>All rights reserved ⓒ SIPE</div>
@@ -27,7 +27,7 @@ function Footer() {
           </div>
         </div>
       </Layout>
-    </div>
+    </footer>
   );
 }
 

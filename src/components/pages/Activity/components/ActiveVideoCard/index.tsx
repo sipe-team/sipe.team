@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import React from 'react';
 
+import ExternalLink from '@/components/common/ExternalLink';
 import Image from '@/components/Image';
 
 import styles from './index.module.scss';
@@ -21,17 +22,9 @@ export const ActiveVideoCard = ({
   link,
   className,
 }: ActiveVideoCardProps) => {
-  const handleClick = () => {
-    if (!link.match(/^https?:\/\//i)) {
-      link = 'https://' + link;
-    }
-    window.open(link);
-  };
-
   return (
     <article className={clsx(styles.wrapper, className)}>
       <Image
-        style={{ borderRadius: '12px' }}
         objectFit="cover"
         fill
         className={styles.thumbnail}
@@ -46,9 +39,13 @@ export const ActiveVideoCard = ({
             <span className={styles.date}>{createDate}</span>
           </div>
         </section>
-        <button className={styles.linkButton} onClick={handleClick}>
+        <ExternalLink
+          className={styles.linkButton}
+          href={link}
+          withTextUnderline={false}
+        >
           보러가기
-        </button>
+        </ExternalLink>
       </section>
     </article>
   );
