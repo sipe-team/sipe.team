@@ -1,24 +1,18 @@
+import clsx from 'clsx';
 import React from 'react';
 
 import styles from './index.module.scss';
 
 const Layout = ({
+  className,
   children,
-  backgroundImage,
 }: {
+  className?: string;
   children: React.ReactNode;
-  backgroundImage?: string;
 }) => {
   return (
-    <div
-      className={styles.wrapper}
-      style={{
-        backgroundImage: backgroundImage
-          ? `url(${backgroundImage})`
-          : undefined,
-      }}
-    >
-      <div className={styles.layout}>{children}</div>
+    <div className={styles.wrapper}>
+      <div className={clsx(styles.layout, className)}>{children}</div>
     </div>
   );
 };

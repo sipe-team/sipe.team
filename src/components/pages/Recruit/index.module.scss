@@ -1,19 +1,22 @@
-.wrapper {
-  width: 100%;
-}
-
-.cardList {
-  height: 100%;
+.cardListWrapper {
+  display: flex;
   align-items: center;
-  gap: 20px;
-  display: inline-flex;
-}
-
-.mobileContent {
-  align-items: flex-start;
-  margin-top: 40px;
-  margin-bottom: 24px;
-  width: 100%;
-  overflow-x: scroll;
+  overflow-x: auto;
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  justify-content: center;
   padding: 0 20px;
+  width: 100vw;
+
+  @media (max-width: 1280px) {
+    justify-content: flex-start;
+  }
+
+  .cardList {
+    height: 100%;
+    align-items: center;
+    gap: 20px;
+    display: inline-flex;
+  }
 }

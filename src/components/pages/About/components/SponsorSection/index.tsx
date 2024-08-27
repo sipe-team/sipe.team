@@ -1,6 +1,5 @@
 import ContentWithTitle from '@/components/ContentWithTitle';
 import Image from '@/components/Image';
-import Layout from '@/components/Layout';
 import * as db from '@/db/index.json';
 
 import styles from './index.module.scss';
@@ -20,7 +19,7 @@ const sponsors = Object.keys(db.abouts.sponsor).map((key) => {
 
 const Sponsor = () => {
   return (
-    <Layout>
+    <>
       <ContentWithTitle title="후원사 소개">
         <div className={styles.imageList}>
           {sponsors?.map((image) => (
@@ -35,7 +34,7 @@ const Sponsor = () => {
           ))}
         </div>
       </ContentWithTitle>
-    </Layout>
+    </>
   );
 };
 

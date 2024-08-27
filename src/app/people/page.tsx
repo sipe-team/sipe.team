@@ -1,5 +1,3 @@
-'use client';
-
 import People from '@/components/pages/People';
 
 function page() {

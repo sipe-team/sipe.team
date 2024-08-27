@@ -24,10 +24,11 @@
   cursor: pointer;
   height: 36px;
   display: flex;
+  text-align: left;
   align-items: center;
   justify-content: space-between;
   font-weight: 700;
-  padding: 0 12px;
+  padding: 0 0 0 12px;
   box-sizing: border-box;
   color: color('white');
   user-select: none;
