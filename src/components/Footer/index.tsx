@@ -15,6 +15,7 @@ function Footer() {
               url="https://www.instagram.com/sipe_team"
             />
             <SocialIconLink type="GITHUB" url="https://github.com/sipe-team" />
+            <SocialIconLink type="GITHUB" url="https://github.com/sipe-team" />
             <SocialIconLink
               type="YOUTUBE"
               url="https://www.youtube.com/@sipe_team"
