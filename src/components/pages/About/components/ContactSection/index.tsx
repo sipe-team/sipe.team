@@ -1,9 +1,10 @@
+'use client';
+
 import clsx from 'clsx';
 
 import { EmailIcon } from '@/assets/icons';
 import { KakaoLogo } from '@/assets/logos';
 import ContentWithTitle from '@/components/ContentWithTitle';
-import Layout from '@/components/Layout';
 
 import styles from './index.module.scss';
 

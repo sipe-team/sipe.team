@@ -9,14 +9,11 @@
 }
 
 .thumbnail {
-  min-width: 320px;
-  height: 220px;
-  object-fit: cover;
+  max-width: 320px;
   border-radius: 4px;
 
   @include mobile {
-    min-width: 100%;
-    height: 200px;
+    max-width: 100%;
   }
 }
 
@@ -65,14 +62,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      gap: 12px;
 
       .userIcon {
-        margin-right: 12px;
-        width: 32px;
-        height: 32px;
-      }
-
-      img.userIcon {
         border-radius: 50%;
       }
 

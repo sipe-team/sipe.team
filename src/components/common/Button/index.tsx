@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { Route } from 'next';
 import Link, { LinkProps } from 'next/link';
-import React, { ComponentProps } from 'react';
+import React, { ComponentProps, ReactNode } from 'react';
 
 import styles from './index.module.scss';
 
@@ -10,6 +10,8 @@ type CommonProps = {
   buttonType?: 'home' | 'menu' | 'apply' | 'chip';
   buttonColor?: 'black' | 'primary';
   disabled?: boolean;
+  className?: string;
+  children: ReactNode;
 };
 
 type ButtonAsLink<T extends Route, K extends boolean | undefined> = {

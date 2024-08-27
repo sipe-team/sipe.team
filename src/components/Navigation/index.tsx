@@ -1,3 +1,5 @@
+'use client';
+
 import { AnimatePresence } from 'framer-motion';
 import { motion } from 'framer-motion';
 import { Route } from 'next';
@@ -6,10 +8,10 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 import { SipeLogo } from '@/assets/logos';
+import Button from '@/components/common/Button';
 import { JOIN_FORM_URL } from '@/constants/recruit';
 import useDeviceType from '@/hook/useDeviceType';
 
-import Button from '../common/Button';
 import HamburgerButton from '../HamburgerButton';
 import Layout from '../Layout';
 import styles from './index.module.scss';

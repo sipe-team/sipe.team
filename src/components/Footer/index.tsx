@@ -1,17 +1,11 @@
-import clsx from 'clsx';
-
 import SocialIconLink from '@/components/common/SocialIconLink';
 
 import Layout from '../Layout';
 import styles from './index.module.scss';
 
-type FooterProps = {
-  fixed?: boolean;
-};
-
-export default function Footer({ fixed = false }: FooterProps) {
+function Footer() {
   return (
-    <div className={clsx(styles.wrapper, { [styles.fixed]: fixed })}>
+    <div className={styles.wrapper}>
       <Layout>
         <div className={styles.group}>
           <div className={styles.copyright}>All rights reserved ⓒ SIPE</div>
@@ -42,3 +36,5 @@ export default function Footer({ fixed = false }: FooterProps) {
     </div>
   );
 }
+
+export default Footer;

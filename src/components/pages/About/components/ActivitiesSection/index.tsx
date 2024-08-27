@@ -1,15 +1,19 @@
+'use client';
+
 import 'swiper/css';
 import 'swiper/css/pagination';
 
+import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { SwiperSlide } from 'swiper/react';
 import { Swiper } from 'swiper/react';
 
+import Button from '@/components/common/Button';
 import ContentWithTitle from '@/components/ContentWithTitle';
+import Image from '@/components/Image';
 import * as db from '@/db/index.json';
 
-import Button from '../../../../common/Button';
 import styles from './index.module.scss';
 
 const aboutActivity = db.abouts.activity;
@@ -78,9 +82,18 @@ const Activity = () => {
         {
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
-          activityData?.activities?.map((data, index) => (
+          activityData?.activities?.map((url, index) => (
             <SwiperSlide key={index}>
-              <img className={styles.image} src={data} />
+              {(data) => (
+                <Image
+                  className={clsx(styles.image, data.isActive && styles.active)}
+                  src={url}
+                  alt="activity"
+                  objectFit="cover"
+                  fill
+                  height={240}
+                />
+              )}
             </SwiperSlide>
           ))
         }

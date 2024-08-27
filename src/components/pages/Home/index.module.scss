@@ -1,18 +1,25 @@
 .wrapper {
   width: 100%;
-  height: calc(100vh - 64px);
+  height: calc(100vh - 164px);
   background-color: color('black');
-  background-size: cover;
-  background-position: center;
-}
-
-.group {
-  height: calc(100% - 100px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
   gap: 16px;
+
+  .background {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0;
+    object-fit: cover;
+    pointer-events: none;
+  }
 
   @include mobile {
     gap: 0;
@@ -30,6 +37,10 @@
     @include text('h1/black', 'white');
     font-size: 80px;
 
+    @include tablet {
+      font-size: 64px;
+    }
+
     @include mobile {
       line-height: 29.9px;
       font-size: 26px;
@@ -39,6 +50,10 @@
   .subTitle {
     @include text('h2/semibold', 'white');
     font-size: 32px;
+
+    @include tablet {
+      font-size: 24px;
+    }
 
     @include mobile {
       line-height: 16.8px;
@@ -54,14 +69,14 @@
   margin-top: 40px;
   gap: 40px;
   align-items: center;
-}
 
-.mobileContent {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-  margin-bottom: 24px;
-  width: 100%;
-  overflow-x: scroll;
-  padding: 0 20px;
+  @include mobile {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 24px;
+    width: 100%;
+    overflow-x: scroll;
+    padding: 0 20px;
+  }
 }
