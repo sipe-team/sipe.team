@@ -1,6 +1,7 @@
 import Faq from '@/components/Faq';
 import Layout from '@/components/Layout';
 import Activity from '@/components/pages/About/components/ActivitiesSection';
+import Contact from '@/components/pages/About/components/ContactSection';
 import Introduce from '@/components/pages/About/components/IntroduceSection';
 import Sponsor from '@/components/pages/About/components/SponsorSection';
 
@@ -13,6 +14,7 @@ export default function About() {
       <Activity />
       <Sponsor />
       <Faq faqs={faqs} />
+      <Contact />
     </Layout>
   );
 }

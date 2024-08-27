@@ -19,19 +19,19 @@ export default function Timer({ dueDate, isRecruiting }: TimerProps) {
       <div className={styles.time}>
         {isRecruiting ? formattedTime(dates) : 0}
       </div>
-      <div>일</div>
+      <div className={styles.text}>일</div>
       <div className={styles.time}>
         {isRecruiting ? formattedTime(hours) : 0}
       </div>
-      <div>시간</div>
+      <div className={styles.text}>시간</div>
       <div className={styles.time}>
         {isRecruiting ? formattedTime(minutes) : 0}
       </div>
-      <div>분</div>
+      <div className={styles.text}>분</div>
       <div className={styles.time}>
         {isRecruiting ? formattedTime(seconds) : 0}
       </div>
-      <div>초</div>
+      <div className={styles.text}>초</div>
     </div>
   );
 }

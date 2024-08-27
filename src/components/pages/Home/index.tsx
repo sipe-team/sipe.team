@@ -40,11 +40,13 @@ export default function Home() {
     >
       <div className={styles.group}>
         <Layout>
-          <div className={styles.title}>
-            <div>
+          <div className={styles.titleWrapper}>
+            <div className={styles.title}>
               Sharing Insights <br /> with People Everyday
             </div>
-            <div>개발자들이 함께 경험을 쌓으며 성장하는 IT 커뮤니티</div>
+            <div className={styles.subTitle}>
+              개발자들이 함께 경험을 쌓으며 성장하는 IT 커뮤니티
+            </div>
           </div>
           {!isMobile && (
             <div className={styles.content}>
@@ -64,7 +66,7 @@ export default function Home() {
                 href={JOIN_FORM_URL}
                 isExternalLink
                 buttonType="home"
-                buttonColor="black"
+                buttonColor="primary"
               >
                 {isFinished ? '3기 모집 알림 신청' : '2기 모집 신청'}
               </Button>
