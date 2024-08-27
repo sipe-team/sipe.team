@@ -13,27 +13,23 @@ export type AccordionProps = {
   answer: string;
 };
 
-export default function Accordion({ question, answer }: AccordionProps) {
-  const [isOpen, setIsOpen] = useState(false);
+function Accordion({ question, answer }: AccordionProps) {
+  const [open, toggle] = useState(false);
 
   return (
     <div className={styles.wrapper}>
       <motion.button
         type="button"
         className={styles.question}
-        onClick={() => setIsOpen((v) => !v)}
+        onClick={() => toggle(!open)}
       >
         {question}
-        <div className={clsx(styles.arrow, { [styles.isOpen]: isOpen })}>
-          <AccordionArrowIcon
-            className={styles.arrowIcon}
-            width={36}
-            height={36}
-          />
+        <div className={clsx(styles.arrow, { [styles.isOpen]: open })}>
+          <AccordionArrowIcon className={styles.arrowIcon} />
         </div>
       </motion.button>
       <AnimatePresence initial={false}>
-        {isOpen && (
+        {open && (
           <motion.div
             initial={{ height: 0 }}
             animate={{ height: 'auto' }}
@@ -47,3 +43,5 @@ export default function Accordion({ question, answer }: AccordionProps) {
     </div>
   );
 }
+
+export default Accordion;
