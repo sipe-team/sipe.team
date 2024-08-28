@@ -1,13 +1,12 @@
 'use client';
 
-import 'swiper/css';
+import 'swiper/css/bundle';
 import 'swiper/css/pagination';
 
 import clsx from 'clsx';
 import { useEffect, useState } from 'react';
-import { Autoplay, Pagination } from 'swiper/modules';
-import { SwiperSlide } from 'swiper/react';
-import { Swiper } from 'swiper/react';
+import { Autoplay, EffectCoverflow, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 import Button from '@/components/common/Button';
 import ContentWithTitle from '@/components/ContentWithTitle';
@@ -61,36 +60,47 @@ const Activity = () => {
         ))}
       </div>
       <Swiper
-        loop
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        loop={activityData?.activities?.length > 1 ? true : false}
+        className={styles.swiper}
         centeredSlides
         slidesPerView={1}
+        spaceBetween={0}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
         }}
+        effect="coverflow"
         pagination={{
-          clickable: true,
+          enabled: true,
+          bulletClass: styles.bullet,
+          bulletActiveClass: styles.activeBullet,
         }}
         breakpoints={{
-          1100: {
+          780: {
             slidesPerView: 3,
-            spaceBetween: -80,
+            spaceBetween: 10,
+            pagination: {
+              enabled: false,
+            },
           },
         }}
-        modules={[Pagination, Autoplay]}
+        modules={[Pagination, Autoplay, EffectCoverflow]}
       >
         {
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
           activityData?.activities?.map((url, index) => (
             <SwiperSlide key={index}>
-              {(data) => (
+              {({ isActive }) => (
                 <Image
-                  className={clsx(styles.image, data.isActive && styles.active)}
+                  className={clsx(styles.image, isActive && styles.active)}
                   src={url}
                   alt="activity"
                   objectFit="cover"
                   fill
+                  loading="lazy"
                   height={240}
                 />
               )}

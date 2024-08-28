@@ -31,12 +31,27 @@
   }
 }
 
-.image {
-  border-radius: 12px;
-  scale: 0.5;
+.swiper {
+  width: 100%;
+  height: 100%;
 
-  &.active {
-    scale: 1;
+  .image {
+    border-radius: 12px;
+  }
+
+  .bullet {
+    margin: 0 4px;
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-radius: 50%;
+    opacity: 0.8;
+    background-color: color('gray700');
+  }
+
+  .activeBullet {
+    opacity: 1;
+    background-color: color('primary');
   }
 }
 
