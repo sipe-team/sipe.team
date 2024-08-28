@@ -8,7 +8,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: var(--z-index-header);
 
   .headerLayout {
     display: block;
@@ -36,19 +36,17 @@
       align-items: center;
       width: initial;
 
-      @include mobile {
+      @include mobile-and-tablet {
         width: 100%;
+        transition: height 0.8s ease-in-out;
+        overflow: hidden;
 
-        &:not(.open) {
-          display: none;
+        &.open {
+          height: 268px;
         }
-      }
 
-      @include tablet {
-        width: 100%;
-
-        &:not(.open) {
-          display: none;
+        &.close {
+          height: 0;
         }
       }
 
@@ -59,6 +57,18 @@
         align-items: center;
         gap: 12px;
         padding-bottom: 20px;
+
+        @include mobile-and-tablet {
+          transition: opacity 1.5s ease;
+
+          &.open {
+            opacity: 1;
+          }
+
+          &.close {
+            opacity: 0;
+          }
+        }
 
         @include desktop {
           flex-direction: row;

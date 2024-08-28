@@ -43,9 +43,17 @@ export default function Navigation() {
           />
         </div>
         <nav
-          className={clsx(styles.menuWrapper, isMobileMenuOpen && styles.open)}
+          className={clsx(
+            styles.menuWrapper,
+            isMobileMenuOpen ? styles.open : styles.close
+          )}
         >
-          <div className={styles.menuList}>
+          <div
+            className={clsx(
+              styles.menuList,
+              isMobileMenuOpen ? styles.open : styles.close
+            )}
+          >
             {menus.map((menu) => (
               <Button
                 key={menu.name}

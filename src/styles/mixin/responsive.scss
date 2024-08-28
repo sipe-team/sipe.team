@@ -15,6 +15,12 @@ $lg: 1060px;
 	}
 }
 
+@mixin mobile-and-tablet {
+	@media (min-width: #{$sm}) and (max-width: #{$lg - 1px}) {
+		@content;
+	}
+}
+
 @mixin desktop {
 	@media (min-width: #{$lg}) {
 		@content;
