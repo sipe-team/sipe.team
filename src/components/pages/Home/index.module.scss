@@ -32,6 +32,7 @@
   gap: 16px;
   align-items: center;
   text-align: center;
+  z-index: 1;
 
   .title {
     @include text('h1/black', 'white');
@@ -69,6 +70,7 @@
   margin-top: 40px;
   gap: 40px;
   align-items: center;
+  z-index: 1;
 
   @include mobile {
     display: flex;
