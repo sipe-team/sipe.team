@@ -36,11 +36,9 @@ function RootLayout({ children }: { children: React.ReactNode }) {
         />
       </head>
       <body>
-        <main className={styles.main}>
-          <Navigation />
-          {children}
-          <Footer />
-        </main>
+        <Navigation />
+        <main className={styles.main}>{children}</main>
+        <Footer />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
       </body>
     </html>
