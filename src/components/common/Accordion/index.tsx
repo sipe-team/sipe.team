@@ -8,7 +8,7 @@ import { AccordionArrowIcon } from '@/assets/icons';
 
 import styles from './index.module.scss';
 
-export type AccordionProps = {
+type AccordionProps = {
   question: string;
   answer: string;
 };

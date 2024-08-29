@@ -11,58 +11,39 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import Button from '@/components/common/Button';
 import ContentWithTitle from '@/components/ContentWithTitle';
 import Image from '@/components/Image';
-import * as db from '@/db/index.json';
+import { getAbout } from '@/db';
+import { getEntries } from '@/libs/utils';
 
 import styles from './index.module.scss';
 
-const aboutActivity = db.abouts.activity;
-
-const aboutActivityNames = Object.keys(aboutActivity).map((key) => {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  const activity = aboutActivity[key];
-  return {
-    name: activity.name,
-    value: activity.key,
-  };
-});
-
 const Activity = () => {
-  const [selectChip, setSelectChip] = useState<string>(
-    aboutActivityNames[0].value
-  );
+  const { activity } = getAbout();
+  const activities = getEntries(activity);
 
-  const [activityData, setActivityData] = useState(
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    aboutActivity[selectChip]
-  );
+  const [selectChip, setSelectChip] = useState<string>(activities[0][1].key);
+  const [activityData, setActivityData] = useState(activity[selectChip]);
 
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    setActivityData(aboutActivity[selectChip]);
+    setActivityData(activity[selectChip]);
   }, [selectChip]);
 
   return (
     <ContentWithTitle title="주요 활동">
       <div className={styles.menus}>
-        {aboutActivityNames.map((chip) => (
+        {activities.map(([key, activity]) => (
           <Button
             className={styles.activityButton}
-            key={chip.name}
+            key={key}
             buttonType="chip"
-            onClick={() => setSelectChip(chip.value)}
-            active={chip.value === selectChip}
+            onClick={() => setSelectChip(activity.key)}
+            active={activity.key === selectChip}
           >
-            {chip.name}
+            {activity.name}
           </Button>
         ))}
       </div>
       <Swiper
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        loop={activityData?.activities?.length > 1 ? true : false}
+        loop={activityData.activities.length > 1 ? true : false}
         className={styles.swiper}
         centeredSlides
         slidesPerView={1}
@@ -88,27 +69,22 @@ const Activity = () => {
         }}
         modules={[Pagination, Autoplay, EffectCoverflow]}
       >
-        {
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore
-          activityData?.activities?.map((url, index) => (
-            <SwiperSlide key={index}>
-              {({ isActive }) => (
-                <Image
-                  className={clsx(styles.image, isActive && styles.active)}
-                  src={url}
-                  alt="activity"
-                  objectFit="cover"
-                  fill
-                  loading="lazy"
-                  height={240}
-                />
-              )}
-            </SwiperSlide>
-          ))
-        }
+        {activityData.activities.map((url, index) => (
+          <SwiperSlide key={index}>
+            {({ isActive }) => (
+              <Image
+                className={clsx(styles.image, isActive && styles.active)}
+                src={url}
+                alt="activity"
+                objectFit="cover"
+                fill
+                loading="lazy"
+                height={240}
+              />
+            )}
+          </SwiperSlide>
+        ))}
       </Swiper>
-
       <div className={styles.description}>
         <div className={styles.title}>{activityData?.title}</div>
         <div className={styles.subTitle}>{activityData?.description}</div>

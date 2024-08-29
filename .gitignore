@@ -21,7 +21,6 @@ dist-ssr
 *.sln
 *.sw?
 
-src/db/index.json
 .env
 
 # Zero Install: https://yarnpkg.com/features/zero-installs
@@ -35,3 +34,6 @@ src/db/index.json
 
 # next
 .next
+
+# google spreadsheet data
+src/db/*.json

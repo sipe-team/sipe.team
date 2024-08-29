@@ -188,20 +188,28 @@ function getGoogleSheet() {
         });
 
         const json = {
-          peoples: periodsMap,
+          people: periodsMap,
           activities: activityMap,
-          abouts: aboutMap,
+          about: aboutMap,
           faq: faqMap,
         };
 
-        fs.writeFile(
-          'src/db/index.json',
-          JSON.stringify(json),
-          { flag: 'w+' },
-          function (err) {
-            if (err) return console.error(err);
-          }
-        );
+        fs.writeFileSync('src/db/people.json', JSON.stringify(json.people), {
+          flag: 'w+',
+        });
+
+
+        fs.writeFileSync('src/db/activities.json', JSON.stringify(json.activities), {
+          flag: 'w+',
+        });
+
+        fs.writeFileSync('src/db/about.json', JSON.stringify(json.about), {
+          flag: 'w+',
+        });
+
+        fs.writeFileSync('src/db/faq.json', JSON.stringify(json.faq), {
+          flag: 'w+',
+        });
       } catch (e) {
         console.error(e);
       }

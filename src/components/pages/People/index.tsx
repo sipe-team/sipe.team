@@ -6,15 +6,15 @@ import Button from '@/components/common/Button';
 import { type LogoType } from '@/components/common/SocialIconLink';
 import ContentWithTitle from '@/components/ContentWithTitle';
 import Layout from '@/components/Layout';
+import type { People as PeopleData, PeopleFlag, PeopleItem } from '@/db/model';
+import { getEntries } from '@/libs/utils';
 
-import * as db from '../../../db/index.json';
 import InfiniteScroll from '../../InfiniteScroll';
 import UserCard from './components/UserCard';
 import styles from './index.module.scss';
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-const PeopleCard = ({ people }) => {
+const PeopleCard = ({ people }: { people: PeopleItem }) => {
+  // TODO - refactoring
   const links: { type: LogoType; url: string }[] = [];
   if (people.github) {
     links.push({
@@ -52,37 +52,20 @@ const PeopleCard = ({ people }) => {
   );
 };
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-const peopleData = (period) => {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  return db.peoples[period];
+type Props = {
+  initialPeople: PeopleData;
 };
 
-const periods = Object.keys(db.peoples)
-  .sort((a, b) => {
-    if (a === 'contribute') return 1;
-    if (b === 'contribute') return -1;
-    return parseInt(b) - parseInt(a);
-  })
-  .map((period) => {
-    return {
-      name: period === 'contribute' ? '기여자' : `${period}기`,
-      value: period,
-    };
-  });
-
-const People = () => {
-  const [period, setPeriod] = useState(periods[0].value);
-  const [peoples, setPeoples] = useState(peopleData(period));
+const People = ({ initialPeople }: Props) => {
+  const people = getEntries(initialPeople);
+  const [flag, setFlag] = useState<PeopleFlag>('2기');
+  const [peoples, setPeoples] = useState(initialPeople[flag]);
 
   useEffect(() => {
-    const _peoples = peopleData(period);
+    const _peoples = initialPeople[flag];
 
+    // TODO - refactoring
     const { organizers, members } = _peoples.reduce(
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
       (acc, cur) => {
         if (cur.isOrganizer) {
           acc.organizers.push(cur);
@@ -91,31 +74,32 @@ const People = () => {
         }
         return acc;
       },
-      { organizers: [], members: [] }
+      { organizers: [], members: [] } as {
+        organizers: PeopleItem[];
+        members: PeopleItem[];
+      }
     );
 
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
     const sortedMembers = members.sort((a, b) => {
       return a.name > b.name ? 1 : -1;
     });
 
     setPeoples([...organizers, ...sortedMembers]);
-  }, [period]);
+  }, [flag]);
 
   return (
     <Layout>
       <ContentWithTitle title="사이퍼 소개">
         <article className={styles.periodsWrapper}>
-          {periods.map((_period) => (
+          {people.map(([key]) => (
             <Button
-              key={_period.value}
+              key={key}
               className={styles.button}
               buttonType="chip"
-              active={_period.value === period}
-              onClick={() => setPeriod(_period.value)}
+              active={key === flag}
+              onClick={() => setFlag(key)}
             >
-              {_period.name}
+              {key}
             </Button>
           ))}
         </article>
