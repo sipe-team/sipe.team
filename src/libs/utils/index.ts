@@ -5,11 +5,11 @@ type PickByValue<T, V> = Pick<
   }[keyof T]
 >;
 
-type Entries<T> = {
+export type Entries<T> = {
   [K in keyof T]: [keyof PickByValue<T, T[K]>, T[K]];
 }[keyof T][];
 
-type RequiredNonNullableObject<T extends object> = {
+export type RequiredNonNullableObject<T extends object> = {
   [P in keyof Required<T>]: NonNullable<T[P]>;
 };
 
@@ -19,4 +19,23 @@ export const getEntries = <T extends object>(obj: T) => {
   return entries?.filter((entry) => !!entry?.[0] && !!entry?.[1]) as Entries<
     RequiredNonNullableObject<T>
   >;
+};
+
+export const sortDescending = (a: string, b: string) => {
+  const numA = parseInt(a, 10);
+  const numB = parseInt(b, 10);
+
+  if (Number.isNaN(numA) && Number.isNaN(numB)) {
+    return a.localeCompare(b);
+  }
+
+  if (Number.isNaN(numA)) {
+    return 1;
+  }
+
+  if (Number.isNaN(numB)) {
+    return -1;
+  }
+
+  return numB - numA;
 };

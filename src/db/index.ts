@@ -1,7 +1,7 @@
 import type { About, Activity, Faq, People } from '@/db/model';
 
 import aboutData from './about.json';
-import { B as post, V as video } from './activities.json';
+import activityData from './activity.json';
 import faqData from './faq.json';
 import peopleData from './people.json';
 
@@ -14,6 +14,6 @@ export const getPeople = (): People => ({
 });
 export const getActivity = () =>
   ({
-    post,
-    video,
+    post: activityData.B,
+    video: activityData.V,
   } as Activity);

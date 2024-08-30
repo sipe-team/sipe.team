@@ -8,7 +8,7 @@ type InfiniteScrollProps<T> = {
   className: string;
 };
 
-function InfiniteScroll<T = unknown>({
+function InfiniteScroll<T extends { id: string } & unknown>({
   items,
   components,
   className,
@@ -21,8 +21,8 @@ function InfiniteScroll<T = unknown>({
 
   return (
     <div className={className}>
-      {elements.map((element, index) => (
-        <Fragment key={index}>{components(element)}</Fragment>
+      {elements.map((element) => (
+        <Fragment key={element.id}>{components(element)}</Fragment>
       ))}
       {!isEnd && (
         <div

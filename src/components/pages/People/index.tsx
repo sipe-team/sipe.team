@@ -1,56 +1,16 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import Button from '@/components/common/Button';
-import { type LogoType } from '@/components/common/SocialIconLink';
 import ContentWithTitle from '@/components/ContentWithTitle';
+import InfiniteScroll from '@/components/InfiniteScroll';
 import Layout from '@/components/Layout';
 import type { People as PeopleData, PeopleFlag, PeopleItem } from '@/db/model';
-import { getEntries } from '@/libs/utils';
+import { getEntries, sortDescending } from '@/libs/utils';
 
-import InfiniteScroll from '../../InfiniteScroll';
 import UserCard from './components/UserCard';
 import styles from './index.module.scss';
-
-const PeopleCard = ({ people }: { people: PeopleItem }) => {
-  // TODO - refactoring
-  const links: { type: LogoType; url: string }[] = [];
-  if (people.github) {
-    links.push({
-      type: 'GITHUB',
-      url: people.github,
-    });
-  }
-
-  if (people.linkedin) {
-    links.push({
-      type: 'LINKEDIN',
-      url: people.linkedin,
-    });
-  }
-
-  if (people.etc) {
-    links.push({
-      type: 'LINK',
-      url: people.etc,
-    });
-  }
-
-  return (
-    <UserCard
-      key={people.id}
-      period={people.period}
-      img={people.thumbnail}
-      name={people.name}
-      part={people.part}
-      links={links}
-      introduce={people.introduce}
-      review={people.review}
-      isOrganizer={people.isOrganizer}
-    />
-  );
-};
 
 type Props = {
   initialPeople: PeopleData;
@@ -58,40 +18,54 @@ type Props = {
 
 const People = ({ initialPeople }: Props) => {
   const people = getEntries(initialPeople);
+  const sortedDescending = [...people].sort((a, b) =>
+    sortDescending(a[0], b[0])
+  );
+
   const [flag, setFlag] = useState<PeopleFlag>('2기');
-  const [peoples, setPeoples] = useState(initialPeople[flag]);
+  const [currentPeople, setCurrentPeople] = useState(initialPeople[flag]);
 
-  useEffect(() => {
-    const _peoples = initialPeople[flag];
+  const renderUserCard = useCallback((people: PeopleItem) => {
+    const { github, linkedin, etc } = people;
 
-    // TODO - refactoring
-    const { organizers, members } = _peoples.reduce(
-      (acc, cur) => {
-        if (cur.isOrganizer) {
-          acc.organizers.push(cur);
-        } else {
-          acc.members.push(cur);
-        }
-        return acc;
-      },
-      { organizers: [], members: [] } as {
-        organizers: PeopleItem[];
-        members: PeopleItem[];
-      }
-    );
-
-    const sortedMembers = members.sort((a, b) => {
-      return a.name > b.name ? 1 : -1;
+    const links = getEntries({
+      GITHUB: github,
+      LINKEDIN: linkedin,
+      LINK: etc,
     });
 
-    setPeoples([...organizers, ...sortedMembers]);
+    return (
+      <UserCard
+        key={people.id}
+        period={people.period}
+        img={people.thumbnail}
+        name={people.name}
+        part={people.part}
+        links={links}
+        introduce={people.introduce}
+        review={people.review}
+        isOrganizer={people.isOrganizer}
+      />
+    );
+  }, []);
+
+  useEffect(() => {
+    const sortedCurrentPeople = [...initialPeople[flag]].sort((a, b) => {
+      if (a.isOrganizer || b.isOrganizer) {
+        return 1;
+      }
+
+      return a.name.localeCompare(b.name);
+    });
+
+    setCurrentPeople(sortedCurrentPeople);
   }, [flag]);
 
   return (
     <Layout>
       <ContentWithTitle title="사이퍼 소개">
-        <article className={styles.periodsWrapper}>
-          {people.map(([key]) => (
+        <div className={styles.periodsWrapper}>
+          {sortedDescending.map(([key]) => (
             <Button
               key={key}
               className={styles.button}
@@ -102,14 +76,14 @@ const People = ({ initialPeople }: Props) => {
               {key}
             </Button>
           ))}
-        </article>
-        <article className={styles.wrapper}>
+        </div>
+        <section className={styles.wrapper}>
           <InfiniteScroll
-            items={peoples}
+            items={currentPeople}
             className={styles.contents}
-            components={(people) => <PeopleCard people={people} />}
+            components={renderUserCard}
           />
-        </article>
+        </section>
       </ContentWithTitle>
     </Layout>
   );

@@ -189,7 +189,7 @@ function getGoogleSheet() {
 
         const json = {
           people: periodsMap,
-          activities: activityMap,
+          activity: activityMap,
           about: aboutMap,
           faq: faqMap,
         };
@@ -199,7 +199,7 @@ function getGoogleSheet() {
         });
 
 
-        fs.writeFileSync('src/db/activities.json', JSON.stringify(json.activities), {
+        fs.writeFileSync('src/db/activity.json', JSON.stringify(json.activity), {
           flag: 'w+',
         });
 
