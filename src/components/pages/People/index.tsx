@@ -1,5 +1,3 @@
-'use client';
-
 import Button from '@/components/common/Button';
 import ContentWithTitle from '@/components/ContentWithTitle';
 import Layout from '@/components/Layout';
