@@ -16,10 +16,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
-      url: `https://${process.env.VERCEL_URL}/contact`,
-      lastModified: new Date(),
-    },
-    {
       url: `https://${process.env.VERCEL_URL}/people`,
       lastModified: new Date(),
     },

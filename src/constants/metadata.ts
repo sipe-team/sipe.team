@@ -28,6 +28,7 @@ const METADATA = {
   images,
   metadataBase,
   title,
+  url: defaultURL,
   description,
 };
 
