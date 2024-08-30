@@ -2,12 +2,14 @@ import ContentWithTitle from '@/components/ContentWithTitle';
 import Faq from '@/components/Faq';
 import Table from '@/components/Table';
 import { Applicants, CardList, InActivity } from '@/constants/recruit';
-import * as db from '@/db/index.json';
+import { getFaq } from '@/db';
 
 import ScheduleCard from './components/ScheduleCard';
 import styles from './index.module.scss';
 
-export default function Recruit() {
+function Recruit() {
+  const faq = getFaq();
+
   return (
     <>
       <ContentWithTitle title="지원자격">
@@ -25,7 +27,9 @@ export default function Recruit() {
       <ContentWithTitle title="활동안내">
         <Table dataList={InActivity} isApplicant={false} />
       </ContentWithTitle>
-      <Faq faqs={db.faq.recruit} />
+      <Faq faqs={faq.recruit} />
     </>
   );
 }
+
+export default Recruit;

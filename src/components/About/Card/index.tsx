@@ -18,6 +18,7 @@ const Card = ({ src, badgeText, title, subTitle, reverse }: CardProps) => {
     <div className={clsx(styles.section, reverse && styles.reverse)}>
       <Image
         fill
+        priority
         className={styles.image}
         src={src}
         alt={title}

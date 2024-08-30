@@ -6,6 +6,7 @@ import SocialIconLink, {
   type LogoType,
 } from '@/components/common/SocialIconLink';
 import Image from '@/components/Image';
+import type { Entries, RequiredNonNullableObject } from '@/libs/utils';
 
 import styles from './index.module.scss';
 
@@ -13,7 +14,9 @@ type UserCardProps = ComponentProps<'div'> & {
   period: string;
   img?: string;
   name: string;
-  links?: { type: LogoType; url: string }[];
+  links?: Entries<
+    RequiredNonNullableObject<Record<LogoType, string | undefined>>
+  >;
   part: string;
   isOrganizer?: boolean;
   introduce?: string;
@@ -24,7 +27,7 @@ const UserCard = ({
   period,
   img,
   name,
-  links = [],
+  links,
   part,
   isOrganizer = false,
   introduce = '',
@@ -46,17 +49,17 @@ const UserCard = ({
           src={img}
           width={70}
           height={70}
-          sizes="(max-width: 1060px) 100vw, 50vw"
+          sizes="(max-width: 1060px) 50vw, 33vw"
         />
         <section className={styles.info}>
           <section className={styles.mainInfo}>
             <h3 className={styles.name}>{name}</h3>
             <article className={styles.links}>
-              {links.map((link) => (
+              {links?.map(([type, link]) => (
                 <SocialIconLink
-                  type={link.type}
-                  url={link.url}
-                  key={link.type}
+                  type={type}
+                  url={link}
+                  key={type}
                   size="small"
                 />
               ))}

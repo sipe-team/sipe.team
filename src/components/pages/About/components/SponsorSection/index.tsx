@@ -1,33 +1,24 @@
 import ContentWithTitle from '@/components/ContentWithTitle';
 import Image from '@/components/Image';
-import * as db from '@/db/index.json';
+import { getAbout } from '@/db';
+import { getEntries } from '@/libs/utils';
 
 import styles from './index.module.scss';
 
-const sponsors = Object.keys(db.abouts.sponsor).map((key) => {
-  const sponsor = db.abouts.sponsor;
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  const { name, link } = sponsor[key];
-
-  return {
-    key: key,
-    name,
-    src: link,
-  };
-});
-
 const Sponsor = () => {
+  const about = getAbout();
+  const sponsors = getEntries(about.sponsor);
+
   return (
     <>
       <ContentWithTitle title="후원사 소개">
         <div className={styles.imageList}>
-          {sponsors?.map((image) => (
+          {sponsors.map(([key, sponsor]) => (
             <Image
               objectFit="contain"
-              src={image.src}
-              key={image.key}
-              alt={image.name}
+              src={sponsor.link}
+              key={key}
+              alt={sponsor.name}
               width={320}
               height={180}
             />

@@ -1,131 +1,89 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import Button from '@/components/common/Button';
-import { type LogoType } from '@/components/common/SocialIconLink';
 import ContentWithTitle from '@/components/ContentWithTitle';
+import InfiniteScroll from '@/components/InfiniteScroll';
 import Layout from '@/components/Layout';
+import type { People as PeopleData, PeopleFlag, PeopleItem } from '@/db/model';
+import { getEntries, sortDescending } from '@/libs/utils';
 
-import * as db from '../../../db/index.json';
-import InfiniteScroll from '../../InfiniteScroll';
 import UserCard from './components/UserCard';
 import styles from './index.module.scss';
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-const PeopleCard = ({ people }) => {
-  const links: { type: LogoType; url: string }[] = [];
-  if (people.github) {
-    links.push({
-      type: 'GITHUB',
-      url: people.github,
-    });
-  }
+type Props = {
+  initialPeople: PeopleData;
+};
 
-  if (people.linkedin) {
-    links.push({
-      type: 'LINKEDIN',
-      url: people.linkedin,
-    });
-  }
-
-  if (people.etc) {
-    links.push({
-      type: 'LINK',
-      url: people.etc,
-    });
-  }
-
-  return (
-    <UserCard
-      key={people.id}
-      period={people.period}
-      img={people.thumbnail}
-      name={people.name}
-      part={people.part}
-      links={links}
-      introduce={people.introduce}
-      review={people.review}
-      isOrganizer={people.isOrganizer}
-    />
+const People = ({ initialPeople }: Props) => {
+  const people = getEntries(initialPeople);
+  const sortedDescending = [...people].sort((a, b) =>
+    sortDescending(a[0], b[0])
   );
-};
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-const peopleData = (period) => {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  return db.peoples[period];
-};
+  const [flag, setFlag] = useState<PeopleFlag>('2기');
+  const [currentPeople, setCurrentPeople] = useState(initialPeople[flag]);
 
-const periods = Object.keys(db.peoples)
-  .sort((a, b) => {
-    if (a === 'contribute') return 1;
-    if (b === 'contribute') return -1;
-    return parseInt(b) - parseInt(a);
-  })
-  .map((period) => {
-    return {
-      name: period === 'contribute' ? '기여자' : `${period}기`,
-      value: period,
-    };
-  });
+  const renderUserCard = useCallback((people: PeopleItem) => {
+    const { github, linkedin, etc } = people;
 
-const People = () => {
-  const [period, setPeriod] = useState(periods[0].value);
-  const [peoples, setPeoples] = useState(peopleData(period));
+    const links = getEntries({
+      GITHUB: github,
+      LINKEDIN: linkedin,
+      LINK: etc,
+    });
+
+    return (
+      <UserCard
+        key={people.id}
+        period={people.period}
+        img={people.thumbnail}
+        name={people.name}
+        part={people.part}
+        links={links}
+        introduce={people.introduce}
+        review={people.review}
+        isOrganizer={people.isOrganizer}
+      />
+    );
+  }, []);
 
   useEffect(() => {
-    const _peoples = peopleData(period);
+    const sortedCurrentPeople = [...initialPeople[flag]].sort((a, b) => {
+      if (a.isOrganizer || b.isOrganizer) {
+        return 1;
+      }
 
-    const { organizers, members } = _peoples.reduce(
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      (acc, cur) => {
-        if (cur.isOrganizer) {
-          acc.organizers.push(cur);
-        } else {
-          acc.members.push(cur);
-        }
-        return acc;
-      },
-      { organizers: [], members: [] }
-    );
-
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    const sortedMembers = members.sort((a, b) => {
-      return a.name > b.name ? 1 : -1;
+      return a.name.localeCompare(b.name);
     });
 
-    setPeoples([...organizers, ...sortedMembers]);
-  }, [period]);
+    setCurrentPeople(sortedCurrentPeople);
+  }, [flag]);
 
   return (
     <Layout>
       <ContentWithTitle title="사이퍼 소개">
-        <article className={styles.periodsWrapper}>
-          {periods.map((_period) => (
+        <div className={styles.periodsWrapper}>
+          {sortedDescending.map(([key]) => (
             <Button
-              key={_period.value}
+              key={key}
               className={styles.button}
               buttonType="chip"
-              active={_period.value === period}
-              onClick={() => setPeriod(_period.value)}
+              active={key === flag}
+              onClick={() => setFlag(key)}
             >
-              {_period.name}
+              {key}
             </Button>
           ))}
-        </article>
-        <article className={styles.wrapper}>
+        </div>
+        <section className={styles.wrapper}>
           <InfiniteScroll
-            items={peoples}
+            items={currentPeople}
             className={styles.contents}
-            components={(people) => <PeopleCard people={people} />}
+            components={renderUserCard}
           />
-        </article>
+        </section>
       </ContentWithTitle>
     </Layout>
   );

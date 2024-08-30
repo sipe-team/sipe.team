@@ -1,14 +1,15 @@
 import Layout from '@/components/Layout';
+import type { Faq as FaqItem } from '@/db/model';
 
-import Accordion, { AccordionProps } from '../common/Accordion';
+import Accordion from '../common/Accordion';
 import ContentWithTitle from '../ContentWithTitle';
 import styles from './index.module.scss';
 
 type FaqProps = {
-  faqs: (AccordionProps & { key: string })[];
+  faqs: FaqItem[];
 };
 
-export default function Faq({ faqs }: FaqProps) {
+function Faq({ faqs }: FaqProps) {
   return (
     <Layout>
       <ContentWithTitle title="자주 묻는 질문">
@@ -25,3 +26,5 @@ export default function Faq({ faqs }: FaqProps) {
     </Layout>
   );
 }
+
+export default Faq;
