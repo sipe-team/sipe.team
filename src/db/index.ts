@@ -7,11 +7,7 @@ import peopleData from './people.json';
 
 export const getAbout = (): About => aboutData;
 export const getFaq = (): { about: Faq[]; recruit: Faq[] } => faqData;
-export const getPeople = (): People => ({
-  '1기': peopleData[1],
-  '2기': peopleData[2],
-  기여자: peopleData.contribute,
-});
+export const getPeople = () => peopleData as People;
 export const getActivity = () =>
   ({
     post: activityData.B,

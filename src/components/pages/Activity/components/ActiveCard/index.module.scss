@@ -17,6 +17,8 @@
 .thumbnail {
   max-width: 320px;
   border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid color('gray200');
 
   @include mobile {
     max-width: 100%;
