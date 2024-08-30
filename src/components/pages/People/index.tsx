@@ -1,5 +1,6 @@
 import Button from '@/components/common/Button';
 import ContentWithTitle from '@/components/ContentWithTitle';
+import InfiniteScroll from '@/components/InfiniteScroll';
 import Layout from '@/components/Layout';
 import type { PeopleGeneration, PeopleItem } from '@/db/model';
 import { getEntries } from '@/libs/utils';
