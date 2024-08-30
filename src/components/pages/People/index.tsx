@@ -1,88 +1,67 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
-
 import Button from '@/components/common/Button';
 import ContentWithTitle from '@/components/ContentWithTitle';
-import InfiniteScroll from '@/components/InfiniteScroll';
 import Layout from '@/components/Layout';
-import type { People as PeopleData, PeopleFlag, PeopleItem } from '@/db/model';
-import { getEntries, sortDescending } from '@/libs/utils';
+import type { PeopleGeneration, PeopleItem } from '@/db/model';
+import { getEntries } from '@/libs/utils';
 
 import UserCard from './components/UserCard';
 import styles from './index.module.scss';
 
 type Props = {
-  initialPeople: PeopleData;
+  currentPeople: PeopleItem[];
+  peopleGenerations: PeopleGeneration[];
+  selectedPeopleGeneration: PeopleGeneration;
 };
 
-const People = ({ initialPeople }: Props) => {
-  const people = getEntries(initialPeople);
-  const sortedDescending = [...people].sort((a, b) =>
-    sortDescending(a[0], b[0])
-  );
-
-  const [flag, setFlag] = useState<PeopleFlag>('2기');
-  const [currentPeople, setCurrentPeople] = useState(initialPeople[flag]);
-
-  const renderUserCard = useCallback((people: PeopleItem) => {
-    const { github, linkedin, etc } = people;
-
-    const links = getEntries({
-      GITHUB: github,
-      LINKEDIN: linkedin,
-      LINK: etc,
-    });
-
-    return (
-      <UserCard
-        key={people.id}
-        period={people.period}
-        img={people.thumbnail}
-        name={people.name}
-        part={people.part}
-        links={links}
-        introduce={people.introduce}
-        review={people.review}
-        isOrganizer={people.isOrganizer}
-      />
-    );
-  }, []);
-
-  useEffect(() => {
-    const sortedCurrentPeople = [...initialPeople[flag]].sort((a, b) => {
-      if (a.isOrganizer || b.isOrganizer) {
-        return 1;
-      }
-
-      return a.name.localeCompare(b.name);
-    });
-
-    setCurrentPeople(sortedCurrentPeople);
-  }, [flag]);
-
+const People = ({
+  currentPeople,
+  peopleGenerations,
+  selectedPeopleGeneration,
+}: Props) => {
   return (
     <Layout>
       <ContentWithTitle title="사이퍼 소개">
         <div className={styles.periodsWrapper}>
-          {sortedDescending.map(([key]) => (
+          {peopleGenerations.map((generation) => (
             <Button
-              key={key}
+              key={generation}
               className={styles.button}
               buttonType="chip"
-              active={key === flag}
-              onClick={() => setFlag(key)}
+              active={generation === selectedPeopleGeneration}
+              href={`/people?generation=${generation}`}
             >
-              {key}
+              {generation === 'contribute' ? '기여자' : `${generation}기`}
             </Button>
           ))}
         </div>
         <section className={styles.wrapper}>
-          <InfiniteScroll
-            items={currentPeople}
-            className={styles.contents}
-            components={renderUserCard}
-          />
+          <div className={styles.contents}>
+            {currentPeople.map((person) => {
+              const { github, linkedin, etc } = person;
+
+              const links = getEntries({
+                GITHUB: github,
+                LINKEDIN: linkedin,
+                LINK: etc,
+              });
+
+              return (
+                <UserCard
+                  key={person.id}
+                  period={person.period}
+                  img={person.thumbnail}
+                  name={person.name}
+                  part={person.part}
+                  links={links}
+                  introduce={person.introduce}
+                  review={person.review}
+                  isOrganizer={person.isOrganizer}
+                />
+              );
+            })}
+          </div>
         </section>
       </ContentWithTitle>
     </Layout>

@@ -1,10 +1,5 @@
-'use client';
-
-import { useCallback, useEffect, useState } from 'react';
-
 import Button from '@/components/common/Button';
 import ContentWithTitle from '@/components/ContentWithTitle';
-import InfiniteScroll from '@/components/InfiniteScroll';
 import Layout from '@/components/Layout';
 import { ActiveCard } from '@/components/pages/Activity/components/ActiveCard';
 import { ActiveVideoCard } from '@/components/pages/Activity/components/ActiveVideoCard';
@@ -17,46 +12,11 @@ import type {
 import styles from './index.module.scss';
 
 type Props = {
-  initialActivity: ActivityData;
+  activityData: ActivityVideo[] | ActivityPost[];
+  currentTab?: keyof ActivityData;
 };
 
-function Activity({ initialActivity }: Props) {
-  const [type, setType] = useState<keyof ActivityData>('post');
-  const [activities, setActivities] = useState(initialActivity[type]);
-
-  const renderComponent = useCallback(
-    (activity: ActivityPost | ActivityVideo) => {
-      if (activity.type === 'B') {
-        return (
-          <ActiveCard
-            thumbnail={activity.thumbnail}
-            profile={activity.profile}
-            contentTitle={activity.title}
-            contentBody={activity.description}
-            userName={activity.name}
-            link={activity.link}
-            createDate={activity.date}
-          />
-        );
-      }
-
-      return (
-        <ActiveVideoCard
-          thumbnail={activity.thumbnail}
-          contentTitle={activity.title}
-          userName={activity.name}
-          link={activity.link}
-          createDate={activity.date}
-        />
-      );
-    },
-    []
-  );
-
-  useEffect(() => {
-    setActivities(initialActivity[type]);
-  }, [type]);
-
+function Activity({ activityData, currentTab }: Props) {
   return (
     <Layout>
       <ContentWithTitle title="사이퍼 활동">
@@ -64,26 +24,49 @@ function Activity({ initialActivity }: Props) {
           <Button
             className={styles.periodButton}
             buttonType="chip"
-            active={type === 'post'}
-            onClick={() => setType('post')}
+            active={currentTab === 'post'}
+            href="/activity?tab=post"
           >
             블로그
           </Button>
           <Button
             className={styles.periodButton}
             buttonType="chip"
-            active={type === 'video'}
-            onClick={() => setType('video')}
+            active={currentTab === 'video'}
+            href="/activity?tab=video"
           >
             발표 영상
           </Button>
         </div>
         <div className={styles.wrapper}>
-          <InfiniteScroll<ActivityPost | ActivityVideo>
-            items={activities}
-            className={type === 'post' ? styles.cards : styles.videoCards}
-            components={renderComponent}
-          />
+          <div
+            className={currentTab === 'post' ? styles.cards : styles.videoCards}
+          >
+            {currentTab === 'post' &&
+              activityData.map((activity) => (
+                <ActiveCard
+                  key={activity.link}
+                  thumbnail={activity.thumbnail}
+                  profile={activity.profile}
+                  contentTitle={activity.title}
+                  contentBody={activity.description}
+                  userName={activity.name}
+                  link={activity.link}
+                  createDate={activity.date}
+                />
+              ))}
+            {currentTab === 'video' &&
+              activityData.map((activity) => (
+                <ActiveVideoCard
+                  key={activity.link}
+                  thumbnail={activity.thumbnail}
+                  contentTitle={activity.title}
+                  userName={activity.name}
+                  link={activity.link}
+                  createDate={activity.date}
+                />
+              ))}
+          </div>
         </div>
       </ContentWithTitle>
     </Layout>

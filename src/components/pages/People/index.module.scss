@@ -7,6 +7,10 @@
   grid-template-columns: 1fr 1fr;
   gap: 32px;
 
+  @include mobile-and-tablet {
+    gap: 16px;
+  }
+
   @include mobile {
     grid-template-columns: 100%;
   }

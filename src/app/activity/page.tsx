@@ -1,6 +1,7 @@
 import Activity from '@/components/pages/Activity';
 import METADATA from '@/constants/metadata';
 import { getActivity } from '@/db';
+import type { Activity as ActivityData } from '@/db/model';
 
 const title = '사이퍼 활동 - SIPE';
 
@@ -18,10 +19,20 @@ export const metadata = {
   },
 };
 
-function page() {
-  const activity = getActivity();
+type SearchParams = {
+  tab: keyof ActivityData;
+};
 
-  return <Activity initialActivity={activity} />;
+function page({ searchParams }: { searchParams?: SearchParams }) {
+  const activity = getActivity();
+  const currentActivityTab = searchParams?.tab || 'post';
+
+  return (
+    <Activity
+      activityData={activity[currentActivityTab]}
+      currentTab={currentActivityTab}
+    />
+  );
 }
 
 export default page;
