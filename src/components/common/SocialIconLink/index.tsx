@@ -59,12 +59,12 @@ function SocialIconLink({
   };
 
   if (!url) {
-    return <Logo className={logoClassName} />;
+    return <Logo className={logoClassName} aria-label={type} />;
   }
 
   return (
     <ExternalLink href={replaceUrl(url)} className={className}>
-      <Logo className={logoClassName} />
+      <Logo className={logoClassName} aria-label={type} />
     </ExternalLink>
   );
 }
