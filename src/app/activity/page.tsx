@@ -27,11 +27,12 @@ function page({ searchParams }: { searchParams?: SearchParams }) {
   const activity = getActivity();
   const currentActivityTab = searchParams?.tab || 'post';
 
+  const sortedActivity = [...activity[currentActivityTab]].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+
   return (
-    <Activity
-      activityData={activity[currentActivityTab]}
-      currentTab={currentActivityTab}
-    />
+    <Activity activityData={sortedActivity} currentTab={currentActivityTab} />
   );
 }
 
