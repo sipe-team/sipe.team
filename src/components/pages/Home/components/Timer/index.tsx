@@ -1,22 +1,22 @@
 'use client';
 
-import useTimer from '../../hooks/useTimer';
 import styles from './index.module.scss';
 
 export interface TimerProps {
-  /**
-   * Date.now()와 같은 형태의 timestamp
-   */
-  dueDate?: number;
+  dates: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
   isRecruiting: boolean;
 }
 
-export default function Timer({ dueDate, isRecruiting }: TimerProps) {
-  const { dates, hours, minutes, seconds } = useTimer(
-    dueDate,
-    isRecruiting ? 1000 : null
-  );
-
+export default function Timer({
+  dates,
+  hours,
+  minutes,
+  seconds,
+  isRecruiting,
+}: TimerProps) {
   const formattedTime = (number: number) => String(number).padStart(2, '0');
 
   return (

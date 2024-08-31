@@ -1,6 +1,6 @@
 import Card from '@/components/About/Card';
 import ContentWithTitle from '@/components/ContentWithTitle';
-import { introduces } from '@/components/pages/About/data';
+import { introduces } from '@/constants/about';
 
 const Introduce = () => {
   return (
