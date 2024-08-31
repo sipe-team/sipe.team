@@ -12,7 +12,7 @@ import Timer from '../Timer';
 import styles from './index.module.scss';
 
 const CURRENT_GENERATION = 3;
-const APPLICATION_START_DATE = new Date('2024-08-31 22:33:00');
+const APPLICATION_START_DATE = new Date('2024-09-08 00:00:00');
 const APPLICATION_DUE_DATE = new Date('2024-09-24 23:59:59');
 
 type ApplicationStatusKey = 'before' | 'ongoing' | 'after';
