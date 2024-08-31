@@ -12,7 +12,7 @@ import type {
 import styles from './index.module.scss';
 
 type Props = {
-  activityData: ActivityVideo[] | ActivityPost[];
+  activityData: (ActivityPost | ActivityVideo)[];
   currentTab?: keyof ActivityData;
 };
 
