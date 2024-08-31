@@ -35,7 +35,7 @@ export default function Navigation() {
       <Layout className={styles.headerLayout}>
         <div className={styles.header}>
           <Link href="/">
-            <SipeLogo />
+            <SipeLogo aria-label="사이프 로고" />
           </Link>
           <HamburgerButton
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
