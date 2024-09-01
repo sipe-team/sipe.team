@@ -36,49 +36,17 @@
 
   .title {
     @include text('h1/black', 'white');
-    font-size: 80px;
-
-    @include tablet {
-      font-size: 64px;
-    }
 
     @include mobile {
-      line-height: 29.9px;
-      font-size: 26px;
+      @include text('h3/black', 'white');
     }
   }
 
   .subTitle {
-    @include text('h2/semibold', 'white');
-    font-size: 32px;
-
-    @include tablet {
-      font-size: 24px;
-    }
+    @include text('h4/semibold', 'white');
 
     @include mobile {
-      line-height: 16.8px;
-      font-size: 12px;
+      @include text('h6/semibold', 'white');
     }
-  }
-}
-
-.content {
-  padding-top: 20px;
-  display: flex;
-  flex-direction: column;
-  margin-top: 40px;
-  gap: 40px;
-  align-items: center;
-  z-index: 1;
-
-  @include mobile {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-    margin-bottom: 24px;
-    width: 100%;
-    overflow-x: scroll;
-    padding: 0 20px;
   }
 }
