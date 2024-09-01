@@ -69,7 +69,6 @@ export default function Navigation() {
             ))}
             <Button
               isExternalLink
-              disabled={currentStatus !== 'ongoing'}
               href={currentApplicationDetail.formUrl}
               buttonType="apply"
             >
