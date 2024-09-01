@@ -1,15 +1,11 @@
 .cardListWrapper {
   display: flex;
   align-items: center;
-  overflow-x: auto;
-  display: flex;
-  align-items: center;
-  overflow-x: auto;
-  justify-content: center;
-  padding: 0 20px;
-  width: 100vw;
+  overflow-x: scroll;
+  justify-content: flex-start;
+  width: 100%;
 
-  @media (max-width: 1280px) {
+  @include mobile-and-tablet {
     justify-content: flex-start;
   }
 
@@ -19,4 +15,8 @@
     gap: 20px;
     display: inline-flex;
   }
+}
+
+.faqWrapper {
+  padding: 0 20px;
 }

@@ -10,7 +10,7 @@ const ContactSection = () => {
     <ContentWithTitle title="문의">
       <div className={styles.wrapper}>
         <div className={styles.title}>
-          더 궁금한 질문이 있거나 후원을 원하신다면 언제든 연락해주세요!
+          더 궁금한 질문이 있거나 후원을 원하신다면 언제든 연락해 주세요!
         </div>
         <div className={styles.content}>
           <ExternalLink
