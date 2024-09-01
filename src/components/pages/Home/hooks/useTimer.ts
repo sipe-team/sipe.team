@@ -5,14 +5,7 @@ export default function useTimer(
   dueDate?: number,
   delay: null | number = 1000
 ) {
-  const [overallTime, setOverallTime] = useState<number>(() => {
-    if (!dueDate) {
-      return 0;
-    }
-    const now = Date.now();
-    const diff = Math.max(0, dueDate - now);
-    return Math.floor(diff / 1000);
-  });
+  const [overallTime, setOverallTime] = useState<number>(0);
 
   useEffect(() => {
     if (dueDate) {
