@@ -1,0 +1,50 @@
+@import './functions';
+
+@mixin text($text, $color-code: '') {
+  $list: str-split($text, '/');
+  $weight: '';
+  $font: '';
+
+  @if length($list) == 2 {
+    $font: list.nth($list, 1);
+    $weight: list.nth($list, 2);
+  }
+
+  @if $font == 'h1' {
+    font-size: var(--h1-font-size);
+  } @else if $font == 'h2' {
+    font-size: var(--h2-font-size);
+    letter-spacing: var(--h2-letter-spacing);
+  } @else if $font == 'h3' {
+    font-size: var(--h3-font-size);
+    letter-spacing: var(--h3-letter-spacing);
+  } @else if $font == 'h4' {
+    font-size: var(--h4-font-size);
+  } @else if $font == 'h5' {
+    font-size: var(--h5-font-size);
+  } @else if $font == 'h6' {
+    font-size: var(--h6-font-size);
+  }
+
+  @if $weight == 'regular' {
+    font-weight: var(--font-weight-regular);
+  } @else if $weight == 'medium' {
+    font-weight: var(--font-weight-medium);
+  } @else if $weight == 'semibold' {
+    font-weight: var(--font-weight-semibold);
+  } @else if $weight == 'bold' {
+    font-weight: var(--font-weight-bold);
+  } @else if $weight == 'extrabold' {
+    font-weight: var(--font-weight-extrabold);
+  } @else if $weight == 'black' {
+    font-weight: var(--font-weight-black);
+  }
+
+  @if $color-code != '' {
+    color: color($color-code);
+  }
+}
+
+@mixin text-color($color-code) {
+  color: color($color-code);
+}

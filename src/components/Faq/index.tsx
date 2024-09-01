@@ -1,22 +1,30 @@
-import Accordion, { AccordionProps } from '../Accordion';
+import Layout from '@/components/Layout';
+import type { Faq as FaqItem } from '@/db/model';
+
+import Accordion from '../common/Accordion';
 import ContentWithTitle from '../ContentWithTitle';
-import Layout from '../Layout';
-import * as S from './styled';
+import styles from './index.module.scss';
 
 type FaqProps = {
-  faqs: AccordionProps[];
+  faqs: FaqItem[];
 };
 
-export default function Faq({ faqs }: FaqProps) {
+function Faq({ faqs }: FaqProps) {
   return (
     <Layout>
       <ContentWithTitle title="자주 묻는 질문">
-        <S.Faqs>
-          {faqs.map((faq, index) => (
-            <Accordion key={index} q={faq.q} a={faq.a} />
+        <div className={styles.faqs}>
+          {faqs.map((faq) => (
+            <Accordion
+              key={faq.key}
+              question={faq.question}
+              answer={faq.answer}
+            />
           ))}
-        </S.Faqs>
+        </div>
       </ContentWithTitle>
     </Layout>
   );
 }
+
+export default Faq;

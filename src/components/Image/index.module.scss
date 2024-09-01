@@ -1,0 +1,12 @@
+.contain {
+  object-fit: contain;
+}
+
+.cover {
+  object-fit: cover;
+}
+
+.fillImageWrapper {
+  position: relative;
+  overflow: hidden;
+}

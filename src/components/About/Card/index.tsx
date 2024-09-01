@@ -1,33 +1,36 @@
-import Badge from '@/components/Badge';
-import useDeviceType from '@/hook/useDeviceType';
+import clsx from 'clsx';
 
-import * as S from './styled';
+import Badge from '@/components/common/Badge';
+import Image from '@/components/Image';
+
+import styles from './index.module.scss';
 
 interface CardProps {
   src: string;
-  index: number;
   badgeText: string;
   title: string;
   subTitle: string;
+  reverse?: boolean;
 }
 
-const Card = ({ src, index, badgeText, title, subTitle }: CardProps) => {
-  const { isTablet, isMobile } = useDeviceType();
-  const isOdd = index % 2 !== 0;
+const Card = ({ src, badgeText, title, subTitle, reverse }: CardProps) => {
   return (
-    <S.Section index={index} isTablet={isTablet}>
-      {isOdd || (!isOdd && isTablet) ? (
-        <S.Image isTablet={isTablet} isMobile={isMobile} src={src} />
-      ) : null}
-      <S.Description isTablet={isTablet}>
+    <div className={clsx(styles.section, reverse && styles.reverse)}>
+      <Image
+        fill
+        priority
+        className={styles.image}
+        src={src}
+        alt={title}
+        height={270}
+        objectFit="contain"
+      />
+      <div className={styles.titleWrapper}>
         <Badge text={badgeText} />
-        <S.Title isTablet={isTablet}>{title}</S.Title>
-        <S.SubTitle>{subTitle}</S.SubTitle>
-      </S.Description>
-      {!isOdd && !isTablet ? (
-        <S.Image isTablet={isTablet} isMobile={isMobile} src={src} />
-      ) : null}
-    </S.Section>
+        <div className={styles.title}>{title}</div>
+        <div className={styles.subTitle}>{subTitle}</div>
+      </div>
+    </div>
   );
 };
 

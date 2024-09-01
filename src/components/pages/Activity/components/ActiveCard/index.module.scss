@@ -1,0 +1,93 @@
+.activeCardWrapper {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  min-height: 252px;
+  padding: 16px;
+  background-color: color('gray000');
+  border: 1px solid color('gray100');
+  border-radius: 12px;
+
+  @include mobile {
+    min-height: 333px;
+    flex-direction: column;
+  }
+}
+
+.thumbnail {
+  max-width: 320px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid color('gray200');
+
+  @include mobile {
+    max-width: 100%;
+  }
+}
+
+.contentsWrapper {
+  width: 100%;
+  margin-left: 24px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include mobile {
+    margin-left: 0;
+  }
+
+  .contents {
+    .title {
+      max-height: 56px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      @include text('h5/bold', 'white');
+    }
+
+    .body {
+      max-height: 40px;
+      color: color('gray700');
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+  }
+
+  .posterUserInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+
+    .userWrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+
+      .userIcon {
+        border-radius: 50%;
+      }
+
+      .userName {
+        color: color('white');
+      }
+    }
+
+    .createDate {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 17px;
+      letter-spacing: -0.002em;
+      text-align: right;
+      color: color('gray500');
+    }
+  }
+}

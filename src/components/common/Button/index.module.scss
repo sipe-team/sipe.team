@@ -1,0 +1,139 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  height: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  transform: translate(0, 0);
+  user-select: none;
+  transition:
+    color 0.1s ease-in-out,
+    background-color 0.1s ease-in-out,
+    border-color 0.1s ease-in-out,
+    opacity 0.1s ease-in-out;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  &.home {
+    font-size: 22px;
+    line-height: 30.8px;
+    width: 392px;
+    height: 56px;
+
+    @include mobile {
+      width: 100%;
+    }
+
+    &.primary {
+      background-color: color('primary');
+      color: color('black');
+
+      &:hover {
+        border: 1px solid color('gray200');
+      }
+    }
+
+    &.black {
+      background-color: color('gray000');
+      color: color('white');
+      border: 1px solid color('gray200');
+
+      &:hover {
+        background-color: color('gray100');
+        color: color('white');
+      }
+
+      &:active {
+        background-color: color('gray000');
+        color: color('gray300');
+      }
+    }
+
+    &:disabled,
+    &.disabled {
+      background-color: color('gray300');
+      color: color('gray100');
+    }
+  }
+
+  &.menu {
+    background-color: transparent;
+    width: 100%;
+    font-size: 15px;
+    line-height: 21px;
+    color: color('white');
+
+    &.active {
+      color: color('primary');
+    }
+
+    @include desktop {
+      width: 88px;
+    }
+  }
+
+  &.apply {
+    background-color: color('primary');
+    color: color('black');
+    width: 100%;
+    font-size: 16px;
+    line-height: 22.4px;
+
+    @include desktop {
+      width: 99px;
+    }
+  }
+
+  &.chip {
+    background-color: color('gray000');
+    color: color('white');
+    width: 100%;
+    font-size: 14px;
+    line-height: 19.6px;
+    padding: 10px 24px;
+    border-radius: 100px;
+
+    &:not(.active):hover {
+      background-color: color('gray100');
+      color: color('white');
+    }
+
+    &.active {
+      background-color: color('primary');
+      color: color('black');
+    }
+
+    &:disabled,
+    &.disabled {
+      background-color: color('gray000');
+      color: color('gray100');
+    }
+
+    @include desktop {
+      width: 99px;
+    }
+  }
+
+  &:disabled,
+  &.disabled {
+    cursor: not-allowed;
+  }
+
+  &:hover {
+    background-color: color('gray100');
+    color: color('white');
+  }
+
+  &:active {
+    background-color: color('gray000');
+    color: color('gray300');
+  }
+}

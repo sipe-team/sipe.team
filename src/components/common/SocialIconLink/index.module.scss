@@ -1,0 +1,38 @@
+.socialIcon {
+  &.small {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
+  }
+
+  &.middle {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    min-height: 28px;
+  }
+
+  path {
+    transition: opacity 0.1s ease-in-out;
+    opacity: 1;
+  }
+
+  &.light {
+    path {
+      fill: color('white');
+    }
+  }
+
+  &.dark {
+    path {
+      fill: color('black');
+    }
+  }
+
+  &:hover {
+    path {
+      opacity: 0.8;
+    }
+  }
+}
