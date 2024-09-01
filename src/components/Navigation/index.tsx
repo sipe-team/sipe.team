@@ -1,82 +1,142 @@
-'use client';
+import { AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-import clsx from 'clsx';
-import { Route } from 'next';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { ReactComponent as Logo } from '@/assets/logo.svg';
+import useDeviceType from '@/hook/useDeviceType';
+import { useJoinUs } from '@/hook/useJoinUs';
 
-import { SipeLogo } from '@/assets/logos';
-import Button from '@/components/common/Button';
-import { displayApplication, getCurrentStatus } from '@/utils/recruit';
-
+import Button from '../Button';
+import { ApplyButton } from '../Button/styled';
 import HamburgerButton from '../HamburgerButton';
 import Layout from '../Layout';
-import styles from './index.module.scss';
+import * as S from './styled';
 
-const menus: { name: string; path: Route }[] = [
+const menus = [
   { name: 'About', path: '/about' },
   { name: 'Recruit', path: '/recruit' },
   { name: 'People', path: '/people' },
   { name: 'Activity', path: '/activity' },
+  { name: 'Contact', path: '/contact' },
 ];
 
 export default function Navigation() {
-  const pathname = usePathname();
-  const now = Date.now();
-  const currentStatus = getCurrentStatus(now);
-  const currentApplicationDetail = displayApplication[currentStatus];
+  const { isDesktop } = useDeviceType();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
+  const { handleJoinUs } = useJoinUs();
+
+  const handleNavigate = (path: string) => {
     setIsMobileMenuOpen(false);
-  }, [pathname]);
+    navigate(path);
+    scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleClickJoinButton = () => {
+    setIsMobileMenuOpen(false);
+    handleJoinUs();
+  };
+
+  const mobileMenuVariant = {
+    opened: {
+      height: 'auto',
+      transition: {
+        delay: 0.15,
+        duration: 1,
+        ease: [0.74, 0, 0.19, 1.02],
+      },
+    },
+    closed: {
+      height: 0,
+      transition: {
+        delay: 0.35,
+        duration: 0.63,
+        ease: [0.74, 0, 0.19, 1.02],
+      },
+    },
+  };
+
+  const fadeInVariant = {
+    opened: {
+      opacity: 1,
+      transition: {
+        delay: 1.1,
+      },
+    },
+    closed: { opacity: 0 },
+  };
 
   return (
-    <header className={styles.wrapper}>
-      <Layout className={styles.headerLayout}>
-        <div className={styles.header}>
-          <Link href="/">
-            <SipeLogo aria-label="사이프 로고" />
-          </Link>
-          <HamburgerButton
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            isOpened={isMobileMenuOpen}
-          />
-        </div>
-        <nav
-          className={clsx(
-            styles.menuWrapper,
-            isMobileMenuOpen ? styles.open : styles.close
-          )}
-        >
+    <S.Wrapper>
+      <Layout>
+        <S.Group>
           <div
-            className={clsx(
-              styles.menuList,
-              isMobileMenuOpen ? styles.open : styles.close
-            )}
+            onClick={() => handleNavigate('/')}
+            style={{ cursor: 'pointer' }}
           >
-            {menus.map((menu) => (
-              <Button
-                key={menu.name}
-                buttonType="menu"
-                active={menu.path === pathname}
-                href={menu.path}
-              >
-                {menu.name}
-              </Button>
-            ))}
-            <Button
-              isExternalLink
-              href={currentApplicationDetail.formUrl}
-              buttonType="apply"
-            >
-              Join Us
-            </Button>
+            <Logo />
           </div>
-        </nav>
+          {isDesktop ? (
+            <S.Buttons>
+              <S.Menus>
+                {menus.map((menu) => (
+                  <Button
+                    key={menu.name}
+                    buttonType="menu"
+                    selected={menu.path === location.pathname}
+                    onClick={() => handleNavigate(menu.path)}
+                  >
+                    {menu.name}
+                  </Button>
+                ))}
+              </S.Menus>
+              <ApplyButton
+                isDesktop={isDesktop}
+                onClick={handleClickJoinButton}
+              >
+                Join Us
+              </ApplyButton>
+            </S.Buttons>
+          ) : (
+            <HamburgerButton
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              isOpened={isMobileMenuOpen}
+            />
+          )}
+        </S.Group>
+        <AnimatePresence>
+          {!isDesktop && (
+            <S.MobileMenus
+              initial="closed"
+              animate={isMobileMenuOpen ? 'opened' : 'closed'}
+              variants={mobileMenuVariant}
+            >
+              <S.MenuList variants={fadeInVariant}>
+                {/* <S.MenuList> */}
+                {menus.map((menu) => (
+                  <Button
+                    key={menu.name}
+                    buttonType="menu"
+                    selected={menu.path === location.pathname}
+                    onClick={() => handleNavigate(menu.path)}
+                  >
+                    {menu.name}
+                  </Button>
+                ))}
+                <ApplyButton
+                  isDesktop={isDesktop}
+                  onClick={handleClickJoinButton}
+                >
+                  Join Us
+                </ApplyButton>
+              </S.MenuList>
+            </S.MobileMenus>
+          )}
+        </AnimatePresence>
       </Layout>
-    </header>
+    </S.Wrapper>
   );
 }

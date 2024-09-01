@@ -13,6 +13,8 @@ dist-ssr
 *.local
 
 # Editor directories and files
+.vscode/*
+!.vscode/extensions.json
 .idea
 .DS_Store
 *.suo
@@ -21,19 +23,5 @@ dist-ssr
 *.sln
 *.sw?
 
+src/db/index.json
 .env
-
-# Zero Install: https://yarnpkg.com/features/zero-installs
-.yarn/*
-!.yarn/cache
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
-
-# next
-.next
-
-# google spreadsheet data
-src/db/*.json

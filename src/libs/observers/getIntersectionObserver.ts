@@ -1,4 +1,4 @@
-import { RefObject } from 'react';
+import React, { RefObject } from 'react';
 
 export const intersection = <T extends (...args: unknown[]) => unknown>(
   func: T

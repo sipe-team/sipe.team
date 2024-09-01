@@ -1,33 +1,22 @@
-import clsx from 'clsx';
 import React from 'react';
 
-import styles from './index.module.scss';
+import * as S from './styled';
 
 type CardWrapperProps = React.ComponentProps<'div'> & {
   type?: 'BASIC' | 'CONTENT';
   minHeight?: number;
-  className?: string;
 };
 
 const CardWrapper = ({
   type = 'BASIC',
   minHeight,
   children,
-  className,
   ...props
 }: CardWrapperProps) => {
   return (
-    <div
-      className={clsx(
-        styles.wrapper,
-        { [styles.basicType]: type === 'BASIC' },
-        className
-      )}
-      style={{ minHeight: `${minHeight}px` }}
-      {...props}
-    >
+    <S.Wrapper type={type} minHeight={minHeight} {...props}>
       {children}
-    </div>
+    </S.Wrapper>
   );
 };
 

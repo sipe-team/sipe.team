@@ -1,4 +1,4 @@
-import styles from './index.module.scss';
+import * as S from './styled';
 
 type ContentWithTitleProps = {
   title: string;
@@ -10,9 +10,9 @@ export default function ContentWithTitle({
   children,
 }: ContentWithTitleProps) {
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.title}>{title}</div>
+    <S.Wrapper>
+      <S.Title>{title}</S.Title>
       {children}
-    </div>
+    </S.Wrapper>
   );
 }

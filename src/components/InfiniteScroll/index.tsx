@@ -1,38 +1,37 @@
-import { Fragment, ReactNode, useRef } from 'react';
+import React from 'react';
+import { useRef } from 'react';
 
 import { useInfiniteScroll } from '@/components/InfiniteScroll/hooks/useInfiniteScroll';
 
-type InfiniteScrollProps<T> = {
-  items: T[];
-  components: (props: T) => ReactNode;
-  className: string;
+import * as S from './styled';
+
+type InfiniteScrollProps = React.ComponentProps<'div'> & {
+  items: Array<unknown>;
+  components: (props: unknown) => React.ReactNode;
 };
 
-function InfiniteScroll<T extends { id: string } & unknown>({
+const InfiniteScroll = ({
   items,
   components,
   className,
-}: InfiniteScrollProps<T>) {
+}: InfiniteScrollProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const { elements, isEnd } = useInfiniteScroll<HTMLDivElement, T>(
-    containerRef,
-    items
-  );
+  const { elements, isEnd } = useInfiniteScroll(containerRef, items);
 
   return (
-    <div className={className}>
-      {elements.map((element) => (
-        <Fragment key={element.id}>{components(element)}</Fragment>
+    <S.Wrapper className={className}>
+      {elements.map((element, index) => (
+        <React.Fragment key={index}>{components(element)}</React.Fragment>
       ))}
       {!isEnd && (
         <div
           style={{ width: '100%', height: '10px' }}
           className="flag"
           ref={containerRef}
-        />
+        ></div>
       )}
-    </div>
+    </S.Wrapper>
   );
-}
+};
 
 export default InfiniteScroll;
