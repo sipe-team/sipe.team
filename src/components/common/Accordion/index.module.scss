@@ -1,0 +1,77 @@
+.wrapper {
+  width: 100;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid color('gray100');
+  background-color: color('gray000');
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  font-size: 17px;
+  font-size: 14px;
+  line-height: 20px;
+  color: color('white');
+  overflow: hidden;
+
+  @include desktop {
+    width: 1060px;
+    font-size: 17px;
+    line-height: 24px;
+  }
+}
+
+.question {
+  cursor: pointer;
+  height: 36px;
+  display: flex;
+  text-align: left;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  padding: 0 0 0 12px;
+  box-sizing: border-box;
+  color: color('white');
+  user-select: none;
+
+  @include desktop {
+    height: 48px;
+    font-size: 17px;
+    line-height: 24px;
+    padding: 0 20px;
+  }
+}
+
+.arrow {
+  transition: transform 0.3s ease-in-out;
+  transform: rotate(180deg);
+
+  &.isOpen {
+    transform: rotate(0deg);
+  }
+
+  .arrowIcon {
+    width: 36px;
+    height: 36px;
+  }
+
+  @include desktop {
+    .arrowIcon {
+      width: 48px;
+      height: 48px;
+    }
+  }
+}
+
+.answer {
+  margin-top: 12px;
+  border-radius: 8px;
+  color: color('gray700');
+  background-color: color('gray100');
+  font-weight: 600;
+  padding: 12px 16px;
+
+  @include desktop {
+    margin-top: 24px;
+    padding: 16px 20px;
+  }
+}

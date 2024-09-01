@@ -1,0 +1,34 @@
+:root {
+  /* colors */
+  --primary: #00ffff;
+  --black: #131518;
+  --gray000: #1a202c;
+  --gray100: #2d3748;
+  --gray200: #4a5568;
+  --gray300: #718096;
+  --gray400: #a0aec0; // grey5가 없음
+  --gray500: #a0aec0;
+  --gray600: #cbd5e0;
+  --gray700: #e2e8f0;
+  --gray800: #edf2f7;
+  --gray900: #f7fafc;
+  --white: #ffffff;
+
+  /* typography */
+  --font-weight-black: 900;
+  --font-weight-extrabold: 800;
+  --font-weight-bold: bold;
+  --font-weight-semibold: 600;
+  --font-weight-medium: 500;
+  --font-weight-regular: normal;
+  --h1-font-size: 48px;
+  --h2-font-size: 36px;
+  --h3-font-size: 28px;
+  --h4-font-size: 24px;
+  --h5-font-size: 20px;
+  --h6-font-size: 16px;
+}
+
+:root {
+  --z-index-header: 100;
+}

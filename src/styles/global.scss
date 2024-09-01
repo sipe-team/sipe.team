@@ -1,0 +1,92 @@
+@import '~sanitize.css';
+@import './variables';
+
+* {
+  box-sizing: border-box;
+  appearance: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+pre,
+a,
+img,
+b,
+u,
+i,
+ul,
+li,
+label,
+legend,
+table,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+footer,
+header,
+nav,
+section,
+summary,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  font-size: 14px;
+  color: color('black');
+  background-color: color('black');
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-size: 14px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  padding-top: 64px;
+  margin: 0;
+  letter-spacing: -0.2%;
+}
+
+button {
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

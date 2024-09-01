@@ -1,61 +1,33 @@
-import { useLocation } from 'react-router-dom';
-
-import { ReactComponent as Github } from '@/assets/github.svg';
-import { ReactComponent as Instagram } from '@/assets/instagram.svg';
-// import { ReactComponent as Linkedin } from '@/assets/linkedin.svg';
-// import { ReactComponent as Youtube } from '@/assets/youtube.svg';
-import useDeviceType from '@/hook/useDeviceType';
+import SocialIconLink from '@/components/common/SocialIconLink';
 
 import Layout from '../Layout';
-import * as S from './styled';
+import styles from './index.module.scss';
 
-const sns = [
-  {
-    id: 1,
-    name: 'Instagram',
-    url: 'https://www.instagram.com/sipe_team/',
-    icon: <Instagram />,
-  },
-  {
-    id: 2,
-    name: 'Github',
-    url: 'https://github.com/sipe-team',
-    icon: <Github />,
-  },
-  // { id: 3, name: 'Youtube', url: '', icon: <Youtube /> },
-  // { id: 4, name: 'Linkedin', url: '', icon: <Linkedin /> },
-];
-
-type FooterProps = {
-  fixed?: boolean;
-};
-
-export default function Footer({ fixed = false }: FooterProps) {
-  const { pathname } = useLocation();
-  const { isDesktop } = useDeviceType();
-
-  const color = pathname === '/' ? 'black' : 'gray';
-
+function Footer() {
   return (
-    <S.Wrapper fixed={fixed}>
+    <footer className={styles.wrapper}>
       <Layout>
-        <S.Group isDesktop={isDesktop}>
-          <S.Copyright color={color}>All rights reserved ⓒ SIPE</S.Copyright>
-          <S.Logos>
-            {sns.map((s) => (
-              <S.Icon
-                key={s.id}
-                color={color}
-                onClick={() => {
-                  window.open(s.url);
-                }}
-              >
-                {s.icon}
-              </S.Icon>
-            ))}
-          </S.Logos>
-        </S.Group>
+        <div className={styles.group}>
+          <div className={styles.copyright}>All rights reserved ⓒ SIPE</div>
+          <div className={styles.logos}>
+            <SocialIconLink
+              type="INSTAGRAM"
+              url="https://www.instagram.com/sipe_team"
+            />
+            <SocialIconLink type="GITHUB" url="https://github.com/sipe-team" />
+            <SocialIconLink
+              type="YOUTUBE"
+              url="https://www.youtube.com/@sipe_team"
+            />
+            <SocialIconLink
+              type="LINKEDIN"
+              url="https://www.linkedin.com/company/sipe.team"
+            />
+          </div>
+        </div>
       </Layout>
-    </S.Wrapper>
+    </footer>
   );
 }
+
+export default Footer;
