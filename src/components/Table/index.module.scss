@@ -6,10 +6,6 @@
   gap: 32px;
   width: 100%;
   padding: 0;
-
-  @include mobile {
-    padding: 0 20px;
-  }
 }
 
 .table {
@@ -37,6 +33,7 @@
     @include mobile {
       height: auto;
       flex-direction: row;
+      align-items: center;
     }
   }
 
@@ -50,8 +47,7 @@
 
 .text {
   flex: 1 1 0;
-  color: color('white');
-  font-size: 20px;
+  @include text('h5/bold', 'white');
 
   &.isApplicant {
     font-size: 14px;

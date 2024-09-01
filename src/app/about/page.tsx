@@ -1,7 +1,7 @@
 import About from '@/components/pages/About';
 import METADATA from '@/constants/metadata';
 
-const title = '소개 - SIPE';
+const title = '사이프 소개 - SIPE';
 
 export const metadata = {
   metadataBase: METADATA.metadataBase,

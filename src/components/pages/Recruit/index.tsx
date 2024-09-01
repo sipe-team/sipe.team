@@ -1,5 +1,6 @@
 import ContentWithTitle from '@/components/ContentWithTitle';
 import Faq from '@/components/Faq';
+import Layout from '@/components/Layout';
 import Table from '@/components/Table';
 import { Applicants, CardList, InActivity } from '@/constants/recruit';
 import { getFaq } from '@/db';
@@ -11,7 +12,7 @@ function Recruit() {
   const faq = getFaq();
 
   return (
-    <>
+    <Layout>
       <ContentWithTitle title="지원자격">
         <Table dataList={Applicants} isApplicant={true} />
       </ContentWithTitle>
@@ -28,7 +29,7 @@ function Recruit() {
         <Table dataList={InActivity} isApplicant={false} />
       </ContentWithTitle>
       <Faq faqs={faq.recruit} />
-    </>
+    </Layout>
   );
 }
 
