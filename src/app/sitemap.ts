@@ -3,24 +3,24 @@ import { MetadataRoute } from 'next';
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: `$https://${process.env.VERCEL_URL}`,
+      url: process.env.NEXT_PUBLIC_ORIGIN,
       lastModified: new Date(),
       priority: 1,
     },
     {
-      url: `https://${process.env.VERCEL_URL}/about`,
+      url: `${process.env.NEXT_PUBLIC_ORIGIN}/about`,
       lastModified: new Date(),
     },
     {
-      url: `https://${process.env.VERCEL_URL}/activity`,
+      url: `${process.env.NEXT_PUBLIC_ORIGIN}/activity`,
       lastModified: new Date(),
     },
     {
-      url: `https://${process.env.VERCEL_URL}/people`,
+      url: `${process.env.NEXT_PUBLIC_ORIGIN}/people`,
       lastModified: new Date(),
     },
     {
-      url: `https://${process.env.VERCEL_URL}/recruit`,
+      url: `${process.env.NEXT_PUBLIC_ORIGIN}/recruit`,
       lastModified: new Date(),
     },
   ];
