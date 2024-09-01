@@ -5,6 +5,6 @@ namespace NodeJS {
     SHEET_ID: string;
     KEY: string;
     NEXT_PUBLIC_GA_MEASUREMENT_ID: string;
-    VERCEL_URL: string;
+    NEXT_PUBLIC_ORIGIN: string;
   }
 }
