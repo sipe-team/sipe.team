@@ -1,4 +1,3 @@
-import Layout from '@/components/Layout';
 import type { Faq as FaqItem } from '@/db/model';
 
 import Accordion from '../common/Accordion';
@@ -11,19 +10,17 @@ type FaqProps = {
 
 function Faq({ faqs }: FaqProps) {
   return (
-    <Layout>
-      <ContentWithTitle title="자주 묻는 질문">
-        <div className={styles.faqs}>
-          {faqs.map((faq) => (
-            <Accordion
-              key={faq.key}
-              question={faq.question}
-              answer={faq.answer}
-            />
-          ))}
-        </div>
-      </ContentWithTitle>
-    </Layout>
+    <ContentWithTitle title="자주 묻는 질문">
+      <div className={styles.faqs}>
+        {faqs.map((faq) => (
+          <Accordion
+            key={faq.key}
+            question={faq.question}
+            answer={faq.answer}
+          />
+        ))}
+      </div>
+    </ContentWithTitle>
   );
 }
 
