@@ -1,26 +1,43 @@
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useInterval } from 'usehooks-ts';
 
 export default function useTimer(
   dueDate?: number,
   delay: null | number = 1000
 ) {
-  const [overallTime, setOverallTime] = useState(0);
+  const [overallTime, setOverallTime] = useState<number>(() => {
+    if (!dueDate) {
+      return 0;
+    }
+    const now = Date.now();
+    const diff = Math.max(0, dueDate - now);
+    return Math.floor(diff / 1000);
+  });
 
-  const getTimeByDueDate = () => (dueDate ? Date.now() - dueDate : 0);
+  useEffect(() => {
+    if (dueDate) {
+      const now = Date.now();
+      const diff = Math.max(0, dueDate - now);
+      setOverallTime(Math.floor(diff / 1000));
+    }
+  }, [dueDate]);
 
-  const getTime = () => overallTime - getTimeByDueDate();
+  useInterval(
+    () => {
+      if (overallTime > 0) {
+        setOverallTime((prevTime) => prevTime - 1);
+      }
+    },
+    overallTime > 0 ? delay : null
+  );
 
-  useInterval(() => {
-    const timeInSeconds = Math.round(getTime() / 1000);
-    setOverallTime(timeInSeconds);
-  }, delay);
-
-  // 남은 일, 시, 분, 초 계산
-  const dates = Math.floor(overallTime / 86400);
-  const hours = Math.floor((overallTime - dates * 86400) / 3600);
-  const minutes = Math.floor((overallTime - dates * 86400 - hours * 3600) / 60);
-  const seconds = overallTime - dates * 86400 - hours * 3600 - minutes * 60;
+  const { dates, hours, minutes, seconds } = useMemo(() => {
+    const d = Math.floor(overallTime / 86400);
+    const h = Math.floor((overallTime % 86400) / 3600);
+    const m = Math.floor((overallTime % 3600) / 60);
+    const s = overallTime % 60;
+    return { dates: d, hours: h, minutes: m, seconds: s };
+  }, [overallTime]);
 
   return { overallTime, dates, hours, minutes, seconds };
 }
