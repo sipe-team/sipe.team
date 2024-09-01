@@ -1,19 +1,21 @@
-import clsx from 'clsx';
 import React from 'react';
 
-import styles from './index.module.scss';
+import useDeviceType from '@/hook/useDeviceType';
 
+import * as S from './styled';
 const Layout = ({
-  className,
   children,
+  backgroundImage,
 }: {
-  className?: string;
   children: React.ReactNode;
+  backgroundImage?: string;
 }) => {
+  const { isDesktop } = useDeviceType();
+
   return (
-    <div className={styles.wrapper}>
-      <div className={clsx(styles.layout, className)}>{children}</div>
-    </div>
+    <S.Wrapper isDesktop={isDesktop} backgroundImage={backgroundImage}>
+      <div className="layout">{children}</div>
+    </S.Wrapper>
   );
 };
 

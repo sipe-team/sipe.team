@@ -1,4 +1,5 @@
 import { RefObject, useEffect, useState } from 'react';
+import { off } from 'react-use/lib/misc/util';
 
 import { getIntersectionObserver } from '@/libs/observers/getIntersectionObserver';
 
@@ -11,9 +12,9 @@ const nextPage = (page: number, lastPage: number) => {
   return page + 1;
 };
 
-export const useInfiniteScroll = <K extends HTMLElement, T>(
-  target: RefObject<K>,
-  items: T[],
+export const useInfiniteScroll = (
+  target: RefObject<any>,
+  items: Array<unknown>,
   options?: {
     offest: number;
   }
@@ -35,7 +36,7 @@ export const useInfiniteScroll = <K extends HTMLElement, T>(
   const [loading, setLoading] = useState(false);
   const [isEnd, setIsEnd] = useState(false);
   const [page, setPage] = useState(0);
-  const [elements, setElements] = useState<Array<T>>([]);
+  const [elements, setElements] = useState<Array<unknown>>([]);
 
   const changeNextPage = () => {
     const next = nextPage(pageInfo.page, pageInfo.lastPage);

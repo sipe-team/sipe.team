@@ -1,9 +1,8 @@
-import clsx from 'clsx';
+import { ReactComponent as Circle } from '@/assets/check_circle.svg';
+import useDeviceType from '@/hook/useDeviceType';
 
-import { CheckCircleIcon } from '@/assets/icons';
-
-import Badge from '../common/Badge';
-import styles from './index.module.scss';
+import Badge from '../Badge';
+import * as S from './styled';
 
 interface TableProps {
   isApplicant: boolean;
@@ -17,27 +16,22 @@ interface DataListProps {
 }
 
 const Table = ({ dataList, isApplicant }: TableProps) => {
+  const { isMobile } = useDeviceType();
+
   return (
-    <div className={styles.wrapper}>
+    <S.Wrapper isMobile={isMobile}>
       {dataList.map((data, index) => (
-        <div
-          className={clsx(styles.table, { [styles.isApplicant]: isApplicant })}
-          key={index}
-        >
+        <S.Table key={index} isMobile={isMobile} isApplicant={isApplicant}>
           {isApplicant ? (
-            <CheckCircleIcon />
+            <Circle />
           ) : (
-            <div className={styles.subText}>{data.recurring_date}</div>
+            <S.SubText>{data.recurring_date}</S.SubText>
           )}
-          <div
-            className={clsx(styles.text, { [styles.isApplicant]: isApplicant })}
-          >
-            {data.text}
-          </div>
+          <S.Text isApplicant={isApplicant}>{data.text}</S.Text>
           {!isApplicant && data.badge && <Badge text={data.badge} />}
-        </div>
+        </S.Table>
       ))}
-    </div>
+    </S.Wrapper>
   );
 };
 
