@@ -32,7 +32,7 @@ export default function Navigation() {
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [pathname]);
-  console.log(currentStatus);
+
   return (
     <header className={styles.wrapper}>
       <Layout className={styles.headerLayout}>
