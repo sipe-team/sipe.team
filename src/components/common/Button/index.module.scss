@@ -60,7 +60,8 @@
     &:disabled,
     &.disabled {
       background-color: color('gray300');
-      color: color('gray100');
+      color: color('black');
+      cursor: not-allowed;
     }
   }
 
@@ -113,8 +114,9 @@
 
     &:disabled,
     &.disabled {
-      background-color: color('gray000');
-      color: color('gray100');
+      background-color: color('gray300');
+      color: color('black');
+      cursor: not-allowed;
     }
 
     @include desktop {
@@ -124,7 +126,10 @@
 
   &:disabled,
   &.disabled {
+    background-color: color('gray300');
+    color: color('black');
     cursor: not-allowed;
+    pointer-events: none;
   }
 
   &:hover {
