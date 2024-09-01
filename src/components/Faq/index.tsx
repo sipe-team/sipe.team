@@ -6,7 +6,6 @@ import styles from './index.module.scss';
 
 type FaqProps = {
   faqs: FaqItem[];
-  className?: string;
 };
 
 function Faq({ faqs }: FaqProps) {
