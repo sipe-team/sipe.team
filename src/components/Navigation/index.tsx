@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 
 import { SipeLogo } from '@/assets/logos';
 import Button from '@/components/common/Button';
-import { JOIN_FORM_URL } from '@/constants/recruit';
+import { displayApplication, getCurrentStatus } from '@/utils/recruit';
 
 import HamburgerButton from '../HamburgerButton';
 import Layout from '../Layout';
@@ -23,13 +23,16 @@ const menus: { name: string; path: Route }[] = [
 
 export default function Navigation() {
   const pathname = usePathname();
+  const now = Date.now();
+  const currentStatus = getCurrentStatus(now);
+  const currentApplicationDetail = displayApplication[currentStatus];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [pathname]);
-
+  console.log(currentStatus);
   return (
     <header className={styles.wrapper}>
       <Layout className={styles.headerLayout}>
@@ -64,7 +67,12 @@ export default function Navigation() {
                 {menu.name}
               </Button>
             ))}
-            <Button isExternalLink href={JOIN_FORM_URL} buttonType="apply">
+            <Button
+              isExternalLink
+              disabled={currentStatus !== 'ongoing'}
+              href={currentApplicationDetail.formUrl}
+              buttonType="apply"
+            >
               Join Us
             </Button>
           </div>
