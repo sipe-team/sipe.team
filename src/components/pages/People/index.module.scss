@@ -1,5 +1,6 @@
 .wrapper {
   box-sizing: border-box;
+  width: 100%;
 }
 
 .contents {
@@ -23,5 +24,9 @@
 
   &.button {
     height: 40px;
+  }
+
+  @include mobile {
+    gap: 8px;
   }
 }

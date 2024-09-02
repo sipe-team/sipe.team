@@ -11,12 +11,20 @@
         cursor: pointer;
       }
     }
+
+    @include mobile {
+      gap: 16px;
+    }
   }
 
   .videoCards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 32px;
+
+    @include mobile {
+      gap: 16px;
+    }
   }
 }
 
@@ -27,5 +35,9 @@
 
   .periodButton {
     height: 40px;
+  }
+
+  @include mobile {
+    gap: 8px;
   }
 }
