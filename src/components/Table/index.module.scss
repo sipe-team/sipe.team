@@ -6,6 +6,10 @@
   gap: 32px;
   width: 100%;
   padding: 0;
+
+  @include mobile {
+    gap: 16px;
+  }
 }
 
 .table {
@@ -26,6 +30,7 @@
 
   &.isApplicant {
     height: 64px;
+
     &:last-child {
       background-color: color('gray100');
     }

@@ -7,7 +7,7 @@ import Introduce from '@/components/pages/About/components/IntroduceSection';
 import Sponsor from '@/components/pages/About/components/SponsorSection';
 import { getFaq } from '@/db';
 
-const Activity = dynamic(
+const ActivitiesSection = dynamic(
   () => import('@/components/pages/About/components/ActivitiesSection'),
   {
     ssr: false,
@@ -20,7 +20,7 @@ function About() {
   return (
     <Layout>
       <Introduce />
-      <Activity />
+      <ActivitiesSection />
       <Sponsor />
       <Faq faqs={faq.about} />
       <Contact />

@@ -64,6 +64,7 @@
   width: 100%;
 
   @include mobile {
+    gap: 8px;
     justify-content: start;
   }
 }

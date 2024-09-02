@@ -19,8 +19,13 @@ function Recruit() {
       <ContentWithTitle title="모집 일정">
         <div className={styles.cardListWrapper}>
           <div className={styles.cardList}>
-            {CardList.map((card) => (
-              <ScheduleCard key={card.title} {...card} />
+            {CardList.map(({ processDate, subTitle, title }) => (
+              <ScheduleCard
+                key={title}
+                processDate={processDate}
+                subTitle={subTitle}
+                title={title}
+              />
             ))}
           </div>
         </div>
