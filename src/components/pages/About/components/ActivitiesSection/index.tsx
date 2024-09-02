@@ -16,7 +16,7 @@ import { getEntries } from '@/libs/utils';
 
 import styles from './index.module.scss';
 
-const Activity = () => {
+function ActivitiesSection() {
   const { activity } = getAbout();
   const activities = getEntries(activity);
 
@@ -91,6 +91,6 @@ const Activity = () => {
       </div>
     </ContentWithTitle>
   );
-};
+}
 
-export default Activity;
+export default ActivitiesSection;
