@@ -5,10 +5,13 @@ import React, { ComponentProps, ReactNode } from 'react';
 
 import styles from './index.module.scss';
 
+type ButtonType = 'home' | 'menu' | 'apply' | 'chip';
+type ButtonColor = 'black' | 'primary' | 'white';
+
 type CommonProps = {
   active?: boolean;
-  buttonType?: 'home' | 'menu' | 'apply' | 'chip';
-  buttonColor?: 'black' | 'primary';
+  buttonType?: ButtonType;
+  buttonColor?: ButtonColor;
   disabled?: boolean;
   className?: string;
   children: ReactNode;

@@ -1,4 +1,5 @@
 import 'src/styles/global.scss';
+import 'react-simple-toasts/dist/theme/dark.css';
 
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/react';
