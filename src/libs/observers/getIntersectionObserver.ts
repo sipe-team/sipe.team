@@ -1,7 +1,7 @@
 import { RefObject } from 'react';
 
 export const intersection = <T extends (...args: unknown[]) => unknown>(
-  func: T
+  func: T,
 ) => {
   return (entries: IntersectionObserverEntry[]) => {
     entries.forEach(({ isIntersecting }) => {
@@ -14,11 +14,11 @@ export const intersection = <T extends (...args: unknown[]) => unknown>(
 
 export const getIntersectionObserver = <
   K extends HTMLElement,
-  T extends (...args: unknown[]) => unknown
+  T extends (...args: unknown[]) => unknown,
 >(
   ref: RefObject<K>,
   func: T,
-  options?: IntersectionObserverInit
+  options?: IntersectionObserverInit,
 ) => {
   if (!ref || !ref.current) {
     console.error('target is not defined');
@@ -33,7 +33,7 @@ export const getIntersectionObserver = <
       root: null,
       rootMargin: '1px',
       threshold: [1.0],
-    }
+    },
   );
 
   return {

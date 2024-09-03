@@ -22,7 +22,7 @@ const Image = ({
 }: ImageProps) => {
   const defaultClassName = clsx(
     objectFit && styles[objectFit],
-    fill ? styles.fill : className
+    fill ? styles.fill : className,
   );
   const defaultSizes = sizes || '(max-width: 1060px) 100vw, 50vw';
 
@@ -44,7 +44,7 @@ const Image = ({
 
       return children;
     },
-    [fill, width, height, className]
+    [fill, width, height, className],
   );
 
   if (!src) {
@@ -60,7 +60,7 @@ const Image = ({
             width={fill ? undefined : width}
             height={fill ? undefined : height}
             {...rest}
-          />
+          />,
         )}
       </>
     );
@@ -78,7 +78,7 @@ const Image = ({
           width={fill ? undefined : width}
           height={fill ? undefined : height}
           {...rest}
-        />
+        />,
       )}
     </>
   );

@@ -16,7 +16,7 @@ function InfiniteScroll<T extends { id: string } & unknown>({
   const containerRef = useRef<HTMLDivElement>(null);
   const { elements, isEnd } = useInfiniteScroll<HTMLDivElement, T>(
     containerRef,
-    items
+    items,
   );
 
   return (

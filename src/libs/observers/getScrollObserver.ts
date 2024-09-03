@@ -4,7 +4,7 @@ const SCROLL_HIDDEN_TIME = 300;
 const DEBOUNCE_WAIT_TIME = 100;
 
 export const getScrollObserver = <T extends (...args: unknown[]) => unknown>(
-  func: T
+  func: T,
 ) => {
   let isObserving = false;
 

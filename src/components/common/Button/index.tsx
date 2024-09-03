@@ -24,12 +24,12 @@ type ButtonAsButton = ComponentProps<'button'> & CommonProps;
 
 type ButtonProps<
   T extends Route | undefined = undefined,
-  K extends boolean | undefined = undefined
+  K extends boolean | undefined = undefined,
 > = T extends Route ? ButtonAsLink<T, K> : ButtonAsButton & { href?: never };
 
 function Button<
   T extends Route | undefined = undefined,
-  K extends boolean | undefined = undefined
+  K extends boolean | undefined = undefined,
 >({
   href,
   active,
@@ -47,7 +47,7 @@ function Button<
       [styles.active]: active,
       [styles.disabled]: disabled,
     },
-    className
+    className,
   );
 
   if (href) {
