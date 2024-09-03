@@ -16,4 +16,13 @@
     overflow-x: scroll;
     padding: 0 20px;
   }
+
+  .buttonWrapper {
+    display: flex;
+    gap: 24px;
+
+    @include mobile {
+      gap: 12px;
+    }
+  }
 }
