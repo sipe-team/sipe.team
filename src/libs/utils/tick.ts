@@ -1,6 +1,6 @@
 export const debounce = <T extends (...args: unknown[]) => unknown>(
   func: T,
-  delay = 0
+  delay = 0,
 ) => {
   let timer: ReturnType<typeof setTimeout>;
 
@@ -18,7 +18,7 @@ export const debounce = <T extends (...args: unknown[]) => unknown>(
 
 export const throttle = <T extends unknown[]>(
   fun: (...params: T) => unknown,
-  delay: number
+  delay: number,
 ) => {
   let flag = true;
   return (...params: T) => {

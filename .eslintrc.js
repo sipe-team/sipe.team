@@ -13,7 +13,12 @@ module.exports = {
     'public/',
     '.yarn/',
   ],
-  plugins: ['react', '@typescript-eslint', 'simple-import-sort'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'simple-import-sort',
+    'unused-imports',
+  ],
   overrides: [
     {
       files: ['*.ts', '*.tsx'],
@@ -37,7 +42,9 @@ module.exports = {
     'plugin:prettier/recommended',
   ],
   rules: {
-    'simple-import-sort/imports': 1,
-    'simple-import-sort/exports': 1,
+    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-vars': 'error',
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
   },
 };

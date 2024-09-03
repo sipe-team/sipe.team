@@ -12,4 +12,4 @@ export const getActivity = () =>
   ({
     post: activityData.B,
     video: activityData.V,
-  } as Activity);
+  }) as Activity;
