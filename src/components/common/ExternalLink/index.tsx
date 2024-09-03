@@ -34,7 +34,7 @@ function ExternalLink({
       className={clsx(
         styles.externalLink,
         withTextUnderline && styles.textUnderline,
-        className
+        className,
       )}
       {...rest}
     >

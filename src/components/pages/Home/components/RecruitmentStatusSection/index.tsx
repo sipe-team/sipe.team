@@ -37,7 +37,7 @@ function RecruitmentStatusSection() {
 
   const { dates, hours, minutes, seconds } = useTimer(
     currentApplicationDetail?.dueDate,
-    isRecruiting ? 1000 : null
+    isRecruiting ? 1000 : null,
   );
 
   const handleClickShareLinkButton = async () => {

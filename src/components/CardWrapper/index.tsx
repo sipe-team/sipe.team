@@ -21,7 +21,7 @@ const CardWrapper = ({
       className={clsx(
         styles.wrapper,
         { [styles.basicType]: type === 'BASIC' },
-        className
+        className,
       )}
       style={{ minHeight: `${minHeight}px` }}
       {...props}

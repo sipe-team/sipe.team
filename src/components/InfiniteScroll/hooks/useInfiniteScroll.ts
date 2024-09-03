@@ -16,7 +16,7 @@ export const useInfiniteScroll = <K extends HTMLElement, T>(
   items: T[],
   options?: {
     offest: number;
-  }
+  },
 ) => {
   const offset = options?.offest || DEFAULT_OFFSET;
 
