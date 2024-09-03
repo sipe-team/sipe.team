@@ -48,13 +48,13 @@ export default function Navigation() {
         <nav
           className={clsx(
             styles.menuWrapper,
-            isMobileMenuOpen ? styles.open : styles.close
+            isMobileMenuOpen ? styles.open : styles.close,
           )}
         >
           <div
             className={clsx(
               styles.menuList,
-              isMobileMenuOpen ? styles.open : styles.close
+              isMobileMenuOpen ? styles.open : styles.close,
             )}
           >
             {menus.map((menu) => (

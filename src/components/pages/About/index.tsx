@@ -11,7 +11,7 @@ const ActivitiesSection = dynamic(
   () => import('@/components/pages/About/components/ActivitiesSection'),
   {
     ssr: false,
-  }
+  },
 );
 
 function About() {

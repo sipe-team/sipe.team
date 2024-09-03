@@ -3,7 +3,7 @@ import { useInterval } from 'usehooks-ts';
 
 export default function useTimer(
   dueDate?: number,
-  delay: null | number = 1000
+  delay: null | number = 1000,
 ) {
   const [overallTime, setOverallTime] = useState<number>(0);
 
@@ -21,7 +21,7 @@ export default function useTimer(
         setOverallTime((prevTime) => prevTime - 1);
       }
     },
-    overallTime > 0 ? delay : null
+    overallTime > 0 ? delay : null,
   );
 
   const { dates, hours, minutes, seconds } = useMemo(() => {
