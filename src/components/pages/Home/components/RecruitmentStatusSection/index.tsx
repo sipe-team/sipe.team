@@ -1,6 +1,7 @@
 'use client';
 
 import Button from '@/components/common/Button';
+import useCopy from '@/hook/useCopy';
 import { displayApplication, getCurrentStatus } from '@/utils/recruit';
 
 import useTimer from '../../hooks/useTimer';
@@ -30,6 +31,7 @@ function RecruitmentStatusSection() {
   const now = Date.now();
   const currentStatus = getCurrentStatus(now);
   const currentApplicationDetail = displayApplication[currentStatus];
+  const { copyToClipboard } = useCopy('링크를 복사했어요. 🔗');
 
   const isRecruiting = currentStatus !== 'after';
 
@@ -37,6 +39,10 @@ function RecruitmentStatusSection() {
     currentApplicationDetail?.dueDate,
     isRecruiting ? 1000 : null,
   );
+
+  const handleClickShareLinkButton = async () => {
+    await copyToClipboard('https://sipe.team');
+  };
 
   return (
     <div className={styles.content}>
@@ -58,14 +64,23 @@ function RecruitmentStatusSection() {
         seconds={seconds}
         isRecruiting={isRecruiting}
       />
-      <Button
-        href={currentApplicationDetail.formUrl}
-        isExternalLink
-        buttonType="home"
-        buttonColor="primary"
-      >
-        {currentApplicationDetail.buttonText}
-      </Button>
+      <div className={styles.buttonWrapper}>
+        <Button
+          href={currentApplicationDetail.formUrl}
+          isExternalLink
+          buttonType="home"
+          buttonColor="primary"
+        >
+          {currentApplicationDetail.buttonText}
+        </Button>
+        <Button
+          buttonType="home"
+          buttonColor="white"
+          onClick={handleClickShareLinkButton}
+        >
+          링크 공유하기
+        </Button>
+      </div>
     </div>
   );
 }
