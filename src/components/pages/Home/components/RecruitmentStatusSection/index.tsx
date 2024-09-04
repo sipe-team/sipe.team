@@ -1,5 +1,7 @@
 'use client';
 
+import { track } from '@vercel/analytics';
+
 import Button from '@/components/common/Button';
 import useCopy from '@/hook/useCopy';
 import { displayApplication, getCurrentStatus } from '@/utils/recruit';
@@ -42,6 +44,11 @@ function RecruitmentStatusSection() {
 
   const handleClickShareLinkButton = async () => {
     await copyToClipboard('https://sipe.team');
+    track('ClickShareLinkButton', { location: 'home' });
+  };
+
+  const handleClickApplicationButton = () => {
+    track('ClickApplicationButton', { location: 'home' });
   };
 
   return (
@@ -70,6 +77,7 @@ function RecruitmentStatusSection() {
           isExternalLink
           buttonType="home"
           buttonColor="primary"
+          onClick={handleClickApplicationButton}
         >
           {currentApplicationDetail.buttonText}
         </Button>
