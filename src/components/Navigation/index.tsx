@@ -1,5 +1,6 @@
 'use client';
 
+import { track } from '@vercel/analytics';
 import clsx from 'clsx';
 import { Route } from 'next';
 import Link from 'next/link';
@@ -32,6 +33,10 @@ export default function Navigation() {
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [pathname]);
+
+  const handleClickJoinUsButton = () => {
+    track('ClickJoinUsButton');
+  };
 
   return (
     <header className={styles.wrapper}>
@@ -72,6 +77,7 @@ export default function Navigation() {
               isExternalLink
               href={currentApplicationDetail.formUrl}
               buttonType="apply"
+              onClick={handleClickJoinUsButton}
             >
               Join Us
             </Button>
