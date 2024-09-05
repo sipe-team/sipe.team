@@ -18,7 +18,7 @@ const ContactSection = () => {
             className={styles.contentBox}
             withTextUnderline={false}
           >
-            <EmailIcon />
+            <EmailIcon width={24} height={24} />
             <span>sipe.team@gmail.com</span>
           </ExternalLink>
           <ExternalLink
@@ -26,7 +26,7 @@ const ContactSection = () => {
             className={styles.contentBox}
             withTextUnderline={false}
           >
-            <KakaoLogo />
+            <KakaoLogo width={24} height={24} />
             <span>@sipe</span>
           </ExternalLink>
         </div>
