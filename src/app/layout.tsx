@@ -4,25 +4,19 @@ import 'react-simple-toasts/dist/theme/dark.css';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Montserrat } from 'next/font/google';
 
+import { pretendardFont } from '@/app/_fonts';
 import Footer from '@/components/Footer';
 import Navigation from '@/components/Navigation';
 import { DEFAULT_METADATA } from '@/constants/metadata';
 
 import styles from './layout.module.scss';
 
-const montserrat = Montserrat({
-  display: 'swap',
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800', '900'],
-});
-
 export const metadata = DEFAULT_METADATA;
 
 function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ko" className={montserrat.className}>
+    <html lang="ko" className={pretendardFont.className}>
       <head>
         <link rel="mask-icon" href="/assets/safari-pinned-tab.svg" />
         <link
