@@ -1,5 +1,6 @@
 'use client';
 
+import { sendGAEvent } from '@next/third-parties/google';
 import { track } from '@vercel/analytics';
 
 import Button from '@/components/common/Button';
@@ -45,10 +46,16 @@ function RecruitmentStatusSection() {
   const handleClickShareLinkButton = async () => {
     await copyToClipboard('https://sipe.team');
     track('ClickShareLinkButton', { location: 'home' });
+    sendGAEvent('event', 'cilck_share_link_button', {
+      screen_name: '/',
+    });
   };
 
   const handleClickApplicationButton = () => {
     track('ClickApplicationButton', { location: 'home' });
+    sendGAEvent('event', 'cilck_application_button', {
+      screen_name: '/',
+    });
   };
 
   return (

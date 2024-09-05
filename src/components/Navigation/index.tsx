@@ -1,5 +1,6 @@
 'use client';
 
+import { sendGAEvent } from '@next/third-parties/google';
 import { track } from '@vercel/analytics';
 import clsx from 'clsx';
 import { Route } from 'next';
@@ -36,6 +37,9 @@ export default function Navigation() {
 
   const handleClickJoinUsButton = () => {
     track('ClickJoinUsButton');
+    sendGAEvent('event', 'cilck_join_us_button', {
+      screen_name: 'menu',
+    });
   };
 
   return (
