@@ -1,22 +1,27 @@
-import { useEffect } from 'react';
-import toast, { toastConfig } from 'react-simple-toasts';
-import { useCopyToClipboard } from 'react-use';
+import { useCallback } from 'react';
+import toast from 'react-simple-toasts';
 
-toastConfig({ theme: 'dark' });
+import useCopyToClipboard from '@/hook/useCopyToClipboard';
 
-export const useCopy = (message?: string) => {
-  const [clipboardState, copyToClipboard] = useCopyToClipboard();
+const useCopy = (message: string) => {
+  const [copiedText, copy] = useCopyToClipboard();
 
-  useEffect(() => {
-    if (!clipboardState.value) {
-      return;
-    }
-
-    toast(message);
-  }, [message, clipboardState]);
+  const copyToClipboard = useCallback(
+    (text: string) => {
+      copy(text)
+        .then(() => {
+          toast(message, { theme: 'dark' });
+        })
+        .catch((error) => {
+          toast('링크 복사에 실패했습니다.', { theme: 'failure' });
+          console.error('Failed to copy!', error);
+        });
+    },
+    [copy],
+  );
 
   return {
-    clipboardState,
+    copiedText,
     copyToClipboard,
   };
 };
