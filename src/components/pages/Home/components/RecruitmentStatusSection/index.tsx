@@ -3,7 +3,7 @@
 import { sendGAEvent } from '@next/third-parties/google';
 
 import Button from '@/components/common/Button';
-import useCopy from '@/hook/useCopy';
+import useCopy from '@/hook/useCopyToClipboard';
 import useTimer from '@/hook/useTimer';
 import { displayApplication, getCurrentStatus } from '@/utils/recruit';
 
@@ -14,7 +14,7 @@ function RecruitmentStatusSection() {
   const now = Date.now();
   const currentStatus = getCurrentStatus(now);
   const currentApplicationDetail = displayApplication[currentStatus];
-  const { copyToClipboard } = useCopy('링크를 복사했어요. 🔗');
+  const { copyToClipboard } = useCopy();
 
   const isRecruiting = currentStatus !== 'after';
 

@@ -1,10 +1,11 @@
 import { useCallback, useState } from 'react';
+import toast from 'react-simple-toasts';
 
 type CopiedValue = string | null;
 
 type CopyFn = (text: string) => Promise<boolean>;
 
-const useCopyToClipboard = (): [CopiedValue, CopyFn] => {
+const useCopyToClipboard = (message = '링크를 복사했어요. 🔗') => {
   const [copiedText, setCopiedText] = useState<CopiedValue>(null);
 
   const copy: CopyFn = useCallback(async (text) => {
@@ -24,7 +25,20 @@ const useCopyToClipboard = (): [CopiedValue, CopyFn] => {
     }
   }, []);
 
-  return [copiedText, copy];
+  const copyToClipboard = useCallback(
+    (text: string) => {
+      copy(text)
+        .then(() => {
+          toast(message, { theme: 'dark' });
+        })
+        .catch(() => {
+          toast('링크 복사에 실패했어요.', { theme: 'failure' });
+        });
+    },
+    [copy],
+  );
+
+  return { copiedText, copyToClipboard };
 };
 
 export default useCopyToClipboard;
