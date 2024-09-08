@@ -6,6 +6,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import { pretendardFont } from '@/app/_fonts';
+import ClientProvider from '@/components/ClientProvider';
 import Footer from '@/components/Footer';
 import Navigation from '@/components/Navigation';
 import { DEFAULT_METADATA } from '@/constants/metadata';
@@ -33,12 +34,14 @@ function RootLayout({ children }: { children: React.ReactNode }) {
         />
       </head>
       <body>
-        <Navigation />
-        <main className={styles.main}>{children}</main>
-        <Footer />
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
-        <Analytics />
-        <SpeedInsights />
+        <ClientProvider>
+          <Navigation />
+          <main className={styles.main}>{children}</main>
+          <Footer />
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+          <Analytics />
+          <SpeedInsights />
+        </ClientProvider>
       </body>
     </html>
   );

@@ -1448,6 +1448,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@channel.io/channel-web-sdk-loader@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@channel.io/channel-web-sdk-loader@npm:2.0.0"
+  checksum: 10/11bf96fa8863a9800537f674225bc3fa67cea59592a8bd1fc9d333e5db899e08ff885bd3380f67b62e0ba7ab3252a7ba2df636cf58f84b562584830ade370f6a
+  languageName: node
+  linkType: hard
+
 "@eslint-community/eslint-utils@npm:^4.2.0, @eslint-community/eslint-utils@npm:^4.4.0":
   version: 4.4.0
   resolution: "@eslint-community/eslint-utils@npm:4.4.0"
@@ -5970,6 +5977,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "sipe@workspace:."
   dependencies:
+    "@channel.io/channel-web-sdk-loader": "npm:^2.0.0"
     "@next/eslint-plugin-next": "npm:^14.2.6"
     "@next/third-parties": "npm:^14.2.6"
     "@svgr/webpack": "npm:8.1.0"

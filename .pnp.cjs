@@ -27,6 +27,7 @@ const RAW_RUNTIME_STATE =
       [null, {\
         "packageLocation": "./",\
         "packageDependencies": [\
+          ["@channel.io/channel-web-sdk-loader", "npm:2.0.0"],\
           ["@next/eslint-plugin-next", "npm:14.2.6"],\
           ["@next/third-parties", "virtual:5f85de5545bdf69af1d0de8ab8cd00a40f1e474c5581aca23c5337afa460a456890bdf1462b39697b558b5d28f831142034715dfeff95fce8312e07dc2f32c22#npm:14.2.6"],\
           ["@svgr/webpack", "npm:8.1.0"],\
@@ -2628,6 +2629,15 @@ const RAW_RUNTIME_STATE =
           ["@babel/helper-string-parser", "npm:7.24.8"],\
           ["@babel/helper-validator-identifier", "npm:7.24.7"],\
           ["to-fast-properties", "npm:2.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@channel.io/channel-web-sdk-loader", [\
+      ["npm:2.0.0", {\
+        "packageLocation": "./.yarn/cache/@channel.io-channel-web-sdk-loader-npm-2.0.0-a716027852-11bf96fa88.zip/node_modules/@channel.io/channel-web-sdk-loader/",\
+        "packageDependencies": [\
+          ["@channel.io/channel-web-sdk-loader", "npm:2.0.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -8177,6 +8187,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["sipe", "workspace:."],\
+          ["@channel.io/channel-web-sdk-loader", "npm:2.0.0"],\
           ["@next/eslint-plugin-next", "npm:14.2.6"],\
           ["@next/third-parties", "virtual:5f85de5545bdf69af1d0de8ab8cd00a40f1e474c5581aca23c5337afa460a456890bdf1462b39697b558b5d28f831142034715dfeff95fce8312e07dc2f32c22#npm:14.2.6"],\
           ["@svgr/webpack", "npm:8.1.0"],\
