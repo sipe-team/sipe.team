@@ -5,7 +5,7 @@ import { getEntries } from '@/libs/utils';
 
 import styles from './index.module.scss';
 
-const Sponsor = () => {
+function Sponsor() {
   const about = getAbout();
   const sponsors = getEntries(about.sponsor);
 
@@ -27,6 +27,6 @@ const Sponsor = () => {
       </ContentWithTitle>
     </>
   );
-};
+}
 
 export default Sponsor;

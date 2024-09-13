@@ -13,11 +13,11 @@ type Props = {
   selectedPeopleGeneration: PeopleGeneration;
 };
 
-const People = ({
+function People({
   currentPeople,
   peopleGenerations,
   selectedPeopleGeneration,
-}: Props) => {
+}: Props) {
   return (
     <Layout>
       <ContentWithTitle title="사이퍼 소개">
@@ -64,6 +64,6 @@ const People = ({
       </ContentWithTitle>
     </Layout>
   );
-};
+}
 
 export default People;

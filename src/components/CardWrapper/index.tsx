@@ -9,13 +9,13 @@ type CardWrapperProps = React.ComponentProps<'div'> & {
   className?: string;
 };
 
-const CardWrapper = ({
+function CardWrapper({
   type = 'BASIC',
   minHeight,
   children,
   className,
   ...props
-}: CardWrapperProps) => {
+}: CardWrapperProps) {
   return (
     <div
       className={clsx(
@@ -29,6 +29,6 @@ const CardWrapper = ({
       {children}
     </div>
   );
-};
+}
 
 export default CardWrapper;

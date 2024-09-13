@@ -23,7 +23,7 @@ type SearchParams = {
   tab: keyof ActivityData;
 };
 
-function page({ searchParams }: { searchParams?: SearchParams }) {
+function Page({ searchParams }: { searchParams?: SearchParams }) {
   const activity = getActivity();
   const currentActivityTab = searchParams?.tab || 'post';
 
@@ -36,4 +36,4 @@ function page({ searchParams }: { searchParams?: SearchParams }) {
   );
 }
 
-export default page;
+export default Page;
