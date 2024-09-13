@@ -1,8 +1,8 @@
 import Button from '@/components/common/Button';
 import ContentWithTitle from '@/components/ContentWithTitle';
 import Layout from '@/components/Layout';
-import { ActiveCard } from '@/components/pages/Activity/components/ActiveCard';
-import { ActiveVideoCard } from '@/components/pages/Activity/components/ActiveVideoCard';
+import ActiveCard from '@/components/pages/Activity/components/ActiveCard';
+import ActiveVideoCard from '@/components/pages/Activity/components/ActiveVideoCard';
 import type {
   Activity as ActivityData,
   ActivityPost,

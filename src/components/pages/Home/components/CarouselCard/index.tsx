@@ -7,7 +7,7 @@ type CarouselCardProps = {
   value: string;
 };
 
-export default function CarouselCard({ title, value }: CarouselCardProps) {
+function CarouselCard({ title, value }: CarouselCardProps) {
   return (
     <CardWrapper className={styles.wrapper}>
       <div>{title}</div>
@@ -15,3 +15,5 @@ export default function CarouselCard({ title, value }: CarouselCardProps) {
     </CardWrapper>
   );
 }
+
+export default CarouselCard;

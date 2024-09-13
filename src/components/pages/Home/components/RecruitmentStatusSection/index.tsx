@@ -5,7 +5,7 @@ import { sendGAEvent } from '@next/third-parties/google';
 import Button from '@/components/common/Button';
 import useCopy from '@/hook/useCopyToClipboard';
 import useTimer from '@/hook/useTimer';
-import { displayApplication, getCurrentStatus } from '@/utils/recruit';
+import { displayApplication, getCurrentStatus } from '@/libs/utils/recruit';
 
 import Timer from '../Timer';
 import styles from './index.module.scss';

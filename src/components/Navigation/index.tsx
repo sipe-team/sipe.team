@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
 
 import { SipeLogo } from '@/assets/logos';
 import Button from '@/components/common/Button';
-import { displayApplication, getCurrentStatus } from '@/utils/recruit';
+import { displayApplication, getCurrentStatus } from '@/libs/utils/recruit';
 
 import HamburgerButton from '../HamburgerButton';
 import Layout from '../Layout';
@@ -22,7 +22,7 @@ const menus: { name: string; path: Route }[] = [
   { name: 'Activity', path: '/activity' },
 ];
 
-export default function Navigation() {
+function Navigation() {
   const pathname = usePathname();
   const now = Date.now();
   const currentStatus = getCurrentStatus(now);
@@ -89,3 +89,5 @@ export default function Navigation() {
     </header>
   );
 }
+
+export default Navigation;

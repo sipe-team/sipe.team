@@ -17,8 +17,8 @@ export const metadata = {
   },
 };
 
-function page() {
+function Page() {
   return <About />;
 }
 
-export default page;
+export default Page;

@@ -1,15 +1,15 @@
 import styles from './index.module.scss';
 
-interface Text {
+interface Props {
   text: string | undefined;
 }
 
-const Badge = ({ text }: Text) => {
+function Badge({ text }: Props) {
   return (
     <div className={styles.wrapper}>
       <div className={styles.text}>{text}</div>
     </div>
   );
-};
+}
 
 export default Badge;

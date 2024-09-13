@@ -24,7 +24,7 @@ type SearchParams = {
   generation?: PeopleGeneration;
 };
 
-function page({ searchParams }: { searchParams?: SearchParams }) {
+function Page({ searchParams }: { searchParams?: SearchParams }) {
   const people = getPeople();
   const peopleData = getEntries(people);
   const sortedPeopleGenerations = [...peopleData]
@@ -51,4 +51,4 @@ function page({ searchParams }: { searchParams?: SearchParams }) {
   );
 }
 
-export default page;
+export default Page;

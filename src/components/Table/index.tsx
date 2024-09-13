@@ -16,7 +16,7 @@ interface DataListProps {
   badge?: string | undefined;
 }
 
-const Table = ({ dataList, isApplicant }: TableProps) => {
+function Table({ dataList, isApplicant }: TableProps) {
   return (
     <div className={styles.wrapper}>
       {dataList.map((data, index) => (
@@ -39,6 +39,6 @@ const Table = ({ dataList, isApplicant }: TableProps) => {
       ))}
     </div>
   );
-};
+}
 
 export default Table;

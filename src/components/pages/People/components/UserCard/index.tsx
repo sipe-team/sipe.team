@@ -23,7 +23,7 @@ type UserCardProps = ComponentProps<'div'> & {
   review?: string;
 };
 
-const UserCard = ({
+function UserCard({
   period,
   img,
   name,
@@ -32,7 +32,7 @@ const UserCard = ({
   isOrganizer = false,
   introduce = '',
   review = '',
-}: UserCardProps) => {
+}: UserCardProps) {
   const isContributor = period === 'contribute';
 
   return (
@@ -84,6 +84,6 @@ const UserCard = ({
       )}
     </CardWrapper>
   );
-};
+}
 
 export default UserCard;
