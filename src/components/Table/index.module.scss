@@ -31,10 +31,6 @@
   &.isApplicant {
     height: 64px;
 
-    &:last-child {
-      background-color: color('gray100');
-    }
-
     @include mobile {
       height: auto;
       flex-direction: row;

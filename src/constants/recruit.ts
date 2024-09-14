@@ -16,6 +16,7 @@ export const Applicants = [
   { text: '다양한 경험을 가진 사람들과 폭넓고 깊이 있는 대화를 나누고 싶은' },
   {
     text: '기술 트렌드에 관심있고 성장을 추구하는 열정적인 개발자',
+    highlight: true,
   },
 ];
 
