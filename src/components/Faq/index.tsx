@@ -1,6 +1,6 @@
+import { Accordion, AccordionItem } from '@/components/common/accordion';
 import type { Faq as FaqItem } from '@/db/model';
 
-import Accordion from '../common/Accordion';
 import ContentWithTitle from '../ContentWithTitle';
 import styles from './index.module.scss';
 
@@ -11,15 +11,15 @@ type FaqProps = {
 function Faq({ faqs }: FaqProps) {
   return (
     <ContentWithTitle title="자주 묻는 질문">
-      <div className={styles.faqs}>
+      <Accordion className={styles.faqs}>
         {faqs.map((faq) => (
-          <Accordion
+          <AccordionItem
             key={faq.key}
-            question={faq.question}
-            answer={faq.answer}
+            title={faq.question}
+            value={faq.answer}
           />
         ))}
-      </div>
+      </Accordion>
     </ContentWithTitle>
   );
 }
