@@ -3,8 +3,8 @@ import { DEFAULT_METADATA } from '@/constants/metadata';
 
 export const metadata = DEFAULT_METADATA;
 
-function page() {
+function Page() {
   return <Home />;
 }
 
-export default page;
+export default Page;

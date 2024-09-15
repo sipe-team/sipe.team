@@ -2,15 +2,12 @@ import clsx from 'clsx';
 
 import styles from './index.module.scss';
 
-export type HamburgerButtonProps = {
+type Props = {
   onClick: () => void;
   isOpened?: boolean;
 };
 
-export default function HamburgerButton({
-  onClick,
-  isOpened = false,
-}: HamburgerButtonProps) {
+function HamburgerButton({ onClick, isOpened = false }: Props) {
   return (
     <div
       className={clsx(styles.wrapper, { [styles.open]: isOpened })}
@@ -22,3 +19,5 @@ export default function HamburgerButton({
     </div>
   );
 }
+
+export default HamburgerButton;

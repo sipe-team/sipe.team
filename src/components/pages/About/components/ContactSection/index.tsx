@@ -5,7 +5,7 @@ import ContentWithTitle from '@/components/ContentWithTitle';
 
 import styles from './index.module.scss';
 
-const ContactSection = () => {
+function ContactSection() {
   return (
     <ContentWithTitle title="문의">
       <div className={styles.wrapper}>
@@ -33,6 +33,6 @@ const ContactSection = () => {
       </div>
     </ContentWithTitle>
   );
-};
+}
 
 export default ContactSection;

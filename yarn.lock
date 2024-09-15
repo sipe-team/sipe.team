@@ -2831,13 +2831,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"classnames@npm:^2.2.5":
-  version: 2.5.1
-  resolution: "classnames@npm:2.5.1"
-  checksum: 10/58eb394e8817021b153bb6e7d782cfb667e4ab390cb2e9dac2fc7c6b979d1cc2b2a733093955fc5c94aa79ef5c8c89f11ab77780894509be6afbb91dddd79d15
-  languageName: node
-  linkType: hard
-
 "clean-stack@npm:^2.0.0":
   version: 2.2.0
   resolution: "clean-stack@npm:2.2.0"
@@ -2962,13 +2955,6 @@ __metadata:
     shebang-command: "npm:^2.0.0"
     which: "npm:^2.0.1"
   checksum: 10/e1a13869d2f57d974de0d9ef7acbf69dc6937db20b918525a01dacb5032129bd552d290d886d981e99f1b624cb03657084cc87bd40f115c07ecf376821c729ce
-  languageName: node
-  linkType: hard
-
-"css-mediaquery@npm:^0.1.2":
-  version: 0.1.2
-  resolution: "css-mediaquery@npm:0.1.2"
-  checksum: 10/f2f7512daa015f98b82bd65bbdd7c2100b16dddf22784bde2a8085f10f11e8775da57108016fe767f5e400afe64581c15d4e649c47725af7eac5f4094fa7ae43
   languageName: node
   linkType: hard
 
@@ -4221,13 +4207,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hyphenate-style-name@npm:^1.0.0":
-  version: 1.1.0
-  resolution: "hyphenate-style-name@npm:1.1.0"
-  checksum: 10/b9ed74e29181d96bd58a2d0e62fc4a19879db591dba268275829ff0ae595fcdf11faafaeaa63330a45c3004664d7db1f0fc7cdb372af8ee4615ed8260302c207
-  languageName: node
-  linkType: hard
-
 "iconv-lite@npm:^0.6.2":
   version: 0.6.3
   resolution: "iconv-lite@npm:0.6.3"
@@ -4884,15 +4863,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"matchmediaquery@npm:^0.3.0":
-  version: 0.3.1
-  resolution: "matchmediaquery@npm:0.3.1"
-  dependencies:
-    css-mediaquery: "npm:^0.1.2"
-  checksum: 10/47183f749ecd252f3bad6553ea3d768cb971cdb0c2514e6080c6d9eef4470212eead5050b53604e9700def48ac15829ccf537f17514aa5d801cd7d1b9728ded4
-  languageName: node
-  linkType: hard
-
 "mdn-data@npm:2.0.28":
   version: 2.0.28
   resolution: "mdn-data@npm:2.0.28"
@@ -5495,7 +5465,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.5.8, prop-types@npm:^15.6.1, prop-types@npm:^15.8.1":
+"prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -5548,44 +5518,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-easy-swipe@npm:^0.0.21":
-  version: 0.0.21
-  resolution: "react-easy-swipe@npm:0.0.21"
-  dependencies:
-    prop-types: "npm:^15.5.8"
-  checksum: 10/69bb2d366d412441b024c802f03b524f63d494d7b72632380ecce485aa1c08eb87cc9a5ffffa23c7e8dcd190834d15b76458f59ca91c8710d12aa27c084a111d
-  languageName: node
-  linkType: hard
-
 "react-is@npm:^16.13.1":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
   checksum: 10/5aa564a1cde7d391ac980bedee21202fc90bdea3b399952117f54fb71a932af1e5902020144fb354b4690b2414a0c7aafe798eb617b76a3d441d956db7726fdf
-  languageName: node
-  linkType: hard
-
-"react-responsive-carousel@npm:^3.2.23":
-  version: 3.2.23
-  resolution: "react-responsive-carousel@npm:3.2.23"
-  dependencies:
-    classnames: "npm:^2.2.5"
-    prop-types: "npm:^15.5.8"
-    react-easy-swipe: "npm:^0.0.21"
-  checksum: 10/1c4883e3085af3a6c242f3f4375f9532bd7ba2b0dde17b2abc6954e80cbcbf074721f61c28781403139eb0453a2a0d0213bdd3d9cb999206309ef05e141ce961
-  languageName: node
-  linkType: hard
-
-"react-responsive@npm:^9.0.2":
-  version: 9.0.2
-  resolution: "react-responsive@npm:9.0.2"
-  dependencies:
-    hyphenate-style-name: "npm:^1.0.0"
-    matchmediaquery: "npm:^0.3.0"
-    prop-types: "npm:^15.6.1"
-    shallow-equal: "npm:^1.2.1"
-  peerDependencies:
-    react: ">=16.8.0"
-  checksum: 10/10787baa54127200e283768d8a858620f21fd5106b2fd4044f6a84854b6831765a0f97f4d2ad20530ff3c9907230a05b6b8cd739fde9e6b9fd2506889c0aa813
   languageName: node
   linkType: hard
 
@@ -5931,13 +5867,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"shallow-equal@npm:^1.2.1":
-  version: 1.2.1
-  resolution: "shallow-equal@npm:1.2.1"
-  checksum: 10/4f1645cc516e7754c4438db687e1da439a5f29a7dba2ba90c5f88e5708aeb17bc4355ba45cad805b0e95dc898e37d8bf6d77d854919c7512f89939986cff8cd1
-  languageName: node
-  linkType: hard
-
 "shebang-command@npm:^2.0.0":
   version: 2.0.0
   resolution: "shebang-command@npm:2.0.0"
@@ -6004,8 +5933,6 @@ __metadata:
     prettier: "npm:^3.3.3"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
-    react-responsive: "npm:^9.0.2"
-    react-responsive-carousel: "npm:^3.2.23"
     react-simple-toasts: "npm:^5.10.1"
     sanitize.css: "npm:^13.0.0"
     sass: "npm:1.77.8"

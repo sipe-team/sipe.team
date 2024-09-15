@@ -13,7 +13,7 @@ interface CardProps {
   reverse?: boolean;
 }
 
-const Card = ({ src, badgeText, title, subTitle, reverse }: CardProps) => {
+function Card({ src, badgeText, title, subTitle, reverse }: CardProps) {
   return (
     <div className={clsx(styles.section, reverse && styles.reverse)}>
       <Image
@@ -32,6 +32,6 @@ const Card = ({ src, badgeText, title, subTitle, reverse }: CardProps) => {
       </div>
     </div>
   );
-};
+}
 
 export default Card;

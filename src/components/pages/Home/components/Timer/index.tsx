@@ -1,22 +1,14 @@
-'use client';
-
 import styles from './index.module.scss';
 
-export interface TimerProps {
+type Props = {
   dates: number;
   hours: number;
   minutes: number;
   seconds: number;
   isRecruiting: boolean;
-}
+};
 
-export default function Timer({
-  dates,
-  hours,
-  minutes,
-  seconds,
-  isRecruiting,
-}: TimerProps) {
+function Timer({ dates, hours, minutes, seconds, isRecruiting }: Props) {
   const formattedTime = (number: number) => String(number).padStart(2, '0');
 
   return (
@@ -40,3 +32,5 @@ export default function Timer({
     </div>
   );
 }
+
+export default Timer;

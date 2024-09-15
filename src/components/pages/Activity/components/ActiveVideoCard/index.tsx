@@ -14,14 +14,14 @@ type ActiveVideoCardProps = React.ComponentProps<'div'> & {
   createDate: string;
 };
 
-export const ActiveVideoCard = ({
+function ActiveVideoCard({
   thumbnail,
   contentTitle,
   userName,
   createDate,
   link,
   className,
-}: ActiveVideoCardProps) => {
+}: ActiveVideoCardProps) {
   return (
     <article className={clsx(styles.wrapper, className)}>
       <Image
@@ -49,4 +49,6 @@ export const ActiveVideoCard = ({
       </section>
     </article>
   );
-};
+}
+
+export default ActiveVideoCard;

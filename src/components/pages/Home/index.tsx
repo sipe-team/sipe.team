@@ -3,7 +3,7 @@ import Image from 'next/image';
 import RecruitmentStatusSection from './components/RecruitmentStatusSection';
 import styles from './index.module.scss';
 
-export default function Home() {
+function Home() {
   return (
     <div className={styles.wrapper}>
       <Image
@@ -27,3 +27,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home;

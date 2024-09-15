@@ -9,7 +9,7 @@ type ImageProps = Omit<NextImageProps, 'src'> & {
   src?: string;
 };
 
-const Image = ({
+function Image({
   src,
   alt,
   className,
@@ -19,7 +19,7 @@ const Image = ({
   height,
   sizes,
   ...rest
-}: ImageProps) => {
+}: ImageProps) {
   const defaultClassName = clsx(
     objectFit && styles[objectFit],
     fill ? styles.fill : className,
@@ -82,6 +82,6 @@ const Image = ({
       )}
     </>
   );
-};
+}
 
 export default Image;

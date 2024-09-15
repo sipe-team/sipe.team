@@ -14,7 +14,7 @@ type ActiveCardProps = React.ComponentProps<'div'> & {
   createDate: string;
 };
 
-export const ActiveCard = ({
+function ActiveCard({
   thumbnail,
   profile,
   contentTitle,
@@ -22,7 +22,7 @@ export const ActiveCard = ({
   userName,
   createDate,
   link,
-}: ActiveCardProps) => {
+}: ActiveCardProps) {
   return (
     <ExternalLink
       href={link}
@@ -63,4 +63,6 @@ export const ActiveCard = ({
       </article>
     </ExternalLink>
   );
-};
+}
+
+export default ActiveCard;

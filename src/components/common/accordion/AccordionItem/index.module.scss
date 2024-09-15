@@ -20,7 +20,7 @@
   }
 }
 
-.question {
+.title {
   cursor: pointer;
   height: 36px;
   display: flex;
@@ -63,7 +63,7 @@
   }
 }
 
-.answer {
+.value {
   margin-top: 12px;
   border-radius: 8px;
   color: color('gray700');
