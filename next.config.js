@@ -25,7 +25,7 @@ const nextConfig = {
   },
   webpack(config) {
     const fileLoaderRule = config.module.rules.find((rule) =>
-      rule.test?.test?.('.svg')
+      rule.test?.test?.('.svg'),
     );
 
     config.resolve.alias.canvas = false;
@@ -41,7 +41,7 @@ const nextConfig = {
         issuer: fileLoaderRule.issuer,
         resourceQuery: { not: [...fileLoaderRule.resourceQuery.not, /url/] }, // exclude if *.svg?url
         use: ['@svgr/webpack'],
-      }
+      },
     );
 
     fileLoaderRule.exclude = /\.svg$/i;
