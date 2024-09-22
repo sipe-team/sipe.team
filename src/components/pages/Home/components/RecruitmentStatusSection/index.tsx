@@ -7,6 +7,7 @@ import useCopy from '@/hook/useCopyToClipboard';
 import useTimer from '@/hook/useTimer';
 import { displayApplication, getCurrentStatus } from '@/libs/utils/recruit';
 
+import SummaryCard from '../SummaryCard';
 import Timer from '../Timer';
 import styles from './index.module.scss';
 
@@ -38,13 +39,17 @@ function RecruitmentStatusSection() {
 
   return (
     <div className={styles.content}>
-      <Timer
-        dates={dates}
-        hours={hours}
-        minutes={minutes}
-        seconds={seconds}
-        isRecruiting={isRecruiting}
-      />
+      {currentStatus === 'after' ? (
+        <SummaryCard />
+      ) : (
+        <Timer
+          dates={dates}
+          hours={hours}
+          minutes={minutes}
+          seconds={seconds}
+          isRecruiting={isRecruiting}
+        />
+      )}
       <div className={styles.buttonWrapper}>
         <Button
           href={currentApplicationDetail.formUrl}
