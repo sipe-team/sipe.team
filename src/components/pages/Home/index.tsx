@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
-import RecruitmentStatusSection from './components/RecruitmentStatusSection';
+import RecruitmentStatusSection from '@/components/pages/Home/components/RecruitmentStatusSection';
+
 import styles from './index.module.scss';
 
 function Home() {
