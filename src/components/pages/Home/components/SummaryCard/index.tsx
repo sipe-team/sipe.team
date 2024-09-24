@@ -11,7 +11,11 @@ function SummaryCard() {
   return (
     <div className={styles.wrapper}>
       {summaryData.map((data) => (
-        <SummaryCardItem title={data.title} value={data.value} />
+        <SummaryCardItem
+          key={data.title}
+          title={data.title}
+          value={data.value}
+        />
       ))}
     </div>
   );
