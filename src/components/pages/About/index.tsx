@@ -1,14 +1,14 @@
 import dynamic from 'next/dynamic';
 
-import Faq from '@/components/Faq';
-import Layout from '@/components/Layout';
-import Contact from '@/components/pages/About/components/ContactSection';
-import Introduce from '@/components/pages/About/components/IntroduceSection';
-import Sponsor from '@/components/pages/About/components/SponsorSection';
+import Layout from '@/components/atoms/Layout';
+import ContactSection from '@/components/organisms/about/ContactSection';
+import Introduce from '@/components/organisms/about/IntroduceSection';
+import Sponsor from '@/components/organisms/about/SponsorSection';
+import Faq from '@/components/organisms/Faq';
 import { getFaq } from '@/db';
 
 const ActivitiesSection = dynamic(
-  () => import('@/components/pages/About/components/ActivitiesSection'),
+  () => import('@/components/organisms/about/ActivitiesSection'),
   {
     ssr: false,
   },
@@ -23,7 +23,7 @@ function About() {
       <ActivitiesSection />
       <Sponsor />
       <Faq faqs={faq.about} />
-      <Contact />
+      <ContactSection />
     </Layout>
   );
 }

@@ -1,7 +1,7 @@
 import People from '@/components/pages/People';
-import METADATA from '@/constants/metadata';
 import { getPeople } from '@/db';
 import { PeopleGeneration } from '@/db/model';
+import METADATA from '@/libs/constants/metadata';
 import { getEntries, sortDescending } from '@/libs/utils';
 
 const title = '사이퍼 소개 - SIPE';

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import RecruitmentStatusSection from '@/components/pages/Home/components/RecruitmentStatusSection';
+import RecruitmentStatusSection from '@/components/organisms/home/RecruitmentStatusSection';
 
 import styles from './index.module.scss';
 

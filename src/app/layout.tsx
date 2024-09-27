@@ -6,10 +6,10 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import { pretendardFont } from '@/app/_fonts';
-import ClientProvider from '@/components/ClientProvider';
-import Footer from '@/components/Footer';
-import Navigation from '@/components/Navigation';
-import { DEFAULT_METADATA } from '@/constants/metadata';
+import ClientProvider from '@/components/global/ClientProvider';
+import Footer from '@/components/global/Footer';
+import Navigation from '@/components/global/Navigation';
+import { DEFAULT_METADATA } from '@/libs/constants/metadata';
 
 import styles from './layout.module.scss';
 

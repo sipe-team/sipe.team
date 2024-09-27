@@ -1,11 +1,11 @@
-import ContentWithTitle from '@/components/ContentWithTitle';
-import Faq from '@/components/Faq';
-import Layout from '@/components/Layout';
-import Table from '@/components/Table';
-import { Applicants, CardList, InActivity } from '@/constants/recruit';
+import ContentWithTitle from '@/components/atoms/ContentWithTitle';
+import Layout from '@/components/atoms/Layout';
+import Table from '@/components/molecules/Table';
+import Faq from '@/components/organisms/Faq';
 import { getFaq } from '@/db';
+import { Applicants, CardList, InActivity } from '@/libs/constants/recruit';
 
-import ScheduleCard from './components/ScheduleCard';
+import ScheduleCard from '../../organisms/recruit/ScheduleCard';
 import styles from './index.module.scss';
 
 function Recruit() {
