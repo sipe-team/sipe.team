@@ -1,7 +1,8 @@
 'use client';
 
-import { AnimatePresence, motion } from 'framer-motion';
 import { PropsWithChildren } from 'react';
+
+import { AnimatePresence, motion } from 'framer-motion';
 
 import useElementSize from '@/hook/useElementSize';
 import { createSVGMask } from '@/libs/utils/svg';

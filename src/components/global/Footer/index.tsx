@@ -1,6 +1,6 @@
+import Layout from '@/components/atoms/Layout';
 import SocialIconLink from '@/components/molecules/SocialIconLink';
 
-import Layout from '../../atoms/Layout';
 import styles from './index.module.scss';
 
 function Footer() {

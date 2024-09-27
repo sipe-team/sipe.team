@@ -1,6 +1,8 @@
-import clsx from 'clsx';
-import NextImage, { ImageProps as NextImageProps } from 'next/image';
 import React, { CSSProperties, ReactNode, useCallback } from 'react';
+
+import NextImage, { ImageProps as NextImageProps } from 'next/image';
+
+import clsx from 'clsx';
 
 import styles from './index.module.scss';
 

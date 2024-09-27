@@ -3,8 +3,9 @@
 import 'swiper/css/bundle';
 import 'swiper/css/pagination';
 
-import clsx from 'clsx';
 import { useEffect, useState } from 'react';
+
+import clsx from 'clsx';
 import { Autoplay, EffectCoverflow, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 

@@ -1,7 +1,8 @@
 'use client';
 
-import { sendGAEvent } from '@next/third-parties/google';
 import dynamic from 'next/dynamic';
+
+import { sendGAEvent } from '@next/third-parties/google';
 
 import Button from '@/components/molecules/Button';
 import useCopy from '@/hook/useCopyToClipboard';
