@@ -1,7 +1,7 @@
 import Activity from '@/components/pages/Activity';
-import METADATA from '@/constants/metadata';
 import { getActivity } from '@/db';
 import type { Activity as ActivityData } from '@/db/model';
+import METADATA from '@/libs/constants/metadata';
 
 const title = '사이퍼 활동 - SIPE';
 

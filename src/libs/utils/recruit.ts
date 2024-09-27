@@ -5,7 +5,7 @@ import {
   JOIN_ALARM_FORM_URL,
   JOIN_FORM_URL,
   JOIN_NEXT_ALARM_FORM_URL,
-} from '@/constants/recruit';
+} from '@/libs/constants/recruit';
 
 export type ApplicationStatusKey = 'before' | 'ongoing' | 'after';
 export type ApplicationDetail = {

@@ -1,5 +1,5 @@
 import About from '@/components/pages/About';
-import METADATA from '@/constants/metadata';
+import METADATA from '@/libs/constants/metadata';
 
 const title = '사이프 소개 - SIPE';
 

@@ -1,5 +1,5 @@
 import Recruit from '@/components/pages/Recruit';
-import METADATA from '@/constants/metadata';
+import METADATA from '@/libs/constants/metadata';
 
 const title = '3기 사이퍼 모집 - SIPE';
 
