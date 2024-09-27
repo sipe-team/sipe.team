@@ -1,5 +1,6 @@
-import clsx from 'clsx';
 import React from 'react';
+
+import clsx from 'clsx';
 
 import ExternalLink from '@/components/atoms/ExternalLink';
 import Image from '@/components/molecules/Image';

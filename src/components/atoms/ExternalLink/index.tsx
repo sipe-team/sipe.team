@@ -1,9 +1,10 @@
-import clsx from 'clsx';
 import {
   AnchorHTMLAttributes,
   DetailedHTMLProps,
   PropsWithChildren,
 } from 'react';
+
+import clsx from 'clsx';
 
 import styles from './index.module.scss';
 

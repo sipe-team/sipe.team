@@ -1,18 +1,20 @@
 'use client';
 
-import { sendGAEvent } from '@next/third-parties/google';
-import clsx from 'clsx';
+import { useEffect, useState } from 'react';
+
 import { Route } from 'next';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
 
+import { sendGAEvent } from '@next/third-parties/google';
+import clsx from 'clsx';
+
+import Layout from '@/components/atoms/Layout';
+import HamburgerButton from '@/components/global/HamburgerButton';
 import Button from '@/components/molecules/Button';
 import { SipeLogo } from '@/libs/assets/logos';
 import { displayApplication, getCurrentStatus } from '@/libs/utils/recruit';
 
-import Layout from '../../atoms/Layout';
-import HamburgerButton from '../HamburgerButton';
 import styles from './index.module.scss';
 
 const menus: { name: string; path: Route }[] = [

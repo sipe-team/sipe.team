@@ -1,5 +1,6 @@
-import clsx from 'clsx';
 import { FunctionComponent, SVGAttributes } from 'react';
+
+import clsx from 'clsx';
 
 import ExternalLink from '@/components/atoms/ExternalLink';
 import { EmailIcon, LinkIcon } from '@/libs/assets/icons';

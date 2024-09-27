@@ -1,7 +1,9 @@
-import clsx from 'clsx';
+import React, { ComponentProps, ReactNode } from 'react';
+
 import { Route } from 'next';
 import Link, { LinkProps } from 'next/link';
-import React, { ComponentProps, ReactNode } from 'react';
+
+import clsx from 'clsx';
 
 import styles from './index.module.scss';
 

@@ -2,10 +2,10 @@ import ContentWithTitle from '@/components/atoms/ContentWithTitle';
 import Layout from '@/components/atoms/Layout';
 import Table from '@/components/molecules/Table';
 import Faq from '@/components/organisms/Faq';
+import ScheduleCard from '@/components/organisms/recruit/ScheduleCard';
 import { getFaq } from '@/db';
 import { Applicants, CardList, InActivity } from '@/libs/constants/recruit';
 
-import ScheduleCard from '../../organisms/recruit/ScheduleCard';
 import styles from './index.module.scss';
 
 function Recruit() {
