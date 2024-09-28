@@ -1,10 +1,10 @@
-import Button from '@/components/common/Button';
-import ContentWithTitle from '@/components/ContentWithTitle';
-import Layout from '@/components/Layout';
+import ContentWithTitle from '@/components/atoms/ContentWithTitle';
+import Layout from '@/components/atoms/Layout';
+import Button from '@/components/molecules/Button';
+import UserCard from '@/components/organisms/people/UserCard';
 import type { PeopleGeneration, PeopleItem } from '@/db/model';
 import { getEntries } from '@/libs/utils';
 
-import UserCard from './components/UserCard';
 import styles from './index.module.scss';
 
 type Props = {

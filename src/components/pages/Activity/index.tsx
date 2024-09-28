@@ -1,8 +1,8 @@
-import Button from '@/components/common/Button';
-import ContentWithTitle from '@/components/ContentWithTitle';
-import Layout from '@/components/Layout';
-import ActiveCard from '@/components/pages/Activity/components/ActiveCard';
-import ActiveVideoCard from '@/components/pages/Activity/components/ActiveVideoCard';
+import ContentWithTitle from '@/components/atoms/ContentWithTitle';
+import Layout from '@/components/atoms/Layout';
+import Button from '@/components/molecules/Button';
+import ActiveCard from '@/components/organisms/activity/ActiveCard';
+import ActiveVideoCard from '@/components/organisms/activity/ActiveVideoCard';
 import type {
   Activity as ActivityData,
   ActivityPost,
