@@ -8,7 +8,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
-    baseURL: 'https://sipe.team',
+    baseURL: 'http://localhost:6100',
     trace: 'on-first-retry',
   },
   projects: [

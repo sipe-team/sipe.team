@@ -16,9 +16,4 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  @include text('h4/bold', 'white');
-}
-
-.text {
-  @include text('h5/semibold', 'white');
 }

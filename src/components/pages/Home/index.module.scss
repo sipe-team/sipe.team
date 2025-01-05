@@ -35,7 +35,7 @@
   z-index: 1;
 
   .title {
-    @include text('h1/black', 'white');
+    font-weight: var(--font-weight-black);
 
     @include mobile {
       @include text('h3/black', 'white');
@@ -43,8 +43,6 @@
   }
 
   .subTitle {
-    @include text('h4/semibold', 'white');
-
     @include mobile {
       @include text('h6/semibold', 'white');
     }

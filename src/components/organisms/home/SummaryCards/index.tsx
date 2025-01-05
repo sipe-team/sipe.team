@@ -1,3 +1,5 @@
+import { color, Typography } from '@sipe-team/side';
+
 import styles from './index.module.scss';
 
 const summaryData = [
@@ -11,8 +13,24 @@ function SummaryCards() {
     <div className={styles.summaryCardWrapper}>
       {summaryData.map(({ title, value }) => (
         <div key={title} className={styles.card}>
-          <div className={styles.title}>{title}</div>
-          <div className={styles.value}>{value}</div>
+          <Typography
+            color={color.white}
+            className={styles.title}
+            lineHeight="compact"
+            size={18}
+            weight="bold"
+          >
+            {title}
+          </Typography>
+          <Typography
+            color={color.white}
+            className={styles.value}
+            lineHeight="compact"
+            size={32}
+            weight="bold"
+          >
+            {value}
+          </Typography>
         </div>
       ))}
     </div>
