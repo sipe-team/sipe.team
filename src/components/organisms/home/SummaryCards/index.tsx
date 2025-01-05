@@ -1,5 +1,4 @@
-import { Typography } from '@sipe-team/side';
-import { color } from '@sipe-team/tokens';
+import { color, Typography } from '@sipe-team/side';
 
 import styles from './index.module.scss';
 

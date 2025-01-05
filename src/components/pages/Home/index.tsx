@@ -1,7 +1,6 @@
 import Image from 'next/image';
 
-import { Typography } from '@sipe-team/side';
-import { color } from '@sipe-team/tokens';
+import { color, Typography } from '@sipe-team/side';
 
 import RecruitmentStatusSection from '@/components/organisms/home/RecruitmentStatusSection';
 
