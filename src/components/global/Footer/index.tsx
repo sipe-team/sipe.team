@@ -1,3 +1,6 @@
+import { Typography } from '@sipe-team/side';
+import { color } from '@sipe-team/tokens';
+
 import Layout from '@/components/atoms/Layout';
 import SocialIconLink from '@/components/molecules/SocialIconLink';
 
@@ -8,7 +11,9 @@ function Footer() {
     <footer className={styles.wrapper}>
       <Layout>
         <div className={styles.group}>
-          <div className={styles.copyright}>All rights reserved ⓒ SIPE</div>
+          <Typography color={color.white} size={12} weight="medium">
+            All rights reserved ⓒ SIPE
+          </Typography>
           <div className={styles.logos}>
             <SocialIconLink
               type="INSTAGRAM"

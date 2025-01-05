@@ -5,7 +5,6 @@ test('메인 페이지', async ({ page }) => {
 
   await expect(page).toHaveScreenshot({
     fullPage: true,
-    maxDiffPixelRatio: 0.2,
   });
 });
 
