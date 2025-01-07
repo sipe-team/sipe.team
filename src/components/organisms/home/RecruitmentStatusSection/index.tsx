@@ -3,8 +3,8 @@
 import dynamic from 'next/dynamic';
 
 import { sendGAEvent } from '@next/third-parties/google';
+import { Button } from '@sipe-team/side';
 
-import Button from '@/components/molecules/Button';
 import useCopy from '@/hook/useCopyToClipboard';
 import { displayApplication, getCurrentStatus } from '@/libs/utils/recruit';
 
@@ -39,17 +39,23 @@ function RecruitmentStatusSection() {
       <RecruitmentSummary currentStatus={currentStatus} />
       <div className={styles.buttonWrapper}>
         <Button
-          href={currentApplicationDetail.formUrl}
-          isExternalLink
-          buttonType="home"
-          buttonColor="primary"
+          asChild
+          className={styles.homeButton}
+          color="primary"
           onClick={handleClickApplicationButton}
         >
-          {currentApplicationDetail.buttonText}
+          <a
+            href={currentApplicationDetail.formUrl}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            {currentApplicationDetail.buttonText}
+          </a>
         </Button>
         <Button
-          buttonType="home"
-          buttonColor="white"
+          color="white"
+          className={styles.homeButton}
+          type="button"
           onClick={handleClickShareLinkButton}
         >
           링크 공유하기

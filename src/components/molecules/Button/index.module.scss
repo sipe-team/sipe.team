@@ -19,68 +19,6 @@
   flex-direction: row;
   text-align: center;
 
-  &.home {
-    font-size: 22px;
-    line-height: 30.8px;
-    width: 280px;
-    height: 56px;
-
-    @include mobile {
-      width: fit-content;
-      height: 44px;
-      font-size: 16px;
-      padding: 0 20px;
-    }
-
-    &.primary {
-      background-color: color('primary');
-      color: color('black');
-
-      &:hover {
-        background-color: #00d2d2;
-      }
-
-      &:active {
-        background-color: #00d2d2;
-      }
-    }
-
-    &.white {
-      background-color: color('white');
-      color: color('black');
-
-      &:hover {
-        background-color: color('gray600');
-      }
-
-      &:active {
-        background-color: color('gray600');
-      }
-    }
-
-    &.black {
-      background-color: color('gray000');
-      color: color('white');
-      border: 1px solid color('gray200');
-
-      &:hover {
-        background-color: color('gray100');
-        color: color('white');
-      }
-
-      &:active {
-        background-color: color('gray000');
-        color: color('gray300');
-      }
-    }
-
-    &:disabled,
-    &.disabled {
-      opacity: 0.4;
-      cursor: not-allowed;
-    }
-  }
-
   &.menu {
     background-color: transparent;
     width: 100%;

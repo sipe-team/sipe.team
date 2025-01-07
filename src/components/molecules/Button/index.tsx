@@ -7,12 +7,12 @@ import clsx from 'clsx';
 
 import styles from './index.module.scss';
 
-type ButtonType = 'home' | 'menu' | 'apply' | 'chip';
+type ButtonType = 'menu' | 'apply' | 'chip';
 type ButtonColor = 'black' | 'primary' | 'white';
 
 type CommonProps = {
   active?: boolean;
-  buttonType?: ButtonType;
+  buttonType: ButtonType;
   buttonColor?: ButtonColor;
   disabled?: boolean;
   className?: string;
@@ -38,7 +38,7 @@ function Button<
 >({
   href,
   active,
-  buttonType = 'home',
+  buttonType,
   buttonColor = 'black',
   disabled,
   className,
