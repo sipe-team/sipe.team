@@ -44,9 +44,9 @@
       overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;
+      line-clamp: 2;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
-      @include text('h5/bold', 'white');
     }
 
     .body {
@@ -55,6 +55,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;
+      line-clamp: 2;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
     }
@@ -75,15 +76,9 @@
       .userIcon {
         border-radius: 50%;
       }
-
-      .userName {
-        color: color('white');
-      }
     }
 
     .createDate {
-      font-size: 12px;
-      font-weight: 500;
       line-height: 17px;
       letter-spacing: -0.002em;
       text-align: right;

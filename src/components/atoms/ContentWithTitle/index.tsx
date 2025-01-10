@@ -1,3 +1,5 @@
+import { color, Typography } from '@sipe-team/side';
+
 import styles from './index.module.scss';
 
 type ContentWithTitleProps = {
@@ -8,7 +10,9 @@ type ContentWithTitleProps = {
 function ContentWithTitle({ title, children }: ContentWithTitleProps) {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.title}>{title}</div>
+      <Typography color={color.white} className={styles.title} size={36}>
+        {title}
+      </Typography>
       {children}
     </div>
   );
