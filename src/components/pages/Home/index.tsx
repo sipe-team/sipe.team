@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { color, Typography } from '@sipe-team/side';
+import { color, Flex, Typography } from '@sipe-team/side';
 
 import RecruitmentStatusSection from '@/components/organisms/home/RecruitmentStatusSection';
 
@@ -8,7 +8,13 @@ import styles from './index.module.scss';
 
 function Home() {
   return (
-    <div className={styles.wrapper}>
+    <Flex
+      align="center"
+      className={styles.wrapper}
+      direction="column"
+      gap="16px"
+      justify="center"
+    >
       <Image
         src="/assets/home-bg.png"
         alt="배경 이미지"
@@ -18,7 +24,12 @@ function Home() {
         priority
         className={styles.background}
       />
-      <div className={styles.titleWrapper}>
+      <Flex
+        align="center"
+        className={styles.titleWrapper}
+        direction="column"
+        gap="16px"
+      >
         <Typography
           asChild
           className={styles.title}
@@ -40,9 +51,9 @@ function Home() {
         >
           <h2>개발자들이 함께 교류하며 성장하는 IT 커뮤니티</h2>
         </Typography>
-      </div>
+      </Flex>
       <RecruitmentStatusSection />
-    </div>
+    </Flex>
   );
 }
 

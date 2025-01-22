@@ -1,7 +1,5 @@
 .wrapper {
   width: 100%;
-  display: flex;
-  justify-content: center;
   position: relative;
 }
 
@@ -20,9 +18,4 @@
     justify-content: space-between;
     gap: 0;
   }
-}
-
-.logos {
-  display: flex;
-  gap: 8px;
 }

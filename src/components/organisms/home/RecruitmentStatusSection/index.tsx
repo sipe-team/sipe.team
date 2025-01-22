@@ -3,7 +3,7 @@
 import dynamic from 'next/dynamic';
 
 import { sendGAEvent } from '@next/third-parties/google';
-import { Button } from '@sipe-team/side';
+import { Button, Flex } from '@sipe-team/side';
 
 import useCopy from '@/hook/useCopyToClipboard';
 import { displayApplication, getCurrentStatus } from '@/libs/utils/recruit';
@@ -35,9 +35,14 @@ function RecruitmentStatusSection() {
   };
 
   return (
-    <div className={styles.content}>
+    <Flex
+      align="center"
+      className={styles.content}
+      direction="column"
+      gap="40px"
+    >
       <RecruitmentSummary currentStatus={currentStatus} />
-      <div className={styles.buttonWrapper}>
+      <Flex className={styles.buttonWrapper} direction="row" gap="24px">
         <Button
           asChild
           className={styles.homeButton}
@@ -60,8 +65,8 @@ function RecruitmentStatusSection() {
         >
           링크 공유하기
         </Button>
-      </div>
-    </div>
+      </Flex>
+    </Flex>
   );
 }
 
