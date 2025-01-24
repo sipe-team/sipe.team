@@ -1,9 +1,5 @@
 .content {
-  display: flex;
-  flex-direction: column;
   margin-top: 40px;
-  gap: 40px;
-  align-items: center;
   z-index: 1;
 
   @include mobile {
@@ -17,8 +13,6 @@
   }
 
   .buttonWrapper {
-    display: flex;
-    gap: 24px;
 
     @include mobile {
       gap: 12px;
@@ -27,8 +21,6 @@
 }
 
 .homeButton {
-  font-size: 22px;
-  line-height: 30.8px;
   width: 280px;
   height: 56px;
 

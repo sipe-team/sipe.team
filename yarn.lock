@@ -1807,16 +1807,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sipe-team/card@npm:0.0.2":
-  version: 0.0.2
-  resolution: "@sipe-team/card@npm:0.0.2::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fcard%2F0.0.2%2Fb896be2201e2e4b128df3ef7f25a13458f1dd263"
+"@sipe-team/card@npm:0.1.0":
+  version: 0.1.0
+  resolution: "@sipe-team/card@npm:0.1.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fcard%2F0.1.0%2Fea64fb79a758896f88d71ab88ca7bc30f771e378"
   dependencies:
     "@radix-ui/react-slot": "npm:^1.1.0"
     "@sipe-team/tokens": "npm:0.1.0"
     clsx: "npm:^2.1.1"
   peerDependencies:
     react: ">= 18"
-  checksum: 10/04c32dbde3b61cb62c6f26196d58e26d32aadd67d99c499a4b1e6074daa373487751137ef8771a7416df4053ff599af236776fbad776a5cd027e8ddf86294f4e
+  checksum: 10/2887c9999f762549b0ac3dc9079d7697001a401997618694dc4ca5040c7486fe7b57fdfd1b5ab1e4354c5444ef746ef5a53bee90a2e60e5f8cb1e2c7134dcea3
   languageName: node
   linkType: hard
 
@@ -1828,6 +1828,18 @@ __metadata:
   peerDependencies:
     react: ">= 18"
   checksum: 10/ae56871bdc217e62dcbd87f7d41e04fe2328daaef923c452b3311973c68076eb50529743af173fbd4aa011b843f2b6292257d60b7412e7edcd70c17a6945249c
+  languageName: node
+  linkType: hard
+
+"@sipe-team/flex@npm:0.1.1":
+  version: 0.1.1
+  resolution: "@sipe-team/flex@npm:0.1.1::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fflex%2F0.1.1%2F24d2e98283c72bf1c8df6396532b78ae4f3bafa5"
+  dependencies:
+    "@radix-ui/react-slot": "npm:^1.1.0"
+    clsx: "npm:^2.1.1"
+  peerDependencies:
+    react: ">= 18"
+  checksum: 10/1d4ef8c0daa15610f95db164f824843e6fba4f8d191face89efc11260ccea48aa7a7e72264ce19c6e4498ed03a9fa2da64d8efed724c44c49b5d0a37add96b22
   languageName: node
   linkType: hard
 
@@ -1852,14 +1864,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sipe-team/side@npm:^0.1.0":
-  version: 0.1.0
-  resolution: "@sipe-team/side@npm:0.1.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fside%2F0.1.0%2F951d3c6a02e38f49bcf6f1cd9b9a437807f74a9a"
+"@sipe-team/side@npm:^0.2.2":
+  version: 0.2.2
+  resolution: "@sipe-team/side@npm:0.2.2::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fside%2F0.2.2%2F05a74610efd9de59c71e5b027f6e3deee21049c9"
   dependencies:
     "@sipe-team/badge": "npm:0.0.3"
     "@sipe-team/button": "npm:0.0.1"
-    "@sipe-team/card": "npm:0.0.2"
+    "@sipe-team/card": "npm:0.1.0"
     "@sipe-team/divider": "npm:0.0.2"
+    "@sipe-team/flex": "npm:0.1.1"
     "@sipe-team/input": "npm:0.0.3"
     "@sipe-team/radio-group": "npm:0.0.2"
     "@sipe-team/skeleton": "npm:0.0.2"
@@ -1869,7 +1882,7 @@ __metadata:
     "@sipe-team/typography": "npm:0.0.4"
   peerDependencies:
     react: ">= 18"
-  checksum: 10/6be784650304296e80f7d5e1a97215c6d9330fb2982fa02e5f5f0daa310af5958a580c3748187e46d7694e037f31de8e9a753b3c207a099dd093b8158a4c850a
+  checksum: 10/bc2a41536e9974679b2b5955f10130f0d01fdf210d8807f42feec698fb0512b56d9bd76b62d664fe91bf6ac32ca4807fd20669a14e12993799c5419c257c001e
   languageName: node
   linkType: hard
 
@@ -6167,7 +6180,7 @@ __metadata:
     "@next/eslint-plugin-next": "npm:^14.2.11"
     "@next/third-parties": "npm:^14.2.11"
     "@playwright/test": "npm:^1.49.1"
-    "@sipe-team/side": "npm:^0.1.0"
+    "@sipe-team/side": "npm:^0.2.2"
     "@svgr/webpack": "npm:8.1.0"
     "@types/node": "npm:^20.12.2"
     "@types/react": "npm:^18.3.4"

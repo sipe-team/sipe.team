@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 
+import { Flex } from '@sipe-team/side';
 import clsx from 'clsx';
 
 import styles from './index.module.scss';
@@ -12,9 +13,14 @@ function Layout({
   children: ReactNode;
 }) {
   return (
-    <div className={styles.wrapper}>
+    <Flex
+      align="center"
+      className={styles.wrapper}
+      direction="row"
+      justify="center"
+    >
       <div className={clsx(styles.layout, className)}>{children}</div>
-    </div>
+    </Flex>
   );
 }
 

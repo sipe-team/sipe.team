@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import { sendGAEvent } from '@next/third-parties/google';
+import { Flex } from '@sipe-team/side';
 import clsx from 'clsx';
 
 import Layout from '@/components/atoms/Layout';
@@ -43,52 +44,65 @@ function Navigation() {
   };
 
   return (
-    <header className={styles.wrapper}>
-      <Layout className={styles.headerLayout}>
-        <div className={styles.header}>
-          <Link href="/">
-            <SipeLogo aria-label="사이프 로고" />
-          </Link>
-          <HamburgerButton
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            isOpened={isMobileMenuOpen}
-          />
-        </div>
-        <nav
-          className={clsx(
-            styles.menuWrapper,
-            isMobileMenuOpen ? styles.open : styles.close,
-          )}
-        >
-          <div
+    <Flex align="center" asChild className={styles.wrapper} direction="column">
+      <header>
+        <Layout className={styles.headerLayout}>
+          <Flex
+            align="center"
+            className={styles.header}
+            direction="row"
+            justify="space-between"
+          >
+            <Link href="/">
+              <SipeLogo aria-label="사이프 로고" />
+            </Link>
+            <HamburgerButton
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              isOpened={isMobileMenuOpen}
+            />
+          </Flex>
+          <Flex
+            align="center"
+            asChild
             className={clsx(
-              styles.menuList,
+              styles.menuWrapper,
               isMobileMenuOpen ? styles.open : styles.close,
             )}
+            direction="row"
           >
-            {menus.map((menu) => (
-              <Button
-                key={menu.name}
-                buttonType="menu"
-                active={menu.path === pathname}
-                href={menu.path}
+            <nav>
+              <Flex
+                className={clsx(
+                  styles.menuList,
+                  isMobileMenuOpen ? styles.open : styles.close,
+                )}
+                gap="12px"
               >
-                {menu.name}
-              </Button>
-            ))}
-            <Button
-              disabled={currentStatus !== 'ongoing'}
-              isExternalLink
-              href={currentApplicationDetail.formUrl}
-              buttonType="apply"
-              onClick={handleClickJoinUsButton}
-            >
-              Join Us
-            </Button>
-          </div>
-        </nav>
-      </Layout>
-    </header>
+                {menus.map((menu) => (
+                  <Button
+                    key={menu.name}
+                    buttonType="menu"
+                    active={menu.path === pathname}
+                    href={menu.path}
+                  >
+                    {menu.name}
+                  </Button>
+                ))}
+                <Button
+                  disabled={currentStatus !== 'ongoing'}
+                  isExternalLink
+                  href={currentApplicationDetail.formUrl}
+                  buttonType="apply"
+                  onClick={handleClickJoinUsButton}
+                >
+                  Join Us
+                </Button>
+              </Flex>
+            </nav>
+          </Flex>
+        </Layout>
+      </header>
+    </Flex>
   );
 }
 
