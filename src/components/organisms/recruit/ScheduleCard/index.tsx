@@ -1,3 +1,5 @@
+import { color, Flex, Typography } from '@sipe-team/side';
+
 import CardWrapper from '@/components/atoms/CardWrapper';
 
 import styles from './index.module.scss';
@@ -10,11 +12,36 @@ type ScheduleCardProps = {
 
 function ScheduleCard({ title, processDate, subTitle }: ScheduleCardProps) {
   return (
-    <CardWrapper className={styles.wrapper}>
-      <div className={styles.title}>{title}</div>
-      <div className={styles.highlightTitle}>{processDate}</div>
-      <div className={styles.subTitle}>{subTitle}</div>
-    </CardWrapper>
+    <Flex
+      align="center"
+      asChild={true}
+      direction="column"
+      gap="16px"
+      inline={true}
+      justify="center"
+    >
+      <CardWrapper className={styles.wrapper}>
+        <Typography
+          className={styles.title}
+          color={color.white}
+          size={20}
+          weight="bold"
+        >
+          {title}
+        </Typography>
+        <Flex
+          asChild={true}
+          align="center"
+          className={styles.highlightTitle}
+          justify="center"
+        >
+          <Typography weight="semiBold">{processDate}</Typography>
+        </Flex>
+        <Typography className={styles.subTitle} weight="medium">
+          {subTitle}
+        </Typography>
+      </CardWrapper>
+    </Flex>
   );
 }
 

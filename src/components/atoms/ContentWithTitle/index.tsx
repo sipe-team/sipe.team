@@ -1,4 +1,4 @@
-import { color, Typography } from '@sipe-team/side';
+import { color, Flex, Typography } from '@sipe-team/side';
 
 import styles from './index.module.scss';
 
@@ -9,12 +9,12 @@ type ContentWithTitleProps = {
 
 function ContentWithTitle({ title, children }: ContentWithTitleProps) {
   return (
-    <div className={styles.wrapper}>
+    <Flex align="center" className={styles.wrapper} direction="column">
       <Typography color={color.white} className={styles.title} size={36}>
         {title}
       </Typography>
       {children}
-    </div>
+    </Flex>
   );
 }
 
