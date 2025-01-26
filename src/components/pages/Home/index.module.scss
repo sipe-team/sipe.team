@@ -2,12 +2,7 @@
   width: 100%;
   height: calc(100vh - 164px);
   background-color: color('black');
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   position: relative;
-  gap: 16px;
 
   .background {
     position: absolute;
@@ -27,15 +22,11 @@
 }
 
 .titleWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  align-items: center;
   text-align: center;
   z-index: 1;
 
   .title {
-    @include text('h1/black', 'white');
+    font-weight: var(--font-weight-black);
 
     @include mobile {
       @include text('h3/black', 'white');
@@ -43,8 +34,6 @@
   }
 
   .subTitle {
-    @include text('h4/semibold', 'white');
-
     @include mobile {
       @include text('h6/semibold', 'white');
     }

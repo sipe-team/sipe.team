@@ -1,7 +1,5 @@
 .wrapper {
   width: 100%;
-  display: flex;
-  justify-content: center;
   position: relative;
 }
 
@@ -20,16 +18,4 @@
     justify-content: space-between;
     gap: 0;
   }
-}
-
-.copyright {
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 17px;
-  color: color('white');
-}
-
-.logos {
-  display: flex;
-  gap: 8px;
 }

@@ -1,3 +1,5 @@
+import { color, Typography } from '@sipe-team/side';
+
 import ExternalLink from '@/components/atoms/ExternalLink';
 import Image from '@/components/molecules/Image';
 import { UserIcon } from '@/libs/assets/icons';
@@ -40,8 +42,17 @@ function ActiveCard({
       />
       <article className={styles.contentsWrapper}>
         <section className={styles.contents}>
-          <div className={styles.title}>{contentTitle}</div>
-          <p className={styles.body}>{contentBody}</p>
+          <Typography
+            color={color.white}
+            className={styles.title}
+            size={20}
+            weight="bold"
+          >
+            {contentTitle}
+          </Typography>
+          <Typography className={styles.body} size={14}>
+            {contentBody}
+          </Typography>
         </section>
         <section className={styles.posterUserInfo}>
           <div className={styles.userWrapper}>
@@ -56,9 +67,13 @@ function ActiveCard({
             ) : (
               <UserIcon className={styles.userIcon} />
             )}
-            <label className={styles.userName}>{userName}</label>
+            <Typography color={color.white} size={14}>
+              {userName}
+            </Typography>
           </div>
-          <label className={styles.createDate}>{createDate}</label>
+          <Typography className={styles.createDate} size={12} weight="semiBold">
+            {createDate}
+          </Typography>
         </section>
       </article>
     </ExternalLink>

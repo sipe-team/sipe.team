@@ -1,3 +1,4 @@
+import { color, Flex, Typography } from '@sipe-team/side';
 import clsx from 'clsx';
 
 import Badge from '@/components/atoms/Badge';
@@ -25,7 +26,14 @@ interface DataListProps {
 
 function Table({ dataList, isApplicant }: TableProps) {
   return (
-    <div className={styles.wrapper}>
+    <Flex
+      align="center"
+      className={styles.wrapper}
+      direction="column"
+      inline={true}
+      gap="32px"
+      justify="center"
+    >
       {dataList.map((data, index) =>
         data.highlight ? (
           <GlowArea key={index} rx={12}>
@@ -35,23 +43,37 @@ function Table({ dataList, isApplicant }: TableProps) {
           <TableData key={index} isApplicant={isApplicant} data={data} />
         ),
       )}
-    </div>
+    </Flex>
   );
 }
 
 function TableData({ data, isApplicant }: TableDataProps) {
   return (
-    <div className={clsx(styles.table, { [styles.isApplicant]: isApplicant })}>
+    <Flex
+      align="center"
+      className={clsx(styles.table, { [styles.isApplicant]: isApplicant })}
+      direction="row"
+      gap="20px"
+      inline={true}
+      justify="space-between"
+    >
       {isApplicant ? (
         <CheckCircleIcon />
       ) : (
-        <div className={styles.subText}>{data.recurring_date}</div>
+        <Typography className={styles.subText} size={14}>
+          {data.recurring_date}
+        </Typography>
       )}
-      <div className={clsx(styles.text, { [styles.isApplicant]: isApplicant })}>
+      <Typography
+        color={color.white}
+        className={clsx(styles.text, { [styles.isApplicant]: isApplicant })}
+        size={20}
+        weight="bold"
+      >
         {data.text}
-      </div>
+      </Typography>
       {!isApplicant && data.badge && <Badge text={data.badge} />}
-    </div>
+    </Flex>
   );
 }
 

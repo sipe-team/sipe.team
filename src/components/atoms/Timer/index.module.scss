@@ -1,7 +1,4 @@
 .wrapper {
-  display: flex;
-  gap: 8px;
-  align-items: center;
   font-size: 20px;
   font-weight: 700;
   line-height: 28px;
@@ -13,12 +10,4 @@
   background-color: rgba(255, 255, 255, 0.16);
   border: 1px solid color('primary');
   border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  @include text('h4/bold', 'white');
-}
-
-.text {
-  @include text('h5/semibold', 'white');
 }
