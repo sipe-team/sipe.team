@@ -21,7 +21,7 @@ dist-ssr
 *.sln
 *.sw?
 
-.env
+.env*
 
 # Zero Install: https://yarnpkg.com/features/zero-installs
 .yarn/*
@@ -37,3 +37,5 @@ dist-ssr
 
 # google spreadsheet data
 src/db/*.json
+.vercel
+
