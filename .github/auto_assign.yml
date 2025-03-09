@@ -1,0 +1,9 @@
+addReviewers: true
+addAssignees: true
+
+reviewers:
+  - azure-553
+  - ProdMoon
+  - froggy1014
+  - frontman-git
+
