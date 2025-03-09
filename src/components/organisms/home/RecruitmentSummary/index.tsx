@@ -3,6 +3,8 @@ import SummaryCard from '@/components/organisms/home/SummaryCards';
 import useTimer from '@/hook/useTimer';
 import { displayApplication } from '@/libs/utils/recruit';
 
+import styles from './index.module.scss';
+
 type Props = {
   currentStatus: 'before' | 'ongoing' | 'after';
 };
@@ -21,13 +23,18 @@ function RecruitmentSummary({ currentStatus }: Props) {
       {currentStatus === 'after' ? (
         <SummaryCard />
       ) : (
-        <Timer
-          dates={dates}
-          hours={hours}
-          minutes={minutes}
-          seconds={seconds}
-          isRecruiting={isRecruiting}
-        />
+        <div className={styles.timerWrapper}>
+          <div className={styles.timerDescription}>
+            {currentStatus === 'before' ? '모집 시작까지' : '모집 마감까지'}
+          </div>
+          <Timer
+            dates={dates}
+            hours={hours}
+            minutes={minutes}
+            seconds={seconds}
+            isRecruiting={isRecruiting}
+          />
+        </div>
       )}
     </>
   );
