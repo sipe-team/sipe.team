@@ -8,6 +8,22 @@ function isEmpty(data) {
   return data === '' || data.length === 0;
 }
 
+const PEOPLE_SHEET_HEADERS = {
+  Timestamp: 0,
+  Email: 1,
+  Consent: 2,
+  Name: 3,
+  Cohort: 4,
+  Organizer: 5,
+  Position: 6,
+  Introduce: 7,
+  Review: 8,
+  Github: 9,
+  Linkedin: 10,
+  Blog: 11,
+  Profile: 12,
+};
+
 function getGoogleSheet() {
   // Initialize the sheet - doc ID is the long id in the sheets URL
 
@@ -24,7 +40,7 @@ function getGoogleSheet() {
       try {
         await doc.loadInfo();
         const config = doc.sheetsByTitle['config'];
-        const peoples = doc.sheetsByTitle['people']; // or use doc.sheetsById[id] or doc.sheetsByTitle[title]
+        const peoples = doc.sheetsByTitle['review']; // or use doc.sheetsById[id] or doc.sheetsByTitle[title]
         const activities = doc.sheetsByTitle['activity'];
         const faqAbout = doc.sheetsByTitle['faq_about'];
         const faqRecruit = doc.sheetsByTitle['faq_recruit'];
@@ -62,30 +78,34 @@ function getGoogleSheet() {
 
         peoplesRow.forEach((it) => {
           const row = it['_rawData'];
-          const key = row[0];
-          const period = row[1];
-          const isOrganizer = row[2] === 'TRUE';
-          const thumbnail = isEmpty(row[3]) ? '' : imageBaseUrl + row[3];
-          const name = row[4];
-          const part = row[5];
-          const introduce = row[6];
-          const review = row[7];
-          const github = row[8];
-          const linkedin = row[9];
-          const etc = row[10];
+
+          const thumbnailId = (row[PEOPLE_SHEET_HEADERS.Profile] ?? '').match(/\/d\/(.*?)\/view/)?.[1] ?? '';
+          const key =
+            row[PEOPLE_SHEET_HEADERS.Timestamp] ??
+            Math.random().toString(36).substring(2, 15);
+          const period = row[PEOPLE_SHEET_HEADERS.Cohort];
+          const isOrganizer = row[PEOPLE_SHEET_HEADERS.Organizer] === 'TRUE';
+          const thumbnail = thumbnailId ? `${imageBaseUrl}${thumbnailId}` : '';
+          const name = row[PEOPLE_SHEET_HEADERS.Name];
+          const part = row[PEOPLE_SHEET_HEADERS.Position];
+          const introduce = row[PEOPLE_SHEET_HEADERS.Introduce];
+          const review = row[PEOPLE_SHEET_HEADERS.Review];
+          const github = row[PEOPLE_SHEET_HEADERS.Github];
+          const linkedin = row[PEOPLE_SHEET_HEADERS.Linkedin];
+          const etc = row[PEOPLE_SHEET_HEADERS.Blog];
 
           periodsMap[period].push({
             id: key,
-            period: period,
-            isOrganizer: isOrganizer,
-            thumbnail: thumbnail,
-            name: name,
-            part: part,
-            introduce: introduce,
-            review: review,
-            github: github,
-            linkedin: linkedin,
-            etc: etc,
+            period,
+            isOrganizer,
+            thumbnail,
+            name,
+            part,
+            introduce,
+            review,
+            github,
+            linkedin,
+            etc,
           });
         });
 
@@ -198,10 +218,13 @@ function getGoogleSheet() {
           flag: 'w+',
         });
 
-
-        fs.writeFileSync('src/db/activity.json', JSON.stringify(json.activity), {
-          flag: 'w+',
-        });
+        fs.writeFileSync(
+          'src/db/activity.json',
+          JSON.stringify(json.activity),
+          {
+            flag: 'w+',
+          },
+        );
 
         fs.writeFileSync('src/db/about.json', JSON.stringify(json.about), {
           flag: 'w+',

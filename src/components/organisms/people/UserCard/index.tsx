@@ -45,11 +45,9 @@ function UserCard({
         <Image
           className={styles.profile}
           alt="user image"
-          objectFit="cover"
           src={img}
           width={70}
           height={70}
-          sizes="(max-width: 1060px) 50vw, 33vw"
         />
         <section className={styles.info}>
           <section className={styles.mainInfo}>
