@@ -1,0 +1,12 @@
+.timerWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    .timerDescription {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #fff;
+    }
+}
