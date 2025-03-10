@@ -21,7 +21,7 @@ function Home() {
           Sharing Insights <br /> with People Everyday
         </h1>
         <h2 className={styles.subTitle}>
-          개발자들이 함께 교류하며 성장하는 IT 커뮤니티
+          다양한 활동으로 함께 성장하는 현직 개발자들의 커뮤니티
         </h2>
       </div>
       <RecruitmentStatusSection />
