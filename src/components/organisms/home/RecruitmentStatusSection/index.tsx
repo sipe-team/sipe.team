@@ -1,19 +1,13 @@
 'use client';
 
-import dynamic from 'next/dynamic';
-
 import { sendGAEvent } from '@next/third-parties/google';
 
 import Button from '@/components/molecules/Button';
+import RecruitmentSummary from '@/components/organisms/home/RecruitmentSummary';
 import useCopy from '@/hook/useCopyToClipboard';
 import { displayApplication, getCurrentStatus } from '@/libs/utils/recruit';
 
 import styles from './index.module.scss';
-
-const RecruitmentSummary = dynamic(
-  () => import('@/components/organisms/home/RecruitmentSummary'),
-  { ssr: false },
-);
 
 function RecruitmentStatusSection() {
   const now = Date.now();
