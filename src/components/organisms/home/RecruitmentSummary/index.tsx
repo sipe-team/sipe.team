@@ -10,34 +10,41 @@ type Props = {
 };
 
 function RecruitmentSummary({ currentStatus }: Props) {
-  const isRecruiting = currentStatus !== 'after';
   const currentApplicationDetail = displayApplication[currentStatus];
-
   const { dates, hours, minutes, seconds } = useTimer(
     currentApplicationDetail?.dueDate,
-    isRecruiting ? 1000 : null,
+    1000,
   );
 
-  return (
-    <>
-      {currentStatus === 'after' ? (
-        <SummaryCard />
-      ) : (
-        <div className={styles.timerWrapper}>
-          <div className={styles.timerDescription}>
-            {currentStatus === 'before' ? '모집 시작까지' : '모집 마감까지'}
-          </div>
-          <Timer
-            dates={dates}
-            hours={hours}
-            minutes={minutes}
-            seconds={seconds}
-            isRecruiting={isRecruiting}
-          />
-        </div>
-      )}
-    </>
-  );
+  const elements = {
+    before: () => (
+      <div className={styles.timerWrapper}>
+        <div className={styles.timerDescription}>모집 시작까지</div>
+        <Timer
+          dates={dates}
+          hours={hours}
+          minutes={minutes}
+          seconds={seconds}
+          isRecruiting={true}
+        />
+      </div>
+    ),
+    ongoing: () => (
+      <div className={styles.timerWrapper}>
+        <div className={styles.timerDescription}>모집 마감까지</div>
+        <Timer
+          dates={dates}
+          hours={hours}
+          minutes={minutes}
+          seconds={seconds}
+          isRecruiting={true}
+        />
+      </div>
+    ),
+    after: () => <SummaryCard />,
+  };
+
+  return elements[currentStatus]();
 }
 
 export default RecruitmentSummary;
