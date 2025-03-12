@@ -14,19 +14,19 @@ function Timer({ dates, hours, minutes, seconds, isRecruiting }: Props) {
   return (
     <div className={styles.wrapper}>
       <div className={styles.time}>
-        {isRecruiting ? formattedTime(dates) : 0}
+        {isRecruiting ? formattedTime(dates) : ''}
       </div>
       <div className={styles.text}>일</div>
       <div className={styles.time}>
-        {isRecruiting ? formattedTime(hours) : 0}
+        {isRecruiting ? formattedTime(hours) : ''}
       </div>
       <div className={styles.text}>시간</div>
       <div className={styles.time}>
-        {isRecruiting ? formattedTime(minutes) : 0}
+        {isRecruiting ? formattedTime(minutes) : ''}
       </div>
       <div className={styles.text}>분</div>
       <div className={styles.time}>
-        {isRecruiting ? formattedTime(seconds) : 0}
+        {isRecruiting ? formattedTime(seconds) : ''}
       </div>
       <div className={styles.text}>초</div>
     </div>
