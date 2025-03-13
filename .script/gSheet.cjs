@@ -4,244 +4,299 @@ const fs = require('fs');
 
 require('dotenv').config();
 
-function isEmpty(data) {
-  return data === '' || data.length === 0;
-}
-
-const PEOPLE_SHEET_HEADERS = {
-  Timestamp: 0,
-  Email: 1,
-  Consent: 2,
-  Name: 3,
-  Cohort: 4,
-  Organizer: 5,
-  Position: 6,
-  Introduce: 7,
-  Review: 8,
-  Github: 9,
-  Linkedin: 10,
-  Blog: 11,
-  Profile: 12,
+// * 구글 스프레드시트 시트 이름 상수
+const SHEET_NAMES = {
+  CONFIG: 'config',
+  REVIEW: 'review',
+  ACTIVITY: 'activity',
+  FAQ_ABOUT: 'faq_about',
+  FAQ_RECRUIT: 'faq_recruit',
+  ABOUT_ACTIVITY: 'about_activity',
+  ABOUT_SPONSOR: 'about_sponsor',
 };
 
-function getGoogleSheet() {
-  // Initialize the sheet - doc ID is the long id in the sheets URL
+// * 파일 경로 상수
+const FILE_PATHS = {
+  PEOPLE: 'src/db/people.json',
+  ACTIVITY: 'src/db/activity.json',
+  ABOUT: 'src/db/about.json',
+  FAQ: 'src/db/faq.json',
+};
 
-  const serviceAccountAuth = new JWT({
-    email: process.env.EMAIL,
-    key: process.env.KEY.replace(/\\n/g, '\n'),
-    scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+async function getGoogleSheet() {
+  try {
+    // * 구글 서비스 계정 인증
+    const serviceAccountAuth = new JWT({
+      email: process.env.EMAIL,
+      key: process.env.KEY.replace(/\\n/g, '\n'),
+      scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+    });
+
+    // * 구글 스프레드시트 문서 로드
+    const doc = new GoogleSpreadsheet(process.env.SHEET_ID, serviceAccountAuth);
+    await doc.loadInfo();
+
+    // * 구글 스프레드시트 시트 로드
+    const sheets = {
+      config: doc.sheetsByTitle[SHEET_NAMES.CONFIG],
+      peoples: doc.sheetsByTitle[SHEET_NAMES.REVIEW],
+      activities: doc.sheetsByTitle[SHEET_NAMES.ACTIVITY],
+      faqAbout: doc.sheetsByTitle[SHEET_NAMES.FAQ_ABOUT],
+      faqRecruit: doc.sheetsByTitle[SHEET_NAMES.FAQ_RECRUIT],
+      aboutActivity: doc.sheetsByTitle[SHEET_NAMES.ABOUT_ACTIVITY],
+      aboutSponsor: doc.sheetsByTitle[SHEET_NAMES.ABOUT_SPONSOR],
+    };
+
+    // * 시트가 존재하지 않을 시 에러 전파
+    const isMissingSheet = Object.values(sheets).some((sheet) => !sheet);
+    if (isMissingSheet) {
+      throw new Error('Sheet is not found');
+    }
+
+    // * 구글 스프레드시트 데이터 처리
+    const data = await processSheetData(sheets);
+
+    // * 구글 스프레드시트 데이터 저장
+    await saveJsonFiles(data);
+  } catch (error) {
+    console.error('Error in Google Sheet processing:', error);
+    process.exit(1);
+  }
+}
+
+// * 구글 각 스프레드시트 정적 데이터 처리
+async function processSheetData(sheets) {
+  const rows = await getSheetRows(sheets);
+  const config = await processConfigData(rows.configRow);
+
+  return {
+    people: processPeopleData(rows.peoplesRow, config),
+    activity: processActivityData(rows.activitiesRow, config),
+    about: processAboutData(
+      rows.aboutActivityRow,
+      rows.aboutSponsorRow,
+      config,
+    ),
+    faq: processFaqData(rows.faqAboutRow, rows.faqRecruitRow),
+  };
+}
+
+// * 구글 각 스프레드시트 데이터 행 가져오기
+async function getSheetRows(sheets) {
+  try {
+    const [
+      configRow,
+      peoplesRow,
+      activitiesRow,
+      faqAboutRow,
+      faqRecruitRow,
+      aboutActivityRow,
+      aboutSponsorRow,
+    ] = await Promise.all([
+      sheets.config.getRows(),
+      sheets.peoples.getRows(),
+      sheets.activities.getRows(),
+      sheets.faqAbout.getRows(),
+      sheets.faqRecruit.getRows(),
+      sheets.aboutActivity.getRows(),
+      sheets.aboutSponsor.getRows(),
+    ]);
+
+    return {
+      configRow,
+      peoplesRow,
+      activitiesRow,
+      faqAboutRow,
+      faqRecruitRow,
+      aboutActivityRow,
+      aboutSponsorRow,
+    };
+  } catch (error) {
+    console.error('Error fetching sheet rows:', error);
+    throw error;
+  }
+}
+
+// * 설정 시트 데이터 처리
+async function processConfigData(configRow) {
+  try {
+    if (!configRow || configRow.length === 0) {
+      console.warn('Config sheet is empty');
+      return {};
+    }
+
+    const driveData = configRow.find((it) => it._rowNumber === 3)['_rawData'];
+    const periods = configRow
+      .find((it) => it._rowNumber === 2)
+      ['_rawData'].slice(1)[0]
+      .split(',')
+      .map((it) => it.trim());
+    const activitiesType = configRow
+      .find((it) => it._rowNumber === 4)
+      ['_rawData'].slice(1)[0]
+      .split(',')
+      .map((it) => it.trim());
+    const imageBaseUrl = driveData[1].trim();
+
+    return {
+      periods,
+      activitiesType,
+      imageBaseUrl,
+      periodsMap: periods.reduce((acc, period) => {
+        acc[period] = [];
+        return acc;
+      }, {}),
+      activityMap: activitiesType.reduce((acc, activity) => {
+        acc[activity] = [];
+        return acc;
+      }, {}),
+    };
+  } catch (error) {
+    console.error('Error processing config data:', error);
+    throw error;
+  }
+}
+
+// * 정적 데이터 파일 저장
+async function saveJsonFiles(data) {
+  try {
+    await Promise.all([
+      fs.writeFileSync(FILE_PATHS.PEOPLE, JSON.stringify(data.people), {
+        flag: 'w+',
+      }),
+      fs.writeFileSync(FILE_PATHS.ACTIVITY, JSON.stringify(data.activity), {
+        flag: 'w+',
+      }),
+      fs.writeFileSync(FILE_PATHS.ABOUT, JSON.stringify(data.about), {
+        flag: 'w+',
+      }),
+      fs.writeFileSync(FILE_PATHS.FAQ, JSON.stringify(data.faq), {
+        flag: 'w+',
+      }),
+    ]);
+  } catch (error) {
+    console.error('Error saving JSON files:', error);
+  }
+}
+
+// * 사람 시트 데이터 처리
+function processPeopleData(peoplesRow, config) {
+  const { imageBaseUrl, periodsMap } = config;
+
+  peoplesRow.forEach((it) => {
+    const row = it['_rawData'];
+
+    const thumbnailId = (row[12] ?? '').match(/\/d\/(.*?)\/view/)?.[1] ?? '';
+    const key = row[0] ?? Math.random().toString(36).substring(2, 15);
+    const period = row[4];
+
+    periodsMap[period].push({
+      id: key,
+      period,
+      isOrganizer: row[5] === 'TRUE',
+      thumbnail: thumbnailId ? `${imageBaseUrl}${thumbnailId}` : '',
+      name: row[3],
+      part: row[6],
+      introduce: row[7],
+      review: row[8],
+      github: row[9],
+      linkedin: row[10],
+      etc: row[11],
+    });
   });
 
-  const doc = new GoogleSpreadsheet(process.env.SHEET_ID, serviceAccountAuth);
+  return periodsMap;
+}
 
-  try {
-    (async () => {
-      try {
-        await doc.loadInfo();
-        const config = doc.sheetsByTitle['config'];
-        const peoples = doc.sheetsByTitle['review']; // or use doc.sheetsById[id] or doc.sheetsByTitle[title]
-        const activities = doc.sheetsByTitle['activity'];
-        const faqAbout = doc.sheetsByTitle['faq_about'];
-        const faqRecruit = doc.sheetsByTitle['faq_recruit'];
-        const aboutActivity = doc.sheetsByTitle['about_activity'];
-        const aboutSponsor = doc.sheetsByTitle['about_sponsor'];
+// * Activity 페이지 데이터 처리
+function processActivityData(activitiesRow, config) {
+  const { imageBaseUrl, activityMap } = config;
 
-        const peoplesRow = await peoples.getRows();
-        const activitiesRow = await activities.getRows();
-        const faqAboutRow = await faqAbout.getRows();
-        const faqRecruitRow = await faqRecruit.getRows();
-        const aboutActivityRow = await aboutActivity.getRows();
-        const aboutSponsorRow = await aboutSponsor.getRows();
+  activitiesRow.forEach((it) => {
+    const row = it['_rawData'];
+    const type = row[1] || 'B';
 
-        const configRow = await config.getRows();
+    activityMap[type].push({
+      id: row[0],
+      type,
+      thumbnail: row[2] ? `${imageBaseUrl}${row[2]}&sz=w1000` : '',
+      title: row[3] || '',
+      description: row[4] || '',
+      name: row[5] || '',
+      date: row[6] || '',
+      link: row[7] || '',
+      profile: row[8] ? `${imageBaseUrl}${row[8]}` : '',
+    });
+  });
 
-        const driveData = configRow.find((it) => it._rowNumber === 3)[
-          '_rawData'
-        ];
-        const periods = configRow
-          .find((it) => it._rowNumber === 2)
-          ['_rawData'].slice(1)[0]
-          .split(',')
-          .map((it) => it.trim());
-        const activitiesType = configRow
-          .find((it) => it._rowNumber === 4)
-          ['_rawData'].slice(1)[0]
-          .split(',')
-          .map((it) => it.trim());
-        const imageBaseUrl = driveData[1].trim();
+  return activityMap;
+}
 
-        const periodsMap = {};
-        periods.forEach((period) => {
-          periodsMap[period] = [];
-        });
+// * About 페이지 데이터 처리
+function processAboutData(aboutActivityRow, aboutSponsorRow, config) {
+  const { imageBaseUrl } = config;
 
-        peoplesRow.forEach((it) => {
-          const row = it['_rawData'];
+  const aboutMap = {
+    activity: {},
+    sponsor: {},
+  };
 
-          const thumbnailId = (row[PEOPLE_SHEET_HEADERS.Profile] ?? '').match(/\/d\/(.*?)\/view/)?.[1] ?? '';
-          const key =
-            row[PEOPLE_SHEET_HEADERS.Timestamp] ??
-            Math.random().toString(36).substring(2, 15);
-          const period = row[PEOPLE_SHEET_HEADERS.Cohort];
-          const isOrganizer = row[PEOPLE_SHEET_HEADERS.Organizer] === 'TRUE';
-          const thumbnail = thumbnailId ? `${imageBaseUrl}${thumbnailId}` : '';
-          const name = row[PEOPLE_SHEET_HEADERS.Name];
-          const part = row[PEOPLE_SHEET_HEADERS.Position];
-          const introduce = row[PEOPLE_SHEET_HEADERS.Introduce];
-          const review = row[PEOPLE_SHEET_HEADERS.Review];
-          const github = row[PEOPLE_SHEET_HEADERS.Github];
-          const linkedin = row[PEOPLE_SHEET_HEADERS.Linkedin];
-          const etc = row[PEOPLE_SHEET_HEADERS.Blog];
+  aboutActivityRow.forEach((it) => {
+    const row = it['_rawData'];
+    const key = row[0];
 
-          periodsMap[period].push({
-            id: key,
-            period,
-            isOrganizer,
-            thumbnail,
-            name,
-            part,
-            introduce,
-            review,
-            github,
-            linkedin,
-            etc,
-          });
-        });
+    aboutMap.activity[key] = {
+      key,
+      name: row[1],
+      title: row[2],
+      description: row[3],
+      activities:
+        row[4]
+          ?.split(',')
+          .map((imageId) => `${imageBaseUrl}${imageId}&sz=w1000`) || [],
+    };
+  });
 
-        const activityMap = {};
-        activitiesType.forEach((activity) => {
-          activityMap[activity] = [];
-        });
+  aboutSponsorRow.forEach((it) => {
+    const row = it['_rawData'];
+    const key = row[0];
 
-        activitiesRow.forEach((it) => {
-          const row = it['_rawData'];
-          const key = row[0];
-          const type = row[1];
-          const thumbnail = row[2];
-          const title = row[3];
-          const description = row[4];
-          const name = row[5];
-          const date = row[6];
-          const link = row[7];
-          const profile = row[8];
+    aboutMap.sponsor[key] = {
+      key,
+      name: row[1] || '',
+      link: row[2] ? `${imageBaseUrl}${row[2]}&sz=w1000` : '',
+    };
+  });
 
-          activityMap[type].push({
-            id: key,
-            type: type || 'B',
-            thumbnail: thumbnail ? imageBaseUrl + thumbnail + '&sz=w1000' : '',
-            title: title || '',
-            description: description || '',
-            name: name || '',
-            date: date || '',
-            link: link || '',
-            profile: profile ? imageBaseUrl + profile : '',
-          });
-        });
+  return aboutMap;
+}
 
-        const faqMap = {
-          about: [],
-          recruit: [],
-        };
+// * FAQ 페이지 데이터 처리
+function processFaqData(faqAboutRow, faqRecruitRow) {
+  const faqMap = {
+    about: [],
+    recruit: [],
+  };
 
-        faqAboutRow.forEach((it) => {
-          const row = it['_rawData'];
-          const key = row[0];
-          const question = row[1];
-          const answer = row[2];
-          faqMap.about.push({
-            key,
-            question,
-            answer,
-          });
-        });
+  faqAboutRow.forEach((it) => {
+    const row = it['_rawData'];
+    faqMap.about.push({
+      key: row[0],
+      question: row[1],
+      answer: row[2],
+    });
+  });
 
-        faqRecruitRow.forEach((it) => {
-          const row = it['_rawData'];
-          const key = row[0];
-          const question = row[1];
-          const answer = row[2];
+  faqRecruitRow.forEach((it) => {
+    const row = it['_rawData'];
+    faqMap.recruit.push({
+      key: row[0],
+      question: row[1],
+      answer: row[2],
+    });
+  });
 
-          faqMap.recruit.push({
-            key,
-            question,
-            answer,
-          });
-        });
-
-        const aboutMap = {
-          activity: {},
-          sponsor: {},
-        };
-
-        aboutActivityRow.forEach((it) => {
-          const row = it['_rawData'];
-          const key = row[0];
-          const name = row[1];
-          const title = row[2];
-          const description = row[3];
-          const activities =
-            row[4]
-              ?.split(',')
-              .map((imageId) => imageBaseUrl + imageId + '&sz=w1000') || [];
-
-          aboutMap.activity[key] = {
-            key,
-            name,
-            title,
-            description,
-            activities,
-          };
-        });
-
-        aboutSponsorRow.forEach((it) => {
-          const row = it['_rawData'];
-          const key = row[0];
-          const name = row[1] || '';
-          const link = imageBaseUrl + row[2] + '&sz=w1000' || '';
-
-          aboutMap.sponsor[key] = {
-            key,
-            name,
-            link,
-          };
-        });
-
-        const json = {
-          people: periodsMap,
-          activity: activityMap,
-          about: aboutMap,
-          faq: faqMap,
-        };
-
-        fs.writeFileSync('src/db/people.json', JSON.stringify(json.people), {
-          flag: 'w+',
-        });
-
-        fs.writeFileSync(
-          'src/db/activity.json',
-          JSON.stringify(json.activity),
-          {
-            flag: 'w+',
-          },
-        );
-
-        fs.writeFileSync('src/db/about.json', JSON.stringify(json.about), {
-          flag: 'w+',
-        });
-
-        fs.writeFileSync('src/db/faq.json', JSON.stringify(json.faq), {
-          flag: 'w+',
-        });
-      } catch (e) {
-        console.error(e);
-      }
-    })();
-  } catch (e) {
-    console.error(e);
-  }
-
-  // Initialize Auth - see https://theoephraim.github.io/node-google-spreadsheet/#/getting-started/authentication
+  return faqMap;
 }
 
 getGoogleSheet();
