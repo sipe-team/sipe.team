@@ -14,8 +14,8 @@ env:
     .yarn/install-state.gz
     .pnp.*
   CACHED_BUILD_PATHS: ${{ github.workspace }}/.next
-  DEFAULT_NODE_VERSION: "v20.12.2"
-  DEFAULT_YARN_VERSION: "4.5.0"
+  DEFAULT_NODE_VERSION: 'v20.12.2'
+  DEFAULT_YARN_VERSION: '4.5.0'
 
 jobs:
   job_install_dependencies:
@@ -28,6 +28,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.DEFAULT_NODE_VERSION }}
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@sipe-team'
 
       - name: Set up Yarn
         run: |
@@ -58,7 +60,7 @@ jobs:
         if: steps.cache_dependencies.outputs.cache-hit != 'true'
         run: yarn install --immutable
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.SIDE_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     outputs:
       dependency_cache_key: ${{ steps.compute_lockfile_hash.outputs.hash }}
