@@ -57,6 +57,8 @@ jobs:
       - name: Install dependencies
         if: steps.cache_dependencies.outputs.cache-hit != 'true'
         run: yarn install --immutable
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.SIDE_TOKEN }}
 
     outputs:
       dependency_cache_key: ${{ steps.compute_lockfile_hash.outputs.hash }}
