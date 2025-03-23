@@ -1,10 +1,10 @@
-export const CURRENT_GENERATION = 3;
-export const APPLICATION_START_DATE = new Date('2024-09-08 00:00:00');
-export const APPLICATION_DUE_DATE = new Date('2024-09-22 23:59:59');
+export const CURRENT_GENERATION = 4;
+export const APPLICATION_START_DATE = new Date('2025-03-11 00:00:00');
+export const APPLICATION_DUE_DATE = new Date('2025-03-23 23:59:59');
 
-export const JOIN_FORM_URL = 'https://forms.gle/D1ZsAb48whk1HB8J7';
-export const JOIN_ALARM_FORM_URL = 'https://forms.gle/K2DiBkmJbhSM7MAx9';
-export const JOIN_NEXT_ALARM_FORM_URL = 'https://forms.gle/vgvMiG2pkoJvWfbZA';
+export const JOIN_FORM_URL = 'https://forms.gle/SPM3xXTVrnvupcLDA';
+export const JOIN_ALARM_FORM_URL = 'https://forms.gle/q9wdvKhEyZmTZGS97';
+export const JOIN_NEXT_ALARM_FORM_URL = 'https://forms.gle/VS7Ap4xfSyf2qYqQ6';
 
 export const Applicants = [
   {
@@ -22,48 +22,53 @@ export const Applicants = [
 
 export const InActivity = [
   {
-    recurring_date: '1회차 (10.12)',
+    recurring_date: '1회차 (04.26)',
     text: 'OT',
     badge: '',
   },
   {
-    recurring_date: '2회차 (10.26)',
+    recurring_date: '2회차 (05.10)',
     text: 'MT',
     badge: '1차 미션 시작',
   },
   {
-    recurring_date: '3회차 (11.09)',
+    recurring_date: '3회차 (05.24)',
     text: '사이프챗',
     badge: '',
   },
   {
-    recurring_date: '4회차 (11.23)',
-    text: '사이데이션',
+    recurring_date: '4회차 (06.07)',
+    text: '홈커밍데이',
     badge: '',
   },
   {
-    recurring_date: '5회차 (12.07)',
+    recurring_date: '5회차 (06.21)',
     text: '1차 미션 발표',
     badge: '',
   },
   {
-    recurring_date: '6회차 (12.21)',
-    text: '사담콘',
+    recurring_date: '6회차 (07.05)',
+    text: '스파크 세션',
     badge: '2차 미션 시작',
   },
   {
-    recurring_date: '7회차 (01.04)',
-    text: '내친소',
+    recurring_date: '7회차 (07.19)',
+    text: '사이데이션',
     badge: '',
   },
   {
-    recurring_date: '8회차 (01.18)',
-    text: '사이프톤',
+    recurring_date: '8회차 (08.02)',
+    text: '사담콘',
     badge: '',
   },
   {
-    recurring_date: '9회차 (02.01)',
+    recurring_date: '9회차 (08.16)',
     text: '2차 미션 발표',
+    badge: '',
+  },
+  {
+    recurring_date: '10회차 (08.30)',
+    text: '사이프-로그',
     badge: '정규 활동 종료',
   },
 ];
@@ -71,28 +76,28 @@ export const InActivity = [
 export const CardList = [
   {
     title: '서류 접수',
-    processDate: '09.08(일) ~ 09.22(일)',
-    subTitle: '23:59:59 마감',
+    processDate: '03.11(화) ~ 03.23(일)',
+    subTitle: '23일 자정에 접수 마감',
   },
   {
     title: '서류 합격자 발표',
-    processDate: '09.27(금)',
+    processDate: '03.28(금)',
     subTitle: '오후 1시 예정',
   },
   {
     title: '오프라인 인터뷰',
-    processDate: '10.03(목) ~ 10.06(일)',
+    processDate: '04.12(토) ~ 04.13(일)',
     subTitle: '서류합격자 개별연락',
   },
 
   {
     title: '최종 합격자 발표',
-    processDate: '10.08(화)',
+    processDate: '04.18(금)',
     subTitle: '오후 1시 예정',
   },
   {
     title: '정규 활동 시작',
-    processDate: '10.12(토)',
+    processDate: '04.26(토)',
     subTitle: 'OT 진행',
   },
 ];

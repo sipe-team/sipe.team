@@ -21,7 +21,7 @@ dist-ssr
 *.sln
 *.sw?
 
-.env
+.env*
 
 # Zero Install: https://yarnpkg.com/features/zero-installs
 .yarn/*
@@ -43,3 +43,5 @@ src/db/*.json
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+.vercel
+

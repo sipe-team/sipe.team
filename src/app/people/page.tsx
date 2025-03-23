@@ -31,14 +31,12 @@ function Page({ searchParams }: { searchParams?: SearchParams }) {
     .sort((a, b) => sortDescending(a[0], b[0]))
     .map(([generation]) => generation);
 
-  const selectedPeopleGeneration = searchParams?.generation || '2';
+  const selectedPeopleGeneration = searchParams?.generation || '3';
   const currentPeople = people[selectedPeopleGeneration];
 
   const sortedCurrentPeople = [...currentPeople].sort((a, b) => {
-    if (a.isOrganizer || b.isOrganizer) {
-      return 1;
-    }
-
+    if (a.isOrganizer && !b.isOrganizer) return -1;
+    if (!a.isOrganizer && b.isOrganizer) return 1;
     return a.name.localeCompare(b.name);
   });
 

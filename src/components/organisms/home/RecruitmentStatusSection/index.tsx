@@ -5,18 +5,25 @@ import dynamic from 'next/dynamic';
 import { sendGAEvent } from '@next/third-parties/google';
 import { Button, Flex } from '@sipe-team/side';
 
+import RecruitmentSummarySkeleton from '@/components/organisms/home/RecruitmentSummarySkeleton';
 import useCopy from '@/hook/useCopyToClipboard';
 import { displayApplication, getCurrentStatus } from '@/libs/utils/recruit';
 
 import styles from './index.module.scss';
 
+const now = Date.now();
+
 const RecruitmentSummary = dynamic(
   () => import('@/components/organisms/home/RecruitmentSummary'),
-  { ssr: false },
+  {
+    ssr: false,
+    loading: () => (
+      <RecruitmentSummarySkeleton currentStatus={getCurrentStatus(now)} />
+    ),
+  },
 );
 
 function RecruitmentStatusSection() {
-  const now = Date.now();
   const currentStatus = getCurrentStatus(now);
   const currentApplicationDetail = displayApplication[currentStatus];
   const { copyToClipboard } = useCopy();
