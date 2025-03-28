@@ -45,3 +45,4 @@ src/db/*.json
 /playwright/.cache/
 .vercel
 
+.env*.local
