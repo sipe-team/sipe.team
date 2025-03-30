@@ -3,7 +3,12 @@
     "**/.yarn": true,
     "**/.pnp.*": true
   },
-  "eslint.nodePath": ".yarn/sdks",
+  "eslint.enable": true,
+  "eslint.validate": ["javascript", "typescript", "typescriptreact"],
+  "eslint.workingDirectories": [{ "mode": "auto" }],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
   "prettier.prettierPath": ".yarn/sdks/prettier/index.cjs",
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
