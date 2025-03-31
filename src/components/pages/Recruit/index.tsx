@@ -1,3 +1,5 @@
+import { Flex } from '@sipe-team/side';
+
 import ContentWithTitle from '@/components/atoms/ContentWithTitle';
 import Layout from '@/components/atoms/Layout';
 import Table from '@/components/molecules/Table';
@@ -17,8 +19,21 @@ function Recruit() {
         <Table dataList={Applicants} isApplicant={true} />
       </ContentWithTitle>
       <ContentWithTitle title="모집 일정">
-        <div className={styles.cardListWrapper}>
-          <div className={styles.cardList}>
+        <Flex
+          align="center"
+          className={styles.cardListWrapper}
+          justify="flex-start"
+          wrap="wrap"
+        >
+          <Flex
+            align="center"
+            className={styles.cardList}
+            direction="row"
+            gap="20px"
+            inline={true}
+            justify="stretch"
+            wrap="nowrap"
+          >
             {CardList.map(({ processDate, subTitle, title }) => (
               <ScheduleCard
                 key={title}
@@ -27,8 +42,8 @@ function Recruit() {
                 title={title}
               />
             ))}
-          </div>
-        </div>
+          </Flex>
+        </Flex>
       </ContentWithTitle>
       <ContentWithTitle title="활동안내">
         <Table dataList={InActivity} isApplicant={false} />

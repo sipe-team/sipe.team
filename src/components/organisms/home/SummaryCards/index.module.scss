@@ -1,7 +1,4 @@
 .summaryCardWrapper {
-  display: flex;
-  gap: 24px;
-
   @include mobile {
     gap: 12px;
   }
@@ -12,22 +9,6 @@
     border: 2px solid color('primary');
     border-radius: 12px;
     background-color: #ffffff12;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    color: color('white');
-
-    .title {
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    .value {
-      font-size: 32px;
-      font-weight: bold;
-    }
 
     @include mobile {
       width: 110px;
