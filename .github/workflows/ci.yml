@@ -37,7 +37,7 @@ jobs:
           yarn set version ${{ env.DEFAULT_YARN_VERSION }}
           yarn config set npmScopes.sipe-team.npmRegistryServer "https://npm.pkg.github.com"
           yarn config set npmScopes.sipe-team.npmAlwaysAuth true
-          yarn config set npmScopes.sipe-team.npmAuthToken "${{ secrets.GITHUB_TOKEN }}"
+          yarn config set npmScopes.sipe-team.npmAuthToken "${{ secrets.NODE_AUTH_TOKEN }}"
           yarn --version
 
       - name: Get yarn cache directory path
