@@ -8,8 +8,8 @@
     "dev": "next dev -p 6100 & yarn open-browser",
     "build": "yarn run script && next build",
     "start": "next start",
-    "lint:prettier": "prettier --write .",
-    "lint:eslint": "eslint --fix",
+    "lint:prettier": "prettier . --write",
+    "lint:eslint": "eslint . --fix",
     "script": "node .script/gSheet.cjs"
   },
   "dependencies": {
