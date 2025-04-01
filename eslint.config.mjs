@@ -4,11 +4,15 @@ import reactPlugin from 'eslint-plugin-react';
 import hooksPlugin from 'eslint-plugin-react-hooks';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import unusedImports from 'eslint-plugin-unused-imports';
-import globals from 'globals';
 import tseslint from 'typescript-eslint';
-import prettier from 'eslint-plugin-prettier/recommended';
+import prettierRecommended from 'eslint-plugin-prettier/recommended';
 
 export default tseslint.config(
+  // * Ignore files configuration
+  {
+    ignores: ['**/*/dist/', '**/node_modules/', '*.config.*', '.next', '.yarn'],
+  },
+
   // * Base ESLint recommended configuration
   // * TypeScript ESLint recommended configuration
   eslint.configs.recommended,
@@ -18,9 +22,6 @@ export default tseslint.config(
       '@typescript-eslint/no-unused-vars': 'off',
     },
   },
-
-  // * Prettier configuration
-  prettier,
 
   // * Unused imports configuration
   // * Simple import sort configuration
@@ -77,32 +78,10 @@ export default tseslint.config(
 
   // * React configuration
   // * React Hooks configuration
-  {
-    files: ['**/*.{ts,tsx}'],
-    plugins: {
-      react: reactPlugin,
-      'react-hooks': hooksPlugin,
-    },
-    languageOptions: {
-      globals: {
-        ...globals.serviceworker,
-        ...globals.browser,
-      },
-    },
-    rules: {
-      ...reactPlugin.configs.recommended.rules,
-      ...reactPlugin.configs['jsx-runtime'].rules,
-      ...hooksPlugin.configs['recommended-latest'].rules,
-    },
-    settings: {
-      react: {
-        version: 'detect',
-      },
-    },
-  },
+  reactPlugin.configs.flat.recommended,
+  reactPlugin.configs.flat['jsx-runtime'],
+  hooksPlugin.configs['recommended-latest'],
 
-  // Ignore files configuration
-  {
-    ignores: ['**/*/dist/', '**/node_modules/', '*.config.*', '.next', '.yarn'],
-  },
+  // * Prettier configuration
+  prettierRecommended,
 );
