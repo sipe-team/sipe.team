@@ -1806,6 +1806,217 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@playwright/test@npm:^1.49.1":
+  version: 1.51.1
+  resolution: "@playwright/test@npm:1.51.1"
+  dependencies:
+    playwright: "npm:1.51.1"
+  bin:
+    playwright: cli.js
+  checksum: 10/ffb0c964d54f593897f05a2587d8e1e4f5f0e8c28f5f6260c1182ff938eb375d96c57594dd2f223ec45452a6af40695fd22f222930610c32f345e28ccf53141d
+  languageName: node
+  linkType: hard
+
+"@radix-ui/react-compose-refs@npm:1.1.1":
+  version: 1.1.1
+  resolution: "@radix-ui/react-compose-refs@npm:1.1.1"
+  peerDependencies:
+    "@types/react": "*"
+    react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 10/1be82f9f7fab96cc10f167a2e4f976e0135a63d473334f664c06f02af13bc5ea1994cb0505f89ed190d756cb65d57506721c030908af07e49b9e3cfd36044f33
+  languageName: node
+  linkType: hard
+
+"@radix-ui/react-slot@npm:^1.1.0":
+  version: 1.1.2
+  resolution: "@radix-ui/react-slot@npm:1.1.2"
+  dependencies:
+    "@radix-ui/react-compose-refs": "npm:1.1.1"
+  peerDependencies:
+    "@types/react": "*"
+    react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 10/6d5e1fac17b3eb79019a697581133dff23a3f6406f8ecfca476ab4a6a73baa53d66a7c9caeeebcc677363aa3b4132aa9d2168641ba9642658a2e4a297c05e4d3
+  languageName: node
+  linkType: hard
+
+"@sipe-team/badge@npm:0.0.4":
+  version: 0.0.4
+  resolution: "@sipe-team/badge@npm:0.0.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fbadge%2F0.0.4%2Fb593978242c072b8927661fdceb3fb48ac2d4336"
+  dependencies:
+    "@sipe-team/typography": "npm:0.0.5"
+    clsx: "npm:^2.1.1"
+  peerDependencies:
+    react: ">= 18"
+    react-dom: ">= 18"
+  checksum: 10/aacd493a3c4a835a7dfb13fa6c34503befd72b7dfe9479976f3086002937a042714b3f209ea53442ba670dad997974676b1323fa914d97f328c902f4a24c1412
+  languageName: node
+  linkType: hard
+
+"@sipe-team/button@npm:0.0.2":
+  version: 0.0.2
+  resolution: "@sipe-team/button@npm:0.0.2::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fbutton%2F0.0.2%2Fe8f6506f21c885541eed4c6ff2b53d35a855a62a"
+  dependencies:
+    "@radix-ui/react-slot": "npm:^1.1.0"
+    "@sipe-team/typography": "npm:0.0.5"
+    clsx: "npm:^2.1.1"
+    ts-pattern: "npm:^5.6.0"
+  peerDependencies:
+    react: ">= 18"
+    react-dom: ">= 18"
+  checksum: 10/e913bc11fc72858d93a42d412515085ce128b3349156b59211f752462d23cf1735cc659a20bcafe5c3dc04b84b8a9c8062fca56d49af4d0318ffe1c6874c5f8a
+  languageName: node
+  linkType: hard
+
+"@sipe-team/card@npm:0.1.1":
+  version: 0.1.1
+  resolution: "@sipe-team/card@npm:0.1.1::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fcard%2F0.1.1%2Fd9ca7f0d6790bc9677f8c66be51dc6732552bc70"
+  dependencies:
+    "@radix-ui/react-slot": "npm:^1.1.0"
+    "@sipe-team/tokens": "npm:0.1.0"
+    clsx: "npm:^2.1.1"
+  peerDependencies:
+    react: ">= 18"
+    react-dom: ">= 18"
+  checksum: 10/6a18168b6c565191ec4243d43ff3e9b7ed9827d8023f0e28ca2c07b07e937a22f0fe075cfa571c11dca17e7f6713f886ce1400b8e53d1518ef1e03d9cbc1c8ce
+  languageName: node
+  linkType: hard
+
+"@sipe-team/divider@npm:0.0.3":
+  version: 0.0.3
+  resolution: "@sipe-team/divider@npm:0.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fdivider%2F0.0.3%2F94e1ed1a380495418b24fa1bbbbac4166306878d"
+  dependencies:
+    clsx: "npm:^2.1.1"
+  peerDependencies:
+    react: ">= 18"
+    react-dom: ">= 18"
+  checksum: 10/765f509e1e40fb7841e61f655177ed9200c2d30329685187ea7781836191a91cfc0d6df55b6ce2ac92be1f5bd497b7a7bdfb3af5dc754226e740292960f887db
+  languageName: node
+  linkType: hard
+
+"@sipe-team/flex@npm:0.1.3":
+  version: 0.1.3
+  resolution: "@sipe-team/flex@npm:0.1.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fflex%2F0.1.3%2Fe48f06595aaf56e08cc15e8a4ea4042fd76223e2"
+  dependencies:
+    "@radix-ui/react-slot": "npm:^1.1.0"
+    clsx: "npm:^2.1.1"
+  peerDependencies:
+    react: ">= 18"
+    react-dom: ">= 18"
+  checksum: 10/8297221b2449401b46b03e0ceaee0901059530d9163033b1d61074888a6d00f5af2c27ff9a5185768c9da16ae725ef1fede0350923f10b6083ad19137a1737e9
+  languageName: node
+  linkType: hard
+
+"@sipe-team/input@npm:0.0.4":
+  version: 0.0.4
+  resolution: "@sipe-team/input@npm:0.0.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Finput%2F0.0.4%2F0d6a75e0d4d5933d77e8799f6a3bd114ebac98b3"
+  dependencies:
+    "@radix-ui/react-slot": "npm:^1.1.0"
+    classnames: "npm:^2.5.1"
+  peerDependencies:
+    react: ">= 18"
+    react-dom: ">= 18"
+  checksum: 10/3c7a7700774f6e8a2647b66d3ba2206d7dff0fa190cca24c162f7671efae6b8fecbb9e5ab6c9bbea20fd713e55396bafe05cbfe9b95191740b8c92ef1fc353fd
+  languageName: node
+  linkType: hard
+
+"@sipe-team/radio-group@npm:0.0.3":
+  version: 0.0.3
+  resolution: "@sipe-team/radio-group@npm:0.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fradio-group%2F0.0.3%2F16e423e9d4cd2c8f04b7fd63759c33df92aa06af"
+  peerDependencies:
+    react: ">= 18"
+    react-dom: ">= 18"
+  checksum: 10/777e8d902e7b656492baf7cde942946b39ec0c3adb30a7ba676f6151573831b70b44d5ce24fae23bf39c45c4e108718c0cd4cda5aa939e793f17fc807495201c
+  languageName: node
+  linkType: hard
+
+"@sipe-team/side@npm:^0.2.2":
+  version: 0.2.4
+  resolution: "@sipe-team/side@npm:0.2.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fside%2F0.2.4%2Fb3ed746f3807eebbaf4f6368c98c76a6c97ffa52"
+  dependencies:
+    "@sipe-team/badge": "npm:0.0.4"
+    "@sipe-team/button": "npm:0.0.2"
+    "@sipe-team/card": "npm:0.1.1"
+    "@sipe-team/divider": "npm:0.0.3"
+    "@sipe-team/flex": "npm:0.1.3"
+    "@sipe-team/input": "npm:0.0.4"
+    "@sipe-team/radio-group": "npm:0.0.3"
+    "@sipe-team/skeleton": "npm:0.0.3"
+    "@sipe-team/switch": "npm:0.0.3"
+    "@sipe-team/tokens": "npm:0.1.0"
+    "@sipe-team/tooltip": "npm:0.0.4"
+    "@sipe-team/typography": "npm:0.0.5"
+  peerDependencies:
+    react: ">= 18"
+    react-dom: ">= 18"
+  checksum: 10/a890c5492b507a612ba925dc102a229f7181dd4bffaa490a8433c3e282a5b1fa5af76341b80852c13c6950fc0165ed198022da0efe61d4996b9af5fbd29f8c9f
+  languageName: node
+  linkType: hard
+
+"@sipe-team/skeleton@npm:0.0.3":
+  version: 0.0.3
+  resolution: "@sipe-team/skeleton@npm:0.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fskeleton%2F0.0.3%2F4f21b6b620990be464829cb2611251d988c4b318"
+  dependencies:
+    "@radix-ui/react-slot": "npm:^1.1.0"
+  peerDependencies:
+    react: ">= 18"
+    react-dom: ">= 18"
+  checksum: 10/6302e41e9968500572eb60b1a752a12f1da4deb86c43719fb21be66eb43a16ce1bcb7ff2a77e3549ce10b3f699bf2d9dbbd84dd475dd58afe55da935d92c0378
+  languageName: node
+  linkType: hard
+
+"@sipe-team/switch@npm:0.0.3":
+  version: 0.0.3
+  resolution: "@sipe-team/switch@npm:0.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fswitch%2F0.0.3%2F3c4c132669ddf1a2fd635a9f13f84e09e733cae1"
+  dependencies:
+    "@sipe-team/tokens": "npm:^0.1.0"
+    clsx: "npm:^2.1.1"
+  peerDependencies:
+    react: ">= 18"
+    react-dom: ">= 18"
+  checksum: 10/fa6f79f3ccc9ba7668aecae693f4fdd3a726b8d4874f43d9fb07c506014713ebb33b846a9b43ebc30c688e2a081819614bc2582915ea8e2282ea2a36355a5046
+  languageName: node
+  linkType: hard
+
+"@sipe-team/tokens@npm:0.1.0, @sipe-team/tokens@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "@sipe-team/tokens@npm:0.1.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Ftokens%2F0.1.0%2F04d76be75e09b4ac26971f4c39916b3556e3859e"
+  checksum: 10/f643a78fb856658ec37b768b4433136ce2f7af652d7905d5d6febe9fa95be8e8d31dfff3e883447c574ba8b7f46e509dddd7552bfb1925199c127072cf61a377
+  languageName: node
+  linkType: hard
+
+"@sipe-team/tooltip@npm:0.0.4":
+  version: 0.0.4
+  resolution: "@sipe-team/tooltip@npm:0.0.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Ftooltip%2F0.0.4%2F26a1fbd2f2ba851ea701da04b89976fc1f6eb06c"
+  dependencies:
+    "@radix-ui/react-slot": "npm:^1.1.0"
+    clsx: "npm:^2.1.1"
+  peerDependencies:
+    react: ">= 18"
+    react-dom: ">= 18"
+  checksum: 10/27104a16f505954bdf29544bd580aaf6dac985d87cd141938bc7854eb7e2ae1c252247f0143261cbc7adf9ecddc91db76251b1ca7fb427c26174761f6a1b7637
+  languageName: node
+  linkType: hard
+
+"@sipe-team/typography@npm:0.0.5":
+  version: 0.0.5
+  resolution: "@sipe-team/typography@npm:0.0.5::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Ftypography%2F0.0.5%2F23964dd6c02cba247ef76cdb3683d223e2165386"
+  dependencies:
+    "@radix-ui/react-slot": "npm:^1.1.0"
+    "@sipe-team/tokens": "npm:^0.1.0"
+    clsx: "npm:^2.1.1"
+  peerDependencies:
+    react: ">= 18"
+    react-dom: ">= 18"
+  checksum: 10/d7245c86a26d014f8e0142d9d131c5ba63dc1256334def35d1429543883a627d41e46e7a730cc71491ca8fe64ece8e798727fbda4412993c6e5b1376e35af8b7
+  languageName: node
+  linkType: hard
+
 "@svgr/babel-plugin-add-jsx-attribute@npm:8.0.0":
   version: 8.0.0
   resolution: "@svgr/babel-plugin-add-jsx-attribute@npm:8.0.0"
@@ -3086,6 +3297,13 @@ __metadata:
   version: 1.0.4
   resolution: "chrome-trace-event@npm:1.0.4"
   checksum: 10/1762bed739774903bf5915fe3045c3120fc3c7f7d929d88e566447ea38944937a6370ccb687278318c43c24f837ad22dac780bed67c066336815557b8cf558c6
+  languageName: node
+  linkType: hard
+
+"classnames@npm:^2.5.1":
+  version: 2.5.1
+  resolution: "classnames@npm:2.5.1"
+  checksum: 10/58eb394e8817021b153bb6e7d782cfb667e4ab390cb2e9dac2fc7c6b979d1cc2b2a733093955fc5c94aa79ef5c8c89f11ab77780894509be6afbb91dddd79d15
   languageName: node
   linkType: hard
 
@@ -4370,12 +4588,31 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fsevents@npm:2.3.2":
+  version: 2.3.2
+  resolution: "fsevents@npm:2.3.2"
+  dependencies:
+    node-gyp: "npm:latest"
+  checksum: 10/6b5b6f5692372446ff81cf9501c76e3e0459a4852b3b5f1fc72c103198c125a6b8c72f5f166bdd76ffb2fca261e7f6ee5565daf80dca6e571e55bcc589cc1256
+  conditions: os=darwin
+  languageName: node
+  linkType: hard
+
 "fsevents@npm:~2.3.2":
   version: 2.3.3
   resolution: "fsevents@npm:2.3.3"
   dependencies:
     node-gyp: "npm:latest"
   checksum: 10/4c1ade961ded57cdbfbb5cac5106ec17bc8bccd62e16343c569a0ceeca83b9dfef87550b4dc5cbb89642da412b20c5071f304c8c464b80415446e8e155a038c0
+  conditions: os=darwin
+  languageName: node
+  linkType: hard
+
+"fsevents@patch:fsevents@npm%3A2.3.2#optional!builtin<compat/fsevents>":
+  version: 2.3.2
+  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#optional!builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"
+  dependencies:
+    node-gyp: "npm:latest"
   conditions: os=darwin
   languageName: node
   linkType: hard
@@ -6292,6 +6529,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"playwright-core@npm:1.51.1":
+  version: 1.51.1
+  resolution: "playwright-core@npm:1.51.1"
+  bin:
+    playwright-core: cli.js
+  checksum: 10/954ce25782bbf0780c170caa56e7a0ab2e625dad42c628f9ee684974398b93885e58b88afb8b18dd2c96a7a82c6dde474d4fa7a4f6dff32111a562506c187cc3
+  languageName: node
+  linkType: hard
+
+"playwright@npm:1.51.1":
+  version: 1.51.1
+  resolution: "playwright@npm:1.51.1"
+  dependencies:
+    fsevents: "npm:2.3.2"
+    playwright-core: "npm:1.51.1"
+  dependenciesMeta:
+    fsevents:
+      optional: true
+  bin:
+    playwright: cli.js
+  checksum: 10/cc7d3e204b9fd70a7208ef1d189981135a04de533eff4a6772a6c8be1604a1eaaa3bac9129eb5d814384d4f727fb8011832676a5105b1b260917c48c421f7f9b
+  languageName: node
+  linkType: hard
+
 "possible-typed-array-names@npm:^1.0.0":
   version: 1.0.0
   resolution: "possible-typed-array-names@npm:1.0.0"
@@ -6911,6 +7172,8 @@ __metadata:
     "@eslint/js": "npm:^9.23.0"
     "@next/eslint-plugin-next": "npm:^15.2.4"
     "@next/third-parties": "npm:^14.2.11"
+    "@playwright/test": "npm:^1.49.1"
+    "@sipe-team/side": "npm:^0.2.2"
     "@svgr/webpack": "npm:8.1.0"
     "@types/node": "npm:^20.12.2"
     "@types/react": "npm:^18.3.4"
@@ -7418,6 +7681,13 @@ __metadata:
   peerDependencies:
     typescript: ">=4.8.4"
   checksum: 10/02e55b49d9617c6eebf8aadfa08d3ca03ca0cd2f0586ad34117fdfc7aa3cd25d95051843fde9df86665ad907f99baed179e7a117b11021417f379e4d2614eacd
+  languageName: node
+  linkType: hard
+
+"ts-pattern@npm:^5.6.0":
+  version: 5.7.0
+  resolution: "ts-pattern@npm:5.7.0"
+  checksum: 10/9a1dda9321a79c7c36209c9434dae4e51cb79c0df2bd15ac2bcd1fc193e1467bb876733d41bf786865646e6736b1d8535ccb40ae39b7cf3e39c4247c745a5eb5
   languageName: node
   linkType: hard
 

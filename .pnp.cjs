@@ -31,6 +31,8 @@ const RAW_RUNTIME_STATE =
           ["@eslint/js", "npm:9.23.0"],\
           ["@next/eslint-plugin-next", "npm:15.2.4"],\
           ["@next/third-parties", "virtual:5f85de5545bdf69af1d0de8ab8cd00a40f1e474c5581aca23c5337afa460a456890bdf1462b39697b558b5d28f831142034715dfeff95fce8312e07dc2f32c22#npm:14.2.11"],\
+          ["@playwright/test", "npm:1.51.1"],\
+          ["@sipe-team/side", "virtual:5f85de5545bdf69af1d0de8ab8cd00a40f1e474c5581aca23c5337afa460a456890bdf1462b39697b558b5d28f831142034715dfeff95fce8312e07dc2f32c22#npm:0.2.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fside%2F0.2.4%2Fb3ed746f3807eebbaf4f6368c98c76a6c97ffa52"],\
           ["@svgr/webpack", "npm:8.1.0"],\
           ["@types/node", "npm:20.16.1"],\
           ["@types/react", "npm:18.3.4"],\
@@ -117,7 +119,7 @@ const RAW_RUNTIME_STATE =
           ["@babel/traverse", "npm:7.25.3"],\
           ["@babel/types", "npm:7.25.2"],\
           ["convert-source-map", "npm:2.0.0"],\
-          ["debug", "virtual:69c3455e973f914a9da079b465f412398aa9db4de6c967c5de9b7df9f75964a40ef9a5e9756b59c737917bf508a15667d830fc1be46cb0566180c490a2062629#npm:4.3.6"],\
+          ["debug", "virtual:c9e1a4b59e37cb479517edede3bf2093b28c0ca1a9d0e517f3c345075bd1e468980b94b4957e389116607ee7155441dfd7d09e19a4229d5d09bcf06244401590#npm:4.3.6"],\
           ["gensync", "npm:1.0.0-beta.2"],\
           ["json5", "npm:2.2.3"],\
           ["semver", "npm:6.3.1"]\
@@ -243,7 +245,7 @@ const RAW_RUNTIME_STATE =
           ["@babel/helper-compilation-targets", "npm:7.25.2"],\
           ["@babel/helper-plugin-utils", "npm:7.24.8"],\
           ["@types/babel__core", null],\
-          ["debug", "virtual:69c3455e973f914a9da079b465f412398aa9db4de6c967c5de9b7df9f75964a40ef9a5e9756b59c737917bf508a15667d830fc1be46cb0566180c490a2062629#npm:4.3.6"],\
+          ["debug", "virtual:c9e1a4b59e37cb479517edede3bf2093b28c0ca1a9d0e517f3c345075bd1e468980b94b4957e389116607ee7155441dfd7d09e19a4229d5d09bcf06244401590#npm:4.3.6"],\
           ["lodash.debounce", "npm:4.0.8"],\
           ["resolve", "patch:resolve@npm%3A1.22.8#optional!builtin<compat/resolve>::version=1.22.8&hash=c3c19d"]\
         ],\
@@ -2618,7 +2620,7 @@ const RAW_RUNTIME_STATE =
           ["@babel/parser", "npm:7.25.3"],\
           ["@babel/template", "npm:7.25.0"],\
           ["@babel/types", "npm:7.25.2"],\
-          ["debug", "virtual:69c3455e973f914a9da079b465f412398aa9db4de6c967c5de9b7df9f75964a40ef9a5e9756b59c737917bf508a15667d830fc1be46cb0566180c490a2062629#npm:4.3.6"],\
+          ["debug", "virtual:c9e1a4b59e37cb479517edede3bf2093b28c0ca1a9d0e517f3c345075bd1e468980b94b4957e389116607ee7155441dfd7d09e19a4229d5d09bcf06244401590#npm:4.3.6"],\
           ["globals", "npm:11.12.0"]\
         ],\
         "linkType": "HARD"\
@@ -2704,7 +2706,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@eslint/config-array", "npm:0.19.2"],\
           ["@eslint/object-schema", "npm:2.1.6"],\
-          ["debug", "virtual:69c3455e973f914a9da079b465f412398aa9db4de6c967c5de9b7df9f75964a40ef9a5e9756b59c737917bf508a15667d830fc1be46cb0566180c490a2062629#npm:4.3.6"],\
+          ["debug", "virtual:c9e1a4b59e37cb479517edede3bf2093b28c0ca1a9d0e517f3c345075bd1e468980b94b4957e389116607ee7155441dfd7d09e19a4229d5d09bcf06244401590#npm:4.3.6"],\
           ["minimatch", "npm:3.1.2"]\
         ],\
         "linkType": "HARD"\
@@ -2735,7 +2737,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@eslint/eslintrc", "npm:3.3.1"],\
           ["ajv", "npm:6.12.6"],\
-          ["debug", "virtual:69c3455e973f914a9da079b465f412398aa9db4de6c967c5de9b7df9f75964a40ef9a5e9756b59c737917bf508a15667d830fc1be46cb0566180c490a2062629#npm:4.3.6"],\
+          ["debug", "virtual:c9e1a4b59e37cb479517edede3bf2093b28c0ca1a9d0e517f3c345075bd1e468980b94b4957e389116607ee7155441dfd7d09e19a4229d5d09bcf06244401590#npm:4.3.6"],\
           ["espree", "npm:10.3.0"],\
           ["globals", "npm:14.0.0"],\
           ["ignore", "npm:5.3.2"],\
@@ -3102,6 +3104,416 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/@pkgr-core-npm-0.1.1-844d1f59d1-6f25fd2e30.zip/node_modules/@pkgr/core/",\
         "packageDependencies": [\
           ["@pkgr/core", "npm:0.1.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@playwright/test", [\
+      ["npm:1.51.1", {\
+        "packageLocation": "./.yarn/cache/@playwright-test-npm-1.51.1-07a96daf47-ffb0c964d5.zip/node_modules/@playwright/test/",\
+        "packageDependencies": [\
+          ["@playwright/test", "npm:1.51.1"],\
+          ["playwright", "npm:1.51.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@radix-ui/react-compose-refs", [\
+      ["npm:1.1.1", {\
+        "packageLocation": "./.yarn/cache/@radix-ui-react-compose-refs-npm-1.1.1-2480de3ef9-1be82f9f7f.zip/node_modules/@radix-ui/react-compose-refs/",\
+        "packageDependencies": [\
+          ["@radix-ui/react-compose-refs", "npm:1.1.1"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:ea586c67db9a88049c94344c6a2187ca2963fdc55d48b8f71de7eb19e02d08d801055dd560d742af230ec44f1d8955e851a235528b3cf8cef8c89ba58e4510f2#npm:1.1.1", {\
+        "packageLocation": "./.yarn/__virtual__/@radix-ui-react-compose-refs-virtual-ddf3a54838/0/cache/@radix-ui-react-compose-refs-npm-1.1.1-2480de3ef9-1be82f9f7f.zip/node_modules/@radix-ui/react-compose-refs/",\
+        "packageDependencies": [\
+          ["@radix-ui/react-compose-refs", "virtual:ea586c67db9a88049c94344c6a2187ca2963fdc55d48b8f71de7eb19e02d08d801055dd560d742af230ec44f1d8955e851a235528b3cf8cef8c89ba58e4510f2#npm:1.1.1"],\
+          ["@types/react", "npm:18.3.4"],\
+          ["react", "npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@radix-ui/react-slot", [\
+      ["npm:1.1.2", {\
+        "packageLocation": "./.yarn/cache/@radix-ui-react-slot-npm-1.1.2-646d6951b9-6d5e1fac17.zip/node_modules/@radix-ui/react-slot/",\
+        "packageDependencies": [\
+          ["@radix-ui/react-slot", "npm:1.1.2"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:9d7cb1124ee9733b9554bdb2599c402f3aa46eb1c59c4d0cf6a81b1910e83bf70e14ff0081b6fc140dc51bd5082e6b77a89d66b6f2361efb7c7a2dd28fbf4fb3#npm:1.1.2", {\
+        "packageLocation": "./.yarn/__virtual__/@radix-ui-react-slot-virtual-ea586c67db/0/cache/@radix-ui-react-slot-npm-1.1.2-646d6951b9-6d5e1fac17.zip/node_modules/@radix-ui/react-slot/",\
+        "packageDependencies": [\
+          ["@radix-ui/react-slot", "virtual:9d7cb1124ee9733b9554bdb2599c402f3aa46eb1c59c4d0cf6a81b1910e83bf70e14ff0081b6fc140dc51bd5082e6b77a89d66b6f2361efb7c7a2dd28fbf4fb3#npm:1.1.2"],\
+          ["@radix-ui/react-compose-refs", "virtual:ea586c67db9a88049c94344c6a2187ca2963fdc55d48b8f71de7eb19e02d08d801055dd560d742af230ec44f1d8955e851a235528b3cf8cef8c89ba58e4510f2#npm:1.1.1"],\
+          ["@types/react", "npm:18.3.4"],\
+          ["react", "npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@sipe-team/badge", [\
+      ["npm:0.0.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fbadge%2F0.0.4%2Fb593978242c072b8927661fdceb3fb48ac2d4336", {\
+        "packageLocation": "./.yarn/cache/@sipe-team-badge-npm-0.0.4-9872e4b170-aacd493a3c.zip/node_modules/@sipe-team/badge/",\
+        "packageDependencies": [\
+          ["@sipe-team/badge", "npm:0.0.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fbadge%2F0.0.4%2Fb593978242c072b8927661fdceb3fb48ac2d4336"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.0.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fbadge%2F0.0.4%2Fb593978242c072b8927661fdceb3fb48ac2d4336", {\
+        "packageLocation": "./.yarn/__virtual__/@sipe-team-badge-virtual-4349d42231/0/cache/@sipe-team-badge-npm-0.0.4-9872e4b170-aacd493a3c.zip/node_modules/@sipe-team/badge/",\
+        "packageDependencies": [\
+          ["@sipe-team/badge", "virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.0.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fbadge%2F0.0.4%2Fb593978242c072b8927661fdceb3fb48ac2d4336"],\
+          ["@sipe-team/typography", "virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.0.5::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Ftypography%2F0.0.5%2F23964dd6c02cba247ef76cdb3683d223e2165386"],\
+          ["@types/react", "npm:18.3.4"],\
+          ["@types/react-dom", "npm:18.3.0"],\
+          ["clsx", "npm:2.1.1"],\
+          ["react", "npm:18.3.1"],\
+          ["react-dom", "virtual:5f85de5545bdf69af1d0de8ab8cd00a40f1e474c5581aca23c5337afa460a456890bdf1462b39697b558b5d28f831142034715dfeff95fce8312e07dc2f32c22#npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@sipe-team/button", [\
+      ["npm:0.0.2::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fbutton%2F0.0.2%2Fe8f6506f21c885541eed4c6ff2b53d35a855a62a", {\
+        "packageLocation": "./.yarn/cache/@sipe-team-button-npm-0.0.2-8711bc8a7b-e913bc11fc.zip/node_modules/@sipe-team/button/",\
+        "packageDependencies": [\
+          ["@sipe-team/button", "npm:0.0.2::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fbutton%2F0.0.2%2Fe8f6506f21c885541eed4c6ff2b53d35a855a62a"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.0.2::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fbutton%2F0.0.2%2Fe8f6506f21c885541eed4c6ff2b53d35a855a62a", {\
+        "packageLocation": "./.yarn/__virtual__/@sipe-team-button-virtual-9d7cb1124e/0/cache/@sipe-team-button-npm-0.0.2-8711bc8a7b-e913bc11fc.zip/node_modules/@sipe-team/button/",\
+        "packageDependencies": [\
+          ["@sipe-team/button", "virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.0.2::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fbutton%2F0.0.2%2Fe8f6506f21c885541eed4c6ff2b53d35a855a62a"],\
+          ["@radix-ui/react-slot", "virtual:9d7cb1124ee9733b9554bdb2599c402f3aa46eb1c59c4d0cf6a81b1910e83bf70e14ff0081b6fc140dc51bd5082e6b77a89d66b6f2361efb7c7a2dd28fbf4fb3#npm:1.1.2"],\
+          ["@sipe-team/typography", "virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.0.5::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Ftypography%2F0.0.5%2F23964dd6c02cba247ef76cdb3683d223e2165386"],\
+          ["@types/react", "npm:18.3.4"],\
+          ["@types/react-dom", "npm:18.3.0"],\
+          ["clsx", "npm:2.1.1"],\
+          ["react", "npm:18.3.1"],\
+          ["react-dom", "virtual:5f85de5545bdf69af1d0de8ab8cd00a40f1e474c5581aca23c5337afa460a456890bdf1462b39697b558b5d28f831142034715dfeff95fce8312e07dc2f32c22#npm:18.3.1"],\
+          ["ts-pattern", "npm:5.7.0"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@sipe-team/card", [\
+      ["npm:0.1.1::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fcard%2F0.1.1%2Fd9ca7f0d6790bc9677f8c66be51dc6732552bc70", {\
+        "packageLocation": "./.yarn/cache/@sipe-team-card-npm-0.1.1-362be0cdcc-6a18168b6c.zip/node_modules/@sipe-team/card/",\
+        "packageDependencies": [\
+          ["@sipe-team/card", "npm:0.1.1::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fcard%2F0.1.1%2Fd9ca7f0d6790bc9677f8c66be51dc6732552bc70"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.1.1::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fcard%2F0.1.1%2Fd9ca7f0d6790bc9677f8c66be51dc6732552bc70", {\
+        "packageLocation": "./.yarn/__virtual__/@sipe-team-card-virtual-0645a5f8fd/0/cache/@sipe-team-card-npm-0.1.1-362be0cdcc-6a18168b6c.zip/node_modules/@sipe-team/card/",\
+        "packageDependencies": [\
+          ["@sipe-team/card", "virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.1.1::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fcard%2F0.1.1%2Fd9ca7f0d6790bc9677f8c66be51dc6732552bc70"],\
+          ["@radix-ui/react-slot", "virtual:9d7cb1124ee9733b9554bdb2599c402f3aa46eb1c59c4d0cf6a81b1910e83bf70e14ff0081b6fc140dc51bd5082e6b77a89d66b6f2361efb7c7a2dd28fbf4fb3#npm:1.1.2"],\
+          ["@sipe-team/tokens", "npm:0.1.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Ftokens%2F0.1.0%2F04d76be75e09b4ac26971f4c39916b3556e3859e"],\
+          ["@types/react", "npm:18.3.4"],\
+          ["@types/react-dom", "npm:18.3.0"],\
+          ["clsx", "npm:2.1.1"],\
+          ["react", "npm:18.3.1"],\
+          ["react-dom", "virtual:5f85de5545bdf69af1d0de8ab8cd00a40f1e474c5581aca23c5337afa460a456890bdf1462b39697b558b5d28f831142034715dfeff95fce8312e07dc2f32c22#npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@sipe-team/divider", [\
+      ["npm:0.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fdivider%2F0.0.3%2F94e1ed1a380495418b24fa1bbbbac4166306878d", {\
+        "packageLocation": "./.yarn/cache/@sipe-team-divider-npm-0.0.3-40c4b9555c-765f509e1e.zip/node_modules/@sipe-team/divider/",\
+        "packageDependencies": [\
+          ["@sipe-team/divider", "npm:0.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fdivider%2F0.0.3%2F94e1ed1a380495418b24fa1bbbbac4166306878d"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fdivider%2F0.0.3%2F94e1ed1a380495418b24fa1bbbbac4166306878d", {\
+        "packageLocation": "./.yarn/__virtual__/@sipe-team-divider-virtual-3ac8c5f376/0/cache/@sipe-team-divider-npm-0.0.3-40c4b9555c-765f509e1e.zip/node_modules/@sipe-team/divider/",\
+        "packageDependencies": [\
+          ["@sipe-team/divider", "virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fdivider%2F0.0.3%2F94e1ed1a380495418b24fa1bbbbac4166306878d"],\
+          ["@types/react", "npm:18.3.4"],\
+          ["@types/react-dom", "npm:18.3.0"],\
+          ["clsx", "npm:2.1.1"],\
+          ["react", "npm:18.3.1"],\
+          ["react-dom", "virtual:5f85de5545bdf69af1d0de8ab8cd00a40f1e474c5581aca23c5337afa460a456890bdf1462b39697b558b5d28f831142034715dfeff95fce8312e07dc2f32c22#npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@sipe-team/flex", [\
+      ["npm:0.1.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fflex%2F0.1.3%2Fe48f06595aaf56e08cc15e8a4ea4042fd76223e2", {\
+        "packageLocation": "./.yarn/cache/@sipe-team-flex-npm-0.1.3-a2dfb90a5d-8297221b24.zip/node_modules/@sipe-team/flex/",\
+        "packageDependencies": [\
+          ["@sipe-team/flex", "npm:0.1.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fflex%2F0.1.3%2Fe48f06595aaf56e08cc15e8a4ea4042fd76223e2"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.1.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fflex%2F0.1.3%2Fe48f06595aaf56e08cc15e8a4ea4042fd76223e2", {\
+        "packageLocation": "./.yarn/__virtual__/@sipe-team-flex-virtual-e58f8b8825/0/cache/@sipe-team-flex-npm-0.1.3-a2dfb90a5d-8297221b24.zip/node_modules/@sipe-team/flex/",\
+        "packageDependencies": [\
+          ["@sipe-team/flex", "virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.1.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fflex%2F0.1.3%2Fe48f06595aaf56e08cc15e8a4ea4042fd76223e2"],\
+          ["@radix-ui/react-slot", "virtual:9d7cb1124ee9733b9554bdb2599c402f3aa46eb1c59c4d0cf6a81b1910e83bf70e14ff0081b6fc140dc51bd5082e6b77a89d66b6f2361efb7c7a2dd28fbf4fb3#npm:1.1.2"],\
+          ["@types/react", "npm:18.3.4"],\
+          ["@types/react-dom", "npm:18.3.0"],\
+          ["clsx", "npm:2.1.1"],\
+          ["react", "npm:18.3.1"],\
+          ["react-dom", "virtual:5f85de5545bdf69af1d0de8ab8cd00a40f1e474c5581aca23c5337afa460a456890bdf1462b39697b558b5d28f831142034715dfeff95fce8312e07dc2f32c22#npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@sipe-team/input", [\
+      ["npm:0.0.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Finput%2F0.0.4%2F0d6a75e0d4d5933d77e8799f6a3bd114ebac98b3", {\
+        "packageLocation": "./.yarn/cache/@sipe-team-input-npm-0.0.4-9941cc537b-3c7a770077.zip/node_modules/@sipe-team/input/",\
+        "packageDependencies": [\
+          ["@sipe-team/input", "npm:0.0.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Finput%2F0.0.4%2F0d6a75e0d4d5933d77e8799f6a3bd114ebac98b3"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.0.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Finput%2F0.0.4%2F0d6a75e0d4d5933d77e8799f6a3bd114ebac98b3", {\
+        "packageLocation": "./.yarn/__virtual__/@sipe-team-input-virtual-8e53225958/0/cache/@sipe-team-input-npm-0.0.4-9941cc537b-3c7a770077.zip/node_modules/@sipe-team/input/",\
+        "packageDependencies": [\
+          ["@sipe-team/input", "virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.0.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Finput%2F0.0.4%2F0d6a75e0d4d5933d77e8799f6a3bd114ebac98b3"],\
+          ["@radix-ui/react-slot", "virtual:9d7cb1124ee9733b9554bdb2599c402f3aa46eb1c59c4d0cf6a81b1910e83bf70e14ff0081b6fc140dc51bd5082e6b77a89d66b6f2361efb7c7a2dd28fbf4fb3#npm:1.1.2"],\
+          ["@types/react", "npm:18.3.4"],\
+          ["@types/react-dom", "npm:18.3.0"],\
+          ["classnames", "npm:2.5.1"],\
+          ["react", "npm:18.3.1"],\
+          ["react-dom", "virtual:5f85de5545bdf69af1d0de8ab8cd00a40f1e474c5581aca23c5337afa460a456890bdf1462b39697b558b5d28f831142034715dfeff95fce8312e07dc2f32c22#npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@sipe-team/radio-group", [\
+      ["npm:0.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fradio-group%2F0.0.3%2F16e423e9d4cd2c8f04b7fd63759c33df92aa06af", {\
+        "packageLocation": "./.yarn/cache/@sipe-team-radio-group-npm-0.0.3-662eb320f9-777e8d902e.zip/node_modules/@sipe-team/radio-group/",\
+        "packageDependencies": [\
+          ["@sipe-team/radio-group", "npm:0.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fradio-group%2F0.0.3%2F16e423e9d4cd2c8f04b7fd63759c33df92aa06af"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fradio-group%2F0.0.3%2F16e423e9d4cd2c8f04b7fd63759c33df92aa06af", {\
+        "packageLocation": "./.yarn/__virtual__/@sipe-team-radio-group-virtual-3f4e16334b/0/cache/@sipe-team-radio-group-npm-0.0.3-662eb320f9-777e8d902e.zip/node_modules/@sipe-team/radio-group/",\
+        "packageDependencies": [\
+          ["@sipe-team/radio-group", "virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fradio-group%2F0.0.3%2F16e423e9d4cd2c8f04b7fd63759c33df92aa06af"],\
+          ["@types/react", "npm:18.3.4"],\
+          ["@types/react-dom", "npm:18.3.0"],\
+          ["react", "npm:18.3.1"],\
+          ["react-dom", "virtual:5f85de5545bdf69af1d0de8ab8cd00a40f1e474c5581aca23c5337afa460a456890bdf1462b39697b558b5d28f831142034715dfeff95fce8312e07dc2f32c22#npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@sipe-team/side", [\
+      ["npm:0.2.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fside%2F0.2.4%2Fb3ed746f3807eebbaf4f6368c98c76a6c97ffa52", {\
+        "packageLocation": "./.yarn/cache/@sipe-team-side-npm-0.2.4-ef436ebd18-a890c5492b.zip/node_modules/@sipe-team/side/",\
+        "packageDependencies": [\
+          ["@sipe-team/side", "npm:0.2.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fside%2F0.2.4%2Fb3ed746f3807eebbaf4f6368c98c76a6c97ffa52"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:5f85de5545bdf69af1d0de8ab8cd00a40f1e474c5581aca23c5337afa460a456890bdf1462b39697b558b5d28f831142034715dfeff95fce8312e07dc2f32c22#npm:0.2.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fside%2F0.2.4%2Fb3ed746f3807eebbaf4f6368c98c76a6c97ffa52", {\
+        "packageLocation": "./.yarn/__virtual__/@sipe-team-side-virtual-db72cb1409/0/cache/@sipe-team-side-npm-0.2.4-ef436ebd18-a890c5492b.zip/node_modules/@sipe-team/side/",\
+        "packageDependencies": [\
+          ["@sipe-team/side", "virtual:5f85de5545bdf69af1d0de8ab8cd00a40f1e474c5581aca23c5337afa460a456890bdf1462b39697b558b5d28f831142034715dfeff95fce8312e07dc2f32c22#npm:0.2.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fside%2F0.2.4%2Fb3ed746f3807eebbaf4f6368c98c76a6c97ffa52"],\
+          ["@sipe-team/badge", "virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.0.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fbadge%2F0.0.4%2Fb593978242c072b8927661fdceb3fb48ac2d4336"],\
+          ["@sipe-team/button", "virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.0.2::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fbutton%2F0.0.2%2Fe8f6506f21c885541eed4c6ff2b53d35a855a62a"],\
+          ["@sipe-team/card", "virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.1.1::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fcard%2F0.1.1%2Fd9ca7f0d6790bc9677f8c66be51dc6732552bc70"],\
+          ["@sipe-team/divider", "virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fdivider%2F0.0.3%2F94e1ed1a380495418b24fa1bbbbac4166306878d"],\
+          ["@sipe-team/flex", "virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.1.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fflex%2F0.1.3%2Fe48f06595aaf56e08cc15e8a4ea4042fd76223e2"],\
+          ["@sipe-team/input", "virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.0.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Finput%2F0.0.4%2F0d6a75e0d4d5933d77e8799f6a3bd114ebac98b3"],\
+          ["@sipe-team/radio-group", "virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fradio-group%2F0.0.3%2F16e423e9d4cd2c8f04b7fd63759c33df92aa06af"],\
+          ["@sipe-team/skeleton", "virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fskeleton%2F0.0.3%2F4f21b6b620990be464829cb2611251d988c4b318"],\
+          ["@sipe-team/switch", "virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fswitch%2F0.0.3%2F3c4c132669ddf1a2fd635a9f13f84e09e733cae1"],\
+          ["@sipe-team/tokens", "npm:0.1.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Ftokens%2F0.1.0%2F04d76be75e09b4ac26971f4c39916b3556e3859e"],\
+          ["@sipe-team/tooltip", "virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.0.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Ftooltip%2F0.0.4%2F26a1fbd2f2ba851ea701da04b89976fc1f6eb06c"],\
+          ["@sipe-team/typography", "virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.0.5::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Ftypography%2F0.0.5%2F23964dd6c02cba247ef76cdb3683d223e2165386"],\
+          ["@types/react", "npm:18.3.4"],\
+          ["@types/react-dom", "npm:18.3.0"],\
+          ["react", "npm:18.3.1"],\
+          ["react-dom", "virtual:5f85de5545bdf69af1d0de8ab8cd00a40f1e474c5581aca23c5337afa460a456890bdf1462b39697b558b5d28f831142034715dfeff95fce8312e07dc2f32c22#npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@sipe-team/skeleton", [\
+      ["npm:0.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fskeleton%2F0.0.3%2F4f21b6b620990be464829cb2611251d988c4b318", {\
+        "packageLocation": "./.yarn/cache/@sipe-team-skeleton-npm-0.0.3-47ca16e06b-6302e41e99.zip/node_modules/@sipe-team/skeleton/",\
+        "packageDependencies": [\
+          ["@sipe-team/skeleton", "npm:0.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fskeleton%2F0.0.3%2F4f21b6b620990be464829cb2611251d988c4b318"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fskeleton%2F0.0.3%2F4f21b6b620990be464829cb2611251d988c4b318", {\
+        "packageLocation": "./.yarn/__virtual__/@sipe-team-skeleton-virtual-302a801654/0/cache/@sipe-team-skeleton-npm-0.0.3-47ca16e06b-6302e41e99.zip/node_modules/@sipe-team/skeleton/",\
+        "packageDependencies": [\
+          ["@sipe-team/skeleton", "virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fskeleton%2F0.0.3%2F4f21b6b620990be464829cb2611251d988c4b318"],\
+          ["@radix-ui/react-slot", "virtual:9d7cb1124ee9733b9554bdb2599c402f3aa46eb1c59c4d0cf6a81b1910e83bf70e14ff0081b6fc140dc51bd5082e6b77a89d66b6f2361efb7c7a2dd28fbf4fb3#npm:1.1.2"],\
+          ["@types/react", "npm:18.3.4"],\
+          ["@types/react-dom", "npm:18.3.0"],\
+          ["react", "npm:18.3.1"],\
+          ["react-dom", "virtual:5f85de5545bdf69af1d0de8ab8cd00a40f1e474c5581aca23c5337afa460a456890bdf1462b39697b558b5d28f831142034715dfeff95fce8312e07dc2f32c22#npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@sipe-team/switch", [\
+      ["npm:0.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fswitch%2F0.0.3%2F3c4c132669ddf1a2fd635a9f13f84e09e733cae1", {\
+        "packageLocation": "./.yarn/cache/@sipe-team-switch-npm-0.0.3-a268df8d5f-fa6f79f3cc.zip/node_modules/@sipe-team/switch/",\
+        "packageDependencies": [\
+          ["@sipe-team/switch", "npm:0.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fswitch%2F0.0.3%2F3c4c132669ddf1a2fd635a9f13f84e09e733cae1"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fswitch%2F0.0.3%2F3c4c132669ddf1a2fd635a9f13f84e09e733cae1", {\
+        "packageLocation": "./.yarn/__virtual__/@sipe-team-switch-virtual-a7b0d7510a/0/cache/@sipe-team-switch-npm-0.0.3-a268df8d5f-fa6f79f3cc.zip/node_modules/@sipe-team/switch/",\
+        "packageDependencies": [\
+          ["@sipe-team/switch", "virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fswitch%2F0.0.3%2F3c4c132669ddf1a2fd635a9f13f84e09e733cae1"],\
+          ["@sipe-team/tokens", "npm:0.1.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Ftokens%2F0.1.0%2F04d76be75e09b4ac26971f4c39916b3556e3859e"],\
+          ["@types/react", "npm:18.3.4"],\
+          ["@types/react-dom", "npm:18.3.0"],\
+          ["clsx", "npm:2.1.1"],\
+          ["react", "npm:18.3.1"],\
+          ["react-dom", "virtual:5f85de5545bdf69af1d0de8ab8cd00a40f1e474c5581aca23c5337afa460a456890bdf1462b39697b558b5d28f831142034715dfeff95fce8312e07dc2f32c22#npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@sipe-team/tokens", [\
+      ["npm:0.1.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Ftokens%2F0.1.0%2F04d76be75e09b4ac26971f4c39916b3556e3859e", {\
+        "packageLocation": "./.yarn/cache/@sipe-team-tokens-npm-0.1.0-ea7e9b5c08-f643a78fb8.zip/node_modules/@sipe-team/tokens/",\
+        "packageDependencies": [\
+          ["@sipe-team/tokens", "npm:0.1.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Ftokens%2F0.1.0%2F04d76be75e09b4ac26971f4c39916b3556e3859e"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@sipe-team/tooltip", [\
+      ["npm:0.0.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Ftooltip%2F0.0.4%2F26a1fbd2f2ba851ea701da04b89976fc1f6eb06c", {\
+        "packageLocation": "./.yarn/cache/@sipe-team-tooltip-npm-0.0.4-cc0e5feeaa-27104a16f5.zip/node_modules/@sipe-team/tooltip/",\
+        "packageDependencies": [\
+          ["@sipe-team/tooltip", "npm:0.0.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Ftooltip%2F0.0.4%2F26a1fbd2f2ba851ea701da04b89976fc1f6eb06c"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.0.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Ftooltip%2F0.0.4%2F26a1fbd2f2ba851ea701da04b89976fc1f6eb06c", {\
+        "packageLocation": "./.yarn/__virtual__/@sipe-team-tooltip-virtual-430fff6bf6/0/cache/@sipe-team-tooltip-npm-0.0.4-cc0e5feeaa-27104a16f5.zip/node_modules/@sipe-team/tooltip/",\
+        "packageDependencies": [\
+          ["@sipe-team/tooltip", "virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.0.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Ftooltip%2F0.0.4%2F26a1fbd2f2ba851ea701da04b89976fc1f6eb06c"],\
+          ["@radix-ui/react-slot", "virtual:9d7cb1124ee9733b9554bdb2599c402f3aa46eb1c59c4d0cf6a81b1910e83bf70e14ff0081b6fc140dc51bd5082e6b77a89d66b6f2361efb7c7a2dd28fbf4fb3#npm:1.1.2"],\
+          ["@types/react", "npm:18.3.4"],\
+          ["@types/react-dom", "npm:18.3.0"],\
+          ["clsx", "npm:2.1.1"],\
+          ["react", "npm:18.3.1"],\
+          ["react-dom", "virtual:5f85de5545bdf69af1d0de8ab8cd00a40f1e474c5581aca23c5337afa460a456890bdf1462b39697b558b5d28f831142034715dfeff95fce8312e07dc2f32c22#npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@sipe-team/typography", [\
+      ["npm:0.0.5::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Ftypography%2F0.0.5%2F23964dd6c02cba247ef76cdb3683d223e2165386", {\
+        "packageLocation": "./.yarn/cache/@sipe-team-typography-npm-0.0.5-7c7059f622-d7245c86a2.zip/node_modules/@sipe-team/typography/",\
+        "packageDependencies": [\
+          ["@sipe-team/typography", "npm:0.0.5::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Ftypography%2F0.0.5%2F23964dd6c02cba247ef76cdb3683d223e2165386"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.0.5::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Ftypography%2F0.0.5%2F23964dd6c02cba247ef76cdb3683d223e2165386", {\
+        "packageLocation": "./.yarn/__virtual__/@sipe-team-typography-virtual-fb92db84e1/0/cache/@sipe-team-typography-npm-0.0.5-7c7059f622-d7245c86a2.zip/node_modules/@sipe-team/typography/",\
+        "packageDependencies": [\
+          ["@sipe-team/typography", "virtual:db72cb140999d43b2ab2342ec8b248883ede93e2beb4d211969ba72d75de0b42c688e6293cf2942be69469813d31d5cdbaf9399eba86c39eb4f8ae373a952440#npm:0.0.5::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Ftypography%2F0.0.5%2F23964dd6c02cba247ef76cdb3683d223e2165386"],\
+          ["@radix-ui/react-slot", "virtual:9d7cb1124ee9733b9554bdb2599c402f3aa46eb1c59c4d0cf6a81b1910e83bf70e14ff0081b6fc140dc51bd5082e6b77a89d66b6f2361efb7c7a2dd28fbf4fb3#npm:1.1.2"],\
+          ["@sipe-team/tokens", "npm:0.1.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Ftokens%2F0.1.0%2F04d76be75e09b4ac26971f4c39916b3556e3859e"],\
+          ["@types/react", "npm:18.3.4"],\
+          ["@types/react-dom", "npm:18.3.0"],\
+          ["clsx", "npm:2.1.1"],\
+          ["react", "npm:18.3.1"],\
+          ["react-dom", "virtual:5f85de5545bdf69af1d0de8ab8cd00a40f1e474c5581aca23c5337afa460a456890bdf1462b39697b558b5d28f831142034715dfeff95fce8312e07dc2f32c22#npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
         ],\
         "linkType": "HARD"\
       }]\
@@ -3630,7 +4042,7 @@ const RAW_RUNTIME_STATE =
           ["@typescript-eslint/types", "npm:8.2.0"],\
           ["@typescript-eslint/typescript-estree", "virtual:28bc1404a7b3158c18049ff724d4c50d0bc2c3d5b422dd7e60cbe2a0362ec07ce13875cea1ca7dadf7ec3184b1e95cfff321e2e712ad451db1c4d016d88d8424#npm:8.2.0"],\
           ["@typescript-eslint/visitor-keys", "npm:8.2.0"],\
-          ["debug", "virtual:69c3455e973f914a9da079b465f412398aa9db4de6c967c5de9b7df9f75964a40ef9a5e9756b59c737917bf508a15667d830fc1be46cb0566180c490a2062629#npm:4.3.6"],\
+          ["debug", "virtual:c9e1a4b59e37cb479517edede3bf2093b28c0ca1a9d0e517f3c345075bd1e468980b94b4957e389116607ee7155441dfd7d09e19a4229d5d09bcf06244401590#npm:4.3.6"],\
           ["eslint", "virtual:5f85de5545bdf69af1d0de8ab8cd00a40f1e474c5581aca23c5337afa460a456890bdf1462b39697b558b5d28f831142034715dfeff95fce8312e07dc2f32c22#npm:9.23.0"],\
           ["typescript", "patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>::version=5.5.4&hash=379a07"]\
         ],\
@@ -3652,7 +4064,7 @@ const RAW_RUNTIME_STATE =
           ["@typescript-eslint/types", "npm:8.28.0"],\
           ["@typescript-eslint/typescript-estree", "virtual:c7f307ea6bf9715fd2805ce5af505eb53cc537e41573a9f62dd92eff9c20f3e6bf6452908696b8c9e764e77c046fa3c30bac4b21ad90084b75452c14abd354d2#npm:8.28.0"],\
           ["@typescript-eslint/visitor-keys", "npm:8.28.0"],\
-          ["debug", "virtual:69c3455e973f914a9da079b465f412398aa9db4de6c967c5de9b7df9f75964a40ef9a5e9756b59c737917bf508a15667d830fc1be46cb0566180c490a2062629#npm:4.3.6"],\
+          ["debug", "virtual:c9e1a4b59e37cb479517edede3bf2093b28c0ca1a9d0e517f3c345075bd1e468980b94b4957e389116607ee7155441dfd7d09e19a4229d5d09bcf06244401590#npm:4.3.6"],\
           ["eslint", "virtual:5f85de5545bdf69af1d0de8ab8cd00a40f1e474c5581aca23c5337afa460a456890bdf1462b39697b558b5d28f831142034715dfeff95fce8312e07dc2f32c22#npm:9.23.0"],\
           ["typescript", "patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>::version=5.5.4&hash=379a07"]\
         ],\
@@ -3707,7 +4119,7 @@ const RAW_RUNTIME_STATE =
           ["@types/typescript", null],\
           ["@typescript-eslint/typescript-estree", "virtual:28bc1404a7b3158c18049ff724d4c50d0bc2c3d5b422dd7e60cbe2a0362ec07ce13875cea1ca7dadf7ec3184b1e95cfff321e2e712ad451db1c4d016d88d8424#npm:8.2.0"],\
           ["@typescript-eslint/utils", "virtual:28bc1404a7b3158c18049ff724d4c50d0bc2c3d5b422dd7e60cbe2a0362ec07ce13875cea1ca7dadf7ec3184b1e95cfff321e2e712ad451db1c4d016d88d8424#npm:8.2.0"],\
-          ["debug", "virtual:69c3455e973f914a9da079b465f412398aa9db4de6c967c5de9b7df9f75964a40ef9a5e9756b59c737917bf508a15667d830fc1be46cb0566180c490a2062629#npm:4.3.6"],\
+          ["debug", "virtual:c9e1a4b59e37cb479517edede3bf2093b28c0ca1a9d0e517f3c345075bd1e468980b94b4957e389116607ee7155441dfd7d09e19a4229d5d09bcf06244401590#npm:4.3.6"],\
           ["ts-api-utils", "virtual:73716ce163e7714f8f1a1b07f3129f1d166929b358c48ef1c0ebbe470798d5da911a4e7738422382496828d3fedd6a9e2a3081277371d874097c73a584a1b120#npm:1.3.0"],\
           ["typescript", "patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>::version=5.5.4&hash=379a07"]\
         ],\
@@ -3725,7 +4137,7 @@ const RAW_RUNTIME_STATE =
           ["@types/typescript", null],\
           ["@typescript-eslint/typescript-estree", "virtual:c7f307ea6bf9715fd2805ce5af505eb53cc537e41573a9f62dd92eff9c20f3e6bf6452908696b8c9e764e77c046fa3c30bac4b21ad90084b75452c14abd354d2#npm:8.28.0"],\
           ["@typescript-eslint/utils", "virtual:fd10e234456d2430881d9f8b17aaaf29283cd352c728a400de2a0e002854afd8fe7ae8a22006ea947fec36127b744f6c35878dce0ab4a49f808a1b129f2d8f64#npm:8.28.0"],\
-          ["debug", "virtual:69c3455e973f914a9da079b465f412398aa9db4de6c967c5de9b7df9f75964a40ef9a5e9756b59c737917bf508a15667d830fc1be46cb0566180c490a2062629#npm:4.3.6"],\
+          ["debug", "virtual:c9e1a4b59e37cb479517edede3bf2093b28c0ca1a9d0e517f3c345075bd1e468980b94b4957e389116607ee7155441dfd7d09e19a4229d5d09bcf06244401590#npm:4.3.6"],\
           ["eslint", "virtual:5f85de5545bdf69af1d0de8ab8cd00a40f1e474c5581aca23c5337afa460a456890bdf1462b39697b558b5d28f831142034715dfeff95fce8312e07dc2f32c22#npm:9.23.0"],\
           ["ts-api-utils", "virtual:a0e6ef4f2ed1e922cbbe5dec7171bdd8cda974f5d92e67e1103b0a9dcff01e59801858845f2915406d5bde4cff2c07a7ae1df70152674cd0cded3b11be01dfcf#npm:2.1.0"],\
           ["typescript", "patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>::version=5.5.4&hash=379a07"]\
@@ -3777,7 +4189,7 @@ const RAW_RUNTIME_STATE =
           ["@types/typescript", null],\
           ["@typescript-eslint/types", "npm:8.2.0"],\
           ["@typescript-eslint/visitor-keys", "npm:8.2.0"],\
-          ["debug", "virtual:69c3455e973f914a9da079b465f412398aa9db4de6c967c5de9b7df9f75964a40ef9a5e9756b59c737917bf508a15667d830fc1be46cb0566180c490a2062629#npm:4.3.6"],\
+          ["debug", "virtual:c9e1a4b59e37cb479517edede3bf2093b28c0ca1a9d0e517f3c345075bd1e468980b94b4957e389116607ee7155441dfd7d09e19a4229d5d09bcf06244401590#npm:4.3.6"],\
           ["globby", "npm:11.1.0"],\
           ["is-glob", "npm:4.0.3"],\
           ["minimatch", "npm:9.0.5"],\
@@ -3798,7 +4210,7 @@ const RAW_RUNTIME_STATE =
           ["@types/typescript", null],\
           ["@typescript-eslint/types", "npm:8.2.0"],\
           ["@typescript-eslint/visitor-keys", "npm:8.2.0"],\
-          ["debug", "virtual:69c3455e973f914a9da079b465f412398aa9db4de6c967c5de9b7df9f75964a40ef9a5e9756b59c737917bf508a15667d830fc1be46cb0566180c490a2062629#npm:4.3.6"],\
+          ["debug", "virtual:c9e1a4b59e37cb479517edede3bf2093b28c0ca1a9d0e517f3c345075bd1e468980b94b4957e389116607ee7155441dfd7d09e19a4229d5d09bcf06244401590#npm:4.3.6"],\
           ["globby", "npm:11.1.0"],\
           ["is-glob", "npm:4.0.3"],\
           ["minimatch", "npm:9.0.5"],\
@@ -3819,7 +4231,7 @@ const RAW_RUNTIME_STATE =
           ["@types/typescript", null],\
           ["@typescript-eslint/types", "npm:8.28.0"],\
           ["@typescript-eslint/visitor-keys", "npm:8.28.0"],\
-          ["debug", "virtual:69c3455e973f914a9da079b465f412398aa9db4de6c967c5de9b7df9f75964a40ef9a5e9756b59c737917bf508a15667d830fc1be46cb0566180c490a2062629#npm:4.3.6"],\
+          ["debug", "virtual:c9e1a4b59e37cb479517edede3bf2093b28c0ca1a9d0e517f3c345075bd1e468980b94b4957e389116607ee7155441dfd7d09e19a4229d5d09bcf06244401590#npm:4.3.6"],\
           ["fast-glob", "npm:3.3.3"],\
           ["is-glob", "npm:4.0.3"],\
           ["minimatch", "npm:9.0.5"],\
@@ -4257,7 +4669,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/agent-base-npm-7.1.1-c9e1a4b59e-c478fec8f7.zip/node_modules/agent-base/",\
         "packageDependencies": [\
           ["agent-base", "npm:7.1.1"],\
-          ["debug", "virtual:69c3455e973f914a9da079b465f412398aa9db4de6c967c5de9b7df9f75964a40ef9a5e9756b59c737917bf508a15667d830fc1be46cb0566180c490a2062629#npm:4.3.6"]\
+          ["debug", "virtual:c9e1a4b59e37cb479517edede3bf2093b28c0ca1a9d0e517f3c345075bd1e468980b94b4957e389116607ee7155441dfd7d09e19a4229d5d09bcf06244401590#npm:4.3.6"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4885,6 +5297,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["classnames", [\
+      ["npm:2.5.1", {\
+        "packageLocation": "./.yarn/cache/classnames-npm-2.5.1-c7273f3423-58eb394e88.zip/node_modules/classnames/",\
+        "packageDependencies": [\
+          ["classnames", "npm:2.5.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["clean-stack", [\
       ["npm:2.2.0", {\
         "packageLocation": "./.yarn/cache/clean-stack-npm-2.2.0-a8ce435a5c-2ac8cd2b2f.zip/node_modules/clean-stack/",\
@@ -5242,10 +5663,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
-      ["virtual:69c3455e973f914a9da079b465f412398aa9db4de6c967c5de9b7df9f75964a40ef9a5e9756b59c737917bf508a15667d830fc1be46cb0566180c490a2062629#npm:4.3.6", {\
-        "packageLocation": "./.yarn/__virtual__/debug-virtual-4475a483b5/0/cache/debug-npm-4.3.6-ecb233d831-d3adb9af7d.zip/node_modules/debug/",\
+      ["virtual:c9e1a4b59e37cb479517edede3bf2093b28c0ca1a9d0e517f3c345075bd1e468980b94b4957e389116607ee7155441dfd7d09e19a4229d5d09bcf06244401590#npm:4.3.6", {\
+        "packageLocation": "./.yarn/__virtual__/debug-virtual-5ebbdf5dd4/0/cache/debug-npm-4.3.6-ecb233d831-d3adb9af7d.zip/node_modules/debug/",\
         "packageDependencies": [\
-          ["debug", "virtual:69c3455e973f914a9da079b465f412398aa9db4de6c967c5de9b7df9f75964a40ef9a5e9756b59c737917bf508a15667d830fc1be46cb0566180c490a2062629#npm:4.3.6"],\
+          ["debug", "virtual:c9e1a4b59e37cb479517edede3bf2093b28c0ca1a9d0e517f3c345075bd1e468980b94b4957e389116607ee7155441dfd7d09e19a4229d5d09bcf06244401590#npm:4.3.6"],\
           ["@types/supports-color", null],\
           ["ms", "npm:2.1.2"],\
           ["supports-color", null]\
@@ -5821,7 +6242,7 @@ const RAW_RUNTIME_STATE =
           ["ajv", "npm:6.12.6"],\
           ["chalk", "npm:4.1.2"],\
           ["cross-spawn", "npm:7.0.6"],\
-          ["debug", "virtual:69c3455e973f914a9da079b465f412398aa9db4de6c967c5de9b7df9f75964a40ef9a5e9756b59c737917bf508a15667d830fc1be46cb0566180c490a2062629#npm:4.3.6"],\
+          ["debug", "virtual:c9e1a4b59e37cb479517edede3bf2093b28c0ca1a9d0e517f3c345075bd1e468980b94b4957e389116607ee7155441dfd7d09e19a4229d5d09bcf06244401590#npm:4.3.6"],\
           ["escape-string-regexp", "npm:4.0.0"],\
           ["eslint-scope", "npm:8.3.0"],\
           ["eslint-visitor-keys", "npm:4.2.0"],\
@@ -6408,6 +6829,14 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["fsevents", [\
+      ["patch:fsevents@npm%3A2.3.2#optional!builtin<compat/fsevents>::version=2.3.2&hash=df0bf1", {\
+        "packageLocation": "./.yarn/unplugged/fsevents-patch-19706e7e35/node_modules/fsevents/",\
+        "packageDependencies": [\
+          ["fsevents", "patch:fsevents@npm%3A2.3.2#optional!builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"],\
+          ["node-gyp", "npm:10.2.0"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["patch:fsevents@npm%3A2.3.3#optional!builtin<compat/fsevents>::version=2.3.3&hash=df0bf1", {\
         "packageLocation": "./.yarn/unplugged/fsevents-patch-6b67494872/node_modules/fsevents/",\
         "packageDependencies": [\
@@ -6856,7 +7285,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["http-proxy-agent", "npm:7.0.2"],\
           ["agent-base", "npm:7.1.1"],\
-          ["debug", "virtual:69c3455e973f914a9da079b465f412398aa9db4de6c967c5de9b7df9f75964a40ef9a5e9756b59c737917bf508a15667d830fc1be46cb0566180c490a2062629#npm:4.3.6"]\
+          ["debug", "virtual:c9e1a4b59e37cb479517edede3bf2093b28c0ca1a9d0e517f3c345075bd1e468980b94b4957e389116607ee7155441dfd7d09e19a4229d5d09bcf06244401590#npm:4.3.6"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -6867,7 +7296,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["https-proxy-agent", "npm:7.0.5"],\
           ["agent-base", "npm:7.1.1"],\
-          ["debug", "virtual:69c3455e973f914a9da079b465f412398aa9db4de6c967c5de9b7df9f75964a40ef9a5e9756b59c737917bf508a15667d830fc1be46cb0566180c490a2062629#npm:4.3.6"]\
+          ["debug", "virtual:c9e1a4b59e37cb479517edede3bf2093b28c0ca1a9d0e517f3c345075bd1e468980b94b4957e389116607ee7155441dfd7d09e19a4229d5d09bcf06244401590#npm:4.3.6"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -8083,7 +8512,7 @@ const RAW_RUNTIME_STATE =
           ["@next/swc-win32-ia32-msvc", "npm:14.2.11"],\
           ["@next/swc-win32-x64-msvc", "npm:14.2.11"],\
           ["@opentelemetry/api", null],\
-          ["@playwright/test", null],\
+          ["@playwright/test", "npm:1.51.1"],\
           ["@swc/helpers", "npm:0.5.5"],\
           ["@types/opentelemetry__api", null],\
           ["@types/playwright__test", null],\
@@ -8507,6 +8936,26 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/pidtree-npm-0.6.0-3d92e16117-ea67fb3159.zip/node_modules/pidtree/",\
         "packageDependencies": [\
           ["pidtree", "npm:0.6.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["playwright", [\
+      ["npm:1.51.1", {\
+        "packageLocation": "./.yarn/cache/playwright-npm-1.51.1-d4d6df5ad4-cc7d3e204b.zip/node_modules/playwright/",\
+        "packageDependencies": [\
+          ["playwright", "npm:1.51.1"],\
+          ["fsevents", "patch:fsevents@npm%3A2.3.2#optional!builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"],\
+          ["playwright-core", "npm:1.51.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["playwright-core", [\
+      ["npm:1.51.1", {\
+        "packageLocation": "./.yarn/cache/playwright-core-npm-1.51.1-52a06837b9-954ce25782.zip/node_modules/playwright-core/",\
+        "packageDependencies": [\
+          ["playwright-core", "npm:1.51.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -9187,6 +9636,8 @@ const RAW_RUNTIME_STATE =
           ["@eslint/js", "npm:9.23.0"],\
           ["@next/eslint-plugin-next", "npm:15.2.4"],\
           ["@next/third-parties", "virtual:5f85de5545bdf69af1d0de8ab8cd00a40f1e474c5581aca23c5337afa460a456890bdf1462b39697b558b5d28f831142034715dfeff95fce8312e07dc2f32c22#npm:14.2.11"],\
+          ["@playwright/test", "npm:1.51.1"],\
+          ["@sipe-team/side", "virtual:5f85de5545bdf69af1d0de8ab8cd00a40f1e474c5581aca23c5337afa460a456890bdf1462b39697b558b5d28f831142034715dfeff95fce8312e07dc2f32c22#npm:0.2.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fside%2F0.2.4%2Fb3ed746f3807eebbaf4f6368c98c76a6c97ffa52"],\
           ["@svgr/webpack", "npm:8.1.0"],\
           ["@types/node", "npm:20.16.1"],\
           ["@types/react", "npm:18.3.4"],\
@@ -9292,7 +9743,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["socks-proxy-agent", "npm:8.0.4"],\
           ["agent-base", "npm:7.1.1"],\
-          ["debug", "virtual:69c3455e973f914a9da079b465f412398aa9db4de6c967c5de9b7df9f75964a40ef9a5e9756b59c737917bf508a15667d830fc1be46cb0566180c490a2062629#npm:4.3.6"],\
+          ["debug", "virtual:c9e1a4b59e37cb479517edede3bf2093b28c0ca1a9d0e517f3c345075bd1e468980b94b4957e389116607ee7155441dfd7d09e19a4229d5d09bcf06244401590#npm:4.3.6"],\
           ["socks", "npm:2.8.3"]\
         ],\
         "linkType": "HARD"\
@@ -9802,6 +10253,15 @@ const RAW_RUNTIME_STATE =
         "packagePeers": [\
           "@types/typescript",\
           "typescript"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["ts-pattern", [\
+      ["npm:5.7.0", {\
+        "packageLocation": "./.yarn/cache/ts-pattern-npm-5.7.0-bf7d16fa9d-9a1dda9321.zip/node_modules/ts-pattern/",\
+        "packageDependencies": [\
+          ["ts-pattern", "npm:5.7.0"]\
         ],\
         "linkType": "HARD"\
       }]\

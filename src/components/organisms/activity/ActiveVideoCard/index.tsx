@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { color, Typography } from '@sipe-team/side';
 import clsx from 'clsx';
 
 import ExternalLink from '@/components/atoms/ExternalLink';
@@ -34,10 +35,20 @@ function ActiveVideoCard({
       />
       <section className={styles.contentsWrapper}>
         <section className={styles.contentsInfo}>
-          <div className={styles.title}>{contentTitle}</div>
+          <Typography className={styles.title} color={color.white} size={16}>
+            {contentTitle}
+          </Typography>
           <div className={styles.body}>
-            <span className={styles.username}>{userName}</span>
-            <span className={styles.date}>{createDate}</span>
+            <Typography
+              className={styles.username}
+              color={color.white}
+              size={14}
+            >
+              {userName}
+            </Typography>
+            <Typography className={styles.date} color={color.white} size={14}>
+              {createDate}
+            </Typography>
           </div>
         </section>
         <ExternalLink

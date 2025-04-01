@@ -1,5 +1,6 @@
 'use client';
 
+import { color, Flex, Typography } from '@sipe-team/side';
 import clsx from 'clsx';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -21,13 +22,26 @@ function AccordionItem({
   isActive,
 }: AccordionItemProps) {
   return (
-    <div className={styles.wrapper}>
-      <motion.button type="button" className={styles.title} onClick={onClick}>
-        {title}
-        <div className={clsx(styles.arrow, { [styles.isOpen]: isActive })}>
-          <AccordionArrowIcon className={styles.arrowIcon} />
-        </div>
-      </motion.button>
+    <Flex className={styles.wrapper} direction="column" gap={0}>
+      <Flex
+        align="center"
+        asChild={true}
+        direction="row"
+        justify="space-between"
+      >
+        <Typography asChild={true} color={color.white} weight="bold">
+          <motion.button
+            type="button"
+            className={styles.title}
+            onClick={onClick}
+          >
+            {title}
+            <div className={clsx(styles.arrow, { [styles.isOpen]: isActive })}>
+              <AccordionArrowIcon className={styles.arrowIcon} />
+            </div>
+          </motion.button>
+        </Typography>
+      </Flex>
       <AnimatePresence initial={false}>
         {isActive && (
           <motion.div
@@ -36,11 +50,13 @@ function AccordionItem({
             exit={{ height: 0 }}
             transition={{ type: 'spring', duration: 0.4, bounce: 0 }}
           >
-            <div className={styles.value}>{value}</div>
+            <Typography className={styles.value} size={14} weight="semiBold">
+              {value}
+            </Typography>
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </Flex>
   );
 }
 

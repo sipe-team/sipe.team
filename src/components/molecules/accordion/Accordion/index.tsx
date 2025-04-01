@@ -1,8 +1,9 @@
 'use client';
 
-import React, {
+import {
   Children,
   cloneElement,
+  CSSProperties,
   ReactElement,
   ReactNode,
   useState,
@@ -13,9 +14,10 @@ import { AccordionItemProps } from '../AccordionItem';
 export type AccordionProps = {
   className?: string;
   children: ReactNode;
+  style?: CSSProperties;
 };
 
-function Accordion({ className, children }: AccordionProps) {
+function Accordion({ className, children, style }: AccordionProps) {
   const [currentActive, setCurrentActive] = useState<string | null>(null);
 
   const handleClick = (isActive: boolean, activeKey: string | null) => {
@@ -28,7 +30,7 @@ function Accordion({ className, children }: AccordionProps) {
   };
 
   return (
-    <div className={className}>
+    <div className={className} style={style}>
       {Children.toArray(children).map((child) => {
         const accordionItem = child as ReactElement<AccordionItemProps>;
         const isActive = currentActive === accordionItem.key;
