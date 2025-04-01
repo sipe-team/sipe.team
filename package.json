@@ -10,7 +10,7 @@
     "start": "next start",
     "lint:prettier": "prettier . --write",
     "lint:eslint": "eslint . --fix",
-    "script": "node .script/gSheet.cjs"
+    "script": "node .script/gSheet.js"
   },
   "dependencies": {
     "@channel.io/channel-web-sdk-loader": "^2.0.0",
@@ -28,7 +28,6 @@
     "usehooks-ts": "^3.1.0"
   },
   "devDependencies": {
-    "@eslint/compat": "^1.2.7",
     "@eslint/js": "^9.23.0",
     "@next/eslint-plugin-next": "^15.2.4",
     "@svgr/webpack": "8.1.0",
@@ -57,7 +56,7 @@
     "webpack": "5.93.0"
   },
   "lint-staged": {
-    "*.{ts,tsx,js,jsx}": [
+    "*.{ts,tsx,js,jsx,cjs,mjs}": [
       "prettier --write",
       "eslint --fix"
     ],

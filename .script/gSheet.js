@@ -1,8 +1,9 @@
-const { GoogleSpreadsheet } = require('google-spreadsheet');
-const { JWT } = require('google-auth-library');
 const fs = require('fs');
+const dotenv = require('dotenv');
+const { JWT } = require('google-auth-library');
+const { GoogleSpreadsheet } = require('google-spreadsheet');
 
-require('dotenv').config();
+dotenv.config();
 
 // * 구글 스프레드시트 시트 이름 상수
 const SHEET_NAMES = {
