@@ -1,4 +1,4 @@
-import React, { ComponentProps, ReactNode } from 'react';
+import { ComponentProps, ReactNode } from 'react';
 
 import { Route } from 'next';
 import Link, { LinkProps } from 'next/link';
