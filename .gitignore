@@ -37,5 +37,12 @@ dist-ssr
 
 # google spreadsheet data
 src/db/*.json
+
+# playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
 .vercel
 
+.env*.local

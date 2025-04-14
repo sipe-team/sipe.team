@@ -1,3 +1,5 @@
+import { color, Flex, Typography } from '@sipe-team/side';
+
 import styles from './index.module.scss';
 
 const summaryData = [
@@ -8,14 +10,37 @@ const summaryData = [
 
 function SummaryCards() {
   return (
-    <div className={styles.summaryCardWrapper}>
+    <Flex className={styles.summaryCardWrapper} direction="row" gap="24px">
       {summaryData.map(({ title, value }) => (
-        <div key={title} className={styles.card}>
-          <div className={styles.title}>{title}</div>
-          <div className={styles.value}>{value}</div>
-        </div>
+        <Flex
+          align="center"
+          key={title}
+          className={styles.card}
+          direction="column"
+          gap="12px"
+          justify="center"
+        >
+          <Typography
+            color={color.white}
+            className={styles.title}
+            lineHeight="compact"
+            size={18}
+            weight="bold"
+          >
+            {title}
+          </Typography>
+          <Typography
+            color={color.white}
+            className={styles.value}
+            lineHeight="compact"
+            size={32}
+            weight="bold"
+          >
+            {value}
+          </Typography>
+        </Flex>
       ))}
-    </div>
+    </Flex>
   );
 }
 

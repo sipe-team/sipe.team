@@ -1,19 +1,9 @@
 .cardListWrapper {
-  display: flex;
-  align-items: center;
   overflow-x: scroll;
-  justify-content: flex-start;
   width: 100%;
-
-  @include mobile-and-tablet {
-    justify-content: flex-start;
-  }
 
   .cardList {
     height: 100%;
-    align-items: center;
-    gap: 20px;
-    display: inline-flex;
   }
 }
 
