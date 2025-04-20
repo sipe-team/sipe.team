@@ -29,15 +29,20 @@ function ScheduleCard({ title, processDate, subTitle }: ScheduleCardProps) {
         >
           {title}
         </Typography>
-        <Flex
-          asChild={true}
-          align="center"
-          className={styles.highlightTitle}
-          justify="center"
-        >
-          <Typography weight="semiBold">{processDate}</Typography>
+        <Flex asChild={true} align="center" justify="center">
+          <Typography
+            className={styles.highlightTitle}
+            color={color.cyan400}
+            weight="semiBold"
+          >
+            {processDate}
+          </Typography>
         </Flex>
-        <Typography className={styles.subTitle} weight="medium">
+        <Typography
+          color={color.gray400}
+          className={styles.subTitle}
+          weight="medium"
+        >
           {subTitle}
         </Typography>
       </CardWrapper>
