@@ -60,7 +60,7 @@ function TableData({ data, isApplicant }: TableDataProps) {
       {isApplicant ? (
         <CheckCircleIcon />
       ) : (
-        <Typography className={styles.subText} size={14}>
+        <Typography color={color.gray400} size={14}>
           {data.recurring_date}
         </Typography>
       )}
