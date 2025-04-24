@@ -1,8 +1,8 @@
 'use client';
 
-import { PropsWithChildren } from 'react';
+import { CSSProperties, PropsWithChildren } from 'react';
 
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, TargetAndTransition } from 'framer-motion';
 
 import useElementSize from '@/hook/useElementSize';
 import { createSVGMask } from '@/libs/utils/svg';
@@ -21,7 +21,9 @@ function GlowArea({ rx, children }: PropsWithChildren<GlowAreaProps>) {
       <div style={{ position: 'relative' }}>
         <motion.div
           className={styles.border}
-          animate={{ '--border-angle': ['0turn', '1turn'] } as any}
+          animate={
+            { '--border-angle': ['0turn', '1turn'] } as TargetAndTransition
+          }
           transition={{
             repeat: Infinity,
             duration: 6,
@@ -33,7 +35,7 @@ function GlowArea({ rx, children }: PropsWithChildren<GlowAreaProps>) {
               '--area-width': `${width}px`,
               '--area-height': `${height}px`,
               '--svg-mask': `url(${createSVGMask(width + 1, height + 1, rx)})`,
-            } as any
+            } as CSSProperties
           }
         ></motion.div>
         <div className={styles.area} ref={ref}>
