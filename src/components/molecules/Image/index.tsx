@@ -72,6 +72,7 @@ function Image({
     <>
       {renderFillImage(
         <NextImage
+          key={src}
           src={src}
           alt={alt}
           className={defaultClassName}
