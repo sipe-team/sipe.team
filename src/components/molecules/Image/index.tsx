@@ -1,4 +1,4 @@
-import React, { CSSProperties, ReactNode, useCallback } from 'react';
+import { CSSProperties, ReactNode, useCallback } from 'react';
 
 import NextImage, { ImageProps as NextImageProps } from 'next/image';
 
