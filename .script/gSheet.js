@@ -188,7 +188,7 @@ function processPeopleData(peoplesRow, config) {
     const row = it['_rawData'];
 
     const thumbnailId = (row[12] ?? '').match(/\/d\/(.*?)\/view/)?.[1] ?? '';
-    const key = row[0] ?? Math.random().toString(36).substring(2, 15);
+    const key = row[0] || Math.random().toString(36).substring(2, 15);
     const period = row[4];
 
     periodsMap[period].push({
