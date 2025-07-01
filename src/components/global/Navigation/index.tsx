@@ -84,13 +84,14 @@ function Navigation() {
                     buttonType="menu"
                     active={menu.path === pathname}
                     href={menu.path}
+                    isExternalLink={menu.isExternal}
                   >
                     {menu.name}
                   </Button>
                 ))}
                 <Button
                   disabled={currentStatus !== 'ongoing'}
-                  isExternalLink={true}
+                  isExternalLink
                   href={currentApplicationDetail.formUrl}
                   buttonType="apply"
                   onClick={handleClickJoinUsButton}
