@@ -1,4 +1,6 @@
-import React, { CSSProperties, ReactNode, useCallback } from 'react';
+'use client';
+
+import { CSSProperties, ReactNode, useCallback } from 'react';
 
 import NextImage, { ImageProps as NextImageProps } from 'next/image';
 
@@ -49,36 +51,28 @@ function Image({
     [fill, width, height, className],
   );
 
-  if (!src) {
-    return (
-      <>
-        {renderFillImage(
-          <NextImage
-            src={'/assets/empty_image.png'}
-            className={defaultClassName}
-            alt="기본 이미지"
-            fill={fill}
-            sizes={defaultSizes}
-            width={fill ? undefined : width}
-            height={fill ? undefined : height}
-            {...rest}
-          />,
-        )}
-      </>
-    );
-  }
+  const fallbackImageSource = '/assets/empty_image.png';
+  const imageSrc = src || fallbackImageSource;
+  const imageAlt = alt || 'Siper Image';
 
   return (
     <>
       {renderFillImage(
         <NextImage
-          src={src}
-          alt={alt}
+          key={imageSrc}
+          src={imageSrc}
+          alt={imageAlt}
           className={defaultClassName}
           fill={fill}
           sizes={defaultSizes}
           width={fill ? undefined : width}
           height={fill ? undefined : height}
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            if (target.src !== fallbackImageSource) {
+              target.src = fallbackImageSource;
+            }
+          }}
           {...rest}
         />,
       )}
