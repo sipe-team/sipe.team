@@ -4,7 +4,7 @@ import styles from './index.module.scss';
 
 const summaryData = [
   { title: '누적 지원자 수', value: '400+' },
-  { title: '총 참여자 수', value: '101' },
+  { title: '총 참여자 수', value: '140' },
   { title: '누적 미션 수', value: '51' },
 ];
 
