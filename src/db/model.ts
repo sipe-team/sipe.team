@@ -22,7 +22,7 @@ export interface Activity {
   video: ActivityVideo[];
 }
 
-export type PeopleGeneration = '1' | '2' | '3' | 'contribute';
+export type PeopleGeneration = '1' | '2' | '3' | '4';
 
 export type People = Record<PeopleGeneration, PeopleItem[]>;
 

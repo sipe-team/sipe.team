@@ -122,22 +122,48 @@ async function getSheetRows(sheets) {
 async function processConfigData(configRow) {
   try {
     if (!configRow || configRow.length === 0) {
-      console.warn('Config sheet is empty');
-      return {};
+      console.warn('Config sheet is empty, using default values');
+      return {
+        periods: [],
+        activitiesType: [],
+        imageBaseUrl: '',
+        periodsMap: {},
+        activityMap: {},
+      };
     }
 
-    const driveData = configRow.find((it) => it._rowNumber === 3)['_rawData'];
-    const periods = configRow
-      .find((it) => it._rowNumber === 2)
-      ['_rawData'].slice(1)[0]
+    // Safe data extraction with fallbacks
+    const driveDataRow = configRow.find((it) => it._rowNumber === 3);
+    const periodsRow = configRow.find((it) => it._rowNumber === 2);
+    const activitiesTypeRow = configRow.find((it) => it._rowNumber === 4);
+
+    if (!driveDataRow || !periodsRow || !activitiesTypeRow) {
+      console.error('Missing required config rows');
+      throw new Error('Config sheet is missing required data rows');
+    }
+
+    const driveData = driveDataRow['_rawData'];
+    const periodsData = periodsRow['_rawData'].slice(1)[0];
+    const activitiesTypeData = activitiesTypeRow['_rawData'].slice(1)[0];
+
+    if (!periodsData || !activitiesTypeData) {
+      console.error('Missing periods or activities type data');
+      throw new Error(
+        'Config sheet is missing periods or activities type data',
+      );
+    }
+
+    const periods = periodsData
       .split(',')
-      .map((it) => it.trim());
-    const activitiesType = configRow
-      .find((it) => it._rowNumber === 4)
-      ['_rawData'].slice(1)[0]
+      .map((it) => it.trim())
+      .filter((it) => it.length > 0);
+
+    const activitiesType = activitiesTypeData
       .split(',')
-      .map((it) => it.trim());
-    const imageBaseUrl = driveData[1].trim();
+      .map((it) => it.trim())
+      .filter((it) => it.length > 0);
+
+    const imageBaseUrl = driveData && driveData[1] ? driveData[1].trim() : '';
 
     return {
       periods,
@@ -184,26 +210,50 @@ async function saveJsonFiles(data) {
 function processPeopleData(peoplesRow, config) {
   const { imageBaseUrl, periodsMap } = config;
 
-  peoplesRow.forEach((it) => {
-    const row = it['_rawData'];
+  peoplesRow.forEach((it, index) => {
+    try {
+      const row = it['_rawData'];
 
-    const thumbnailId = (row[12] ?? '').match(/\/d\/(.*?)\/view/)?.[1] ?? '';
-    const key = row[0] || Math.random().toString(36).substring(2, 15);
-    const period = row[4];
+      if (!row || row.length === 0) {
+        console.warn(`Skipping empty row at index ${index}`);
+        return;
+      }
 
-    periodsMap[period].push({
-      id: key,
-      period,
-      isOrganizer: row[5] === 'TRUE',
-      thumbnail: thumbnailId ? `${imageBaseUrl}${thumbnailId}` : '',
-      name: row[3],
-      part: row[6],
-      introduce: row[7],
-      review: row[8],
-      github: row[9],
-      linkedin: row[10],
-      etc: row[11],
-    });
+      const thumbnailId = (row[12] ?? '').match(/\/d\/(.*?)\/view/)?.[1] ?? '';
+      const key = row[0] || Math.random().toString(36).substring(2, 15);
+      const period = row[4];
+
+      // Check if period exists in periodsMap, if not, skip this row or create it
+      if (!period) {
+        console.warn(`Row ${index + 1}: Missing period value, skipping row`);
+        return;
+      }
+
+      if (!periodsMap[period]) {
+        console.warn(
+          `Row ${index + 1}: Period "${period}" not found in config. Available periods: ${Object.keys(periodsMap).join(', ')}`,
+        );
+        // Create the period if it doesn't exist
+        periodsMap[period] = [];
+      }
+
+      periodsMap[period].push({
+        id: key,
+        period,
+        isOrganizer: row[5] === 'TRUE',
+        thumbnail: thumbnailId ? `${imageBaseUrl}${thumbnailId}` : '',
+        name: row[3],
+        part: row[6],
+        introduce: row[7],
+        review: row[8],
+        github: row[9],
+        linkedin: row[10],
+        etc: row[11],
+      });
+    } catch (error) {
+      console.error(`Error processing people data at row ${index + 1}:`, error);
+      console.error('Row data:', it['_rawData']);
+    }
   });
 
   return periodsMap;
@@ -213,21 +263,44 @@ function processPeopleData(peoplesRow, config) {
 function processActivityData(activitiesRow, config) {
   const { imageBaseUrl, activityMap } = config;
 
-  activitiesRow.forEach((it) => {
-    const row = it['_rawData'];
-    const type = row[1] || 'B';
+  activitiesRow.forEach((it, index) => {
+    try {
+      const row = it['_rawData'];
 
-    activityMap[type].push({
-      id: row[0],
-      type,
-      thumbnail: row[2] ? `${imageBaseUrl}${row[2]}&sz=w1000` : '',
-      title: row[3] || '',
-      description: row[4] || '',
-      name: row[5] || '',
-      date: row[6] || '',
-      link: row[7] || '',
-      profile: row[8] ? `${imageBaseUrl}${row[8]}` : '',
-    });
+      if (!row || row.length === 0) {
+        console.warn(`Skipping empty activity row at index ${index}`);
+        return;
+      }
+
+      const type = row[1] || 'B';
+
+      // Check if activity type exists in activityMap, if not, create it
+      if (!activityMap[type]) {
+        console.warn(
+          `Row ${index + 1}: Activity type "${type}" not found in config. Available types: ${Object.keys(activityMap).join(', ')}`,
+        );
+        // Create the activity type if it doesn't exist
+        activityMap[type] = [];
+      }
+
+      activityMap[type].push({
+        id: row[0],
+        type,
+        thumbnail: row[2] ? `${imageBaseUrl}${row[2]}&sz=w1000` : '',
+        title: row[3] || '',
+        description: row[4] || '',
+        name: row[5] || '',
+        date: row[6] || '',
+        link: row[7] || '',
+        profile: row[8] ? `${imageBaseUrl}${row[8]}` : '',
+      });
+    } catch (error) {
+      console.error(
+        `Error processing activity data at row ${index + 1}:`,
+        error,
+      );
+      console.error('Row data:', it['_rawData']);
+    }
   });
 
   return activityMap;
