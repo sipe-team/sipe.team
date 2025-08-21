@@ -17,12 +17,11 @@ import { displayApplication, getCurrentStatus } from '@/libs/utils/recruit';
 
 import styles from './index.module.scss';
 
-const menus: { name: string; path: string; isExternal?: boolean }[] = [
+const menus: { name: string; path: string }[] = [
   { name: 'About', path: '/about' },
   { name: 'Recruit', path: '/recruit' },
   { name: 'People', path: '/people' },
   { name: 'Activity', path: '/activity' },
-  { name: 'Blog', path: 'https://blog.sipe.team', isExternal: true },
 ];
 
 function Navigation() {
@@ -84,7 +83,6 @@ function Navigation() {
                     buttonType="menu"
                     active={menu.path === pathname}
                     href={menu.path}
-                    isExternalLink={menu.isExternal}
                   >
                     {menu.name}
                   </Button>
