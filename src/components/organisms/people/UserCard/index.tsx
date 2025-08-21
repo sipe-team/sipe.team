@@ -33,14 +33,8 @@ function UserCard({
   introduce = '',
   review = '',
 }: UserCardProps) {
-  const isContributor = period === 'contribute';
-
   return (
-    <CardWrapper
-      type="CONTENT"
-      className="people-box"
-      minHeight={isContributor ? undefined : 270}
-    >
+    <CardWrapper type="CONTENT" className="people-box" minHeight={270}>
       <section className={styles.userInfo}>
         <Image
           className={styles.profile}
@@ -74,7 +68,7 @@ function UserCard({
         </section>
       </section>
       <section className={styles.introduceWrapper}>{introduce}</section>
-      {!isContributor && (
+      {review && (
         <section className={styles.reviewWrapper}>
           <h3>활동후기</h3>
           <p>{review}</p>
