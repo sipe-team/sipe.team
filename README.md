@@ -15,7 +15,9 @@
 </a>
 
 ## 🐛 Bug reporting
+
 [Issues](https://github.com/sipe-team/sipe.team/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc)
 
 ## 🔒 LICENSE
+
 This Project is [MIT LICENSE](https://github.com/sipe-team/sipe.team/blob/main/LICENSE).
