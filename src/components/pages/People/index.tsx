@@ -30,7 +30,7 @@ function People({
               active={generation === selectedPeopleGeneration}
               href={`/people?generation=${generation}`}
             >
-              {generation === 'contribute' ? '기여자' : `${generation}기`}
+              {`${generation}기`}
             </Button>
           ))}
         </div>

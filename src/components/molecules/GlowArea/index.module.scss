@@ -1,32 +1,32 @@
 .border {
-    --border-size: 15px;
-    --border-angle: 0turn;
-    pointer-events: none;
-    background-image: conic-gradient(
-      from var(--border-angle) at 50% 50%,
-      rgba(255, 255, 255, 0.5) 0deg,
-      rgba(255, 255, 255, 0) 60deg,
-      rgba(255, 255, 255, 0) 310deg,
-      rgba(255, 255, 255, 0.5) 360deg
-    );
-    background-size: calc(100% - (var(--border-size) * 2))
-        calc(100% - (var(--border-size) * 2)),
-      cover;
-    position: absolute;
-    bottom: calc(50% - (var(--size) / 2));
-    left: calc(50% - (var(--size) / 2));
-    width: var(--size);
-    height: var(--size);
-    background-position: center center;
-    background-repeat: no-repeat;
+  --border-size: 15px;
+  --border-angle: 0turn;
+  pointer-events: none;
+  background-image: conic-gradient(
+    from var(--border-angle) at 50% 50%,
+    rgba(255, 255, 255, 0.5) 0deg,
+    rgba(255, 255, 255, 0) 60deg,
+    rgba(255, 255, 255, 0) 310deg,
+    rgba(255, 255, 255, 0.5) 360deg
+  );
+  background-size:
+    calc(100% - (var(--border-size) * 2)) calc(100% - (var(--border-size) * 2)),
+    cover;
+  position: absolute;
+  bottom: calc(50% - (var(--size) / 2));
+  left: calc(50% - (var(--size) / 2));
+  width: var(--size);
+  height: var(--size);
+  background-position: center center;
+  background-repeat: no-repeat;
 
-    mask: var(--svg-mask);
-    mask-size: (var(--area-width) + 4px) (var(--area-height) + 4px);
-    mask-position: center center;
-    mask-repeat: no-repeat;
-    mask-mode: alpha;
+  mask: var(--svg-mask);
+  mask-size: (var(--area-width) + 4px) (var(--area-height) + 4px);
+  mask-position: center center;
+  mask-repeat: no-repeat;
+  mask-mode: alpha;
 }
 
 .area {
-    position: relative;
+  position: relative;
 }
