@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
+import type { Route } from 'next';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -17,12 +18,11 @@ import { displayApplication, getCurrentStatus } from '@/libs/utils/recruit';
 
 import styles from './index.module.scss';
 
-const menus: { name: string; path: string; isExternal?: boolean }[] = [
+const menus: { name: string; path: Route }[] = [
   { name: 'About', path: '/about' },
   { name: 'Recruit', path: '/recruit' },
   { name: 'People', path: '/people' },
   { name: 'Activity', path: '/activity' },
-  { name: 'Blog', path: 'https://blog.sipe.team', isExternal: true },
 ];
 
 function Navigation() {
@@ -84,7 +84,6 @@ function Navigation() {
                     buttonType="menu"
                     active={menu.path === pathname}
                     href={menu.path}
-                    isExternalLink={menu.isExternal}
                   >
                     {menu.name}
                   </Button>
