@@ -23,6 +23,10 @@
   width: 280px;
   height: 56px;
 
+  &.primary {
+    background-color: var(--primary);
+  }
+
   @include mobile {
     width: fit-content;
     height: 44px;

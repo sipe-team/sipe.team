@@ -9,6 +9,7 @@ import RecruitmentSummarySkeleton from '@/components/organisms/home/RecruitmentS
 import useCopy from '@/hook/useCopyToClipboard';
 import { displayApplication, getCurrentStatus } from '@/libs/utils/recruit';
 
+import clsx from 'clsx';
 import styles from './index.module.scss';
 
 const now = Date.now();
@@ -39,6 +40,11 @@ function RecruitmentStatusSection() {
     sendGAEvent('event', 'cilck_application_button', {
       screen_name: '/',
     });
+    window.open(
+      currentApplicationDetail.formUrl,
+      '_blank',
+      'noopener,noreferrer',
+    );
   };
 
   return (
@@ -51,18 +57,11 @@ function RecruitmentStatusSection() {
       <RecruitmentSummary currentStatus={currentStatus} />
       <Flex className={styles.buttonWrapper} direction="row" gap="24px">
         <Button
-          asChild
-          className={styles.homeButton}
-          color="primary"
+          className={clsx(styles.homeButton, styles.primary)}
+          type="button"
           onClick={handleClickApplicationButton}
         >
-          <a
-            href={currentApplicationDetail.formUrl}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            {currentApplicationDetail.buttonText}
-          </a>
+          {currentApplicationDetail.buttonText}
         </Button>
         <Button
           color="white"
