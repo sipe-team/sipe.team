@@ -1,6 +1,6 @@
-export const CURRENT_GENERATION = 4;
-export const APPLICATION_START_DATE = new Date('2025-03-11 00:00:00');
-export const APPLICATION_DUE_DATE = new Date('2025-03-23 23:59:59');
+export const CURRENT_GENERATION = 5;
+export const APPLICATION_START_DATE = new Date('2024-12-14 00:00:00');
+export const APPLICATION_DUE_DATE = new Date('2026-01-05 23:59:59');
 
 export const JOIN_FORM_URL = 'https://forms.gle/SPM3xXTVrnvupcLDA';
 export const JOIN_ALARM_FORM_URL = 'https://forms.gle/q9wdvKhEyZmTZGS97';
@@ -76,28 +76,28 @@ export const InActivity = [
 export const CardList = [
   {
     title: '서류 접수',
-    processDate: '03.11(화) ~ 03.23(일)',
-    subTitle: '23일 자정에 접수 마감',
+    processDate: '12.14(일) ~ 01.05(월)',
+    subTitle: '5일 자정에 접수 마감',
   },
   {
     title: '서류 합격자 발표',
-    processDate: '03.28(금)',
+    processDate: '01.13(화)',
     subTitle: '오후 1시 예정',
   },
   {
     title: '오프라인 인터뷰',
-    processDate: '04.12(토) ~ 04.13(일)',
+    processDate: '01.31(토) ~ 02.01(일)',
     subTitle: '서류합격자 개별연락',
   },
 
   {
     title: '최종 합격자 발표',
-    processDate: '04.18(금)',
+    processDate: '02.14(토)',
     subTitle: '오후 1시 예정',
   },
   {
     title: '정규 활동 시작',
-    processDate: '04.26(토)',
+    processDate: '03.07(토)',
     subTitle: 'OT 진행',
   },
 ];

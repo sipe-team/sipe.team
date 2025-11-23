@@ -1925,19 +1925,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sipe-team/radio-group@npm:0.0.3":
-  version: 0.0.3
-  resolution: "@sipe-team/radio-group@npm:0.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fradio-group%2F0.0.3%2F16e423e9d4cd2c8f04b7fd63759c33df92aa06af"
+"@sipe-team/radio@npm:0.1.0":
+  version: 0.1.0
+  resolution: "@sipe-team/radio@npm:0.1.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fradio%2F0.1.0%2F6c3d7c8319e7aa9a9c0a821d3f3796dec7351dc9"
   peerDependencies:
     react: ">= 18"
     react-dom: ">= 18"
-  checksum: 10/777e8d902e7b656492baf7cde942946b39ec0c3adb30a7ba676f6151573831b70b44d5ce24fae23bf39c45c4e108718c0cd4cda5aa939e793f17fc807495201c
+  checksum: 10/8c4d60a3aa7da7e4e2f40b0be661776b2021e5da7661214d5a31e1ce5e808d80a17b45d4eb0ef9f1e5b2bdce437b78bf039ed20d3f612a61e3b28a03c79a9680
   languageName: node
   linkType: hard
 
-"@sipe-team/side@npm:^0.2.2":
-  version: 0.2.4
-  resolution: "@sipe-team/side@npm:0.2.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fside%2F0.2.4%2Fb3ed746f3807eebbaf4f6368c98c76a6c97ffa52"
+"@sipe-team/side@npm:^0.2.5":
+  version: 0.2.5
+  resolution: "@sipe-team/side@npm:0.2.5::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40sipe-team%2Fside%2F0.2.5%2F7323c705dfd499d6a4df8584fef3e233f869454c"
   dependencies:
     "@sipe-team/badge": "npm:0.0.4"
     "@sipe-team/button": "npm:0.0.2"
@@ -1945,7 +1945,7 @@ __metadata:
     "@sipe-team/divider": "npm:0.0.3"
     "@sipe-team/flex": "npm:0.1.3"
     "@sipe-team/input": "npm:0.0.4"
-    "@sipe-team/radio-group": "npm:0.0.3"
+    "@sipe-team/radio": "npm:0.1.0"
     "@sipe-team/skeleton": "npm:0.0.3"
     "@sipe-team/switch": "npm:0.0.3"
     "@sipe-team/tokens": "npm:0.1.0"
@@ -1954,7 +1954,7 @@ __metadata:
   peerDependencies:
     react: ">= 18"
     react-dom: ">= 18"
-  checksum: 10/a890c5492b507a612ba925dc102a229f7181dd4bffaa490a8433c3e282a5b1fa5af76341b80852c13c6950fc0165ed198022da0efe61d4996b9af5fbd29f8c9f
+  checksum: 10/aebd8b8cba3a1b319654760a22775838e2e38892df767cf2ea9e0f974ff2e7ff5e89ac467a673c857f08e6711f9073a81a48e08f1e718e8370da14f13ba6b994
   languageName: node
   linkType: hard
 
@@ -7173,7 +7173,7 @@ __metadata:
     "@next/eslint-plugin-next": "npm:^15.2.4"
     "@next/third-parties": "npm:^14.2.11"
     "@playwright/test": "npm:^1.49.1"
-    "@sipe-team/side": "npm:^0.2.2"
+    "@sipe-team/side": "npm:^0.2.5"
     "@svgr/webpack": "npm:8.1.0"
     "@types/node": "npm:^20.12.2"
     "@types/react": "npm:^18.3.4"
