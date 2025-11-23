@@ -4,12 +4,12 @@ import dynamic from 'next/dynamic';
 
 import { sendGAEvent } from '@next/third-parties/google';
 import { Button, Flex } from '@sipe-team/side';
+import clsx from 'clsx';
 
 import RecruitmentSummarySkeleton from '@/components/organisms/home/RecruitmentSummarySkeleton';
 import useCopy from '@/hook/useCopyToClipboard';
 import { displayApplication, getCurrentStatus } from '@/libs/utils/recruit';
 
-import clsx from 'clsx';
 import styles from './index.module.scss';
 
 const now = Date.now();
