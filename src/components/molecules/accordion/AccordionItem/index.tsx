@@ -50,7 +50,12 @@ function AccordionItem({
             exit={{ height: 0 }}
             transition={{ type: 'spring', duration: 0.4, bounce: 0 }}
           >
-            <Typography className={styles.value} size={14} weight="semiBold">
+            <Typography
+              className={styles.value}
+              color={color.gray200}
+              size={14}
+              weight="semiBold"
+            >
               {value}
             </Typography>
           </motion.div>

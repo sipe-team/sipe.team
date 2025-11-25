@@ -35,9 +35,15 @@ function ScheduleCard({ title, processDate, subTitle }: ScheduleCardProps) {
           className={styles.highlightTitle}
           justify="center"
         >
-          <Typography weight="semiBold">{processDate}</Typography>
+          <Typography color={'var(--primary)'} weight="semiBold">
+            {processDate}
+          </Typography>
         </Flex>
-        <Typography className={styles.subTitle} weight="medium">
+        <Typography
+          className={styles.subTitle}
+          color={color.gray200}
+          weight="medium"
+        >
           {subTitle}
         </Typography>
       </CardWrapper>
