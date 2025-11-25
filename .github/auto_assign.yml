@@ -1,8 +1,7 @@
-addReviewers: true
+# addReviewers: true
 addAssignees: author
-
-reviewers:
-  - azure-553
-  - ProdMoon
-  - froggy1014
-  - frontman-git
+# reviewers:
+#   - azure-553
+#   - ProdMoon
+#   - froggy1014
+#   - frontman-git

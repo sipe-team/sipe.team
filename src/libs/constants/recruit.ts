@@ -1,5 +1,5 @@
 export const CURRENT_GENERATION = 5;
-export const APPLICATION_START_DATE = new Date('2024-12-14 00:00:00');
+export const APPLICATION_START_DATE = new Date('2025-12-14 00:00:00');
 export const APPLICATION_DUE_DATE = new Date('2026-01-05 23:59:59');
 
 export const JOIN_FORM_URL = 'https://forms.gle/SPM3xXTVrnvupcLDA';
