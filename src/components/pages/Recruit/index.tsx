@@ -1,6 +1,7 @@
 import { Flex } from '@sipe-team/side';
 
 import ContentWithTitle from '@/components/atoms/ContentWithTitle';
+import DraggableContainer from '@/components/atoms/DraggableContainer';
 import Layout from '@/components/atoms/Layout';
 import Table from '@/components/molecules/Table';
 import Faq from '@/components/organisms/Faq';
@@ -19,11 +20,9 @@ function Recruit() {
         <Table dataList={Applicants} isApplicant={true} />
       </ContentWithTitle>
       <ContentWithTitle title="모집 일정">
-        <Flex
-          align="center"
+        <DraggableContainer
+          ariaLabel="모집 일정 스크롤 영역"
           className={styles.cardListWrapper}
-          justify="flex-start"
-          wrap="wrap"
         >
           <Flex
             align="center"
@@ -43,7 +42,7 @@ function Recruit() {
               />
             ))}
           </Flex>
-        </Flex>
+        </DraggableContainer>
       </ContentWithTitle>
       <ContentWithTitle title="활동안내">
         <Table dataList={InActivity} isApplicant={false} />

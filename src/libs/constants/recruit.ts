@@ -6,6 +6,12 @@ export const JOIN_FORM_URL = 'https://forms.gle/SPM3xXTVrnvupcLDA';
 export const JOIN_ALARM_FORM_URL = 'https://forms.gle/VS7Ap4xfSyf2qYqQ6';
 export const JOIN_NEXT_ALARM_FORM_URL = 'https://forms.gle/VS7Ap4xfSyf2qYqQ6';
 
+export type CardListType = {
+  title: string;
+  processDate: string;
+  subTitle: string;
+};
+
 export const Applicants = [
   {
     text: '격주 토요일 오후 2시 ~ 6시에 진행되는 정규 활동에 성실하게 참여할 수 있는',
@@ -22,53 +28,58 @@ export const Applicants = [
 
 export const InActivity = [
   {
-    recurring_date: '1회차 (04.26)',
+    recurring_date: '1회차 (03.07)',
     text: 'OT',
     badge: '',
   },
   {
-    recurring_date: '2회차 (05.10)',
+    recurring_date: '2회차 (03.21)',
     text: 'MT',
-    badge: '1차 미션 시작',
+    badge: '1차 미션 팀 빌딩',
   },
   {
-    recurring_date: '3회차 (05.24)',
-    text: '사이프챗',
+    recurring_date: '3회차 (04.04)',
+    text: '라이트닝 토크 1',
     badge: '',
   },
   {
-    recurring_date: '4회차 (06.07)',
-    text: '홈커밍데이',
+    recurring_date: '4회차 (04.18)',
+    text: '개발자 힐링 캠프',
     badge: '',
   },
   {
-    recurring_date: '5회차 (06.21)',
+    recurring_date: '5회차 (05.02)',
     text: '1차 미션 발표',
     badge: '',
   },
   {
-    recurring_date: '6회차 (07.05)',
+    recurring_date: '6회차 (05.16)',
     text: '스파크 세션',
-    badge: '2차 미션 시작',
+    badge: '해커톤 팀 빌딩',
   },
   {
-    recurring_date: '7회차 (07.19)',
-    text: '사이데이션',
+    recurring_date: '7회차 (05.30)',
+    text: '내친소',
     badge: '',
   },
   {
-    recurring_date: '8회차 (08.02)',
+    recurring_date: '8회차 (06.13)',
+    text: '라이트닝 토크 2',
+    badge: '',
+  },
+  {
+    recurring_date: '9회차 (06.27)',
+    text: '사이프톤',
+    badge: '',
+  },
+  {
+    recurring_date: '10회차 (07.11)',
     text: '사담콘',
     badge: '',
   },
   {
-    recurring_date: '9회차 (08.16)',
-    text: '2차 미션 발표',
-    badge: '',
-  },
-  {
-    recurring_date: '10회차 (08.30)',
-    text: '사이프-로그',
+    recurring_date: '10회차 (07.25)',
+    text: '사이프 로그',
     badge: '정규 활동 종료',
   },
 ];
@@ -82,7 +93,7 @@ export const CardList = [
   {
     title: '서류 합격자 발표',
     processDate: '01.13(화)',
-    subTitle: '오후 1시 예정',
+    subTitle: '힙격자 개별 연락',
   },
   {
     title: '오프라인 인터뷰',
@@ -93,7 +104,7 @@ export const CardList = [
   {
     title: '최종 합격자 발표',
     processDate: '02.14(토)',
-    subTitle: '오후 1시 예정',
+    subTitle: '힙격자 개별 연락',
   },
   {
     title: '정규 활동 시작',
