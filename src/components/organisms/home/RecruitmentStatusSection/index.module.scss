@@ -25,6 +25,10 @@
 
   &.primary {
     background-color: var(--primary);
+
+    &:hover {
+      background-color: var(--primary-hover);
+    }
   }
 
   @include mobile {
