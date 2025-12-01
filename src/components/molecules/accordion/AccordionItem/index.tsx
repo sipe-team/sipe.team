@@ -51,8 +51,8 @@ function AccordionItem({
             transition={{ type: 'spring', duration: 0.4, bounce: 0 }}
           >
             <Typography
-              color={color.gray200}
               className={styles.value}
+              color={color.gray200}
               size={14}
               weight="semiBold"
             >

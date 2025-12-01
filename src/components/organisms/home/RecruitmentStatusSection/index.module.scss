@@ -23,6 +23,14 @@
   width: 280px;
   height: 56px;
 
+  &.primary {
+    background-color: var(--primary);
+
+    &:hover {
+      background-color: var(--primary-hover);
+    }
+  }
+
   @include mobile {
     width: fit-content;
     height: 44px;

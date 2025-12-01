@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 
 import { sendGAEvent } from '@next/third-parties/google';
 import { Button, Flex } from '@sipe-team/side';
+import clsx from 'clsx';
 
 import RecruitmentSummarySkeleton from '@/components/organisms/home/RecruitmentSummarySkeleton';
 import useCopy from '@/hook/useCopyToClipboard';
@@ -39,6 +40,11 @@ function RecruitmentStatusSection() {
     sendGAEvent('event', 'cilck_application_button', {
       screen_name: '/',
     });
+    window.open(
+      currentApplicationDetail.formUrl,
+      '_blank',
+      'noopener,noreferrer',
+    );
   };
 
   return (
@@ -51,18 +57,11 @@ function RecruitmentStatusSection() {
       <RecruitmentSummary currentStatus={currentStatus} />
       <Flex className={styles.buttonWrapper} direction="row" gap="24px">
         <Button
-          asChild
-          className={styles.homeButton}
-          color="primary"
+          className={clsx(styles.homeButton, styles.primary)}
+          type="button"
           onClick={handleClickApplicationButton}
         >
-          <a
-            href={currentApplicationDetail.formUrl}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            {currentApplicationDetail.buttonText}
-          </a>
+          {currentApplicationDetail.buttonText}
         </Button>
         <Button
           color="white"
