@@ -61,7 +61,11 @@ function UserCard({
             <p className={styles.part}>{part}</p>
             {isOrganizer && (
               <p className={styles.organizer}>
-                Organizer <OrganizerIcon className={styles.organizerMark} />
+                Organizer{' '}
+                <OrganizerIcon
+                  className={styles.organizerMark}
+                  style={{ color: 'var(--primary)' }}
+                />
               </p>
             )}
           </section>

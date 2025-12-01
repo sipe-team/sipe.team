@@ -58,7 +58,8 @@ function TableData({ data, isApplicant }: TableDataProps) {
       justify="space-between"
     >
       {isApplicant ? (
-        <CheckCircleIcon />
+        // 이전 check_circle.svg 색상은: --cyan 이었음
+        <CheckCircleIcon style={{ color: 'var(--primary)' }} />
       ) : (
         <Typography color={'var(--gray700)'} size={14}>
           {data.recurring_date}
