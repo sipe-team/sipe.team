@@ -55,6 +55,7 @@
   border-radius: 8px;
   background-color: color('gray100');
   padding: 12px 16px;
+  white-space: pre-line;
 
   @include desktop {
     margin-top: 24px;

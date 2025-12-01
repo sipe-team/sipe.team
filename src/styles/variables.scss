@@ -1,6 +1,8 @@
 :root {
   /* colors */
-  --primary: #00ffff;
+  --primary: #ffb24d;
+  --primary-hover: #d9963f;
+  // --primary: #00ffff;
   --black: #131518;
   --gray000: #1a202c;
   --gray100: #2d3748;
@@ -13,6 +15,8 @@
   --gray800: #edf2f7;
   --gray900: #f7fafc;
   --white: #ffffff;
+  // 이전 check_circle.svg, organizer.svg 색상
+  --cyan: #00ffff;
 
   /* typography */
   --font-weight-black: 900;
