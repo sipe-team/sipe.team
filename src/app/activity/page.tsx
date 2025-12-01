@@ -25,7 +25,7 @@ type SearchParams = {
 
 function Page({ searchParams }: { searchParams?: SearchParams }) {
   const activity = getActivity();
-  const currentActivityTab = searchParams?.tab || 'post';
+  const currentActivityTab = searchParams?.tab || 'video';
 
   const sortedActivity = [...activity[currentActivityTab]].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
