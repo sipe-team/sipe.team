@@ -78,7 +78,7 @@ export const InActivity = [
     badge: '',
   },
   {
-    recurring_date: '10회차 (07.25)',
+    recurring_date: '11회차 (07.25)',
     text: '사이프 로그',
     badge: '정규 활동 종료',
   },
@@ -93,7 +93,7 @@ export const CardList = [
   {
     title: '서류 합격자 발표',
     processDate: '01.13(화)',
-    subTitle: '힙격자 개별 연락',
+    subTitle: '합격자 개별 연락',
   },
   {
     title: '오프라인 인터뷰',
@@ -104,7 +104,7 @@ export const CardList = [
   {
     title: '최종 합격자 발표',
     processDate: '02.14(토)',
-    subTitle: '힙격자 개별 연락',
+    subTitle: '합격자 개별 연락',
   },
   {
     title: '정규 활동 시작',
