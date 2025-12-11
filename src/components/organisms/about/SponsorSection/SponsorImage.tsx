@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 
+import Image from 'next/image';
+
 import clsx from 'clsx';
 
 import styles from './index.module.scss';
@@ -18,17 +20,25 @@ function SponsorImage({ src, alt }: SponsorImageProps) {
     setHasError(true);
   };
 
-  const imageSrc = hasError ? '/assets/empty_image.png' : src;
-  const imageClassName = hasError ? styles.fallbackImage : styles.sponsorImage;
+  const imageProperties = hasError
+    ? {
+        src: '/assets/empty_image.png',
+        alt: 'Image not available',
+        fill: true,
+        className: styles.fallbackImage,
+      }
+    : {
+        src,
+        alt,
+        width: 0,
+        height: 0,
+        onError: handleError,
+        className: styles.sponsorImage,
+      };
 
   return (
     <div className={clsx(styles.imageWrapper, hasError && styles.errorWrapper)}>
-      <img
-        src={imageSrc}
-        alt={alt}
-        onError={handleError}
-        className={imageClassName}
-      />
+      <Image {...imageProperties} />
     </div>
   );
 }

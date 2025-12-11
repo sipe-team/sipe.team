@@ -1,8 +1,8 @@
 import ContentWithTitle from '@/components/atoms/ContentWithTitle';
-import SponsorImage from './SponsorImage';
-
 import { getAbout } from '@/db';
 import { getEntries } from '@/libs/utils';
+
+import SponsorImage from './SponsorImage';
 
 import styles from './index.module.scss';
 
