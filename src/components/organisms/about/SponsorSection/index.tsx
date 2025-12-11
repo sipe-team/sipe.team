@@ -1,5 +1,6 @@
 import ContentWithTitle from '@/components/atoms/ContentWithTitle';
-import Image from '@/components/molecules/Image';
+import SponsorImage from './SponsorImage';
+
 import { getAbout } from '@/db';
 import { getEntries } from '@/libs/utils';
 
@@ -14,14 +15,7 @@ function Sponsor() {
       <ContentWithTitle title="후원사 소개">
         <div className={styles.imageList}>
           {sponsors.map(([key, sponsor]) => (
-            <Image
-              objectFit="contain"
-              src={sponsor.link}
-              key={key}
-              alt={sponsor.name}
-              width={320}
-              height={180}
-            />
+            <SponsorImage key={key} src={sponsor.link} alt={sponsor.name} />
           ))}
         </div>
       </ContentWithTitle>
