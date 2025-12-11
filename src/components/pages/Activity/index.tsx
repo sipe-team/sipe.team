@@ -24,18 +24,18 @@ function Activity({ activityData, currentTab }: Props) {
           <Button
             className={styles.periodButton}
             buttonType="chip"
-            active={currentTab === 'post'}
-            href="/activity?tab=post"
-          >
-            블로그
-          </Button>
-          <Button
-            className={styles.periodButton}
-            buttonType="chip"
             active={currentTab === 'video'}
             href="/activity?tab=video"
           >
             발표 영상
+          </Button>
+          <Button
+            className={styles.periodButton}
+            buttonType="chip"
+            active={currentTab === 'post'}
+            href="/activity?tab=post"
+          >
+            블로그
           </Button>
         </div>
         <div className={styles.wrapper}>
