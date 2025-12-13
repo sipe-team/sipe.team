@@ -2,7 +2,7 @@ export const CURRENT_GENERATION = 5;
 export const APPLICATION_START_DATE = new Date('2025-12-14 00:00:00');
 export const APPLICATION_DUE_DATE = new Date('2026-01-05 23:59:59');
 
-export const JOIN_FORM_URL = 'https://forms.gle/SPM3xXTVrnvupcLDA';
+export const JOIN_FORM_URL = 'https://forms.gle/Mr6e4NyPrdSdJPU4A';
 export const JOIN_ALARM_FORM_URL = 'https://forms.gle/VS7Ap4xfSyf2qYqQ6';
 export const JOIN_NEXT_ALARM_FORM_URL = 'https://forms.gle/VS7Ap4xfSyf2qYqQ6';
 
