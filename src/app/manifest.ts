@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next';
 
+import { ASSET_VERSION } from '@/libs/constants/assetVersion';
+
 function manifest(): MetadataRoute.Manifest {
   return {
     name: 'SIPE',
@@ -11,27 +13,27 @@ function manifest(): MetadataRoute.Manifest {
     theme_color: '#131518',
     icons: [
       {
-        src: '/favicon.ico',
+        src: `/favicon.ico?v=${ASSET_VERSION}`,
         sizes: '48x48',
         type: 'image/x-icon',
       },
       {
-        src: '/assets/favicon-16x16.png',
+        src: `/assets/favicon-16x16.png?v=${ASSET_VERSION}`,
         sizes: '16x16',
         type: 'image/png',
       },
       {
-        src: '/assets/favicon-32x32.png',
+        src: `/assets/favicon-32x32.png?v=${ASSET_VERSION}`,
         sizes: '32x32',
         type: 'image/png',
       },
       {
-        src: '/assets/android-chrome-192x192.png',
+        src: `/assets/android-chrome-192x192.png?v=${ASSET_VERSION}`,
         sizes: '192x192',
         type: 'image/png',
       },
       {
-        src: '/assets/android-chrome-512x512.png',
+        src: `/assets/android-chrome-512x512.png?v=${ASSET_VERSION}`,
         sizes: '512x512',
         type: 'image/png',
       },

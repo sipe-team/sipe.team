@@ -9,6 +9,7 @@ import { pretendardFont } from '@/app/_fonts';
 import ClientProvider from '@/components/global/ClientProvider';
 import Footer from '@/components/global/Footer';
 import Navigation from '@/components/global/Navigation';
+import { ASSET_VERSION } from '@/libs/constants/assetVersion';
 import { DEFAULT_METADATA } from '@/libs/constants/metadata';
 
 import styles from './layout.module.scss';
@@ -19,18 +20,21 @@ function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko" className={pretendardFont.className}>
       <head>
-        <link rel="mask-icon" href="/assets/safari-pinned-tab.svg" />
+        <link
+          rel="mask-icon"
+          href={`/assets/safari-pinned-tab.svg?v=${ASSET_VERSION}`}
+        />
         <link
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href="/assets/favicon-32x32.png"
+          href={`/assets/favicon-32x32.png?v=${ASSET_VERSION}`}
         />
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href="/assets/favicon-16x16.png"
+          href={`/assets/favicon-16x16.png?v=${ASSET_VERSION}`}
         />
       </head>
       <body>
