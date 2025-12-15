@@ -1,8 +1,8 @@
 import ContentWithTitle from '@/components/atoms/ContentWithTitle';
 import ExternalLink from '@/components/atoms/ExternalLink';
 import { EmailIcon } from '@/libs/assets/icons';
-// import { KakaoLogo } from '@/libs/assets/logos';
 
+// import { KakaoLogo } from '@/libs/assets/logos';
 import styles from './index.module.scss';
 
 function ContactSection() {
