@@ -12,6 +12,10 @@ export const DEFAULT_METADATA: Metadata = {
   metadataBase,
   title,
   description,
+  icons: {
+    icon: `/favicon.ico?v=${ASSET_VERSION}`,
+    apple: `/assets/apple-touch-icon.png?v=${ASSET_VERSION}`,
+  },
   openGraph: {
     title,
     description,
