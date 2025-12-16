@@ -21,6 +21,18 @@ function RootLayout({ children }: { children: React.ReactNode }) {
     <html lang="ko" className={pretendardFont.className}>
       <head>
         <link
+          rel="icon"
+          href={`/favicon.ico?v=${ASSET_VERSION}`}
+          type="image/x-icon"
+          sizes="48x48"
+        />
+        <link
+          rel="apple-touch-icon"
+          href={`/apple-icon.png?v=${ASSET_VERSION}`}
+          type="image/png"
+          sizes="180x180"
+        />
+        <link
           rel="mask-icon"
           href={`/assets/safari-pinned-tab.svg?v=${ASSET_VERSION}`}
         />
