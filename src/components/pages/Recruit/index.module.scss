@@ -9,3 +9,24 @@
 .faqWrapper {
   padding: 0 20px;
 }
+
+.chartsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 32px;
+}
+
+.chartSection {
+  width: 100%;
+  max-width: 514px;
+
+  @include mobile-and-tablet {
+    max-width: 100%;
+  }
+}
+
+.jobRoleChartSection {
+  width: 100%;
+  max-width: 100%;
+}

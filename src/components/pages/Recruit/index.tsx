@@ -5,6 +5,9 @@ import DraggableContainer from '@/components/atoms/DraggableContainer';
 import Layout from '@/components/atoms/Layout';
 import Table from '@/components/molecules/Table';
 import Faq from '@/components/organisms/Faq';
+import CompanyChart from '@/components/organisms/recruit/CompanyChart';
+import ExperienceChart from '@/components/organisms/recruit/ExperienceChart';
+import JobRoleChart from '@/components/organisms/recruit/JobRoleChart';
 import ScheduleCard from '@/components/organisms/recruit/ScheduleCard';
 import { getFaq } from '@/db';
 import { Applicants, CardList, InActivity } from '@/libs/constants/recruit';
@@ -46,6 +49,19 @@ function Recruit() {
       </ContentWithTitle>
       <ContentWithTitle title="활동안내">
         <Table dataList={InActivity} isApplicant={false} />
+      </ContentWithTitle>
+      <ContentWithTitle title="이전 기수 구성원 현황">
+        <div className={styles.chartsWrapper}>
+          <div className={styles.chartSection}>
+            <ExperienceChart />
+          </div>
+          <div className={styles.chartSection}>
+            <CompanyChart />
+          </div>
+          <div className={styles.jobRoleChartSection}>
+            <JobRoleChart />
+          </div>
+        </div>
       </ContentWithTitle>
       <Faq faqs={faq.recruit} />
     </Layout>
