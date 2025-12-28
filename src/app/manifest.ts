@@ -4,8 +4,8 @@ import { ASSET_VERSION } from '@/libs/constants/assetVersion';
 
 function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'SIPE',
-    short_name: 'SIPE',
+    name: 'SIPE 5기 신규 모집 중 (~1/5 마감)',
+    short_name: 'SIPE 5기 신규 모집 중 (~1/5 마감)',
     description: '개발자들이 함께 교류하며 성장하는 IT 커뮤니티',
     start_url: '/',
     display: 'standalone',
