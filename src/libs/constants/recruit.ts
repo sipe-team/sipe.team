@@ -4,7 +4,7 @@ export const APPLICATION_DUE_DATE = new Date('2026-01-05 23:59:59');
 
 export const JOIN_FORM_URL = 'https://forms.gle/Mr6e4NyPrdSdJPU4A';
 export const JOIN_ALARM_FORM_URL = 'https://forms.gle/VS7Ap4xfSyf2qYqQ6';
-export const JOIN_NEXT_ALARM_FORM_URL = 'https://forms.gle/VS7Ap4xfSyf2qYqQ6';
+export const JOIN_NEXT_ALARM_FORM_URL = 'https://forms.gle/KxxLCA9db9NgWv4k8';
 
 export type CardListType = {
   title: string;
