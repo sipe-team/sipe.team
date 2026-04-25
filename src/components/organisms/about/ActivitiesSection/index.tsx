@@ -9,6 +9,8 @@ import clsx from 'clsx';
 import { Autoplay, EffectCoverflow, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import { Flex } from '@sipe-team/side';
+
 import ContentWithTitle from '@/components/atoms/ContentWithTitle';
 import Button from '@/components/molecules/Button';
 import Image from '@/components/molecules/Image';
@@ -30,7 +32,7 @@ function ActivitiesSection() {
 
   return (
     <ContentWithTitle title="주요 활동">
-      <div className={styles.menus}>
+      <Flex className={styles.menus}>
         {activities.map(([key, activity]) => (
           <Button
             className={styles.activityButton}
@@ -42,7 +44,7 @@ function ActivitiesSection() {
             {activity.name}
           </Button>
         ))}
-      </div>
+      </Flex>
       <Swiper
         loop={activityData.activities.length > 1 ? true : false}
         className={styles.swiper}
@@ -86,10 +88,10 @@ function ActivitiesSection() {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className={styles.description}>
+      <Flex align="center" className={styles.description} direction="column" gap="16px" inline={true} justify="center">
         <div className={styles.title}>{activityData?.title}</div>
         <div className={styles.subTitle}>{activityData?.description}</div>
-      </div>
+      </Flex>
     </ContentWithTitle>
   );
 }

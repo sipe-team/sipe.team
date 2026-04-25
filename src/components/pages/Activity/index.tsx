@@ -1,3 +1,5 @@
+import { Flex } from '@sipe-team/side';
+
 import ContentWithTitle from '@/components/atoms/ContentWithTitle';
 import Layout from '@/components/atoms/Layout';
 import Button from '@/components/molecules/Button';
@@ -20,7 +22,7 @@ function Activity({ activityData, currentTab }: Props) {
   return (
     <Layout>
       <ContentWithTitle title="사이퍼 활동">
-        <div className={styles.typeWrapper}>
+        <Flex className={styles.typeWrapper}>
           <Button
             className={styles.periodButton}
             buttonType="chip"
@@ -37,13 +39,14 @@ function Activity({ activityData, currentTab }: Props) {
           >
             블로그
           </Button>
-        </div>
+        </Flex>
         <div className={styles.wrapper}>
-          <div
-            className={currentTab === 'post' ? styles.cards : styles.videoCards}
-          >
-            {currentTab === 'post' &&
-              activityData.map((activity) => (
+          {currentTab === 'post' ? (
+            <Flex
+              className={styles.cards}
+              direction="column"
+            >
+              {activityData.map((activity) => (
                 <ActiveCard
                   key={activity.link}
                   thumbnail={activity.thumbnail}
@@ -55,8 +58,12 @@ function Activity({ activityData, currentTab }: Props) {
                   createDate={activity.date}
                 />
               ))}
-            {currentTab === 'video' &&
-              activityData.map((activity) => (
+            </Flex>
+          ) : (
+            <div
+            className={currentTab === 'post' ? styles.cards : styles.videoCards}
+          >
+              {activityData.map((activity) => (
                 <ActiveVideoCard
                   key={activity.link}
                   thumbnail={activity.thumbnail}
@@ -66,7 +73,8 @@ function Activity({ activityData, currentTab }: Props) {
                   createDate={activity.date}
                 />
               ))}
-          </div>
+            </div>
+          )}
         </div>
       </ContentWithTitle>
     </Layout>
