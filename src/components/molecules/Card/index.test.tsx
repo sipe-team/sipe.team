@@ -3,11 +3,17 @@ import { render, screen } from '@testing-library/react';
 import Card from './index';
 
 vi.mock('@/components/atoms/Badge', () => ({
-  default: ({ text }: { text: string }) => <div data-testid="badge">{text}</div>,
+  default: ({ text }: { text: string }) => (
+    <div data-testid="badge">{text}</div>
+  ),
 }));
 
 vi.mock('@/components/molecules/Image', () => ({
-  default: ({ alt, src }: { alt: string; src: string }) => <img alt={alt} src={src} />,
+  default: ({ alt, src }: { alt: string; src: string }) => (
+    // Tests only need an element with alt text semantics.
+    // eslint-disable-next-line @next/next/no-img-element
+    <img alt={alt} src={src} />
+  ),
 }));
 
 describe('Card', () => {

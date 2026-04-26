@@ -7,7 +7,9 @@ import type { ActivityPost, ActivityVideo } from '@/db/model';
 import Activity from './index';
 
 vi.mock('@/components/atoms/Layout', () => ({
-  default: ({ children }: { children: ReactNode }) => <div data-testid="layout">{children}</div>,
+  default: ({ children }: { children: ReactNode }) => (
+    <div data-testid="layout">{children}</div>
+  ),
 }));
 
 vi.mock('@/components/atoms/ContentWithTitle', () => ({
@@ -20,17 +22,25 @@ vi.mock('@/components/atoms/ContentWithTitle', () => ({
 }));
 
 vi.mock('@/components/molecules/Button', () => ({
-  default: ({ children, active }: { children: ReactNode; active?: boolean }) => (
-    <button aria-pressed={active}>{children}</button>
-  ),
+  default: ({
+    children,
+    active,
+  }: {
+    children: ReactNode;
+    active?: boolean;
+  }) => <button aria-pressed={active}>{children}</button>,
 }));
 
 vi.mock('@/components/organisms/activity/ActiveCard', () => ({
-  default: ({ contentTitle }: { contentTitle: string }) => <article data-testid="active-card">{contentTitle}</article>,
+  default: ({ contentTitle }: { contentTitle: string }) => (
+    <article data-testid="active-card">{contentTitle}</article>
+  ),
 }));
 
 vi.mock('@/components/organisms/activity/ActiveVideoCard', () => ({
-  default: ({ contentTitle }: { contentTitle: string }) => <article data-testid="active-video-card">{contentTitle}</article>,
+  default: ({ contentTitle }: { contentTitle: string }) => (
+    <article data-testid="active-video-card">{contentTitle}</article>
+  ),
 }));
 
 const postActivities: ActivityPost[] = [
@@ -65,7 +75,9 @@ describe('Activity page', () => {
   it('renders blog cards in the post tab', () => {
     render(<Activity activityData={postActivities} currentTab="post" />);
 
-    expect(screen.getByRole('button', { name: '발표 영상' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: '발표 영상' }),
+    ).toBeInTheDocument();
     expect(screen.getByRole('button', { name: '블로그' })).toBeInTheDocument();
     expect(screen.getAllByTestId('active-card')).toHaveLength(1);
     expect(screen.queryByTestId('active-video-card')).not.toBeInTheDocument();
@@ -77,6 +89,8 @@ describe('Activity page', () => {
 
     expect(screen.getAllByTestId('active-video-card')).toHaveLength(1);
     expect(screen.queryByTestId('active-card')).not.toBeInTheDocument();
-    expect(screen.getByTestId('active-video-card')).toHaveTextContent('발표 영상');
+    expect(screen.getByTestId('active-video-card')).toHaveTextContent(
+      '발표 영상',
+    );
   });
 });

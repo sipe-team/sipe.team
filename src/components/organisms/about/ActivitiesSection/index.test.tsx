@@ -11,10 +11,14 @@ vi.mock('swiper/modules', () => ({
 }));
 
 vi.mock('swiper/react', () => ({
-  Swiper: ({ children }: { children: ReactNode }) => <div data-testid="swiper">{children}</div>,
-  SwiperSlide: ({ children }: { children: ({ isActive }: { isActive: boolean }) => ReactNode }) => (
-    <div data-testid="swiper-slide">{children({ isActive: true })}</div>
+  Swiper: ({ children }: { children: ReactNode }) => (
+    <div data-testid="swiper">{children}</div>
   ),
+  SwiperSlide: ({
+    children,
+  }: {
+    children: ({ isActive }: { isActive: boolean }) => ReactNode;
+  }) => <div data-testid="swiper-slide">{children({ isActive: true })}</div>,
 }));
 
 vi.mock('@/components/atoms/ContentWithTitle', () => ({
@@ -43,7 +47,11 @@ vi.mock('@/components/molecules/Button', () => ({
 }));
 
 vi.mock('@/components/molecules/Image', () => ({
-  default: ({ alt, src }: { alt: string; src: string }) => <img alt={alt} src={src} />,
+  default: ({ alt, src }: { alt: string; src: string }) => (
+    // Tests only need an element with alt text semantics.
+    // eslint-disable-next-line @next/next/no-img-element
+    <img alt={alt} src={src} />
+  ),
 }));
 
 vi.mock('@/db', () => ({
@@ -73,7 +81,9 @@ describe('ActivitiesSection', () => {
 
     expect(screen.getByText('주요 활동')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: '세션' })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: '네트워킹' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: '네트워킹' }),
+    ).toBeInTheDocument();
     expect(screen.getByText('세션 활동')).toBeInTheDocument();
     expect(screen.getByText('세션 설명')).toBeInTheDocument();
     expect(screen.getAllByAltText('activity')).toHaveLength(2);

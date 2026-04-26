@@ -42,10 +42,7 @@ function Activity({ activityData, currentTab }: Props) {
         </Flex>
         <div className={styles.wrapper}>
           {currentTab === 'post' ? (
-            <Flex
-              className={styles.cards}
-              direction="column"
-            >
+            <Flex className={styles.cards} direction="column">
               {activityData.map((activity) => (
                 <ActiveCard
                   key={activity.link}
@@ -61,8 +58,10 @@ function Activity({ activityData, currentTab }: Props) {
             </Flex>
           ) : (
             <div
-            className={currentTab === 'post' ? styles.cards : styles.videoCards}
-          >
+              className={
+                currentTab === 'post' ? styles.cards : styles.videoCards
+              }
+            >
               {activityData.map((activity) => (
                 <ActiveVideoCard
                   key={activity.link}

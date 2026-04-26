@@ -7,7 +7,9 @@ import type { PeopleGeneration, PeopleItem } from '@/db/model';
 import People from './index';
 
 vi.mock('@/components/atoms/Layout', () => ({
-  default: ({ children }: { children: ReactNode }) => <div data-testid="layout">{children}</div>,
+  default: ({ children }: { children: ReactNode }) => (
+    <div data-testid="layout">{children}</div>
+  ),
 }));
 
 vi.mock('@/components/atoms/ContentWithTitle', () => ({
@@ -20,13 +22,19 @@ vi.mock('@/components/atoms/ContentWithTitle', () => ({
 }));
 
 vi.mock('@/components/molecules/Button', () => ({
-  default: ({ children, active }: { children: ReactNode; active?: boolean }) => (
-    <button aria-pressed={active}>{children}</button>
-  ),
+  default: ({
+    children,
+    active,
+  }: {
+    children: ReactNode;
+    active?: boolean;
+  }) => <button aria-pressed={active}>{children}</button>,
 }));
 
 vi.mock('@/components/organisms/people/UserCard', () => ({
-  default: ({ name }: { name: string }) => <article data-testid="user-card">{name}</article>,
+  default: ({ name }: { name: string }) => (
+    <article data-testid="user-card">{name}</article>
+  ),
 }));
 
 const peopleGenerations: PeopleGeneration[] = ['1', '2', '3'];
@@ -56,7 +64,11 @@ const currentPeople: PeopleItem[] = [
 describe('People page', () => {
   it('renders generation buttons and user cards', () => {
     render(
-      <People currentPeople={currentPeople} peopleGenerations={peopleGenerations} selectedPeopleGeneration="3" />,
+      <People
+        currentPeople={currentPeople}
+        peopleGenerations={peopleGenerations}
+        selectedPeopleGeneration="3"
+      />,
     );
 
     expect(screen.getByText('사이퍼 소개')).toBeInTheDocument();

@@ -19,16 +19,32 @@ describe('RecruitBarChart', () => {
       <RecruitBarChart
         title="지원 현황"
         data={[
-          { name: 'Backend', value: 10, percentage: 50, examples: 'Java, Kotlin' },
-          { name: 'Frontend', value: 10, percentage: 50, examples: 'React, Next.js' },
+          {
+            name: 'Backend',
+            value: 10,
+            percentage: 50,
+            examples: 'Java, Kotlin',
+          },
+          {
+            name: 'Frontend',
+            value: 10,
+            percentage: 50,
+            examples: 'React, Next.js',
+          },
         ]}
       />,
     );
 
-    expect(screen.getByRole('region', { name: '지원 현황 차트' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('region', { name: '지원 현황 차트' }),
+    ).toBeInTheDocument();
     expect(screen.getByText('지원 현황')).toBeInTheDocument();
-    expect(screen.getByLabelText('Backend: 10명, 50퍼센트')).toBeInTheDocument();
-    expect(screen.getByLabelText('Frontend: 10명, 50퍼센트')).toBeInTheDocument();
+    expect(
+      screen.getByLabelText('Backend: 10명, 50퍼센트'),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByLabelText('Frontend: 10명, 50퍼센트'),
+    ).toBeInTheDocument();
     expect(screen.getAllByText('10명')).toHaveLength(2);
   });
 });

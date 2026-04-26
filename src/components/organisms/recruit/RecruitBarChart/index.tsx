@@ -1,7 +1,8 @@
 'use client';
 
-import { Flex } from '@sipe-team/side';
 import { useState } from 'react';
+
+import { Flex } from '@sipe-team/side';
 
 import { useCountAnimation } from '@/hooks/useCountAnimation';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
@@ -124,26 +125,27 @@ function RecruitBarChart({
   return (
     <Flex asChild className={styles.wrapper} direction="column" gap="24px">
       <section aria-label={`${title} 차트`}>
-      <div className={styles.visuallyHidden}>
-        {title}: {data.map((item) => `${item.name} ${item.value}명`).join(', ')}
-      </div>
-      <div className={styles.titleWrapper}>
-        <h3 className={styles.title}>{title}</h3>
-      </div>
-      {data.map((item) => (
-        <BarItem
-          key={item.name}
-          item={item}
-          barColor={barColor}
-          barWidthMultiplier={barWidthMultiplier}
-          maxValue={maxValue}
-          onMouseEnter={() => setHoveredItem(item)}
-          onMouseLeave={() => setHoveredItem(null)}
-          onMouseMove={handleMouseMove}
-          isHovered={hoveredItem?.name === item.name}
-          mousePosition={mousePosition}
-        />
-      ))}
+        <div className={styles.visuallyHidden}>
+          {title}:{' '}
+          {data.map((item) => `${item.name} ${item.value}명`).join(', ')}
+        </div>
+        <div className={styles.titleWrapper}>
+          <h3 className={styles.title}>{title}</h3>
+        </div>
+        {data.map((item) => (
+          <BarItem
+            key={item.name}
+            item={item}
+            barColor={barColor}
+            barWidthMultiplier={barWidthMultiplier}
+            maxValue={maxValue}
+            onMouseEnter={() => setHoveredItem(item)}
+            onMouseLeave={() => setHoveredItem(null)}
+            onMouseMove={handleMouseMove}
+            isHovered={hoveredItem?.name === item.name}
+            mousePosition={mousePosition}
+          />
+        ))}
       </section>
     </Flex>
   );
