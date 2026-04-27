@@ -57,11 +57,7 @@ function Activity({ activityData, currentTab }: Props) {
               ))}
             </Flex>
           ) : (
-            <div
-              className={
-                currentTab === 'post' ? styles.cards : styles.videoCards
-              }
-            >
+            <div className={styles.videoCards}>
               {activityData.map((activity) => (
                 <ActiveVideoCard
                   key={activity.link}
