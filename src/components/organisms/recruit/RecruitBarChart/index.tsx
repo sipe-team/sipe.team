@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 
+import { Flex } from '@sipe-team/side';
+
 import { useCountAnimation } from '@/hooks/useCountAnimation';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
@@ -69,7 +71,7 @@ function BarItem({
       onBlur={onMouseLeave}
     >
       <p className={styles.label}>{item.name}</p>
-      <div className={styles.barWrapper}>
+      <Flex align="center" className={styles.barWrapper} gap="10px">
         <div
           className={styles.bar}
           style={{
@@ -79,7 +81,7 @@ function BarItem({
           }}
         />
         <span className={styles.value}>{displayValue}명</span>
-      </div>
+      </Flex>
       {isHovered && (
         <div
           className={styles.tooltip}
@@ -121,28 +123,31 @@ function RecruitBarChart({
   };
 
   return (
-    <section className={styles.wrapper} aria-label={`${title} 차트`}>
-      <div className={styles.visuallyHidden}>
-        {title}: {data.map((item) => `${item.name} ${item.value}명`).join(', ')}
-      </div>
-      <div className={styles.titleWrapper}>
-        <h3 className={styles.title}>{title}</h3>
-      </div>
-      {data.map((item) => (
-        <BarItem
-          key={item.name}
-          item={item}
-          barColor={barColor}
-          barWidthMultiplier={barWidthMultiplier}
-          maxValue={maxValue}
-          onMouseEnter={() => setHoveredItem(item)}
-          onMouseLeave={() => setHoveredItem(null)}
-          onMouseMove={handleMouseMove}
-          isHovered={hoveredItem?.name === item.name}
-          mousePosition={mousePosition}
-        />
-      ))}
-    </section>
+    <Flex asChild className={styles.wrapper} direction="column" gap="24px">
+      <section aria-label={`${title} 차트`}>
+        <div className={styles.visuallyHidden}>
+          {title}:{' '}
+          {data.map((item) => `${item.name} ${item.value}명`).join(', ')}
+        </div>
+        <div className={styles.titleWrapper}>
+          <h3 className={styles.title}>{title}</h3>
+        </div>
+        {data.map((item) => (
+          <BarItem
+            key={item.name}
+            item={item}
+            barColor={barColor}
+            barWidthMultiplier={barWidthMultiplier}
+            maxValue={maxValue}
+            onMouseEnter={() => setHoveredItem(item)}
+            onMouseLeave={() => setHoveredItem(null)}
+            onMouseMove={handleMouseMove}
+            isHovered={hoveredItem?.name === item.name}
+            mousePosition={mousePosition}
+          />
+        ))}
+      </section>
+    </Flex>
   );
 }
 

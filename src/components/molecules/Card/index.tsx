@@ -1,3 +1,4 @@
+import { Flex } from '@sipe-team/side';
 import clsx from 'clsx';
 
 import Badge from '@/components/atoms/Badge';
@@ -15,7 +16,15 @@ interface CardProps {
 
 function Card({ src, badgeText, title, subTitle, reverse }: CardProps) {
   return (
-    <div className={clsx(styles.section, reverse && styles.reverse)}>
+    <Flex
+      align="flex-start"
+      className={clsx(styles.section, reverse && styles.reverse)}
+      direction="column"
+      gap="24px"
+      grow={1}
+      justify="flex-start"
+      shrink={1}
+    >
       <Image
         fill
         priority
@@ -25,12 +34,19 @@ function Card({ src, badgeText, title, subTitle, reverse }: CardProps) {
         height={270}
         objectFit="contain"
       />
-      <div className={styles.titleWrapper}>
+      <Flex
+        align="flex-start"
+        className={styles.titleWrapper}
+        direction="column"
+        gap="24px"
+        inline={true}
+        justify="flex-start"
+      >
         <Badge text={badgeText} />
         <div className={styles.title}>{title}</div>
         <div className={styles.subTitle}>{subTitle}</div>
-      </div>
-    </div>
+      </Flex>
+    </Flex>
   );
 }
 

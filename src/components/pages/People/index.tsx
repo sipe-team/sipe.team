@@ -1,3 +1,5 @@
+import { Flex } from '@sipe-team/side';
+
 import ContentWithTitle from '@/components/atoms/ContentWithTitle';
 import Layout from '@/components/atoms/Layout';
 import Button from '@/components/molecules/Button';
@@ -21,7 +23,7 @@ function People({
   return (
     <Layout>
       <ContentWithTitle title="사이퍼 소개">
-        <div className={styles.periodsWrapper}>
+        <Flex className={styles.periodsWrapper}>
           {peopleGenerations.map((generation) => (
             <Button
               key={generation}
@@ -33,7 +35,7 @@ function People({
               {`${generation}기`}
             </Button>
           ))}
-        </div>
+        </Flex>
         <section className={styles.wrapper}>
           <div className={styles.contents}>
             {currentPeople.map((person) => {
