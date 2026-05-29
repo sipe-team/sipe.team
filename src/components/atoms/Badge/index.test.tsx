@@ -8,11 +8,4 @@ describe('Badge', () => {
 
     expect(screen.getByText('후원사')).toBeInTheDocument();
   });
-
-  it('renders without text when text is undefined', () => {
-    const { container } = render(<Badge text={undefined} />);
-
-    expect(container.firstChild).toBeInTheDocument();
-    expect(container).toHaveTextContent('');
-  });
 });

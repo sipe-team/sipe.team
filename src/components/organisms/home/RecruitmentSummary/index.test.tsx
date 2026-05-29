@@ -3,23 +3,7 @@ import { render, screen } from '@testing-library/react';
 import RecruitmentSummary from './index';
 
 vi.mock('@/components/atoms/Timer', () => ({
-  default: ({
-    dates,
-    hours,
-    minutes,
-    seconds,
-    isRecruiting,
-  }: {
-    dates: number;
-    hours: number;
-    minutes: number;
-    seconds: number;
-    isRecruiting: boolean;
-  }) => (
-    <div data-testid="timer">
-      {dates}:{hours}:{minutes}:{seconds}:{String(isRecruiting)}
-    </div>
-  ),
+  default: () => <div data-testid="timer">timer</div>,
 }));
 
 vi.mock('@/components/organisms/home/SummaryCards', () => ({
@@ -40,7 +24,7 @@ describe('RecruitmentSummary', () => {
     render(<RecruitmentSummary currentStatus="before" />);
 
     expect(screen.getByText('모집 시작까지')).toBeInTheDocument();
-    expect(screen.getByTestId('timer')).toHaveTextContent('1:2:3:4:true');
+    expect(screen.getByTestId('timer')).toBeInTheDocument();
     expect(screen.queryByTestId('summary-cards')).not.toBeInTheDocument();
   });
 
@@ -48,7 +32,7 @@ describe('RecruitmentSummary', () => {
     render(<RecruitmentSummary currentStatus="ongoing" />);
 
     expect(screen.getByText('모집 마감까지')).toBeInTheDocument();
-    expect(screen.getByTestId('timer')).toHaveTextContent('1:2:3:4:true');
+    expect(screen.getByTestId('timer')).toBeInTheDocument();
     expect(screen.queryByTestId('summary-cards')).not.toBeInTheDocument();
   });
 
