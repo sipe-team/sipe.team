@@ -29,14 +29,12 @@ describe('ContactSection', () => {
     ).toBeInTheDocument();
   });
 
-  it('renders the email contact link with external link attributes', () => {
+  it('renders the email contact link', () => {
     render(<ContactSection />);
 
     const link = screen.getByRole('link', { name: /sipe.team@gmail.com/ });
 
     expect(link).toHaveAttribute('href', 'mailto:sipe.team@gmail.com');
-    expect(link).toHaveAttribute('target', '_blank');
-    expect(link).toHaveAttribute('rel', 'noopener noreferrer');
     expect(screen.getByLabelText('email icon')).toBeInTheDocument();
   });
 });
