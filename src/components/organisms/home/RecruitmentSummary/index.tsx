@@ -1,3 +1,5 @@
+import { Flex } from '@sipe-team/side';
+
 import Timer from '@/components/atoms/Timer';
 import SummaryCard from '@/components/organisms/home/SummaryCards';
 import useTimer from '@/hook/useTimer';
@@ -18,7 +20,12 @@ function RecruitmentSummary({ currentStatus }: Props) {
 
   const elements = {
     before: () => (
-      <div className={styles.timerWrapper}>
+      <Flex
+        align="center"
+        className={styles.timerWrapper}
+        direction="column"
+        gap="1rem"
+      >
         <div className={styles.timerDescription}>모집 시작까지</div>
         <Timer
           dates={dates}
@@ -27,10 +34,15 @@ function RecruitmentSummary({ currentStatus }: Props) {
           seconds={seconds}
           isRecruiting={true}
         />
-      </div>
+      </Flex>
     ),
     ongoing: () => (
-      <div className={styles.timerWrapper}>
+      <Flex
+        align="center"
+        className={styles.timerWrapper}
+        direction="column"
+        gap="1rem"
+      >
         <div className={styles.timerDescription}>모집 마감까지</div>
         <Timer
           dates={dates}
@@ -39,7 +51,7 @@ function RecruitmentSummary({ currentStatus }: Props) {
           seconds={seconds}
           isRecruiting={true}
         />
-      </div>
+      </Flex>
     ),
     after: () => <SummaryCard />,
   };
