@@ -29,9 +29,6 @@
   width: 100%;
   margin-left: 24px;
   padding: 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 
   @include mobile {
     margin-left: 0;
@@ -60,17 +57,9 @@
   }
 
   .posterUserInfo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-top: 16px;
 
     .userWrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 12px;
-
       .userIcon {
         border-radius: 50%;
       }

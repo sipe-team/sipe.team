@@ -74,13 +74,15 @@ function ActiveVideoCard({
               </Flex>
             </section>
           </Flex>
-          <ExternalLink
-            className={styles.linkButton}
-            href={link}
-            withTextUnderline={false}
-          >
-            보러가기
-          </ExternalLink>
+          <Flex asChild align="center" justify="center">
+            <ExternalLink
+              className={styles.linkButton}
+              href={link}
+              withTextUnderline={false}
+            >
+              보러가기
+            </ExternalLink>
+          </Flex>
         </section>
       </Flex>
     </article>
