@@ -3,6 +3,7 @@ import { ComponentProps, ReactNode } from 'react';
 import { Route } from 'next';
 import Link, { LinkProps } from 'next/link';
 
+import { Flex } from '@sipe-team/side';
 import clsx from 'clsx';
 
 import styles from './index.module.scss';
@@ -62,24 +63,28 @@ function Button<
     >;
 
     return (
-      <Link
-        href={href as Route}
-        className={commonClassName}
-        aria-disabled={disabled}
-        rel={isExternalLink ? 'noopener noreferrer' : undefined}
-        target={isExternalLink ? '_blank' : undefined}
-        {...linkRest}
-      />
+      <Flex asChild align="center" direction="row" justify="center">
+        <Link
+          href={href as Route}
+          className={commonClassName}
+          aria-disabled={disabled}
+          rel={isExternalLink ? 'noopener noreferrer' : undefined}
+          target={isExternalLink ? '_blank' : undefined}
+          {...linkRest}
+        />
+      </Flex>
     );
   }
 
   return (
-    <button
-      className={commonClassName}
-      disabled={disabled}
-      aria-disabled={disabled}
-      {...(rest as ComponentProps<'button'>)}
-    />
+    <Flex asChild align="center" direction="row" justify="center">
+      <button
+        className={commonClassName}
+        disabled={disabled}
+        aria-disabled={disabled}
+        {...(rest as ComponentProps<'button'>)}
+      />
+    </Flex>
   );
 }
 

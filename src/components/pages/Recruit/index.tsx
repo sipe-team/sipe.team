@@ -33,7 +33,6 @@ function Recruit() {
             direction="row"
             gap="20px"
             inline={true}
-            justify="stretch"
             wrap="nowrap"
           >
             {CardList.map(({ processDate, subTitle, title }) => (
@@ -51,7 +50,12 @@ function Recruit() {
         <Table dataList={InActivity} isApplicant={false} />
       </ContentWithTitle>
       <ContentWithTitle title="이전 기수 구성원 현황">
-        <div className={styles.chartsWrapper}>
+        <Flex
+          className={styles.chartsWrapper}
+          direction="row"
+          gap="32px"
+          wrap="wrap"
+        >
           <div className={styles.chartSection}>
             <ExperienceChart />
           </div>
@@ -61,7 +65,7 @@ function Recruit() {
           <div className={styles.jobRoleChartSection}>
             <JobRoleChart />
           </div>
-        </div>
+        </Flex>
       </ContentWithTitle>
       <Faq faqs={faq.recruit} />
     </Layout>

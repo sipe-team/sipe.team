@@ -83,8 +83,10 @@ function BarItem({
         <span className={styles.value}>{displayValue}명</span>
       </Flex>
       {isHovered && (
-        <div
+        <Flex
           className={styles.tooltip}
+          direction="column"
+          gap="3px"
           style={{
             left: `${mousePosition.x + 12}px`,
             top: `${mousePosition.y + 12}px`,
@@ -97,7 +99,7 @@ function BarItem({
           {item.examples && (
             <p className={styles.tooltipExamples}>{item.examples}</p>
           )}
-        </div>
+        </Flex>
       )}
     </div>
   );
