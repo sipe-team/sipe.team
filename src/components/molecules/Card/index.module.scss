@@ -7,11 +7,6 @@
   }
 
   @include desktop {
-    &.reverse {
-      flex-direction: row-reverse;
-    }
-
-    flex-direction: row;
     margin-bottom: 120px;
   }
 }

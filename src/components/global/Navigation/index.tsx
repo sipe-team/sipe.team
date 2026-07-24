@@ -72,11 +72,14 @@ function Navigation() {
           >
             <nav>
               <Flex
+                align="center"
                 className={clsx(
                   styles.menuList,
                   isMobileMenuOpen ? styles.open : styles.close,
                 )}
+                direction={{ sm: 'column', lg: 'row' }}
                 gap="12px"
+                justify={{ lg: 'center' }}
               >
                 {menus.map((menu) => (
                   <Button

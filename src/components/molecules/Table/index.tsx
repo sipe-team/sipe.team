@@ -31,7 +31,7 @@ function Table({ dataList, isApplicant }: TableProps) {
       className={styles.wrapper}
       direction="column"
       inline={true}
-      gap="32px"
+      gap={{ sm: '16px', md: '32px' }}
       justify="center"
     >
       {dataList.map((data, index) =>
@@ -50,9 +50,9 @@ function Table({ dataList, isApplicant }: TableProps) {
 function TableData({ data, isApplicant }: TableDataProps) {
   return (
     <Flex
-      align="center"
+      align={isApplicant ? 'center' : { sm: 'flex-start', md: 'center' }}
       className={clsx(styles.table, { [styles.isApplicant]: isApplicant })}
-      direction="row"
+      direction={isApplicant ? 'row' : { sm: 'column', md: 'row' }}
       gap="20px"
       inline={true}
       justify="space-between"

@@ -3,8 +3,6 @@
   padding: 0;
 
   @include mobile {
-    gap: 16px;
-
     > * {
       width: 100%;
     }
@@ -26,16 +24,12 @@
 
     @include mobile {
       height: auto;
-      flex-direction: row;
-      align-items: center;
     }
   }
 
   @include mobile {
     width: 100%;
     height: auto;
-    align-items: start;
-    flex-direction: column;
   }
 }
 

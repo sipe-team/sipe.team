@@ -43,8 +43,6 @@
 
       .menuList {
         width: 100%;
-        flex-direction: column;
-        align-items: center;
         padding-bottom: 20px;
 
         @include mobile-and-tablet {
@@ -60,9 +58,6 @@
         }
 
         @include desktop {
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
           padding: 0;
         }
       }

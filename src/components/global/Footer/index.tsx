@@ -10,7 +10,13 @@ function Footer() {
     <Flex asChild className={styles.wrapper} direction="row" justify="center">
       <footer>
         <Layout>
-          <div className={styles.group}>
+          <Flex
+            align="center"
+            className={styles.group}
+            direction={{ sm: 'column-reverse', lg: 'row' }}
+            gap={{ sm: '16px', lg: 0 }}
+            justify={{ sm: 'center', lg: 'space-between' }}
+          >
             <Typography color={color.white} size={12} weight="medium">
               All rights reserved ⓒ SIPE
             </Typography>
@@ -32,7 +38,7 @@ function Footer() {
                 url="https://www.linkedin.com/company/sipe.team"
               />
             </Flex>
-          </div>
+          </Flex>
         </Layout>
       </footer>
     </Flex>
