@@ -2,16 +2,10 @@
   width: 100%;
 
   .cards {
-    gap: 32px;
-
     .card {
       &:hover {
         cursor: pointer;
       }
-    }
-
-    @include mobile {
-      gap: 16px;
     }
   }
 
@@ -28,13 +22,8 @@
 
 .typeWrapper {
   margin-bottom: 40px;
-  gap: 16px;
 
   .periodButton {
     height: 40px;
-  }
-
-  @include mobile {
-    gap: 8px;
   }
 }
