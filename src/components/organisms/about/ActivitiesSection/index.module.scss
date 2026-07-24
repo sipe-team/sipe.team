@@ -51,16 +51,9 @@
 }
 
 .menus {
-  justify-content: center;
-  gap: 16px;
   margin-bottom: 40px;
   overflow: scroll;
   width: 100%;
-
-  @include mobile {
-    gap: 8px;
-    justify-content: start;
-  }
 }
 
 .activityButton {

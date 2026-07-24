@@ -20,7 +20,7 @@ function ContactSection() {
         <div className={styles.title}>
           더 궁금한 질문이 있거나 후원을 원하신다면 언제든 연락해 주세요!
         </div>
-        <div className={styles.content}>
+        <Flex direction={{ sm: 'column', md: 'row' }} gap="20px">
           <Flex align="center" asChild className={styles.contentBox} gap="12px">
             <ExternalLink
               href="mailto:sipe.team@gmail.com"
@@ -38,7 +38,7 @@ function ContactSection() {
             <KakaoLogo width={24} height={24} />
             <span>@sipe</span>
           </ExternalLink> */}
-        </div>
+        </Flex>
       </Flex>
     </ContentWithTitle>
   );
