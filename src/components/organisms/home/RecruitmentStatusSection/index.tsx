@@ -53,9 +53,14 @@ function RecruitmentStatusSection() {
       className={styles.content}
       direction="column"
       gap="40px"
+      justify={{ sm: 'center', md: 'normal' }}
     >
       <RecruitmentSummary currentStatus={currentStatus} />
-      <Flex className={styles.buttonWrapper} direction="row" gap="24px">
+      <Flex
+        className={styles.buttonWrapper}
+        direction="row"
+        gap={{ sm: '12px', md: '24px' }}
+      >
         <Button
           className={clsx(styles.homeButton, styles.primary)}
           type="button"

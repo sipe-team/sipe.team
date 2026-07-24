@@ -12,7 +12,7 @@ function Home() {
       align="center"
       className={styles.wrapper}
       direction="column"
-      gap="16px"
+      gap={{ sm: 0, md: '16px' }}
       justify="center"
     >
       <Image

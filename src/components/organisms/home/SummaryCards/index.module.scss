@@ -1,8 +1,4 @@
 .summaryCardWrapper {
-  @include mobile {
-    gap: 12px;
-  }
-
   .card {
     width: 230px;
     height: 133px;
@@ -13,7 +9,6 @@
     @include mobile {
       width: 110px;
       height: 80px;
-      gap: 6px;
 
       .title {
         font-size: 12px;

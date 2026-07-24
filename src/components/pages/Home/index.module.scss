@@ -15,10 +15,6 @@
     object-fit: cover;
     pointer-events: none;
   }
-
-  @include mobile {
-    gap: 0;
-  }
 }
 
 .titleWrapper {

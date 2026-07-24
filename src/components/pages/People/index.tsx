@@ -23,7 +23,7 @@ function People({
   return (
     <Layout>
       <ContentWithTitle title="사이퍼 소개">
-        <Flex className={styles.periodsWrapper}>
+        <Flex className={styles.periodsWrapper} gap={{ sm: '8px', md: '16px' }}>
           {peopleGenerations.map((generation) => (
             <Button
               key={generation}
