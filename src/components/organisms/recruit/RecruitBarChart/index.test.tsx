@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 
 import RecruitBarChart from './index';
 
@@ -46,5 +46,26 @@ describe('RecruitBarChart', () => {
       screen.getByLabelText('Frontend: 10명, 50퍼센트'),
     ).toBeInTheDocument();
     expect(screen.getAllByText('10명')).toHaveLength(2);
+  });
+
+  it('renders the tooltip when a bar item is hovered', () => {
+    render(
+      <RecruitBarChart
+        title="지원 현황"
+        data={[
+          {
+            name: 'Backend',
+            value: 10,
+            percentage: 50,
+            examples: 'Java, Kotlin',
+          },
+        ]}
+      />,
+    );
+
+    fireEvent.mouseEnter(screen.getByLabelText('Backend: 10명, 50퍼센트'));
+
+    expect(screen.getByText('10명 (50%)')).toBeInTheDocument();
+    expect(screen.getByText('Java, Kotlin')).toBeInTheDocument();
   });
 });

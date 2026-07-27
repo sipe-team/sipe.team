@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 import Image from 'next/image';
 
+import { Flex } from '@sipe-team/side';
 import clsx from 'clsx';
 
 import styles from './index.module.scss';
@@ -37,9 +38,13 @@ function SponsorImage({ src, alt }: SponsorImageProps) {
       };
 
   return (
-    <div className={clsx(styles.imageWrapper, hasError && styles.errorWrapper)}>
+    <Flex
+      align="center"
+      className={clsx(styles.imageWrapper, hasError && styles.errorWrapper)}
+      justify="center"
+    >
       <Image {...imageProperties} />
-    </div>
+    </Flex>
   );
 }
 
