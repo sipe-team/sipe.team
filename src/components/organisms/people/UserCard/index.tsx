@@ -13,7 +13,6 @@ import type { Entries, RequiredNonNullableObject } from '@/libs/utils';
 import styles from './index.module.scss';
 
 type UserCardProps = ComponentProps<'div'> & {
-  period: string;
   img?: string;
   name: string;
   links?: Entries<
@@ -26,7 +25,6 @@ type UserCardProps = ComponentProps<'div'> & {
 };
 
 function UserCard({
-  period: _period,
   img,
   name,
   links,
