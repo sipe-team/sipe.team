@@ -1,12 +1,9 @@
 import type { ReactNode } from 'react';
 
+import { sendGAEvent } from '@next/third-parties/google';
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import Navigation from './index';
-
-const { sendGAEvent } = vi.hoisted(() => ({
-  sendGAEvent: vi.fn(),
-}));
 
 vi.mock('next/link', () => ({
   default: ({ children, href }: { children: ReactNode; href: string }) => (
@@ -19,7 +16,7 @@ vi.mock('next/navigation', () => ({
 }));
 
 vi.mock('@next/third-parties/google', () => ({
-  sendGAEvent,
+  sendGAEvent: vi.fn(),
 }));
 
 vi.mock('@/components/atoms/Layout', () => ({
@@ -90,7 +87,7 @@ vi.mock('@/libs/utils/recruit', () => ({
 
 describe('Navigation', () => {
   beforeEach(() => {
-    sendGAEvent.mockClear();
+    vi.mocked(sendGAEvent).mockClear();
   });
 
   it('renders the current menu, navigation links, and application link', () => {

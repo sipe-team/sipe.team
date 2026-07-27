@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 import { render, screen } from '@testing-library/react';
 
 import Table from './index';
@@ -7,7 +9,7 @@ vi.mock('@/components/atoms/Badge', () => ({
 }));
 
 vi.mock('@/components/molecules/GlowArea', () => ({
-  default: ({ children }: { children: React.ReactNode }) => (
+  default: ({ children }: { children: ReactNode }) => (
     <div data-testid="glow-area">{children}</div>
   ),
 }));
