@@ -4,6 +4,12 @@ import { render, screen } from '@testing-library/react';
 
 import Recruit from './index';
 
+vi.mock('@sipe-team/side', () => ({
+  Flex: ({ children, justify }: { children: ReactNode; justify?: string }) => (
+    <div data-justify={justify}>{children}</div>
+  ),
+}));
+
 vi.mock('@/components/atoms/Layout', () => ({
   default: ({ children }: { children: ReactNode }) => (
     <div data-testid="layout">{children}</div>
@@ -76,9 +82,9 @@ describe('Recruit page', () => {
     expect(screen.getByText('활동안내')).toBeInTheDocument();
     expect(screen.getByText('이전 기수 구성원 현황')).toBeInTheDocument();
     expect(screen.getAllByTestId('schedule-card')).toHaveLength(5);
-    expect(screen.getAllByTestId('schedule-card')[0].parentElement).toHaveStyle(
-      '--flex-justify: stretch',
-    );
+    expect(
+      screen.getAllByTestId('schedule-card')[0].parentElement,
+    ).toHaveAttribute('data-justify', 'normal');
     expect(screen.getByTestId('experience-chart')).toBeInTheDocument();
     expect(screen.getByTestId('company-chart')).toBeInTheDocument();
     expect(screen.getByTestId('job-role-chart')).toBeInTheDocument();
