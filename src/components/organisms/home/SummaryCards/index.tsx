@@ -10,14 +10,18 @@ const summaryData = [
 
 function SummaryCards() {
   return (
-    <Flex className={styles.summaryCardWrapper} direction="row" gap="24px">
+    <Flex
+      className={styles.summaryCardWrapper}
+      direction="row"
+      gap={{ sm: '12px', md: '24px' }}
+    >
       {summaryData.map(({ title, value }) => (
         <Flex
           align="center"
           key={title}
           className={styles.card}
           direction="column"
-          gap="12px"
+          gap={{ sm: '6px', md: '12px' }}
           justify="center"
         >
           <Typography

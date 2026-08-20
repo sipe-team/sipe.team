@@ -22,7 +22,7 @@ function Activity({ activityData, currentTab }: Props) {
   return (
     <Layout>
       <ContentWithTitle title="사이퍼 활동">
-        <Flex className={styles.typeWrapper}>
+        <Flex className={styles.typeWrapper} gap={{ sm: '8px', md: '16px' }}>
           <Button
             className={styles.periodButton}
             buttonType="chip"
@@ -42,7 +42,11 @@ function Activity({ activityData, currentTab }: Props) {
         </Flex>
         <div className={styles.wrapper}>
           {currentTab === 'post' ? (
-            <Flex className={styles.cards} direction="column">
+            <Flex
+              className={styles.cards}
+              direction="column"
+              gap={{ sm: '16px', md: '32px' }}
+            >
               {activityData.map((activity) => (
                 <ActiveCard
                   key={activity.link}

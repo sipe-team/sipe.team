@@ -1,5 +1,4 @@
 import { Flex } from '@sipe-team/side';
-import clsx from 'clsx';
 
 import Badge from '@/components/atoms/Badge';
 import Image from '@/components/molecules/Image';
@@ -18,8 +17,8 @@ function Card({ src, badgeText, title, subTitle, reverse }: CardProps) {
   return (
     <Flex
       align="flex-start"
-      className={clsx(styles.section, reverse && styles.reverse)}
-      direction="column"
+      className={styles.section}
+      direction={{ sm: 'column', lg: reverse ? 'row-reverse' : 'row' }}
       gap="24px"
       grow={1}
       justify="flex-start"

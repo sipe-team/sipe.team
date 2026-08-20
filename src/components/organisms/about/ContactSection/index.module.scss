@@ -6,15 +6,6 @@
   @include text('h5/medium', 'white');
 }
 
-.content {
-  display: flex;
-  gap: 20px;
-
-  @include mobile {
-    flex-direction: column;
-  }
-}
-
 .contentBox {
   width: 240px;
   height: 53px;

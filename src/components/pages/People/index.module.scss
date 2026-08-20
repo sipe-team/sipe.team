@@ -19,13 +19,8 @@
 
 .periodsWrapper {
   margin-bottom: 40px;
-  gap: 16px;
 
   &.button {
     height: 40px;
-  }
-
-  @include mobile {
-    gap: 8px;
   }
 }

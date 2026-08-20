@@ -27,7 +27,11 @@ function ActivitiesSection() {
 
   return (
     <ContentWithTitle title="주요 활동">
-      <Flex className={styles.menus}>
+      <Flex
+        className={styles.menus}
+        gap={{ sm: '8px', md: '16px' }}
+        justify={{ sm: 'flex-start', md: 'center' }}
+      >
         {activities.map(([key, activity]) => (
           <Button
             className={styles.activityButton}

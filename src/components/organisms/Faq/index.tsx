@@ -13,7 +13,12 @@ type FaqProps = {
 function Faq({ faqs }: FaqProps) {
   return (
     <ContentWithTitle title="자주 묻는 질문">
-      <Flex align="stretch" asChild={true} direction="column" gap="32px">
+      <Flex
+        align="stretch"
+        asChild={true}
+        direction="column"
+        gap={{ sm: '16px', md: '32px' }}
+      >
         <Accordion className={styles.faqs}>
           {faqs.map((faq) => (
             <AccordionItem
