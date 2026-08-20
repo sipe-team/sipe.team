@@ -79,7 +79,10 @@ function ActiveCard({
                         className={styles.userIcon}
                       />
                     ) : (
-                      <UserIcon className={styles.userIcon} />
+                      <UserIcon
+                        aria-label="default user profile"
+                        className={styles.userIcon}
+                      />
                     )}
                     <Typography color={color.white} size={14}>
                       {userName}

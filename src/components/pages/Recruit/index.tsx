@@ -33,6 +33,7 @@ function Recruit() {
             direction="row"
             gap="20px"
             inline={true}
+            justify="stretch"
             wrap="nowrap"
           >
             {CardList.map(({ processDate, subTitle, title }) => (

@@ -35,7 +35,6 @@ describe('UserCard', () => {
   it('renders profile, user information, social links, and review', () => {
     render(
       <UserCard
-        period="5"
         img="/profile.png"
         name="김사이퍼"
         part="Frontend"
@@ -77,7 +76,6 @@ describe('UserCard', () => {
   it('omits optional organizer and review content when not provided', () => {
     render(
       <UserCard
-        period="5"
         name="박사이퍼"
         part="Backend"
         introduce="백엔드 미션 참여"

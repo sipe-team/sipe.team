@@ -50,7 +50,6 @@ function People({
               return (
                 <UserCard
                   key={person.id}
-                  period={person.period}
                   img={person.thumbnail}
                   name={person.name}
                   part={person.part}

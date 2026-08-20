@@ -11,9 +11,7 @@ vi.mock('@/components/molecules/Image', () => ({
 }));
 
 vi.mock('@/libs/assets/icons', () => ({
-  UserIcon: ({ className }: { className?: string }) => (
-    <svg aria-label="default user profile" className={className} />
-  ),
+  UserIcon: (props: React.SVGProps<SVGSVGElement>) => <svg {...props} />,
 }));
 
 describe('ActiveCard', () => {
