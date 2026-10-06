@@ -7,25 +7,26 @@ import { Button, Flex } from '@sipe-team/side';
 import clsx from 'clsx';
 
 import RecruitmentSummarySkeleton from '@/components/organisms/home/RecruitmentSummarySkeleton';
+import useApplicationStatus from '@/hook/useApplicationStatus';
 import useCopy from '@/hook/useCopyToClipboard';
 import { displayApplication, getCurrentStatus } from '@/libs/utils/recruit';
 
 import styles from './index.module.scss';
-
-const now = Date.now();
 
 const RecruitmentSummary = dynamic(
   () => import('@/components/organisms/home/RecruitmentSummary'),
   {
     ssr: false,
     loading: () => (
-      <RecruitmentSummarySkeleton currentStatus={getCurrentStatus(now)} />
+      <RecruitmentSummarySkeleton
+        currentStatus={getCurrentStatus(Date.now())}
+      />
     ),
   },
 );
 
 function RecruitmentStatusSection() {
-  const currentStatus = getCurrentStatus(now);
+  const currentStatus = useApplicationStatus();
   const currentApplicationDetail = displayApplication[currentStatus];
   const { copyToClipboard } = useCopy();
 

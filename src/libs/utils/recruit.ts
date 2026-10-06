@@ -2,6 +2,7 @@ import {
   APPLICATION_DUE_DATE,
   APPLICATION_START_DATE,
   CURRENT_GENERATION,
+  JOIN_ALARM_FORM_URL,
   JOIN_FORM_URL,
 } from '@/libs/constants/recruit';
 
@@ -17,14 +18,12 @@ export const displayApplication: Record<
   ApplicationDetail
 > = {
   before: {
-    buttonText: `${CURRENT_GENERATION}기 모집 준비 중`,
-    formUrl: undefined,
+    buttonText: `${CURRENT_GENERATION}기 모집 알림 신청`,
+    formUrl: JOIN_ALARM_FORM_URL,
     dueDate: APPLICATION_START_DATE.getTime(),
   },
   ongoing: {
-    buttonText: JOIN_FORM_URL
-      ? `${CURRENT_GENERATION}기 모집 신청`
-      : `${CURRENT_GENERATION}기 모집 준비 중`,
+    buttonText: `${CURRENT_GENERATION}기 모집 신청`,
     formUrl: JOIN_FORM_URL,
     dueDate: APPLICATION_DUE_DATE.getTime(),
   },
