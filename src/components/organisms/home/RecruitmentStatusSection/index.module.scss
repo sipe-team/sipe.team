@@ -26,9 +26,14 @@
   &.primary {
     background-color: var(--primary);
 
-    &:hover {
+    &:hover:not(:disabled) {
       background-color: var(--primary-hover);
     }
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
   }
 
   @include mobile {

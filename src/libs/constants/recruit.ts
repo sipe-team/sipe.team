@@ -1,10 +1,9 @@
-export const CURRENT_GENERATION = 5;
-export const APPLICATION_START_DATE = new Date('2025-12-14 00:00:00');
-export const APPLICATION_DUE_DATE = new Date('2026-01-05 23:59:59');
+export const CURRENT_GENERATION = 6;
+export const APPLICATION_START_DATE = new Date('2026-11-02T00:00:00+09:00');
+export const APPLICATION_DUE_DATE = new Date('2026-11-16T23:59:59+09:00');
 
-export const JOIN_FORM_URL = 'https://forms.gle/Mr6e4NyPrdSdJPU4A';
-export const JOIN_ALARM_FORM_URL = 'https://forms.gle/VS7Ap4xfSyf2qYqQ6';
-export const JOIN_NEXT_ALARM_FORM_URL = 'https://forms.gle/KxxLCA9db9NgWv4k8';
+// 실제 모집 시 확정된 지원 폼 URL을 넣으면 모집 기간에 신청이 활성화됩니다.
+export const JOIN_FORM_URL: string | undefined = undefined;
 
 export type CardListType = {
   title: string;
@@ -17,68 +16,63 @@ export const Applicants = [
     text: '격주 토요일 오후 2시 ~ 6시에 진행되는 정규 활동에 성실하게 참여할 수 있는',
   },
   {
-    text: '자신의 지식과 경험을 다른 구성원들과 적극적으로 공유하고 소통할 수 있는',
+    text: 'AI를 실무에서 적극적으로 써보고 있고, 그 경험을 나눌 수 있는',
   },
-  { text: '다양한 경험을 가진 사람들과 폭넓고 깊이 있는 대화를 나누고 싶은' },
   {
-    text: '기술 트렌드에 관심있고 성장을 추구하는 열정적인 개발자',
+    text: '언어·런타임·인프라처럼 기본기를 깊게 파고드는 이야기를 나누고 싶은',
+  },
+  {
+    text: '프론트엔드·백엔드 같은 직군의 경계를 넘어 폭넓게 이야기 나누고 싶은',
+  },
+  {
+    text: '쌓아온 경험을 나누거나 다른 구성원에게 배우며 함께 성장하고 싶은 개발자',
     highlight: true,
   },
 ];
 
 export const InActivity = [
   {
-    recurring_date: '1회차 (03.07)',
+    recurring_date: '1회차 (01.16)',
     text: 'OT',
     badge: '',
   },
   {
-    recurring_date: '2회차 (03.21)',
+    recurring_date: '2회차 (01.30)',
     text: 'MT',
     badge: '1차 미션 팀 빌딩',
   },
   {
-    recurring_date: '3회차 (04.04)',
-    text: '라이트닝 토크 1',
+    recurring_date: '3회차 (02.13)',
+    text: '라이트닝 토크',
     badge: '',
   },
   {
-    recurring_date: '4회차 (04.18)',
-    text: '개발자 힐링 캠프',
-    badge: '',
-  },
-  {
-    recurring_date: '5회차 (05.02)',
+    recurring_date: '4회차 (02.27)',
     text: '1차 미션 발표',
     badge: '',
   },
   {
-    recurring_date: '6회차 (05.16)',
-    text: '스파크 세션',
-    badge: '해커톤 팀 빌딩',
+    recurring_date: '5회차 (03.13)',
+    text: '사이프 파트랩',
+    badge: '2차 미션 팀 빌딩',
   },
   {
-    recurring_date: '7회차 (05.30)',
+    recurring_date: '6회차 (03.27)',
     text: '내친소',
     badge: '',
   },
   {
-    recurring_date: '8회차 (06.13)',
-    text: '라이트닝 토크 2',
+    recurring_date: '7회차 (04.10)',
+    text: '2차 미션 발표',
     badge: '',
   },
   {
-    recurring_date: '9회차 (06.27)',
-    text: '사이프톤',
-    badge: '',
-  },
-  {
-    recurring_date: '10회차 (07.11)',
+    recurring_date: '8회차 (04.24)',
     text: '사담콘',
     badge: '',
   },
   {
-    recurring_date: '11회차 (07.25)',
+    recurring_date: '9회차 (05.08)',
     text: '사이프 로그',
     badge: '정규 활동 종료',
   },
@@ -87,28 +81,28 @@ export const InActivity = [
 export const CardList = [
   {
     title: '서류 접수',
-    processDate: '12.14(일) ~ 01.05(월)',
-    subTitle: '5일 자정에 접수 마감',
+    processDate: '11.02(월) ~ 11.16(월)',
+    subTitle: '2026년 11월 16일 23:59 마감',
   },
   {
     title: '서류 합격자 발표',
-    processDate: '01.13(화)',
+    processDate: '11.23(월)',
     subTitle: '합격자 개별 연락',
   },
   {
     title: '오프라인 인터뷰',
-    processDate: '01.31(토) ~ 02.01(일)',
+    processDate: '12.12(토) ~ 12.13(일)',
     subTitle: '서류합격자 개별연락',
   },
 
   {
     title: '최종 합격자 발표',
-    processDate: '02.14(토)',
+    processDate: '12.21(월)',
     subTitle: '합격자 개별 연락',
   },
   {
     title: '정규 활동 시작',
-    processDate: '03.07(토)',
-    subTitle: 'OT 진행',
+    processDate: '01.16(토)',
+    subTitle: '2027년 OT 진행',
   },
 ];

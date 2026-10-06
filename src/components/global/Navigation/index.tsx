@@ -88,15 +88,25 @@ function Navigation() {
                     {menu.name}
                   </Button>
                 ))}
-                <Button
-                  disabled={currentStatus !== 'ongoing'}
-                  isExternalLink
-                  href={currentApplicationDetail.formUrl}
-                  buttonType="apply"
-                  onClick={handleClickJoinUsButton}
-                >
-                  Join Us
-                </Button>
+                {currentApplicationDetail.formUrl ? (
+                  <Button
+                    isExternalLink
+                    href={currentApplicationDetail.formUrl}
+                    buttonType="apply"
+                    onClick={handleClickJoinUsButton}
+                  >
+                    Join Us
+                  </Button>
+                ) : (
+                  <Button
+                    disabled
+                    buttonType="apply"
+                    type="button"
+                    aria-label={currentApplicationDetail.buttonText}
+                  >
+                    Join Us
+                  </Button>
+                )}
               </Flex>
             </nav>
           </Flex>

@@ -2,15 +2,13 @@ import {
   APPLICATION_DUE_DATE,
   APPLICATION_START_DATE,
   CURRENT_GENERATION,
-  JOIN_ALARM_FORM_URL,
   JOIN_FORM_URL,
-  JOIN_NEXT_ALARM_FORM_URL,
 } from '@/libs/constants/recruit';
 
 export type ApplicationStatusKey = 'before' | 'ongoing' | 'after';
 export type ApplicationDetail = {
   buttonText: string;
-  formUrl: string;
+  formUrl: string | undefined;
   dueDate: number | undefined;
 };
 
@@ -19,18 +17,20 @@ export const displayApplication: Record<
   ApplicationDetail
 > = {
   before: {
-    buttonText: `${CURRENT_GENERATION}기 모집 알림 신청`,
-    formUrl: JOIN_ALARM_FORM_URL,
+    buttonText: `${CURRENT_GENERATION}기 모집 준비 중`,
+    formUrl: undefined,
     dueDate: APPLICATION_START_DATE.getTime(),
   },
   ongoing: {
-    buttonText: `${CURRENT_GENERATION}기 모집 신청`,
+    buttonText: JOIN_FORM_URL
+      ? `${CURRENT_GENERATION}기 모집 신청`
+      : `${CURRENT_GENERATION}기 모집 준비 중`,
     formUrl: JOIN_FORM_URL,
     dueDate: APPLICATION_DUE_DATE.getTime(),
   },
   after: {
-    buttonText: `${CURRENT_GENERATION + 1}기 모집 알림 신청`,
-    formUrl: JOIN_NEXT_ALARM_FORM_URL,
+    buttonText: `${CURRENT_GENERATION}기 모집 마감`,
+    formUrl: undefined,
     dueDate: undefined,
   },
 };

@@ -37,6 +37,8 @@ function RecruitmentStatusSection() {
   };
 
   const handleClickApplicationButton = () => {
+    if (!currentApplicationDetail.formUrl) return;
+
     sendGAEvent('event', 'cilck_application_button', {
       screen_name: '/',
     });
@@ -59,6 +61,7 @@ function RecruitmentStatusSection() {
         <Button
           className={clsx(styles.homeButton, styles.primary)}
           type="button"
+          disabled={!currentApplicationDetail.formUrl}
           onClick={handleClickApplicationButton}
         >
           {currentApplicationDetail.buttonText}

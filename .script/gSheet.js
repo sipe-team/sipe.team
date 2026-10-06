@@ -11,7 +11,6 @@ const SHEET_NAMES = {
   REVIEW: 'review',
   ACTIVITY: 'activity',
   FAQ_ABOUT: 'faq_about',
-  FAQ_RECRUIT: 'faq_recruit',
   ABOUT_ACTIVITY: 'about_activity',
   ABOUT_SPONSOR: 'about_sponsor',
 };
@@ -43,7 +42,6 @@ async function getGoogleSheet() {
       peoples: doc.sheetsByTitle[SHEET_NAMES.REVIEW],
       activities: doc.sheetsByTitle[SHEET_NAMES.ACTIVITY],
       faqAbout: doc.sheetsByTitle[SHEET_NAMES.FAQ_ABOUT],
-      faqRecruit: doc.sheetsByTitle[SHEET_NAMES.FAQ_RECRUIT],
       aboutActivity: doc.sheetsByTitle[SHEET_NAMES.ABOUT_ACTIVITY],
       aboutSponsor: doc.sheetsByTitle[SHEET_NAMES.ABOUT_SPONSOR],
     };
@@ -78,7 +76,7 @@ async function processSheetData(sheets) {
       rows.aboutSponsorRow,
       config,
     ),
-    faq: processFaqData(rows.faqAboutRow, rows.faqRecruitRow),
+    faq: processFaqData(rows.faqAboutRow),
   };
 }
 
@@ -90,7 +88,6 @@ async function getSheetRows(sheets) {
       peoplesRow,
       activitiesRow,
       faqAboutRow,
-      faqRecruitRow,
       aboutActivityRow,
       aboutSponsorRow,
     ] = await Promise.all([
@@ -98,7 +95,6 @@ async function getSheetRows(sheets) {
       sheets.peoples.getRows(),
       sheets.activities.getRows(),
       sheets.faqAbout.getRows(),
-      sheets.faqRecruit.getRows(),
       sheets.aboutActivity.getRows(),
       sheets.aboutSponsor.getRows(),
     ]);
@@ -108,7 +104,6 @@ async function getSheetRows(sheets) {
       peoplesRow,
       activitiesRow,
       faqAboutRow,
-      faqRecruitRow,
       aboutActivityRow,
       aboutSponsorRow,
     };
@@ -346,24 +341,14 @@ function processAboutData(aboutActivityRow, aboutSponsorRow, config) {
 }
 
 // * FAQ 페이지 데이터 처리
-function processFaqData(faqAboutRow, faqRecruitRow) {
+function processFaqData(faqAboutRow) {
   const faqMap = {
     about: [],
-    recruit: [],
   };
 
   faqAboutRow.forEach((it) => {
     const row = it['_rawData'];
     faqMap.about.push({
-      key: row[0],
-      question: row[1],
-      answer: row[2],
-    });
-  });
-
-  faqRecruitRow.forEach((it) => {
-    const row = it['_rawData'];
-    faqMap.recruit.push({
       key: row[0],
       question: row[1],
       answer: row[2],
