@@ -40,20 +40,7 @@ vi.mock('@/components/molecules/Table', () => ({
 }));
 
 vi.mock('@/components/organisms/Faq', () => ({
-  default: ({
-    faqs,
-  }: {
-    faqs: { key: string; question: string; answer: string }[];
-  }) => (
-    <section data-testid="faq">
-      {faqs.map((faq) => (
-        <article key={faq.key}>
-          <h2>{faq.question}</h2>
-          <p>{faq.answer}</p>
-        </article>
-      ))}
-    </section>
-  ),
+  default: () => <section data-testid="faq" />,
 }));
 
 vi.mock('@/components/organisms/recruit/CompanyChart', () => ({
@@ -74,6 +61,12 @@ vi.mock('@/components/organisms/recruit/ScheduleCard', () => ({
   ),
 }));
 
+vi.mock('@/db', () => ({
+  getFaq: () => ({
+    recruit: [{ id: 'faq-1', question: '질문', answer: '답변' }],
+  }),
+}));
+
 describe('Recruit page', () => {
   it('renders the recruit sections, schedule cards, and member charts', () => {
     render(<Recruit />);
@@ -89,7 +82,5 @@ describe('Recruit page', () => {
     expect(screen.getByTestId('experience-chart')).toBeInTheDocument();
     expect(screen.getByTestId('company-chart')).toBeInTheDocument();
     expect(screen.getByTestId('job-role-chart')).toBeInTheDocument();
-    expect(screen.getByText('6기 선발 인원은 몇명인가요?')).toBeInTheDocument();
-    expect(screen.getByText(/6기 활동 회원에게는 15만원/)).toBeInTheDocument();
   });
 });

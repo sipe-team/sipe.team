@@ -9,12 +9,14 @@ import CompanyChart from '@/components/organisms/recruit/CompanyChart';
 import ExperienceChart from '@/components/organisms/recruit/ExperienceChart';
 import JobRoleChart from '@/components/organisms/recruit/JobRoleChart';
 import ScheduleCard from '@/components/organisms/recruit/ScheduleCard';
+import { getFaq } from '@/db';
 import { Applicants, CardList, InActivity } from '@/libs/constants/recruit';
-import { RECRUIT_FAQ } from '@/libs/constants/recruitFaq';
 
 import styles from './index.module.scss';
 
 function Recruit() {
+  const faq = getFaq();
+
   return (
     <Layout>
       <ContentWithTitle title="지원자격">
@@ -66,7 +68,7 @@ function Recruit() {
           </div>
         </Flex>
       </ContentWithTitle>
-      <Faq faqs={RECRUIT_FAQ} />
+      <Faq faqs={faq.recruit} />
     </Layout>
   );
 }
