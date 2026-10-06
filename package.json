@@ -2,6 +2,9 @@
   "name": "sipe",
   "private": true,
   "version": "3.0.0",
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "prepare": "husky",
     "open-browser": "open http://localhost:6100",
