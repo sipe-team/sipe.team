@@ -13,6 +13,13 @@
     transform: translateX(-50%);
     padding: 0;
     object-fit: cover;
+    mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      black 8%,
+      black 85%,
+      transparent
+    );
     pointer-events: none;
   }
 

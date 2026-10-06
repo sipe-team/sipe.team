@@ -16,7 +16,7 @@ function Home() {
       justify="center"
     >
       <Image
-        src="/assets/home-bg.png"
+        src="/assets/sky-blue/home-bg.png"
         alt="배경 이미지"
         sizes="(max-width: 1060px) 100vw, 50vw"
         width={0}

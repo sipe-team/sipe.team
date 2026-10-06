@@ -108,7 +108,7 @@ function BarItem({
 function RecruitBarChart({
   title,
   data,
-  barColor = '#FFB24D',
+  barColor = 'var(--primary)',
   barWidthMultiplier = 10,
 }: RecruitBarChartProps) {
   const [hoveredItem, setHoveredItem] = useState<BarChartData | null>(null);
