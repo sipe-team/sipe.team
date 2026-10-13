@@ -69,7 +69,7 @@ export function createForm(purpose: ActivityForm['purpose']): ActivityForm {
   ): Question => ({ id: uid(), title, type, options, required: true });
   return {
     id: uid(),
-    title: purpose === 'review' ? '오늘의 활동 후기' : '함께할 팀을 만들어요',
+    title: purpose === 'review' ? '오늘의 활동 후기' : 'Sipe 미션 희망 팀 지원',
     description:
       purpose === 'review'
         ? '오늘의 경험을 들려주세요. 여러분의 이야기가 다음 활동을 만듭니다.'
