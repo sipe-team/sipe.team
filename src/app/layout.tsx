@@ -5,12 +5,9 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 
 import { pretendardFont } from '@/app/_fonts';
 import ClientProvider from '@/components/global/ClientProvider';
-import Footer from '@/components/global/Footer';
-import Navigation from '@/components/global/Navigation';
+import SiteChrome from '@/features/forms/SiteChrome';
 import { ASSET_VERSION } from '@/libs/constants/assetVersion';
 import { DEFAULT_METADATA } from '@/libs/constants/metadata';
-
-import styles from './layout.module.scss';
 
 export const metadata = DEFAULT_METADATA;
 
@@ -49,9 +46,7 @@ function RootLayout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <ClientProvider>
-          <Navigation />
-          <main className={styles.main}>{children}</main>
-          <Footer />
+          <SiteChrome>{children}</SiteChrome>
           {process.env.VERCEL_ENV === 'production' &&
             process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
               <GoogleAnalytics

@@ -46,3 +46,7 @@ src/db/*.json
 .vercel
 
 .env*.local
+
+# Local activity forms demo records
+.activity-forms.local/
+*.tsbuildinfo

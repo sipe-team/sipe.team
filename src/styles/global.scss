@@ -91,3 +91,8 @@ button {
 ::-webkit-scrollbar {
   display: none;
 }
+
+body:has([data-activity-forms]) {
+  padding-top: 0;
+  background: #f9faf8;
+}
