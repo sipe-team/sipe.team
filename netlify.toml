@@ -1,0 +1,5 @@
+# Vercel hosts the site. Skip duplicate Netlify Git builds.
+# Build hooks bypass this setting; stop builds in Netlify to disable those too.
+# Remove this setting before using Netlify for deployments again.
+[build]
+  ignore = "exit 0"
