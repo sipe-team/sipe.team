@@ -3,9 +3,9 @@ import { color, Flex, Typography } from '@sipe-team/side';
 import styles from './index.module.scss';
 
 const summaryData = [
-  { title: '누적 지원자 수', value: '400+' },
-  { title: '총 참여자 수', value: '140' },
-  { title: '누적 미션 수', value: '51' },
+  { title: '누적 지원자 수', value: '600명+' },
+  { title: '총 참여자 수', value: '163명' },
+  { title: '누적 미션 수', value: '71개' },
 ];
 
 function SummaryCards() {
