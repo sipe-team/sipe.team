@@ -2,8 +2,6 @@ import 'src/styles/global.scss';
 import 'react-simple-toasts/dist/theme/dark.css';
 
 import { GoogleAnalytics } from '@next/third-parties/google';
-import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import { pretendardFont } from '@/app/_fonts';
 import ClientProvider from '@/components/global/ClientProvider';
@@ -54,9 +52,12 @@ function RootLayout({ children }: { children: React.ReactNode }) {
           <Navigation />
           <main className={styles.main}>{children}</main>
           <Footer />
-          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
-          <Analytics />
-          <SpeedInsights />
+          {process.env.VERCEL_ENV === 'production' &&
+            process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
+              <GoogleAnalytics
+                gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}
+              />
+            )}
         </ClientProvider>
       </body>
     </html>
