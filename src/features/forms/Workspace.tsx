@@ -655,151 +655,305 @@ function Respond({ id }: { id: string }) {
   const [notice, setNotice] = useState('');
   const [done, setDone] = useState(false);
   const [busy, setBusy] = useState(false);
+  const [step, setStep] = useState(-1);
   const [responseId] = useState(uid);
   useEffect(() => {
     api<ActivityForm>('form', undefined, id)
       .then(setForm)
       .catch((e) => setError(e.message));
   }, [id]);
+  useEffect(() => {
+    document.getElementById('response-heading')?.focus({ preventScroll: true });
+  }, [step, done]);
   const draftKey = 'sipe-form-answer:' + id;
+  const q = form?.questions[step];
+  function restore() {
+    try {
+      const saved = localStorage.getItem(draftKey);
+      if (!saved) {
+        setNotice('저장된 임시 응답이 없습니다.');
+        return;
+      }
+      const value = JSON.parse(saved);
+      if (
+        !value ||
+        typeof value !== 'object' ||
+        Array.isArray(value) ||
+        Object.values(value).some(
+          (v) =>
+            typeof v !== 'string' &&
+            !(Array.isArray(v) && v.every((x) => typeof x === 'string')),
+        )
+      )
+        throw new Error();
+      setAnswers(value);
+      setErrors({});
+      setStep(0);
+      setNotice('임시 응답을 불러왔습니다.');
+    } catch {
+      setError('저장된 응답을 불러오지 못했습니다.');
+    }
+  }
+  async function next() {
+    if (!form || busy) return;
+    setError('');
+    setNotice('');
+    if (q) {
+      const problem = validateAnswers({ ...form, questions: [q] }, answers);
+      setErrors(problem);
+      if (Object.keys(problem).length) {
+        document.getElementById('answer-' + q.id)?.focus();
+        return;
+      }
+      setStep(step + 1);
+      return;
+    }
+    const problems = validateAnswers(form, answers);
+    setErrors(problems);
+    if (Object.keys(problems).length) {
+      setStep(form.questions.findIndex((item) => problems[item.id]));
+      return;
+    }
+    setBusy(true);
+    try {
+      await api('submit', { formId: id, id: responseId, answers });
+      try {
+        localStorage.removeItem(draftKey);
+      } catch {
+        /* The response was submitted successfully. */
+      }
+      setDone(true);
+    } catch (e) {
+      setError((e as Error).message);
+    } finally {
+      setBusy(false);
+    }
+  }
   if (done)
     return (
-      <div className={styles.success}>
-        <span>✓</span>
-        <Intro eyebrow="THANK YOU" title="소중한 기록, 잘 받았어요.">
-          함께 나눈 이야기가 다음 만남을 더 좋게 만들 거예요.
-        </Intro>
-        <p>창을 닫아도 괜찮아요.</p>
+      <div className={styles.conversation}>
+        <div className={styles.welcome}>
+          <span className={styles.completionMark}>✓</span>
+          <p className={styles.eyebrow}>ONE MORE CONNECTION</p>
+          <h1 id="response-heading" tabIndex={-1}>
+            당신의 이야기가
+            <br />
+            다음 만남을 만들어요.
+          </h1>
+          <p>
+            소중한 기록, 잘 받았어요.
+            <br />
+            이제 창을 닫아도 괜찮습니다.
+          </p>
+        </div>
       </div>
     );
+  if (!form)
+    return (
+      <>
+        <ErrorMessage message={error} />
+        {!error && <Notice>폼을 불러오는 중…</Notice>}
+      </>
+    );
   return (
-    <div className={styles.narrow}>
-      <ErrorMessage message={error} />
-      {!form ? (
-        !error && <Notice>폼을 불러오는 중…</Notice>
+    <div className={styles.conversation}>
+      {form.status !== 'open' && (
+        <Notice>
+          {form.status === 'draft'
+            ? '미리보기입니다. 공개 후 응답을 제출할 수 있어요.'
+            : '응답이 마감되었습니다.'}
+        </Notice>
+      )}
+      {step === -1 ? (
+        <section className={styles.welcome}>
+          <p className={styles.eyebrow}>
+            {form.purpose === 'teams'
+              ? 'FIND YOUR PEOPLE'
+              : 'MAKE YOUR MOMENT COUNT'}
+          </p>
+          <h1 id="response-heading" tabIndex={-1}>
+            {form.title}
+          </h1>
+          <p>{form.description}</p>
+          <div className={styles.actions}>
+            <button className={styles.primary} onClick={() => setStep(0)}>
+              시작하기 →
+            </button>
+            <span className={styles.muted}>
+              {form.questions.length}개의 질문 · 나의 속도로 답해주세요
+            </span>
+          </div>
+          <button className={styles.ghost} onClick={restore}>
+            작성하던 응답 불러오기
+          </button>
+        </section>
       ) : (
         <>
-          <Intro
-            eyebrow={
-              form.purpose === 'review'
-                ? 'YOUR EXPERIENCE MATTERS'
-                : 'MEET YOUR TEAM'
-            }
-            title={form.title}
+          <div className={styles.responseTop}>
+            <span>{form.title}</span>
+            <span>
+              {Math.min(step + 1, form.questions.length)} /{' '}
+              {form.questions.length}
+            </span>
+          </div>
+          <div
+            className={styles.progressTrack}
+            role="progressbar"
+            aria-label="질문 진행"
+            aria-valuemin={0}
+            aria-valuemax={form.questions.length}
+            aria-valuenow={step}
           >
-            {form.description}
-          </Intro>
-          {form.status !== 'open' ? (
-            <Notice>
-              {form.status === 'draft'
-                ? '미리보기입니다. 공개 후 응답을 제출할 수 있어요.'
-                : '응답이 마감되었습니다.'}
-            </Notice>
-          ) : (
-            <p className={styles.muted}>
-              별표(*)는 필수 질문입니다. 응답은 운영진만 확인할 수 있어요.
-            </p>
-          )}
+            <span
+              style={{ width: `${(step / form.questions.length) * 100}%` }}
+            />
+          </div>
           <form
             noValidate
-            onSubmit={async (e) => {
+            onSubmit={(e) => {
               e.preventDefault();
-              const errors = validateAnswers(form, answers);
-              setErrors(errors);
-              if (Object.keys(errors).length) {
-                document
-                  .getElementById('question-' + Object.keys(errors)[0])
-                  ?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                return;
-              }
-              setBusy(true);
-              setError('');
-              try {
-                await api('submit', { formId: id, id: responseId, answers });
-                try {
-                  localStorage.removeItem(draftKey);
-                } catch {
-                  /* Submission already succeeded. */
-                }
-                setDone(true);
-              } catch (e) {
-                setError((e as Error).message);
-              } finally {
-                setBusy(false);
-              }
+              void next();
+            }}
+            onKeyDown={(e) => {
+              if (
+                e.key === 'Enter' &&
+                (e.nativeEvent.isComposing || e.keyCode === 229)
+              )
+                e.preventDefault();
             }}
           >
-            {form.questions.map((q, i) => (
-              <fieldset
-                className={styles.card}
-                key={q.id}
-                id={'question-' + q.id}
-              >
-                <legend>
-                  {String(i + 1).padStart(2, '0')}{' '}
-                  <span>
-                    {q.title} {q.required && <em>*</em>}
-                  </span>
-                </legend>
-                <QuestionInput
-                  q={q}
-                  value={answers[q.id]}
-                  onChange={(v) => setAnswers((a) => ({ ...a, [q.id]: v }))}
-                />
-                {q.type === 'rating' && (
-                  <div className={styles.ratingLabels}>
-                    <span>아쉬워요</span>
-                    <span>아주 좋아요</span>
+            <section
+              className={styles.questionStage}
+              key={step}
+              aria-labelledby="response-heading"
+            >
+              {q ? (
+                <>
+                  <p className={styles.questionNumber}>
+                    {String(step + 1).padStart(2, '0')} <span>→</span>
+                  </p>
+                  <h1 id="response-heading" tabIndex={-1}>
+                    {q.title}
+                    {q.required && <em aria-label="필수"> *</em>}
+                  </h1>
+                  <p className={styles.questionHint}>
+                    {q.type === 'multiple'
+                      ? '해당하는 항목을 모두 선택해주세요.'
+                      : q.type === 'long'
+                        ? '편하게 들려주세요. 줄바꿈도 할 수 있어요.'
+                        : q.required
+                          ? '필수 질문이에요.'
+                          : '선택 질문이에요. 건너뛰어도 괜찮아요.'}
+                  </p>
+                  <QuestionInput
+                    q={q}
+                    value={answers[q.id]}
+                    onChange={(v) => {
+                      setAnswers((a) => ({ ...a, [q.id]: v }));
+                      setErrors({});
+                    }}
+                  />
+                  {q.type === 'rating' && (
+                    <div className={styles.ratingLabels}>
+                      <span>아쉬워요</span>
+                      <span>아주 좋아요</span>
+                    </div>
+                  )}
+                  <ErrorMessage message={errors[q.id]} />
+                  <button className={styles.primary} type="submit">
+                    {step === form.questions.length - 1
+                      ? '답변 확인 →'
+                      : '다음 →'}
+                  </button>
+                </>
+              ) : (
+                <>
+                  <p className={styles.eyebrow}>READY WHEN YOU ARE</p>
+                  <h1 id="response-heading" tabIndex={-1}>
+                    이렇게 남길까요?
+                  </h1>
+                  <p className={styles.questionHint}>
+                    제출하기 전에 답변을 한 번 확인해주세요.
+                  </p>
+                  <div className={styles.reviewAnswers}>
+                    {form.questions.map((item, i) => (
+                      <div key={item.id}>
+                        <div>
+                          <h2>{item.title}</h2>
+                          <p>
+                            {Array.isArray(answers[item.id])
+                              ? (answers[item.id] as string[]).join(', ') ||
+                                '미응답'
+                              : answers[item.id] || '미응답'}
+                          </p>
+                        </div>
+                        <button
+                          type="button"
+                          className={styles.ghost}
+                          onClick={() => setStep(i)}
+                          aria-label={`${item.title} 수정`}
+                        >
+                          수정
+                        </button>
+                      </div>
+                    ))}
                   </div>
-                )}
-                <ErrorMessage message={errors[q.id]} />
-              </fieldset>
-            ))}
-            <div className={styles.actions}>
+                  <button
+                    className={styles.primary}
+                    disabled={busy || form.status !== 'open'}
+                  >
+                    {busy ? '제출 중…' : '응답 제출 ✓'}
+                  </button>
+                  <p className={styles.questionHint}>
+                    응답은 운영진만 확인할 수 있어요.
+                  </p>
+                </>
+              )}
+            </section>
+          </form>
+          <div className={styles.responseControls}>
+            <button
+              className={styles.secondary}
+              disabled={busy}
+              onClick={() => {
+                setStep(step - 1);
+                setErrors({});
+                setError('');
+              }}
+              aria-label="이전 질문"
+            >
+              ← 이전
+            </button>
+            <div>
               <button
-                type="button"
-                className={styles.secondary}
+                className={styles.ghost}
+                disabled={busy}
                 onClick={() => {
                   try {
                     localStorage.setItem(draftKey, JSON.stringify(answers));
                     setNotice(
-                      '이 기기에 임시저장했습니다. 공용 기기에서는 사용 후 지워주세요.',
+                      '이 기기에 임시저장했어요. 나중에 이어서 작성할 수 있습니다.',
                     );
                   } catch {
-                    setError('이 기기에 임시저장할 수 없습니다.');
+                    setError('이 기기에 저장할 수 없습니다.');
                   }
                 }}
               >
                 임시저장
               </button>
               <button
-                type="button"
                 className={styles.ghost}
-                onClick={() => {
-                  try {
-                    const saved = localStorage.getItem(draftKey);
-                    if (saved) {
-                      setAnswers(JSON.parse(saved));
-                      setNotice('임시 응답을 불러왔습니다.');
-                    } else setNotice('저장된 임시 응답이 없습니다.');
-                  } catch {
-                    setError('저장된 응답을 불러오지 못했습니다.');
-                  }
-                }}
+                disabled={busy}
+                onClick={restore}
               >
                 불러오기
               </button>
-              <button
-                className={styles.primary}
-                disabled={busy || form.status !== 'open'}
-              >
-                {busy ? '제출 중…' : '응답 제출 →'}
-              </button>
             </div>
-            {notice && <Notice>{notice}</Notice>}
-          </form>
+          </div>
         </>
       )}
+      <ErrorMessage message={error} />
+      {notice && <Notice>{notice}</Notice>}
     </div>
   );
 }
