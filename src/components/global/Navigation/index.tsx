@@ -13,8 +13,9 @@ import clsx from 'clsx';
 import Layout from '@/components/atoms/Layout';
 import HamburgerButton from '@/components/global/HamburgerButton';
 import Button from '@/components/molecules/Button';
+import useApplicationStatus from '@/hook/useApplicationStatus';
 import { SipeLogo } from '@/libs/assets/logos';
-import { displayApplication, getCurrentStatus } from '@/libs/utils/recruit';
+import { displayApplication } from '@/libs/utils/recruit';
 
 import styles from './index.module.scss';
 
@@ -27,8 +28,7 @@ const menus: { name: string; path: Route }[] = [
 
 function Navigation() {
   const pathname = usePathname();
-  const now = Date.now();
-  const currentStatus = getCurrentStatus(now);
+  const currentStatus = useApplicationStatus();
   const currentApplicationDetail = displayApplication[currentStatus];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -88,15 +88,25 @@ function Navigation() {
                     {menu.name}
                   </Button>
                 ))}
-                <Button
-                  disabled={currentStatus !== 'ongoing'}
-                  isExternalLink
-                  href={currentApplicationDetail.formUrl}
-                  buttonType="apply"
-                  onClick={handleClickJoinUsButton}
-                >
-                  Join Us
-                </Button>
+                {currentApplicationDetail.formUrl ? (
+                  <Button
+                    isExternalLink
+                    href={currentApplicationDetail.formUrl}
+                    buttonType="apply"
+                    onClick={handleClickJoinUsButton}
+                  >
+                    Join Us
+                  </Button>
+                ) : (
+                  <Button
+                    disabled
+                    buttonType="apply"
+                    type="button"
+                    aria-label={currentApplicationDetail.buttonText}
+                  >
+                    Join Us
+                  </Button>
+                )}
               </Flex>
             </nav>
           </Flex>

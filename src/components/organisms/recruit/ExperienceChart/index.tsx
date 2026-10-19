@@ -18,7 +18,7 @@ function ExperienceChart() {
     <RecruitBarChart
       title="연차별 분포는 어떻게 되나요?"
       data={data}
-      barColor="#FFB24D"
+      barColor="var(--primary)"
     />
   );
 }
