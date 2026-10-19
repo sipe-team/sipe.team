@@ -1,7 +1,4 @@
 .button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border-radius: 8px;
   height: 40px;
   font-weight: bold;
@@ -16,7 +13,6 @@
     border-color 0.3s ease-in-out,
     opacity 0.3s ease-in-out;
   white-space: nowrap;
-  flex-direction: row;
   text-align: center;
 
   &.menu {

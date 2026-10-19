@@ -5,6 +5,8 @@
 * {
   box-sizing: border-box;
   appearance: none;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 a {

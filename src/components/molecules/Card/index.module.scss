@@ -1,12 +1,10 @@
 .section {
-  width: 100%;
   display: flex;
-  flex: 1 1;
-  justify-content: flex-start;
+  flex-direction: column;
   align-items: flex-start;
   gap: 24px;
+  width: 100%;
   margin-bottom: 60px;
-  flex-direction: column;
 
   &:last-of-type {
     margin-bottom: 0;
@@ -23,8 +21,13 @@
 }
 
 .image {
+  min-width: 0;
   width: 100%;
   border-radius: 12px;
+
+  @include desktop {
+    flex: 1 1 0;
+  }
 
   @include mobile {
     height: auto;
@@ -49,19 +52,18 @@
 }
 
 .titleWrapper {
-  padding: 8px 0;
-  margin-top: 24px;
+  display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: flex-start;
   gap: 24px;
+  min-width: 0;
+  padding: 8px 0;
+  margin-top: 24px;
   width: auto;
   min-height: 270px;
-  display: inline-flex;
-  box-shadow: '0px 4px 4px rgba(0, 0, 0, 0.25)';
-  border: '1px black solid';
 
   @include desktop {
+    flex: 1 1 0;
     margin-top: 0px;
   }
 }

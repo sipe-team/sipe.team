@@ -30,7 +30,7 @@ function CompanyChart() {
     <RecruitBarChart
       title="회사별 분포는 어떻게 되나요?"
       data={data}
-      barColor="#FFB24D"
+      barColor="var(--primary)"
     />
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { color, Typography } from '@sipe-team/side';
+import { color, Flex, Typography } from '@sipe-team/side';
 import clsx from 'clsx';
 
 import ExternalLink from '@/components/atoms/ExternalLink';
@@ -33,32 +33,58 @@ function ActiveVideoCard({
         alt={contentTitle}
         src={thumbnail}
       />
-      <section className={styles.contentsWrapper}>
-        <section className={styles.contentsInfo}>
-          <Typography className={styles.title} color={color.white} size={16}>
-            {contentTitle}
-          </Typography>
-          <div className={styles.body}>
-            <Typography
-              className={styles.username}
-              color={color.white}
-              size={14}
+      <Flex
+        asChild
+        className={styles.contentsWrapper}
+        direction="column"
+        justify="space-between"
+      >
+        <section>
+          <Flex
+            asChild
+            className={styles.contentsInfo}
+            direction="column"
+            gap="12px"
+          >
+            <section>
+              <Typography
+                className={styles.title}
+                color={color.white}
+                size={16}
+              >
+                {contentTitle}
+              </Typography>
+              <Flex asChild align="center" gap="10px">
+                <div>
+                  <Typography
+                    className={styles.username}
+                    color={color.white}
+                    size={14}
+                  >
+                    {userName}
+                  </Typography>
+                  <Typography
+                    className={styles.date}
+                    color={color.white}
+                    size={14}
+                  >
+                    {createDate}
+                  </Typography>
+                </div>
+              </Flex>
+            </section>
+          </Flex>
+          <Flex asChild align="center" justify="center">
+            <ExternalLink
+              className={styles.linkButton}
+              href={link}
+              withTextUnderline={false}
             >
-              {userName}
-            </Typography>
-            <Typography className={styles.date} color={color.white} size={14}>
-              {createDate}
-            </Typography>
-          </div>
+              보러가기
+            </ExternalLink>
+          </Flex>
         </section>
-        <ExternalLink
-          className={styles.linkButton}
-          href={link}
-          withTextUnderline={false}
-        >
-          보러가기
-        </ExternalLink>
-      </section>
+      </Flex>
     </article>
   );
 }

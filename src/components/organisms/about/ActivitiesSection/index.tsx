@@ -3,8 +3,9 @@
 import 'swiper/css/bundle';
 import 'swiper/css/pagination';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
+import { Flex } from '@sipe-team/side';
 import clsx from 'clsx';
 import { Autoplay, EffectCoverflow, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -22,15 +23,11 @@ function ActivitiesSection() {
   const activities = getEntries(activity);
 
   const [selectChip, setSelectChip] = useState<string>(activities[0][1].key);
-  const [activityData, setActivityData] = useState(activity[selectChip]);
-
-  useEffect(() => {
-    setActivityData(activity[selectChip]);
-  }, [selectChip]);
+  const activityData = activity[selectChip];
 
   return (
     <ContentWithTitle title="주요 활동">
-      <div className={styles.menus}>
+      <Flex className={styles.menus}>
         {activities.map(([key, activity]) => (
           <Button
             className={styles.activityButton}
@@ -42,7 +39,7 @@ function ActivitiesSection() {
             {activity.name}
           </Button>
         ))}
-      </div>
+      </Flex>
       <Swiper
         loop={activityData.activities.length > 1 ? true : false}
         className={styles.swiper}
@@ -86,10 +83,17 @@ function ActivitiesSection() {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className={styles.description}>
+      <Flex
+        align="center"
+        className={styles.description}
+        direction="column"
+        gap="16px"
+        inline={true}
+        justify="center"
+      >
         <div className={styles.title}>{activityData?.title}</div>
         <div className={styles.subTitle}>{activityData?.description}</div>
-      </div>
+      </Flex>
     </ContentWithTitle>
   );
 }

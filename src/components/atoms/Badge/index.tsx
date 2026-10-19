@@ -1,3 +1,5 @@
+import { Flex } from '@sipe-team/side';
+
 import styles from './index.module.scss';
 
 interface Props {
@@ -6,9 +8,15 @@ interface Props {
 
 function Badge({ text }: Props) {
   return (
-    <div className={styles.wrapper}>
+    <Flex
+      align="center"
+      className={styles.wrapper}
+      gap="12px"
+      inline={true}
+      justify="center"
+    >
       <div className={styles.text}>{text}</div>
-    </div>
+    </Flex>
   );
 }
 

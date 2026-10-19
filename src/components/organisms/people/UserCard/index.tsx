@@ -1,5 +1,7 @@
 import { ComponentProps } from 'react';
 
+import { Flex } from '@sipe-team/side';
+
 import CardWrapper from '@/components/atoms/CardWrapper';
 import Image from '@/components/molecules/Image';
 import SocialIconLink, {
@@ -11,7 +13,6 @@ import type { Entries, RequiredNonNullableObject } from '@/libs/utils';
 import styles from './index.module.scss';
 
 type UserCardProps = ComponentProps<'div'> & {
-  period: string;
   img?: string;
   name: string;
   links?: Entries<
@@ -24,7 +25,6 @@ type UserCardProps = ComponentProps<'div'> & {
 };
 
 function UserCard({
-  period,
   img,
   name,
   links,
@@ -35,42 +35,59 @@ function UserCard({
 }: UserCardProps) {
   return (
     <CardWrapper type="CONTENT" className="people-box" minHeight={270}>
-      <section className={styles.userInfo}>
-        <Image
-          className={styles.profile}
-          alt="user image"
-          src={img}
-          width={70}
-          height={70}
-        />
-        <section className={styles.info}>
-          <section className={styles.mainInfo}>
-            <h3 className={styles.name}>{name}</h3>
-            <article className={styles.links}>
-              {links?.map(([type, link]) => (
-                <SocialIconLink
-                  type={type}
-                  url={link}
-                  key={type}
-                  size="small"
-                />
-              ))}
-            </article>
-          </section>
-          <section className={styles.subInfo}>
-            <p className={styles.part}>{part}</p>
-            {isOrganizer && (
-              <p className={styles.organizer}>
-                Organizer{' '}
-                <OrganizerIcon
-                  className={styles.organizerMark}
-                  style={{ color: 'var(--primary)' }}
-                />
-              </p>
-            )}
-          </section>
+      <Flex asChild className={styles.userInfo}>
+        <section>
+          <Image
+            className={styles.profile}
+            alt="user image"
+            src={img}
+            width={70}
+            height={70}
+          />
+          <Flex asChild className={styles.info} direction="column">
+            <section>
+              <Flex asChild className={styles.mainInfo} justify="space-between">
+                <section>
+                  <h3 className={styles.name}>{name}</h3>
+                  <Flex asChild gap="12px">
+                    <article>
+                      {links?.map(([type, link]) => (
+                        <SocialIconLink
+                          type={type}
+                          url={link}
+                          key={type}
+                          size="small"
+                        />
+                      ))}
+                    </article>
+                  </Flex>
+                </section>
+              </Flex>
+              <Flex asChild className={styles.subInfo} justify="space-between">
+                <section>
+                  <p className={styles.part}>{part}</p>
+                  {isOrganizer && (
+                    <Flex
+                      align="center"
+                      asChild
+                      className={styles.organizer}
+                      justify="center"
+                    >
+                      <p>
+                        Organizer{' '}
+                        <OrganizerIcon
+                          className={styles.organizerMark}
+                          style={{ color: 'var(--primary)' }}
+                        />
+                      </p>
+                    </Flex>
+                  )}
+                </section>
+              </Flex>
+            </section>
+          </Flex>
         </section>
-      </section>
+      </Flex>
       <section className={styles.introduceWrapper}>{introduce}</section>
       {review && (
         <section className={styles.reviewWrapper}>

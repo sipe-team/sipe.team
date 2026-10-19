@@ -2,8 +2,6 @@
   width: 100%;
 
   .cards {
-    display: flex;
-    flex-direction: column;
     gap: 32px;
 
     .card {
@@ -29,7 +27,6 @@
 }
 
 .typeWrapper {
-  display: flex;
   margin-bottom: 40px;
   gap: 16px;
 

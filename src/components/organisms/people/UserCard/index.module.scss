@@ -1,5 +1,4 @@
 .userInfo {
-  display: flex;
   height: 70px;
   margin-bottom: 20px;
 
@@ -12,15 +11,11 @@
   }
 
   .info {
-    display: flex;
-    flex-direction: column;
     width: 100%;
     margin: 8.5px 0 8.5px 16px;
   }
 
   .mainInfo {
-    display: flex;
-    justify-content: space-between;
     height: 100%;
 
     .name {
@@ -30,17 +25,9 @@
       line-height: 137%;
       color: color('white');
     }
-
-    .links {
-      display: flex;
-      gap: 12px;
-    }
   }
 
   .subInfo {
-    display: flex;
-    justify-content: space-between;
-
     .part {
       font-size: 12px;
       font-weight: 500;
@@ -51,9 +38,6 @@
     }
 
     .organizer {
-      display: flex;
-      justify-content: center;
-      align-items: center;
       color: color('primary');
     }
 

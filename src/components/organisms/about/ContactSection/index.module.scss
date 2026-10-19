@@ -1,9 +1,4 @@
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  justify-content: center;
-  align-items: center;
   text-align: center;
 }
 
@@ -26,11 +21,8 @@
   border-radius: 8px;
   background-color: color('gray100');
   color: color('white');
-  display: flex;
-  align-items: center;
   padding: 16px;
   box-sizing: border-box;
-  gap: 12px;
   font-size: 15px;
   font-weight: 600;
   line-height: 21px;
