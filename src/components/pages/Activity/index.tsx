@@ -1,6 +1,7 @@
 import { Flex } from '@sipe-team/side';
 
 import ContentWithTitle from '@/components/atoms/ContentWithTitle';
+import ExternalLink from '@/components/atoms/ExternalLink';
 import Layout from '@/components/atoms/Layout';
 import Button from '@/components/molecules/Button';
 import ActiveCard from '@/components/organisms/activity/ActiveCard';
@@ -43,6 +44,9 @@ function Activity({ activityData, currentTab }: Props) {
         <div className={styles.wrapper}>
           {currentTab === 'post' ? (
             <Flex className={styles.cards} direction="column">
+              <ExternalLink href="https://medium.com/@sipe.team/">
+                SIPE 공식 블로그 전체 글 보기 ↗
+              </ExternalLink>
               {activityData.map((activity) => (
                 <ActiveCard
                   key={activity.link}

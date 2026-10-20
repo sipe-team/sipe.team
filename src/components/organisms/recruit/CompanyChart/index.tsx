@@ -1,38 +1,31 @@
-import RecruitBarChart from '../RecruitBarChart';
+import styles from './index.module.scss';
 
-const rawData = [
-  {
-    name: '대기업',
-    value: 18,
-    examples: '토스, 네이버, 카카오, 두나무 등',
-  },
-  {
-    name: '스타트업/중견기업',
-    value: 34,
-    examples: '당근, 무신사, 파수, 팀스파르타 등',
-  },
-  {
-    name: '창업/프리랜서',
-    value: 8,
-    examples: '프리랜서, 창업 등',
-  },
+// 5기 자기소개 작성 당시 명시된 소속 회사 예시. 회사 규모는 추정하지 않음.
+const companies = [
+  '삼성전자',
+  '토스',
+  '현대오토에버',
+  '네이버',
+  '두나무',
+  '넷마블',
+  '우아한형제들',
+  '삼정KPMG',
+  '펄어비스',
+  'Match Group',
+  '뤼튼',
+  '파수',
 ];
-
-const total = rawData.reduce((sum, item) => sum + item.value, 0);
-
-const data = rawData.map((item) => ({
-  ...item,
-  percentage: Number(((item.value / total) * 100).toFixed(1)),
-}));
 
 function CompanyChart() {
   return (
-    <RecruitBarChart
-      title="회사별 분포는 어떻게 되나요?"
-      data={data}
-      barColor="var(--primary)"
-    />
+    <section className={styles.wrapper}>
+      <h3>어떤 회사에서 함께하나요?</h3>
+      <ul className={styles.companies}>
+        {companies.map((company) => (
+          <li key={company}>{company}</li>
+        ))}
+      </ul>
+    </section>
   );
 }
-
 export default CompanyChart;

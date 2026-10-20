@@ -1,0 +1,27 @@
+.wrapper {
+  padding: 32px;
+  border-radius: 12px;
+  background-color: color('gray000');
+  outline: 1px solid color('gray100');
+
+  h3 {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: color('white');
+  }
+}
+
+.companies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0 0;
+
+  li {
+    padding: 10px 16px;
+    border-radius: 8px;
+    color: color('primary');
+    background-color: color('gray100');
+  }
+}

@@ -15,15 +15,17 @@ function Home() {
       gap="16px"
       justify="center"
     >
-      <Image
-        src="/assets/sky-blue/home-bg.webp"
-        alt="배경 이미지"
-        sizes="(max-width: 1060px) 100vw, 50vw"
-        width={0}
-        height={0}
-        priority
-        className={styles.background}
-      />
+      <div className={styles.backgroundFrame} aria-hidden="true">
+        <Image
+          src="/assets/sky-blue/home-bg.webp"
+          alt=""
+          sizes="(max-width: 1060px) 100vw, 50vw"
+          width={0}
+          height={0}
+          priority
+          className={styles.background}
+        />
+      </div>
       <Flex
         align="center"
         className={styles.titleWrapper}
