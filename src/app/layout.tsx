@@ -32,6 +32,7 @@ function RootLayout({ children }: { children: React.ReactNode }) {
         />
         <link
           rel="mask-icon"
+          color="#7dd3fc"
           href={`/assets/safari-pinned-tab.svg?v=${ASSET_VERSION}`}
         />
         <link

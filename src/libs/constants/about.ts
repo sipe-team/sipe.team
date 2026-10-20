@@ -19,7 +19,7 @@ export const introduces = [
     id: 3,
     src: '/assets/sky-blue/intro-culture.webp',
     badgeText: 'Culture',
-    title: '사이퍼들의 성장에 긍정적인 영향을끼치는 사람들과 함께하고 싶어요.',
+    title: '사이퍼들의 성장에 긍정적인 영향을 끼치는 사람들과 함께하고 싶어요.',
     subTitle:
       '각자가 원하는 목표를 성공적으로 이루기 위해서는 그 과정을 함께하는 사람이 무척 중요하다고 생각합니다. 어떤 면이든 배울 점이 있는 사람과 함께하고 싶어요!',
   },
