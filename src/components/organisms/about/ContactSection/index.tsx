@@ -9,7 +9,7 @@ import styles from './index.module.scss';
 
 function ContactSection() {
   return (
-    <ContentWithTitle title="문의">
+    <ContentWithTitle id="contact" title="문의">
       <Flex
         align="center"
         className={styles.wrapper}

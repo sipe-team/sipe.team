@@ -6,6 +6,7 @@ import Image from '@/components/molecules/Image';
 import styles from './index.module.scss';
 
 interface CardProps {
+  id?: string;
   src: string;
   badgeText: string;
   title: string;
@@ -13,9 +14,9 @@ interface CardProps {
   reverse?: boolean;
 }
 
-function Card({ src, badgeText, title, subTitle, reverse }: CardProps) {
+function Card({ id, src, badgeText, title, subTitle, reverse }: CardProps) {
   return (
-    <div className={clsx(styles.section, reverse && styles.reverse)}>
+    <div id={id} className={clsx(styles.section, reverse && styles.reverse)}>
       <Image
         fill
         priority

@@ -9,6 +9,7 @@ import styles from './index.module.scss';
 function Home() {
   return (
     <Flex
+      id="home"
       align="center"
       className={styles.wrapper}
       direction="column"

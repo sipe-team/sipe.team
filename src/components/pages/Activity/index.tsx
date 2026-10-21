@@ -22,7 +22,7 @@ type Props = {
 function Activity({ activityData, currentTab }: Props) {
   return (
     <Layout>
-      <ContentWithTitle title="사이퍼 활동">
+      <ContentWithTitle id="activity" title="사이퍼 활동">
         <Flex className={styles.typeWrapper}>
           <Button
             className={styles.periodButton}

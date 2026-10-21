@@ -62,6 +62,14 @@ const currentPeople: PeopleItem[] = [
 ];
 
 describe('People page', () => {
+  it('shows an empty state when no member data is available', () => {
+    render(<People currentPeople={[]} peopleGenerations={[]} />);
+    expect(screen.getByRole('status')).toHaveTextContent(
+      '구성원 정보를 준비 중입니다.',
+    );
+    expect(screen.queryByTestId('user-card')).not.toBeInTheDocument();
+  });
+
   it('renders generation buttons and user cards', () => {
     render(
       <People

@@ -1,0 +1,65 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="480" height="270" viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="about-image-3" clip-path="url(#clip0_0_4)">
+<path id="Vector 93" opacity="0.5" d="M116.087 12.9922C12.5412 66.3696 -60.741 254.387 240.97 126.003C542.682 -2.38212 458.433 151.49 381.74 257.012" stroke="white"/>
+<g id="Vector" filter="url(#filter0_i_0_4)">
+<path d="M274.858 94.969L179.498 89.3538L207.655 8.82031H203.618L150.168 76.3656L105.263 32.0461H100.527L126.21 89.4677L71.1484 97.6382V103.009L128.358 113.703L91.6236 178.4H96.0344L155.344 122.703L224.875 186.472H228.651L181.646 113.589L274.858 100.324V94.969Z" fill-rule="evenodd" clip-rule="evenodd" fill="#131518" fill-opacity="0.01"/>
+</g>
+<g id="Vector_2" filter="url(#filter1_d_0_4)">
+<path d="M405.494 169.659L348.349 164.043L376.507 83.5099H372.47L319.362 150.632L253.232 83.5099H248.512L295.062 164.157L240 172.344V177.699L297.226 188.408L255.446 257.012H259.857L324.163 197.23L369.947 238.978H373.723L350.514 188.278L405.494 175.013V169.659Z" fill-rule="evenodd" clip-rule="evenodd" fill="url(#paint0_linear_0_4)"/>
+</g>
+<g id="Group 2085667252">
+<path id="Vector 92" d="M301.098 56.2979L248.626 56.2979" stroke-width="2" stroke="white"/>
+<path id="Vector 90" d="M293.406 37.75L256.303 74.8532" stroke-width="2" stroke="white"/>
+<path id="Vector 91" d="M293.412 74.8583L256.309 37.7551" stroke-width="2" stroke="white"/>
+</g>
+<g id="Group 2085667253">
+<path id="Vector 92_2" d="M189.196 175.027L156.819 175.027" stroke-width="2" stroke="#79D1FB"/>
+<path id="Vector 90_2" d="M184.454 163.579L161.56 186.472" stroke-width="2" stroke="#79D1FB"/>
+<path id="Vector 91_2" d="M184.454 186.476L161.56 163.582" stroke-width="2" stroke="#79D1FB"/>
+</g>
+<g id="Group 2085667256">
+<path id="Vector 92_3" d="M431.977 117.57L412.551 117.57" stroke-width="1.2" stroke="#79D1FB"/>
+<path id="Vector 90_3" d="M429.136 110.698L415.4 124.435" stroke-width="1.2" stroke="#79D1FB"/>
+<path id="Vector 91_3" d="M429.136 124.442L415.4 110.706" stroke-width="1.2" stroke="#79D1FB"/>
+</g>
+<g id="Group 2085667255">
+<path id="Vector 92_4" d="M70.741 63.4141L44.8396 63.4141" stroke-width="1.6" stroke="#79D1FB"/>
+<path id="Vector 90_4" d="M66.9472 54.2516L48.6322 72.5666" stroke-width="1.6" stroke="#79D1FB"/>
+<path id="Vector 91_4" d="M66.9472 72.5703L48.6322 54.2553" stroke-width="1.6" stroke="#79D1FB"/>
+</g>
+<g id="Group 2085667254">
+<path id="Vector 92_5" d="M286.12 223.278L219.918 223.278" stroke-width="2" stroke="white"/>
+<path id="Vector 90_5" d="M276.423 199.878L229.611 246.69" stroke-width="2" stroke="white"/>
+<path id="Vector 91_5" d="M276.432 246.697L229.62 199.886" stroke-width="2" stroke="white"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_i_0_4" x="71.1484" y="8.82031" width="203.71" height="177.652" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="6"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_0_4"/>
+</filter>
+<filter id="filter1_d_0_4" x="220" y="63.5099" width="205.494" height="213.502" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="10"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_4"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_4" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear_0_4" x1="405.494" y1="83.5098" x2="232.186" y2="248.819" gradientUnits="userSpaceOnUse">
+<stop stop-color="#5BC8F9"/>
+<stop offset="1" stop-color="#A4DFFD"/>
+</linearGradient>
+<clipPath id="clip0_0_4">
+<rect width="480" height="270" fill="white"/>
+</clipPath>
+</defs>
+</svg>

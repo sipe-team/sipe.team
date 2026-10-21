@@ -3,7 +3,7 @@
 import 'swiper/css/bundle';
 import 'swiper/css/pagination';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Flex } from '@sipe-team/side';
 import clsx from 'clsx';
@@ -22,11 +22,30 @@ function ActivitiesSection() {
   const { activity } = getAbout();
   const activities = getEntries(activity);
 
-  const [selectChip, setSelectChip] = useState<string>(activities[0][1].key);
+  const [selectChip, setSelectChip] = useState<string>(
+    activities[0]?.[1].key ?? '',
+  );
   const activityData = activity[selectChip];
 
+  useEffect(() => {
+    // This section loads on the client and can shift later anchor targets.
+    const frame = requestAnimationFrame(() => {
+      const hash = window.location.hash.slice(1);
+      if (hash) document.getElementById(hash)?.scrollIntoView();
+    });
+    return () => cancelAnimationFrame(frame);
+  }, []);
+
+  if (!activityData) {
+    return (
+      <ContentWithTitle id="activities" title="주요 활동">
+        {null}
+      </ContentWithTitle>
+    );
+  }
+
   return (
-    <ContentWithTitle title="주요 활동">
+    <ContentWithTitle id="activities" title="주요 활동">
       <Flex className={styles.menus}>
         {activities.map(([key, activity]) => (
           <Button

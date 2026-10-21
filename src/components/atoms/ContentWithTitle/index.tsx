@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import styles from './index.module.scss';
 
 type ContentWithTitleProps = {
+  id?: string;
   title: string;
   children: React.ReactNode | React.ReactNode[];
   className?: string;
@@ -13,6 +14,7 @@ type ContentWithTitleProps = {
 };
 
 function ContentWithTitle({
+  id,
   title,
   children,
   className,
@@ -22,6 +24,7 @@ function ContentWithTitle({
 }: ContentWithTitleProps) {
   return (
     <Flex
+      id={id}
       align="center"
       className={clsx(styles.wrapper, className)}
       direction="column"

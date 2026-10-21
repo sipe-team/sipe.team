@@ -52,6 +52,7 @@ function RecruitmentStatusSection() {
 
   return (
     <Flex
+      id="recruitment"
       align="center"
       className={styles.content}
       direction="column"

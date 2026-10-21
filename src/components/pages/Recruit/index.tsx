@@ -19,10 +19,10 @@ function Recruit() {
 
   return (
     <Layout>
-      <ContentWithTitle title="지원자격">
+      <ContentWithTitle id="eligibility" title="지원자격">
         <Table dataList={Applicants} isApplicant={true} />
       </ContentWithTitle>
-      <ContentWithTitle title="모집 일정">
+      <ContentWithTitle id="schedule" title="모집 일정">
         <DraggableContainer
           ariaLabel="모집 일정 스크롤 영역"
           className={styles.cardListWrapper}
@@ -47,10 +47,10 @@ function Recruit() {
           </Flex>
         </DraggableContainer>
       </ContentWithTitle>
-      <ContentWithTitle title="활동안내">
+      <ContentWithTitle id="activities" title="활동안내">
         <Table dataList={InActivity} isApplicant={false} />
       </ContentWithTitle>
-      <ContentWithTitle title="이전 기수 구성원 현황">
+      <ContentWithTitle id="members" title="이전 기수 구성원 현황">
         <Flex
           className={styles.chartsWrapper}
           direction="row"
