@@ -93,3 +93,8 @@ button {
 ::-webkit-scrollbar {
   display: none;
 }
+
+// Keep hash-linked sections visible below the fixed 64px navigation.
+[id] {
+  scroll-margin-top: 88px;
+}

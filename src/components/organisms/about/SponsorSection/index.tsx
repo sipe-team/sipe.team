@@ -12,7 +12,7 @@ function Sponsor() {
 
   return (
     <>
-      <ContentWithTitle title="후원사 소개">
+      <ContentWithTitle id="sponsors" title="후원사 소개">
         <div className={styles.imageList}>
           {sponsors.map(([key, sponsor]) => (
             <SponsorImage key={key} src={sponsor.link} alt={sponsor.name} />

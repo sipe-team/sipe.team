@@ -1,7 +1,7 @@
 export const introduces = [
   {
     id: 1,
-    src: '/assets/sky-blue/intro-goal.webp',
+    src: '/assets/figma-6th/intro-goal.png',
     badgeText: 'Goal',
     title: '사이프에서의 성장 경험으로 더 멀리 나아갈 수 있기를 바라요.',
     subTitle:
@@ -9,7 +9,7 @@ export const introduces = [
   },
   {
     id: 2,
-    src: '/assets/sky-blue/intro-mission.webp',
+    src: '/assets/figma-6th/intro-mission.png',
     badgeText: 'Mission',
     title: '본인만의 성장 방식을 찾고 나아갈 수 있도록 도와드려요.',
     subTitle:
@@ -17,7 +17,7 @@ export const introduces = [
   },
   {
     id: 3,
-    src: '/assets/sky-blue/intro-culture.webp',
+    src: '/assets/figma-6th/intro-culture.png',
     badgeText: 'Culture',
     title: '사이퍼들의 성장에 긍정적인 영향을 끼치는 사람들과 함께하고 싶어요.',
     subTitle:
