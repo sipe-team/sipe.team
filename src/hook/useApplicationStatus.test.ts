@@ -14,7 +14,7 @@ describe('useApplicationStatus', () => {
     act(() => vi.advanceTimersByTime(1000));
     expect(result.current).toBe('ongoing');
 
-    vi.setSystemTime(new Date('2026-11-16T23:59:58+09:00'));
+    vi.setSystemTime(new Date('2026-11-30T23:59:58+09:00'));
     act(() => vi.advanceTimersByTime(1000));
     expect(result.current).toBe('after');
 
