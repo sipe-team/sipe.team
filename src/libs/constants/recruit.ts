@@ -88,7 +88,7 @@ export const CardList = [
   },
   {
     title: '서류 합격자 발표',
-    processDate: '11.23(월)',
+    processDate: '11.30(월)',
     subTitle: '합격자 개별 연락',
   },
   {
