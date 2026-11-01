@@ -1,6 +1,6 @@
 export const CURRENT_GENERATION = 6;
 export const APPLICATION_START_DATE = new Date('2026-11-02T00:00:00+09:00');
-export const APPLICATION_DUE_DATE = new Date('2026-11-16T23:59:59+09:00');
+export const APPLICATION_DUE_DATE = new Date('2026-11-30T23:59:59+09:00');
 
 // 지원 폼은 모집 시작 시각부터 신청 버튼에 연결됩니다.
 export const JOIN_FORM_URL =
@@ -83,8 +83,8 @@ export const InActivity = [
 export const CardList = [
   {
     title: '서류 접수',
-    processDate: '11.02(월) ~ 11.16(월)',
-    subTitle: '2026년 11월 16일 23:59 마감',
+    processDate: '11.02(월) ~ 11.30(월)',
+    subTitle: '2026년 11월 30일 23:59 마감',
   },
   {
     title: '서류 합격자 발표',
