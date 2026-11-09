@@ -4,16 +4,14 @@ import styles from './index.module.scss';
 const companies = [
   '삼성전자',
   '토스',
-  '현대오토에버',
+  '우아한형제들',
   '네이버',
   '두나무',
   '넷마블',
-  '우아한형제들',
-  '삼정KPMG',
   '펄어비스',
   'Match Group',
+  '현대오토에버',
   '뤼튼',
-  '파수',
 ];
 
 function CompanyChart() {
