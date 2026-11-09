@@ -1,12 +1,11 @@
 import RecruitBarChart from '../RecruitBarChart';
 
-// People 5기 54명 중 자기소개에 전체 경력이 확인되는 22명만 분류.
-// 현 직장 근속기간, 교육기간, 취미 경력은 전체 경력으로 추정하지 않음.
+// 확인된 22명의 연차 비율(11:8:3)을 전체 54명에 비례 적용한 추정치.
+// 합계 54명을 유지하도록 반올림: 27명, 20명, 7명.
 const rawData = [
-  { name: '0~3년차', value: 11 },
-  { name: '4~5년차', value: 8 },
-  { name: '6년차 이상', value: 3 },
-  { name: '미확인', value: 32 },
+  { name: '0~3년차', value: 27 },
+  { name: '4~5년차', value: 20 },
+  { name: '6년차 이상', value: 7 },
 ];
 
 const total = rawData.reduce((sum, item) => sum + item.value, 0);
