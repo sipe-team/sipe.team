@@ -1,0 +1,26 @@
+.notice {
+  text-align: center;
+  color: #fff;
+  line-height: 1.5;
+
+  .title {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+  }
+
+  .description {
+    margin: 12px 0 0;
+    font-size: 20px;
+  }
+
+  @include mobile {
+    .title {
+      font-size: 20px;
+    }
+
+    .description {
+      font-size: 16px;
+    }
+  }
+}

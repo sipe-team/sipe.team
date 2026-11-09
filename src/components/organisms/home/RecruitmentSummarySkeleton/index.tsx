@@ -1,7 +1,7 @@
 import { Flex } from '@sipe-team/side';
 
 import Timer from '@/components/atoms/Timer';
-import SummaryCard from '@/components/organisms/home/SummaryCards';
+import RecruitmentClosedSummary from '@/components/organisms/home/RecruitmentClosedSummary';
 
 import styles from './index.module.scss';
 
@@ -45,7 +45,7 @@ function RecruitmentSummary({ currentStatus }: Props) {
         />
       </Flex>
     ),
-    after: () => <SummaryCard />,
+    after: () => <RecruitmentClosedSummary />,
   };
 
   return elements[currentStatus]();
