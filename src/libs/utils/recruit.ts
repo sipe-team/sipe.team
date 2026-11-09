@@ -4,9 +4,15 @@ import {
   CURRENT_GENERATION,
   JOIN_ALARM_FORM_URL,
   JOIN_FORM_URL,
+  NEXT_GENERATION_ALARM_FORM_URL,
+  RECRUITMENT_CLOSED_NOTICE_END_DATE,
 } from '@/libs/constants/recruit';
 
 export type ApplicationStatusKey = 'before' | 'ongoing' | 'after';
+export const shouldShowRecruitmentClosedNotice = (now: number) =>
+  now >= APPLICATION_DUE_DATE.getTime() &&
+  now < RECRUITMENT_CLOSED_NOTICE_END_DATE.getTime();
+
 export type ApplicationDetail = {
   buttonText: string;
   formUrl: string | undefined;
@@ -28,8 +34,8 @@ export const displayApplication: Record<
     dueDate: APPLICATION_DUE_DATE.getTime(),
   },
   after: {
-    buttonText: `${CURRENT_GENERATION}기 모집 마감`,
-    formUrl: undefined,
+    buttonText: `${CURRENT_GENERATION + 1}기 모집 알림 신청`,
+    formUrl: NEXT_GENERATION_ALARM_FORM_URL,
     dueDate: undefined,
   },
 };

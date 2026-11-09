@@ -1,11 +1,16 @@
 export const CURRENT_GENERATION = 6;
 export const APPLICATION_START_DATE = new Date('2026-11-02T00:00:00+09:00');
 export const APPLICATION_DUE_DATE = new Date('2026-11-16T23:59:59+09:00');
+export const RECRUITMENT_CLOSED_NOTICE_END_DATE = new Date(
+  '2027-01-01T00:00:00+09:00',
+);
 
 // 지원 폼은 모집 시작 시각부터 신청 버튼에 연결됩니다.
 export const JOIN_FORM_URL =
   'https://docs.google.com/forms/d/e/1FAIpQLSdhyMjqq41EL5r-uo_rpXm3e4R-cuW8qbA5r6zM1RfmY9SN-A/viewform?usp=header';
 export const JOIN_ALARM_FORM_URL = 'https://forms.gle/KxxLCA9db9NgWv4k8';
+export const NEXT_GENERATION_ALARM_FORM_URL =
+  'https://forms.gle/nAH2kzMNBcaEYnPH9';
 
 export type CardListType = {
   title: string;
