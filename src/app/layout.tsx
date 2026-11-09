@@ -7,6 +7,7 @@ import { pretendardFont } from '@/app/_fonts';
 import ClientProvider from '@/components/global/ClientProvider';
 import Footer from '@/components/global/Footer';
 import Navigation from '@/components/global/Navigation';
+import ScrollEffects from '@/components/global/ScrollEffects';
 import { ASSET_VERSION } from '@/libs/constants/assetVersion';
 import { DEFAULT_METADATA } from '@/libs/constants/metadata';
 
@@ -51,6 +52,7 @@ function RootLayout({ children }: { children: React.ReactNode }) {
       <body>
         <ClientProvider>
           <Navigation />
+          <ScrollEffects />
           <main className={styles.main}>{children}</main>
           <Footer />
           {process.env.VERCEL_ENV === 'production' &&

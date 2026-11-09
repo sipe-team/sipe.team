@@ -16,7 +16,11 @@ function Home() {
       gap="16px"
       justify="center"
     >
-      <div className={styles.backgroundFrame} aria-hidden="true">
+      <div
+        data-scroll-background
+        className={styles.backgroundFrame}
+        aria-hidden="true"
+      >
         <Image
           src="/assets/sky-blue/home-bg.webp"
           alt=""
@@ -30,6 +34,7 @@ function Home() {
       <Flex
         align="center"
         className={styles.titleWrapper}
+        data-scroll-reveal
         direction="column"
         gap="16px"
       >
