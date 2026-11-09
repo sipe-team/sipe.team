@@ -30,3 +30,9 @@
 .area {
   position: relative;
 }
+
+.frame {
+  position: relative;
+  overflow: clip;
+  overflow-clip-margin: 4px;
+}

@@ -16,7 +16,11 @@ interface CardProps {
 
 function Card({ id, src, badgeText, title, subTitle, reverse }: CardProps) {
   return (
-    <div id={id} className={clsx(styles.section, reverse && styles.reverse)}>
+    <div
+      data-scroll-reveal
+      id={id}
+      className={clsx(styles.section, reverse && styles.reverse)}
+    >
       <Image
         fill
         priority

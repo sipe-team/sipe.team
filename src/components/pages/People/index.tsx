@@ -42,7 +42,7 @@ function People({
               구성원 정보를 준비 중입니다. 잠시 후 다시 확인해 주세요.
             </p>
           )}
-          <div className={styles.contents}>
+          <div data-scroll-stagger className={styles.contents}>
             {currentPeople.map((person) => {
               const { github, linkedin, etc } = person;
 

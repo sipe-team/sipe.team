@@ -43,7 +43,11 @@ function Activity({ activityData, currentTab }: Props) {
         </Flex>
         <div className={styles.wrapper}>
           {currentTab === 'post' ? (
-            <Flex className={styles.cards} direction="column">
+            <Flex
+              data-scroll-stagger
+              className={styles.cards}
+              direction="column"
+            >
               <ExternalLink href="https://medium.com/@sipe.team/">
                 SIPE 공식 블로그 전체 글 보기 ↗
               </ExternalLink>
@@ -61,7 +65,7 @@ function Activity({ activityData, currentTab }: Props) {
               ))}
             </Flex>
           ) : (
-            <div className={styles.videoCards}>
+            <div data-scroll-stagger className={styles.videoCards}>
               {activityData.map((activity) => (
                 <ActiveVideoCard
                   key={activity.link}

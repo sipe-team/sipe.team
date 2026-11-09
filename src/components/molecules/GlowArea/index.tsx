@@ -18,7 +18,7 @@ function GlowArea({ rx, children }: PropsWithChildren<GlowAreaProps>) {
 
   return (
     <AnimatePresence mode="wait">
-      <div style={{ position: 'relative' }}>
+      <div className={styles.frame}>
         <motion.div
           className={styles.border}
           animate={

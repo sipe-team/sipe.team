@@ -25,6 +25,7 @@ function ContentWithTitle({
   return (
     <Flex
       id={id}
+      data-scroll-section
       align="center"
       className={clsx(styles.wrapper, className)}
       direction="column"

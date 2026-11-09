@@ -30,6 +30,7 @@ function Recruit() {
           <Flex
             align="center"
             className={styles.cardList}
+            data-scroll-stagger
             direction="row"
             gap="20px"
             inline={true}
@@ -53,6 +54,7 @@ function Recruit() {
       <ContentWithTitle id="members" title="이전 기수 구성원 현황">
         <Flex
           className={styles.chartsWrapper}
+          data-scroll-stagger
           direction="row"
           gap="32px"
           wrap="wrap"

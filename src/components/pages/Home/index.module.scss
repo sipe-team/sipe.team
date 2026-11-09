@@ -29,10 +29,12 @@
     object-fit: cover;
     transform: scale(1.08);
     transform-origin: center;
+    translate: 0 var(--scroll-offset, 0px);
     animation: backgroundDrift 14s ease-in-out infinite alternate;
 
     @media (prefers-reduced-motion: reduce) {
       animation: none;
+      translate: none;
     }
   }
 
