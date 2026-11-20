@@ -42,10 +42,19 @@
 
 .sponsorLink {
   max-width: 100%;
-  border-radius: 12px;
 
   &:focus-visible {
     outline: 2px solid color('primary');
     outline-offset: 4px;
+  }
+}
+
+.alpaonLink {
+  .imageWrapper {
+    border-radius: 0;
+    border: 0;
+    box-shadow: none;
+    background: #fff;
+    padding: 28px;
   }
 }
