@@ -19,6 +19,14 @@ const sponsorWebsites: Record<string, string> = {
   cloop: 'https://www.cloop.kr/',
 };
 
+function withSponsorUtm(href: string) {
+  const url = new URL(href);
+  url.searchParams.set('utm_source', 'sipe');
+  url.searchParams.set('utm_medium', 'referral');
+  url.searchParams.set('utm_campaign', 'sponsor');
+  return url.toString();
+}
+
 function Sponsor() {
   const about = getAbout();
   const sponsors = getEntries(about.sponsor);
@@ -34,7 +42,7 @@ function Sponsor() {
             return href ? (
               <ExternalLink
                 key={key}
-                href={href}
+                href={withSponsorUtm(href)}
                 withTextUnderline={false}
                 aria-label={`${sponsor.name} 공식 사이트 (새 탭에서 열기)`}
                 className={styles.sponsorLink}
@@ -46,7 +54,7 @@ function Sponsor() {
             );
           })}
           <ExternalLink
-            href="https://alpaon.com/ko/services"
+            href={withSponsorUtm('https://alpaon.com/ko/services')}
             withTextUnderline={false}
             aria-label="알파온 서비스 페이지 (새 탭에서 열기)"
             className={`${styles.sponsorLink} ${styles.alpaonLink}`}
